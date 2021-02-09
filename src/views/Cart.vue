@@ -1,6 +1,7 @@
 <template>
   <b-container id="cart">
     <b-row>
+      <!-- PAYMENT METHOD -->
       <b-col>
         <h2>Payment Method</h2>
         <b-form @submit.prevent="onSubmitCardDetails">
@@ -35,27 +36,40 @@
               label="Card expires on:"
               label-for="cardExp"
             >
-              <b-row>
+              <b-row id="cardExp">
                 <b-col>
                   <b-form-input
-                    id="carExp"
+                    id="carExpMonth"
                     required
                     type="number"
                     placeholder="Month"
                     max="12"
                     min="1"
+                    v-model="receiver.cardExpMonth"
                   />
                 </b-col>
                 <b-col>
                   <b-form-input
-                    id="carExp"
+                    id="carExpYear"
                     required
                     type="number"
                     placeholder="Year"
                     min="2021"
+                    v-model="receiver.cardExpYear"
                   />
                 </b-col>
               </b-row>
+            </b-form-group>
+            <b-form-group
+              id="cardSecurity-group"
+              label="Card security number"
+              label-for="cardSecurity"
+            >
+              <b-form-input
+                id="cardSecurity"
+                v-model="receiver.cardSecurity"
+                placeholder="XXX"
+              />
             </b-form-group>
             <b-form-group
               id="cardNumberName-group"
@@ -104,6 +118,8 @@
           </div>
         </b-form>
       </b-col>
+
+      <!-- ContactINFO -->
       <b-col>
         <h2>Contact information</h2>
         <b-form @submit.prevent="onSubmit">
@@ -170,6 +186,7 @@
               placeholder="07XXXXXXX"
               required
               v-model="receiver.telephone"
+              type="tel"
             />
           </b-form-group>
           <b-form-group
@@ -186,7 +203,7 @@
               v-model="receiver.email"
             />
           </b-form-group>
-          <b-button type="submit" variant="primary">Beställ</b-button>
+          <b-button type="submit" variant="primary">Order</b-button>
         </b-form>
       </b-col>
     </b-row>
@@ -209,6 +226,9 @@
           payMethod: '',
           cardNumber: '',
           cardNumberName: '',
+          cardExpMonth: '',
+          cardExpYear: '',
+          cardSecurity: '',
           paypalEmail: '',
           bitcoinAdress: ''
         },
