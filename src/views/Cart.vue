@@ -2,11 +2,11 @@
   <b-container id="cart">
     <b-row>
       <b-col>
-        <h2>Betalningssätt</h2>
+        <h2>Payment Method</h2>
         <b-form @submit.prevent="onSubmitCardDetails">
           <b-form-group
             id="paymentMethod-group"
-            label="Betalningsmetod"
+            label="Payment Method"
             label-for="paymentMethod"
           >
             <b-form-select
@@ -19,7 +19,7 @@
           <div v-if="receiver.payMethod == 'Visa'">
             <b-form-group
               id="cardNumber-group"
-              label="Kortnummer"
+              label="Card number"
               label-for="cardNumber"
             >
               <b-form-input
@@ -29,10 +29,32 @@
                 required
               />
             </b-form-group>
-
+            <b-form-group
+              id="cardExp-group"
+              label="Card expires on:"
+              label-for="cardExp"
+            >
+              <b-form-input
+                id="carExp"
+                required
+                type="number"
+                placeholder="Month"
+                max="12"
+                min="1"
+                class="w-25"
+              />
+              <b-form-input
+                id="carExp"
+                required
+                type="number"
+                placeholder="Year"
+                min="2021"
+                class="w-25"
+              />
+            </b-form-group>
             <b-form-group
               id="cardNumberName-group"
-              label="Kortinnehavare"
+              label="Card owner"
               label-for="cardNumberName"
             >
               <b-form-input
@@ -46,7 +68,7 @@
           <div v-else-if="receiver.payMethod == 'Paypal'">
             <b-form-group
               id="paypal-group"
-              label="Paypal Konto"
+              label="Paypal Account"
               label-for="paypal"
             >
               <b-form-input
@@ -72,15 +94,15 @@
               />
             </b-form-group>
           </div>
-          <div v-else-if="receiver.payMethod == 'Faktura'">
-            <p>Fakturan skickas till din adress</p>
+          <div v-else-if="receiver.payMethod == 'Invoice'">
+            <p>The invoice will be sent to you.</p>
           </div>
         </b-form>
       </b-col>
       <b-col>
-        <h2>Kontakt uppgifter</h2>
+        <h2>Contact information</h2>
         <b-form @submit.prevent="onSubmit">
-          <b-form-group id="surname-group" label-for="surname" label="Förnamn">
+          <b-form-group id="surname-group" label-for="surname" label="Surname">
             <b-form-input
               id="surname"
               placeholder="Jonathan"
@@ -92,7 +114,7 @@
             i
             d="lastname-group"
             label-for="lastname"
-            label="Efternamn"
+            label="Lastname"
           >
             <b-form-input
               id="lastname"
@@ -103,7 +125,7 @@
           </b-form-group>
           <b-form-group
             id="street-group"
-            label="Gata och Husnummer"
+            label="Street & street number"
             label-for="street"
           >
             <b-form-input
@@ -115,7 +137,7 @@
           </b-form-group>
           <b-form-group
             id="postNumber-group"
-            label="Postadress"
+            label="Post number"
             label-for="postAdress"
           >
             <b-form-input
@@ -125,7 +147,7 @@
               v-model="receiver.postAdress"
             />
           </b-form-group>
-          <b-form-group id="city" label="Ort" label-for="city">
+          <b-form-group id="city" label="City" label-for="city">
             <b-form-input
               id="city"
               required
@@ -135,7 +157,7 @@
           </b-form-group>
           <b-form-group
             id="telephone"
-            label="Mobilnummer"
+            label="Phonenumber"
             label-for="telephone"
           >
             <b-form-input
@@ -147,7 +169,7 @@
           </b-form-group>
           <b-form-group
             id="email-group"
-            label="Email adress"
+            label="Email"
             label-for="email-adress"
             v-model="receiver.email"
           >
@@ -185,7 +207,7 @@
           paypalEmail: '',
           bitcoinAdress: ''
         },
-        payMethodOptions: ['Visa', 'Paypal', 'Bitcoin', 'Faktura'],
+        payMethodOptions: ['Visa', 'Paypal', 'Bitcoin', 'Invoice'],
         submitted: false
       }
     },
