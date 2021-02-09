@@ -1,5 +1,5 @@
 <template>
-  <b-container>
+  <b-container id="cart">
     <b-row>
       <b-col>
         <h2>Betalningssätt</h2>
@@ -199,4 +199,8 @@
 </script>
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
-<style scoped lang="scss"></style>
+<style scoped lang="scss">
+  #cart {
+    text-align: start;
+  }
+</style>
