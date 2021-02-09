@@ -5,7 +5,7 @@
         <p class="footerNavbar">Contact info:</p>
         <p class="footerNavbar">Tel: 032843417</p>
 
-        <p class="footerNavbar">e-mail: WLShop@hotmail.com</p>
+        <p class="footerNavbar">E-mail: WLShop@hotmail.com</p>
 
         <b-icon style="margin-left:1.5em" icon="facebook" font-scale="1" />
         <b-icon style="margin-left:1.5em" icon="instagram" font-scale="1" />
