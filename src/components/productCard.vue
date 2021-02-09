@@ -11,10 +11,10 @@
             <p>Här kan man skiva info om produkter</p>
             <!-- Color dots -->
             <div id="dots">
-              <b-icon icon="circle-fill" variant="success"></b-icon>
-              <b-icon icon="circle-fill" variant="warning"></b-icon>
-              <b-icon icon="circle-fill" variant="danger"></b-icon>
-              <b-icon icon="circle-fill" variant="info"></b-icon>
+              <b-icon icon="circle-fill" variant="success" />
+              <b-icon icon="circle-fill" variant="warning" />
+              <b-icon icon="circle-fill" variant="danger" />
+              <b-icon icon="circle-fill" variant="info" />
             </div>
             <!-- Add to cart button -->
             <b-button pill variant="primary">Add to Cart</b-button>
@@ -32,8 +32,8 @@
             <p>Här kan man skiva info om produkter</p>
             <!-- Color dots -->
             <div id="dots">
-              <b-icon icon="circle-fill" variant="success"></b-icon>
-              <b-icon icon="circle-fill" variant="warning"></b-icon>
+              <b-icon icon="circle-fill" variant="success" />
+              <b-icon icon="circle-fill" variant="warning" />
             </div>
             <!-- Add to cart button -->
             <b-button pill variant="primary">Add to Cart</b-button>
