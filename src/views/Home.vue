@@ -3,8 +3,6 @@
     <img alt="Vue logo" src="../assets/logo.png" />
     <HelloWorld msg="Welcome to Your Vue.js App" />
     <productCard style="width:300px" />
-    
-
   </div>
 </template>
 
@@ -133,21 +131,14 @@
 
 <script>
   // @ is an alias to /src
-<<<<<<< HEAD
   import HelloWorld from '@/components/HelloWorld.vue'
-import ProductCard from '@/components/productCard.vue'
+  import ProductCard from '@/components/productCard.vue'
 
   export default {
     name: 'Home',
     components: {
       HelloWorld,
-        ProductCard
+      ProductCard
     }
-=======
-
-  export default {
-    name: 'Home',
-    components: {}
->>>>>>> 7fdac11291fc4b7f44c64c2a658800e433e77067
   }
 </script>

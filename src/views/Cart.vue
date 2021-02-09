@@ -29,28 +29,33 @@
                 required
               />
             </b-form-group>
+
             <b-form-group
               id="cardExp-group"
               label="Card expires on:"
               label-for="cardExp"
             >
-              <b-form-input
-                id="carExp"
-                required
-                type="number"
-                placeholder="Month"
-                max="12"
-                min="1"
-                class="w-25"
-              />
-              <b-form-input
-                id="carExp"
-                required
-                type="number"
-                placeholder="Year"
-                min="2021"
-                class="w-25"
-              />
+              <b-row>
+                <b-col>
+                  <b-form-input
+                    id="carExp"
+                    required
+                    type="number"
+                    placeholder="Month"
+                    max="12"
+                    min="1"
+                  />
+                </b-col>
+                <b-col>
+                  <b-form-input
+                    id="carExp"
+                    required
+                    type="number"
+                    placeholder="Year"
+                    min="2021"
+                  />
+                </b-col>
+              </b-row>
             </b-form-group>
             <b-form-group
               id="cardNumberName-group"
