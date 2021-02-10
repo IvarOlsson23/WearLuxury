@@ -1,8 +1,19 @@
 <template>
   <b-container id="cart">
     <b-row>
-      <b-col id="totalprice" sm="4" class="bg-danger h-50">
-        <h2>Total price</h2>
+      <b-col>
+        <b-card
+          title="Total amount"
+          footer="Total price"
+          footer-border-variant="dark"
+          style="max-width: 20rem"
+        >
+          <b-card-tex>
+            Subtotal:
+            <br />
+            Shipping:
+          </b-card-tex>
+        </b-card>
       </b-col>
     </b-row>
     <b-row>
