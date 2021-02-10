@@ -18,7 +18,7 @@
           footer-border-variant="dark"
           footer-tag="footer"
         >
-          <b-card-tex>
+          <b-card-text>
             <div class="d-flex justify-content-between">
               <span>Subtotal:</span>
               <span>2000 $</span>
@@ -28,7 +28,7 @@
               <span>Shipping:</span>
               <span>29 $</span>
             </div>
-          </b-card-tex>
+          </b-card-text>
           <template #footer>
             <div class="d-flex justify-content-between font-weight-bold  ">
               <span>Total amount(inc. vat)</span>
