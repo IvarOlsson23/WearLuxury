@@ -1,9 +1,22 @@
 <template>
   <div id="body">
     <div id="wrapper" />
-    ¨
     <div id="product-wrapper1">
-      <div id="nav">Här kan kanske nav ligga</div>
+      <div id="nav-overlay" v-show="!productOverlay">
+        <li class="product-list">
+          Shirts Pants Coats and Jackets Accessoaries Shoes
+        </li>
+      </div>
+      <div id="nav">
+        <div>
+          <input
+            @click="productOverlay = !productOverlay"
+            id="button"
+            type="button"
+            value="products"
+          />
+        </div>
+      </div>
       <span id="text1">Här står det lite text om nånting</span>
       <div id="product-pic1">img</div>
       <div id="overlay1" />
@@ -14,16 +27,17 @@
       <div id="overlay2" />
     </div>
     <div id="footer">
-      <span class="nav-buttons">test test test test</span>
+      <span class="nav-buttons">Nav Nav Nav Nav Nav LOGO</span>
     </div>
   </div>
 </template>
 
 <script>
   export default {
-    name: 'HelloWorld',
-    props: {
-      msg: String
+    data() {
+      return {
+        productOverlay: true
+      }
     }
   }
 </script>
@@ -50,9 +64,10 @@
 
   #product-pic1 {
     background-color: #777978;
-    position: absolute;
+    margin-left: 50%;
+    margin-top: 8vh;
     width: 540px;
-    height: 716px;
+    height: 700px;
     left: 982px;
     top: 780px;
     box-shadow: -8px 8px 21px rgba(0, 0, 0, 0.25);
@@ -79,7 +94,7 @@
     background-color: #777978;
     position: absolute;
     width: 606px;
-    height: 813px;
+    height: 700px;
     left: 358px;
     top: 1771px;
     box-shadow: -8px 8px 21px rgba(0, 0, 0, 0.25);
@@ -91,7 +106,7 @@
     width: 329px;
     height: 324px;
     left: 800px;
-    top: 2422px;
+    top: 2300px;
   }
 
   #text2 {
@@ -107,15 +122,15 @@
     width: 1920px;
     height: 376px;
     left: 0px;
-    top: 2907px;
+    top: 2800px;
     background-color: #333333;
     display: flex;
     justify-content: center;
     align-items: center;
   }
 
-  #nav-buttons {
-    background-color: rgb(168, 62, 255);
+  .nav-buttons {
+    color: rgb(221, 221, 221);
     display: flex;
     flex-direction: row;
     align-items: flex-start;
@@ -136,17 +151,77 @@
     display: inline-block;
     margin: 0 10px;
   }
-</style>
 
-<script>
-  export default {}
-</script>
-
-<script>
-  // @ is an alias to /src
-
-  export default {
-    name: 'Home',
-    components: {}
+  #nav-overlay {
+    background-color: rgb(221, 221, 221);
+    position: absolute;
+    width: 1920px;
+    height: 350px;
+    left: 0px;
+    top: 650px;
+    -webkit-animation: fadein 0.5s; /* Safari, Chrome and Opera > 12.1 */
+    -moz-animation: fadein 0.5s; /* Firefox < 16 */
+    -ms-animation: fadein 0.5s; /* Internet Explorer */
+    -o-animation: fadein 0.5s; /* Opera < 12.1 */
+    animation: fadein 0.5s;
+    display: flex;
+    justify-content: center;
+    align-items: center;
   }
-</script>
+
+  .product-list {
+    margin: 10em;
+  }
+
+  #nav-buttons {
+  }
+
+  @keyframes fadein {
+    from {
+      opacity: 0;
+    }
+    to {
+      opacity: 1;
+    }
+  }
+
+  /* Firefox < 16 */
+  @-moz-keyframes fadein {
+    from {
+      opacity: 0;
+    }
+    to {
+      opacity: 1;
+    }
+  }
+
+  /* Safari, Chrome and Opera > 12.1 */
+  @-webkit-keyframes fadein {
+    from {
+      opacity: 0;
+    }
+    to {
+      opacity: 1;
+    }
+  }
+
+  /* Internet Explorer */
+  @-ms-keyframes fadein {
+    from {
+      opacity: 0;
+    }
+    to {
+      opacity: 1;
+    }
+  }
+
+  /* Opera < 12.1 */
+  @-o-keyframes fadein {
+    from {
+      opacity: 0;
+    }
+    to {
+      opacity: 1;
+    }
+  }
+</style>
