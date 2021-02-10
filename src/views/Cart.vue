@@ -1,17 +1,35 @@
 <template>
   <b-container id="cart">
-    <b-row
-      ><b-col>
+    <b-row>
+      <!-- CARTITEMS -->
+      <b-col>
         <b-card title="Cart (5) products" class="h-100">
           <b-card
             img-src="https://img01.ztat.net/article/spp-media-p1/5e0b5adffa1338618afdae5031987c3e/0d68e7d30bf0477f93d4d0a7272ae7cc.jpg?imwidth=1800"
             img-left
             img-width="100px"
+            title="Cucci"
+            sub-title="Solglasögon - black/grey"
+            footer-tag="footer"
+            footer-bg-variant="light"
+            footer-border-variant="light"
           >
-            <b-card-text>Products</b-card-text>
+            <b-card-text>
+              Color: black
+              <br />
+              Size: XS
+            </b-card-text>
+            <template #footer class="d-flex justify-content-center">
+              <span>
+                <strong>
+                  2000$
+                </strong>
+              </span>
+            </template>
           </b-card>
         </b-card>
       </b-col>
+      <!-- TOTAL AMOUNT -->
       <b-col>
         <b-card
           title="Total amount"
@@ -38,8 +56,9 @@
         </b-card>
       </b-col>
     </b-row>
+
+    <!-- PAYMENT METHOD -->
     <b-row>
-      <!-- PAYMENT METHOD -->
       <b-col>
         <h2>Payment Method</h2>
         <b-form @submit.prevent="onSubmitCardDetails">
@@ -241,7 +260,7 @@
               v-model="receiver.email"
             />
           </b-form-group>
-          <b-button type="submit" variant="primary">Order</b-button>
+          <b-button type="submit" variant="danger">Place order</b-button>
         </b-form>
       </b-col>
     </b-row>
