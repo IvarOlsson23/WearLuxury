@@ -1,44 +1,52 @@
 <template>
   <div id="body">
-    <div id="wrapper" />
+    <div id="wrapper">
+      img
+    </div>
+    <div id="nav">
+      <div>
+        <input
+          @click="productOverlay = !productOverlay"
+          id="button"
+          type="button"
+          value="products"
+        />
+      </div>
+    </div>
+    <div id="nav-overlay" v-show="!productOverlay">
+      <li class="product-list">
+        Shirts Pants Coats and Jackets Accessoaries Shoes
+      </li>
+    </div>
     <div id="product-wrapper1">
-      <div id="nav-overlay" v-show="!productOverlay">
-        <li class="product-list">
-          Shirts Pants Coats and Jackets Accessoaries Shoes
-        </li>
-      </div>
-      <div id="nav">
-        <div>
-          <input
-            @click="productOverlay = !productOverlay"
-            id="button"
-            type="button"
-            value="products"
-          />
-        </div>
-      </div>
-      <span id="text1">Här står det lite text om nånting</span>
-      <div id="product-pic1">img</div>
-      <div id="overlay1" />
+      <p id="p1">här kan det stå lite text</p>
+      <div id="reklam-bild1">t</div>
     </div>
-    <div id="product-wrapper2">
-      <span id="text2">Här står det lite text om nånting</span>
-      <div id="product-pic2">img</div>
-      <div id="overlay2" />
-    </div>
-    <div id="footer">
-      <span class="nav-buttons">Nav Nav Nav Nav Nav LOGO</span>
+    <div id="product-wrapper1">
+      <div id="reklam-bild2">t</div>
+      <p id="p2">här kan det stå lite text</p>
     </div>
   </div>
 </template>
 
 <script>
+  export default {}
+</script>
+
+<script>
+  import ProductCard from '@/components/productCard.vue'
   export default {
     name: 'Home',
+
     components: {
       HelloWorld,
       ProductCard
     },
+
+    components: {
+      ProductCard
+    },
+
     data() {
       return {
         productOverlay: true
@@ -49,6 +57,7 @@
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
+
       #wrapper {
         background-color: #777978;
         position: relative;
@@ -57,6 +66,80 @@
         left: 0px;
         top: 0px;
       }
+
+  #wrapper {
+    background-color: #777978;
+    position: relative;
+    width: 100%;
+    height: 560px;
+    left: 0px;
+    top: 0px;
+  }
+  #nav {
+    width: 100%;
+    background: #202020;
+    left: 0px;
+    margin: 0%;
+  }
+
+  #product-wrapper1 {
+    display: flex;
+    justify-content: space-evenly;
+  }
+
+  #reklam-bild1 {
+    background-color: rgb(95, 95, 95);
+    width: 30em;
+    height: 40em;
+    margin-top: 10vh;
+    box-shadow: -8px 8px 21px rgba(0, 0, 0, 0.25);
+  }
+
+  #reklam-bild2 {
+    background-color: rgb(95, 95, 95);
+    width: 30em;
+    height: 40em;
+    margin-top: 10vh;
+    box-shadow: -8px 8px 21px rgba(0, 0, 0, 0.25);
+  }
+
+  #p1 {
+    margin-top: 40vh;
+    margin-left: 10%;
+  }
+
+  #p2 {
+    margin-top: 40vh;
+    margin-right: 10%;
+  }
+  h3 {
+    margin: 40px 0 0;
+  }
+  ul {
+    list-style-type: none;
+    padding: 0;
+  }
+  li {
+    display: inline-block;
+    margin: 0 10px;
+  }
+  #nav-overlay {
+    position: absolute;
+    background-color: rgb(221, 221, 221);
+    -webkit-animation: fadein 0.5s; /* Safari, Chrome and Opera > 12.1 */
+    -moz-animation: fadein 0.5s; /* Firefox < 16 */
+    -ms-animation: fadein 0.5s; /* Internet Explorer */
+    -o-animation: fadein 0.5s; /* Opera < 12.1 */
+    animation: fadein 0.5s;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+  }
+  .product-list {
+    margin: 10em;
+  }
+
 
       #nav {
         position: absolute;
@@ -186,7 +269,7 @@
 
       export default {
 
-    >>>>>>> 3c3ae87947de3d1919389371858be13d0e7f0325
+
       }
 
       @keyframes fadein {
