@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div class="footer-container">
     <nav class="navbar navbar-light bg-dark p-0">
       <div class="footerNavbar pt-5 pb-5">
         <p class="footerNavbar">Contact info:</p>
@@ -19,7 +19,13 @@
   .footerNavbar {
     color: rgb(229, 230, 231);
     text-align: center;
+    width: 100%;
+  }
 
+  .footer-container {
+    margin-top: 10%;
+    left: 0;
+    bottom: 0;
     width: 100%;
   }
 </style>
