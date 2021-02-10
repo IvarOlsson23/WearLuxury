@@ -1,57 +1,38 @@
 <template>
-  <b-container>
-    <b-row align-h="center">
-      <b-col>
-        <!-- product card -->
-        <b-card class="overflow-hidden" style="max-width: 540px">
-          <img src="../assets/suit.png" alt="suit"/> 
+ <!-- product card -->
+        <b-card class="text-left" >
+          <img src="../assets/suit.png" alt="suit" />
           <b-card-text>
-            <h3>Produkt</h3>
-            <p>2900 sek</p>
-            <p>Här kan man skiva info om produkter</p>
+            <h3>Product</h3>
+            <p>info about product</p>
+            
             <!-- Color dots -->
             <div id="dots">
-              <b-icon icon="circle-fill" variant="success">
-              <b-icon icon="circle-fill" variant="warning">
-              <b-icon icon="circle-fill" variant="danger">
-              <b-icon icon="circle-fill" variant="info"/> 
+              <b-icon icon="circle-fill" variant="success" style="margin: 3px" />
+              <b-icon icon="circle-fill" variant="warning" style="margin: 3px" />
+              <b-icon icon="circle-fill" variant="danger" style="margin: 3px" />
+              <b-icon icon="circle-fill" variant="info" style="margin: 3px" />
             </div>
-            <!-- Add to cart button -->
-            <b-button pill variant="primary">Add to Cart</b-button>
-          </b-card-text>
-        </b-card>
-      </b-col>
-
-      <b-col>
-        <!-- product card -->
-        <b-card class="overflow-hidden" style="max-width: 540px">
-          <img src="../assets/suit.png" alt="Suit" />
-          <b-card-text>
-            <h3>Produkt</h3>
+            <div class="text-right">
             <p>2900 sek</p>
-            <p>Här kan man skiva info om produkter</p>
-            <!-- Color dots -->
-            <div id="dots">
-              <b-icon icon="circle-fill" variant="success">
-              <b-icon icon="circle-fill" variant="warning"/>
-            </div>
             <!-- Add to cart button -->
-            <b-button pill variant="primary">Add to Cart</b-button>
+            <b-button  pill variant="primary"  >Add to cart</b-button>
+             </div>
           </b-card-text>
         </b-card>
-      </b-col>
-    </b-row>
-  </b-container>
+    
+ 
 </template>
 
 <script>
-  export default {
-    props: {}
-  }
+export default {
+  
+};
 </script>
 
 <style scoped>
-  img {
-    max-width: 100%;
-  }
+img {
+  max-width: 100%;
+}
+
 </style>

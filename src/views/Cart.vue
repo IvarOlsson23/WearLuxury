@@ -1,12 +1,34 @@
 <template>
-  <b-container>
-    <b-row>
+  <b-container id="cart">
+    <b-row
+      ><b-col>
+        <b-card title="Cart" class="h-100">
+          <b-card-text>Products</b-card-text>
+        </b-card>
+      </b-col>
       <b-col>
-        <h2>Betalningssätt</h2>
+        <b-card
+          title="Total amount"
+          footer="Total amount(inc. vat)"
+          footer-border-variant="dark"
+          footer-class="font-weight-bold"
+        >
+          <b-card-tex>
+            Subtotal: 20000$
+            <br />
+            Shipping: 99$
+          </b-card-tex>
+        </b-card>
+      </b-col>
+    </b-row>
+    <b-row>
+      <!-- PAYMENT METHOD -->
+      <b-col>
+        <h2>Payment Method</h2>
         <b-form @submit.prevent="onSubmitCardDetails">
           <b-form-group
             id="paymentMethod-group"
-            label="Betalningsmetod"
+            label="Payment Method"
             label-for="paymentMethod"
           >
             <b-form-select
@@ -19,7 +41,7 @@
           <div v-if="receiver.payMethod == 'Visa'">
             <b-form-group
               id="cardNumber-group"
-              label="Kortnummer"
+              label="Card number"
               label-for="cardNumber"
             >
               <b-form-input
@@ -31,8 +53,48 @@
             </b-form-group>
 
             <b-form-group
+              id="cardExp-group"
+              label="Card expires on:"
+              label-for="cardExp"
+            >
+              <b-row id="cardExp">
+                <b-col>
+                  <b-form-input
+                    id="carExpMonth"
+                    required
+                    type="number"
+                    placeholder="Month"
+                    max="12"
+                    min="1"
+                    v-model="receiver.cardExpMonth"
+                  />
+                </b-col>
+                <b-col>
+                  <b-form-input
+                    id="carExpYear"
+                    required
+                    type="number"
+                    placeholder="Year"
+                    min="2021"
+                    v-model="receiver.cardExpYear"
+                  />
+                </b-col>
+              </b-row>
+            </b-form-group>
+            <b-form-group
+              id="cardSecurity-group"
+              label="Card security number"
+              label-for="cardSecurity"
+            >
+              <b-form-input
+                id="cardSecurity"
+                v-model="receiver.cardSecurity"
+                placeholder="XXX"
+              />
+            </b-form-group>
+            <b-form-group
               id="cardNumberName-group"
-              label="Kortinnehavare"
+              label="Card owner"
               label-for="cardNumberName"
             >
               <b-form-input
@@ -46,7 +108,7 @@
           <div v-else-if="receiver.payMethod == 'Paypal'">
             <b-form-group
               id="paypal-group"
-              label="Paypal Konto"
+              label="Paypal Account"
               label-for="paypal"
             >
               <b-form-input
@@ -72,15 +134,17 @@
               />
             </b-form-group>
           </div>
-          <div v-else-if="receiver.payMethod == 'Faktura'">
-            <p>Fakturan skickas till din adress</p>
+          <div v-else-if="receiver.payMethod == 'Invoice'">
+            <p>The invoice will be sent to you.</p>
           </div>
         </b-form>
       </b-col>
+
+      <!-- ContactINFO -->
       <b-col>
-        <h2>Kontakt uppgifter</h2>
+        <h2>Contact information</h2>
         <b-form @submit.prevent="onSubmit">
-          <b-form-group id="surname-group" label-for="surname" label="Förnamn">
+          <b-form-group id="surname-group" label-for="surname" label="Surname">
             <b-form-input
               id="surname"
               placeholder="Jonathan"
@@ -92,7 +156,7 @@
             i
             d="lastname-group"
             label-for="lastname"
-            label="Efternamn"
+            label="Lastname"
           >
             <b-form-input
               id="lastname"
@@ -103,19 +167,19 @@
           </b-form-group>
           <b-form-group
             id="street-group"
-            label="Gata och Husnummer"
+            label="Street & street number"
             label-for="street"
           >
             <b-form-input
               id="street"
-              placeholder="Kungstorget 23"
+              placeholder="Kingstreet 13"
               v-model="receiver.street"
               required
             />
           </b-form-group>
           <b-form-group
             id="postNumber-group"
-            label="Postadress"
+            label="Post number"
             label-for="postAdress"
           >
             <b-form-input
@@ -125,7 +189,7 @@
               v-model="receiver.postAdress"
             />
           </b-form-group>
-          <b-form-group id="city" label="Ort" label-for="city">
+          <b-form-group id="city" label="City" label-for="city">
             <b-form-input
               id="city"
               required
@@ -135,7 +199,7 @@
           </b-form-group>
           <b-form-group
             id="telephone"
-            label="Mobilnummer"
+            label="Phonenumber"
             label-for="telephone"
           >
             <b-form-input
@@ -143,11 +207,12 @@
               placeholder="07XXXXXXX"
               required
               v-model="receiver.telephone"
+              type="tel"
             />
           </b-form-group>
           <b-form-group
             id="email-group"
-            label="Email adress"
+            label="Email"
             label-for="email-adress"
             v-model="receiver.email"
           >
@@ -159,7 +224,7 @@
               v-model="receiver.email"
             />
           </b-form-group>
-          <b-button type="submit" variant="primary">Beställ</b-button>
+          <b-button type="submit" variant="primary">Order</b-button>
         </b-form>
       </b-col>
     </b-row>
@@ -182,10 +247,13 @@
           payMethod: '',
           cardNumber: '',
           cardNumberName: '',
+          cardExpMonth: '',
+          cardExpYear: '',
+          cardSecurity: '',
           paypalEmail: '',
           bitcoinAdress: ''
         },
-        payMethodOptions: ['Visa', 'Paypal', 'Bitcoin', 'Faktura'],
+        payMethodOptions: ['Visa', 'Paypal', 'Bitcoin', 'Invoice'],
         submitted: false
       }
     },
@@ -199,4 +267,8 @@
 </script>
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
-<style scoped lang="scss"></style>
+<style scoped lang="scss">
+  #cart {
+    text-align: start;
+  }
+</style>
