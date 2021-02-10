@@ -2,7 +2,7 @@
   <b-container id="cart">
     <b-row
       ><b-col>
-        <b-card title="Cart" class="h-100">
+        <b-card title="Cart (5) products" class="h-100">
           <b-card-text>Products</b-card-text>
         </b-card>
       </b-col>
