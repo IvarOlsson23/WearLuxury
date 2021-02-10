@@ -2,22 +2,37 @@
   <b-container id="cart">
     <b-row
       ><b-col>
-        <b-card title="Cart" class="h-100">
-          <b-card-text>Products</b-card-text>
+        <b-card title="Cart (5) products" class="h-100">
+          <b-card
+            img-src="https://img01.ztat.net/article/spp-media-p1/5e0b5adffa1338618afdae5031987c3e/0d68e7d30bf0477f93d4d0a7272ae7cc.jpg?imwidth=1800"
+          >
+            <b-card-text>Products</b-card-text>
+          </b-card>
         </b-card>
       </b-col>
       <b-col>
         <b-card
           title="Total amount"
-          footer="Total amount(inc. vat)"
           footer-border-variant="dark"
-          footer-class="font-weight-bold"
+          footer-tag="footer"
         >
           <b-card-tex>
-            Subtotal: 20000$
-            <br />
-            Shipping: 99$
+            <div class="d-flex justify-content-between">
+              <span>Subtotal:</span>
+              <span>2000 $</span>
+            </div>
+
+            <div class="d-flex justify-content-between">
+              <span>Shipping:</span>
+              <span>29 $</span>
+            </div>
           </b-card-tex>
+          <template #footer>
+            <div class="d-flex justify-content-between font-weight-bold  ">
+              <span>Total amount(inc. vat)</span>
+              <span>2029 $</span>
+            </div>
+          </template>
         </b-card>
       </b-col>
     </b-row>
