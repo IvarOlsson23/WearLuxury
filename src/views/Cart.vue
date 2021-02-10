@@ -1,6 +1,11 @@
 <template>
   <b-container id="cart">
     <b-row>
+      <b-col id="totalprice" sm="4" class="bg-danger h-50">
+        <h2>Total price</h2>
+      </b-col>
+    </b-row>
+    <b-row>
       <!-- PAYMENT METHOD -->
       <b-col>
         <h2>Payment Method</h2>
@@ -151,7 +156,7 @@
           >
             <b-form-input
               id="street"
-              placeholder="Kungstorget 23"
+              placeholder="Kingstreet 13"
               v-model="receiver.street"
               required
             />
