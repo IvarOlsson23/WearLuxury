@@ -15,18 +15,18 @@
           <b-card-tex>
             <div class="d-flex justify-content-between">
               <span>Subtotal:</span>
-              <span>2000$</span>
+              <span>2000 $</span>
             </div>
 
             <div class="d-flex justify-content-between">
               <span>Shipping:</span>
-              <span>29$</span>
+              <span>29 $</span>
             </div>
           </b-card-tex>
           <template #footer>
             <div class="d-flex justify-content-between font-weight-bold  ">
               <span>Total amount(inc. vat)</span>
-              <span>2029$</span>
+              <span>2029 $</span>
             </div>
           </template>
         </b-card>
