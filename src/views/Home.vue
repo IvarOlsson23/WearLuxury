@@ -1,5 +1,4 @@
 <template>
-<<<<<<< HEAD
   <div id="body">
     <div id="wrapper" />
     <div id="product-wrapper1">
@@ -30,11 +29,6 @@
     <div id="footer">
       <span class="nav-buttons">Nav Nav Nav Nav Nav LOGO</span>
     </div>
-=======
-  <div class="home">
-    <HelloWorld msg="Welcome to Your Vue.js App" />
-    <productCard style="width:300px" />
->>>>>>> 3c3ae87947de3d1919389371858be13d0e7f0325
   </div>
 </template>
 
@@ -177,21 +171,6 @@
 
   .product-list {
     margin: 10em;
-  }
-
-<<<<<<< HEAD
-  #nav-buttons {
-=======
-  import HelloWorld from '@/components/HelloWorld.vue'
-  import ProductCard from '@/components/productCard.vue'
-
-  export default {
-    name: 'Home',
-    components: {
-      HelloWorld,
-      ProductCard
-    }
->>>>>>> 3c3ae87947de3d1919389371858be13d0e7f0325
   }
 
   @keyframes fadein {
