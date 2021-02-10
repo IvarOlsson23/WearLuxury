@@ -1,8 +1,35 @@
 <template>
   <b-container id="cart">
-    <b-row>
-      <b-col id="totalprice" sm="4" class="bg-danger h-50">
-        <h2>Total price</h2>
+    <b-row
+      ><b-col>
+        <b-card title="Cart (5) products" class="h-100">
+          <b-card-text>Products</b-card-text>
+        </b-card>
+      </b-col>
+      <b-col>
+        <b-card
+          title="Total amount"
+          footer-border-variant="dark"
+          footer-tag="footer"
+        >
+          <b-card-tex>
+            <div class="d-flex justify-content-between">
+              <span>Subtotal:</span>
+              <span>2000$</span>
+            </div>
+
+            <div class="d-flex justify-content-between">
+              <span>Shipping:</span>
+              <span>29$</span>
+            </div>
+          </b-card-tex>
+          <template #footer>
+            <div class="d-flex justify-content-between font-weight-bold  ">
+              <span>Total amount(inc. vat)</span>
+              <span>2029$</span>
+            </div>
+          </template>
+        </b-card>
       </b-col>
     </b-row>
     <b-row>

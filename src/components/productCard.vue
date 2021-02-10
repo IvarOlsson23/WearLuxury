@@ -1,9 +1,18 @@
 <template>
   <!-- product card -->
+<<<<<<< HEAD
   <b-card>
     <img src="../assets/suit.png" alt="suit" />
     <b-card-text class="text-left">
       <h3>{{ product.men.name }}</h3>
+=======
+  <b-card class="text-left">
+    <img src="../assets/suit.png" alt="suit" />
+    <b-card-text>
+      <h3>Product</h3>
+      <p>info about product</p>
+
+>>>>>>> c8718d7db67a14931ce7ddbef4af8b9dd1d9906d
       <!-- Color dots -->
       <div id="dots">
         <b-icon icon="circle-fill" variant="success" style="margin: 3px" />
@@ -12,7 +21,11 @@
         <b-icon icon="circle-fill" variant="info" style="margin: 3px" />
       </div>
       <div class="text-right">
+<<<<<<< HEAD
         <p>{{ product.men.price }} sek</p>
+=======
+        <p>2900 sek</p>
+>>>>>>> c8718d7db67a14931ce7ddbef4af8b9dd1d9906d
         <!-- Add to cart button -->
         <b-button pill variant="primary">Add to cart</b-button>
       </div>
@@ -21,6 +34,7 @@
 </template>
 
 <script>
+<<<<<<< HEAD
   export default {
     data() {
       return {
@@ -65,6 +79,9 @@
       }
     }
   }
+=======
+  export default {}
+>>>>>>> c8718d7db67a14931ce7ddbef4af8b9dd1d9906d
 </script>
 
 <style scoped>
