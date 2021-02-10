@@ -1,6 +1,6 @@
 <template>
   <div>
-    <nav class="navbar navbar-light bg-light p-0">
+    <nav class="navbar navbar-light bg-dark p-0">
       <div class="footerNavbar pt-5 pb-5">
         <p class="footerNavbar">Contact info:</p>
         <p class="footerNavbar">Tel: 032843417</p>
@@ -19,7 +19,7 @@
   .footerNavbar {
     color: rgb(229, 230, 231);
     text-align: center;
-    background-color: rgb(53, 53, 53);
+
     width: 100%;
   }
 </style>
