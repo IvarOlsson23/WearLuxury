@@ -1,7 +1,7 @@
 <template>
   <div>
     <nav class="navbar navbar-light bg-light p-0">
-      <div class="footerNavbar">
+      <div class="footerNavbar pt-5 pb-5">
         <p class="footerNavbar">Contact info:</p>
         <p class="footerNavbar">Tel: 032843417</p>
 
