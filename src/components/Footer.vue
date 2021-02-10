@@ -21,7 +21,5 @@
     text-align: center;
     background-color: rgb(53, 53, 53);
     width: 100%;
-    margin-bottom: 10px;
-    margin-top: 10px;
   }
 </style>
