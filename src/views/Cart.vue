@@ -3,7 +3,11 @@
     <b-row
       ><b-col>
         <b-card title="Cart (5) products" class="h-100">
-          <b-card-text>Products</b-card-text>
+          <b-card
+            img-src="https://img01.ztat.net/article/spp-media-p1/5e0b5adffa1338618afdae5031987c3e/0d68e7d30bf0477f93d4d0a7272ae7cc.jpg?imwidth=1800"
+          >
+            <b-card-text>Products</b-card-text>
+          </b-card>
         </b-card>
       </b-col>
       <b-col>
