@@ -15,7 +15,7 @@
 
     <h5>Product</h5>
   <b-img src="https://picsum.photos/300/150/?image=41" fluid alt="Product image" />
-</div>
+
 
  <b-list-group-item class="d-flex justify-content-between align-items-center">
       <b-icon icon="check-circle" scale="2" variant="success" />
@@ -73,16 +73,17 @@
 
     <div>
   
-  <b-button href="/">Back to Home</b-button>
+  <b-button href="#">Back to Home</b-button>
 </div>
-  
+
+  </div>
 </template>
 
 <script>
   export default {
     data() {
       return {
-        rate: null
+        rate: 4
       }
     }
   }
