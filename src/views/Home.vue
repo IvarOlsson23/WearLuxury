@@ -34,6 +34,8 @@
 
 <script>
   export default {
+    name: 'Home',
+    components: {},
     data() {
       return {
         productOverlay: true
@@ -52,7 +54,6 @@
     left: 0px;
     top: 0px;
   }
-
   #nav {
     position: absolute;
     width: 1920px;
@@ -61,7 +62,6 @@
     left: 0px;
     margin: 0%;
   }
-
   #product-pic1 {
     background-color: #777978;
     margin-left: 50%;
@@ -72,7 +72,6 @@
     top: 780px;
     box-shadow: -8px 8px 21px rgba(0, 0, 0, 0.25);
   }
-
   #overlay1 {
     background-color: #353535;
     position: absolute;
@@ -81,7 +80,6 @@
     left: 818px;
     top: 1334px;
   }
-
   #text1 {
     position: absolute;
     width: 410px;
@@ -89,7 +87,6 @@
     left: 268px;
     top: 1046px;
   }
-
   #product-pic2 {
     background-color: #777978;
     position: absolute;
@@ -99,7 +96,6 @@
     top: 1771px;
     box-shadow: -8px 8px 21px rgba(0, 0, 0, 0.25);
   }
-
   #overlay2 {
     background-color: #353535;
     position: absolute;
@@ -108,7 +104,6 @@
     left: 800px;
     top: 2300px;
   }
-
   #text2 {
     position: absolute;
     width: 410px;
@@ -116,7 +111,6 @@
     left: 1152px;
     top: 2019px;
   }
-
   #footer {
     position: absolute;
     width: 1920px;
@@ -128,7 +122,6 @@
     justify-content: center;
     align-items: center;
   }
-
   .nav-buttons {
     color: rgb(221, 221, 221);
     display: flex;
@@ -137,21 +130,17 @@
     padding: 10px;
     justify-content: center;
   }
-
   h3 {
     margin: 40px 0 0;
   }
-
   ul {
     list-style-type: none;
     padding: 0;
   }
-
   li {
     display: inline-block;
     margin: 0 10px;
   }
-
   #nav-overlay {
     background-color: rgb(221, 221, 221);
     position: absolute;
@@ -168,7 +157,6 @@
     justify-content: center;
     align-items: center;
   }
-
   .product-list {
     margin: 10em;
   }
@@ -181,7 +169,6 @@
       opacity: 1;
     }
   }
-
   /* Firefox < 16 */
   @-moz-keyframes fadein {
     from {
@@ -191,7 +178,6 @@
       opacity: 1;
     }
   }
-
   /* Safari, Chrome and Opera > 12.1 */
   @-webkit-keyframes fadein {
     from {
@@ -201,7 +187,6 @@
       opacity: 1;
     }
   }
-
   /* Internet Explorer */
   @-ms-keyframes fadein {
     from {
@@ -211,7 +196,6 @@
       opacity: 1;
     }
   }
-
   /* Opera < 12.1 */
   @-o-keyframes fadein {
     from {
