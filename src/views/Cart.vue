@@ -58,7 +58,7 @@
     </b-row>
 
     <!-- PAYMENT METHOD -->
-    <b-row>
+    <b-row class="mt-5">
       <b-col>
         <h2>Payment Method</h2>
         <b-form @submit.prevent="onSubmitCardDetails">
