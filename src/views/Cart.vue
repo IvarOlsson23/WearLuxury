@@ -1,17 +1,22 @@
 <template>
   <b-container id="cart">
-    <b-row>
+    <b-row
+      ><b-col>
+        <b-card title="Cart" class="h-100">
+          <b-card-text>Products</b-card-text>
+        </b-card>
+      </b-col>
       <b-col>
         <b-card
           title="Total amount"
-          footer="Total price"
+          footer="Total amount(inc. vat)"
           footer-border-variant="dark"
-          style="max-width: 20rem"
+          footer-class="font-weight-bold"
         >
           <b-card-tex>
-            Subtotal:
+            Subtotal: 20000$
             <br />
-            Shipping:
+            Shipping: 99$
           </b-card-tex>
         </b-card>
       </b-col>
