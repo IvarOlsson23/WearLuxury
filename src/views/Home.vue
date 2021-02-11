@@ -19,27 +19,26 @@
       </li>
     </div>
     <div id="product-wrapper1">
-      <p id="p1">här kan det stå lite text</p>
-      <div id="reklam-bild1">t</div>
+      <div id="reklam-bild1" class="groove">
+        <p class="reklam-text">Our Vision</p>
+      </div>
+      <div id="reklam-bild2" class="groove">
+        <p class="reklam-text">Summer Collection</p>
+      </div>
+      <div id="reklam-bild3" class="groove">
+        <p class="reklam-text">Latest Products</p>
+      </div>
     </div>
-    <div id="product-wrapper1">
-      <div id="reklam-bild2">t</div>
-      <p id="p2">här kan det stå lite text</p>
+    <div id="qoute">
+      <p>Nothing but the best</p>
     </div>
   </div>
 </template>
 
 <script>
-  export default {}
-</script>
-
-<script>
-  import ProductCard from '@/components/productCard.vue'
   export default {
     name: 'Home',
-    components: {
-      ProductCard
-    },
+    components: {},
     data() {
       return {
         productOverlay: true
@@ -50,13 +49,18 @@
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
+  #body {
+    background-color: rgb(232, 232, 233);
+  }
   #wrapper {
-    background-color: #777978;
     position: relative;
     width: 100%;
     height: 560px;
     left: 0px;
     top: 0px;
+    background-image: url('~@/assets/wrapper.jpg');
+    background-repeat: no-repeat;
+    background-size: 100% 220%;
   }
   #nav {
     width: 100%;
@@ -67,58 +71,102 @@
 
   #product-wrapper1 {
     display: flex;
-    justify-content: space-evenly;
   }
 
   #reklam-bild1 {
-    background-color: rgb(95, 95, 95);
-    width: 30em;
-    height: 40em;
-    margin-top: 10vh;
-    box-shadow: -8px 8px 21px rgba(0, 0, 0, 0.25);
+    width: 45em;
+    height: 30em;
+    margin-top: 20vh;
+    background-repeat: no-repeat;
+    background-image: url('~@/assets/reklam1.jpg');
+    opacity: 0.9;
+    border: 10px solid #ffffff;
+    margin-left: 2em;
+  }
+
+  #reklam-bild1:hover {
+    opacity: 0.8;
   }
 
   #reklam-bild2 {
-    background-color: rgb(95, 95, 95);
-    width: 30em;
-    height: 40em;
-    margin-top: 10vh;
-    box-shadow: -8px 8px 21px rgba(0, 0, 0, 0.25);
+    width: 45em;
+    height: 30em;
+    margin-top: 20vh;
+    background-image: url('~@/assets/reklam2.jpg');
+    background-position: left;
+    opacity: 0.9;
+    border: 10px solid #ffffff;
   }
 
-  #p1 {
-    margin-top: 40vh;
-    margin-left: 10%;
+  #reklam-bild2:hover {
+    opacity: 0.8;
   }
 
-  #p2 {
-    margin-top: 40vh;
-    margin-right: 10%;
+  #reklam-bild3 {
+    width: 45em;
+    height: 30em;
+    margin-top: 20vh;
+    background-image: url('~@/assets/reklam3.jpg');
+    opacity: 0.9;
+    border: 10px solid #ffffff;
+    margin-right: 2em;
   }
+
+  #reklam-bild3:hover {
+    opacity: 0.8;
+  }
+  #qoute {
+    justify-content: center;
+    align-items: center;
+    display: flex;
+    height: 600px;
+    font-size: 50px;
+  }
+
+  .reklam-text {
+    justify-content: center;
+    align-items: center;
+    display: flex;
+    height: 450px;
+    color: rgb(255, 255, 255);
+    font-size: 40px;
+  }
+
   h3 {
     margin: 40px 0 0;
   }
+
   ul {
     list-style-type: none;
     padding: 0;
   }
+
   li {
     display: inline-block;
     margin: 0 10px;
   }
+
   #nav-overlay {
-    position: absolute;
     background-color: rgb(221, 221, 221);
-    -webkit-animation: fadein 0.5s; /* Safari, Chrome and Opera > 12.1 */
-    -moz-animation: fadein 0.5s; /* Firefox < 16 */
-    -ms-animation: fadein 0.5s; /* Internet Explorer */
-    -o-animation: fadein 0.5s; /* Opera < 12.1 */
+    position: absolute;
+    width: 100%;
+    height: 280px;
+    left: 0px;
+    top: 365px;
+    -webkit-animation: fadein 0.5s;
+    /* Safari, Chrome and Opera > 12.1 */
+    -moz-animation: fadein 0.5s;
+    /* Firefox < 16 */
+    -ms-animation: fadein 0.5s;
+    /* Internet Explorer */
+    -o-animation: fadein 0.5s;
+    /* Opera < 12.1 */
     animation: fadein 0.5s;
     display: flex;
     justify-content: center;
     align-items: center;
-    width: 100%;
   }
+
   .product-list {
     margin: 10em;
   }
@@ -131,6 +179,7 @@
       opacity: 1;
     }
   }
+
   /* Firefox < 16 */
   @-moz-keyframes fadein {
     from {
@@ -140,17 +189,9 @@
       opacity: 1;
     }
   }
+
   /* Safari, Chrome and Opera > 12.1 */
   @-webkit-keyframes fadein {
-    from {
-      opacity: 0;
-    }
-    to {
-      opacity: 1;
-    }
-  }
-  /* Internet Explorer */
-  @-ms-keyframes fadein {
     from {
       opacity: 0;
     }
