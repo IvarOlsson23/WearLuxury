@@ -5,6 +5,7 @@ Vue.use(Vuex)
 
 export default new Vuex.Store({
   state: {
+    stock: {},
     cart: {
       '5895af63-e246-42bc-b629-bf607f004da7': {
         brand: 'Dior',
@@ -19,15 +20,19 @@ export default new Vuex.Store({
         brand: 'Hugo boss',
         name: 'Dress',
         price: '2499',
-        items: 5,
+        items: 3,
         color: 'red',
         size: 'sm'
       }
-    }
+    },
+    orders: []
   },
   mutations: {
-    setCartItems(name) {
-      this.state.cart(name)
+    // setCartItems(name) {
+    //   // this.state.cart(name
+    // },
+    setOrder(state, order) {
+      state.orders.push(order)
     }
   },
   actions: {},

@@ -28,11 +28,7 @@
               <br />
               <span>
                 <b-icon icon="trash" /> Remove
-                <b-form-select
-                  v-model="product.items"
-                  :options="options"
-                  value="2"
-                />
+                <b-form-select v-model="product.items" :options="options" />
               </span>
             </template>
           </b-card>
@@ -295,7 +291,8 @@
           cardExpYear: '',
           cardSecurity: '',
           paypalEmail: '',
-          bitcoinAdress: ''
+          bitcoinAdress: '',
+          invoice: false
         },
         payMethodOptions: ['Visa', 'Paypal', 'Bitcoin', 'Invoice'],
         submitted: false,
@@ -305,7 +302,11 @@
     methods: {
       onSubmit() {
         this.submitted = true
-        alert('Din produkt är skickad')
+        this.$store.commit('setOrder', this.receiver)
+        // RESETS DATA
+        Object.keys(this.receiver).forEach(key => (this.receiver[key] = ''))
+        // GOES TO NEXT PAGE
+        this.$router.go(1)
       }
     },
     computed: {
