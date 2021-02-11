@@ -23,8 +23,8 @@ const routes = [
     path: '/Products',
     name: 'Products',
     component: Products
-  }
-    {
+  },
+  {
     path: '/OrderConfirm',
     name: 'OrderConfirm',
     component: OrderConfirm

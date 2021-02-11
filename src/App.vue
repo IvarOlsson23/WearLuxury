@@ -4,7 +4,7 @@
       <router-link to="/">Home</router-link> |
       <router-link to="/about">About</router-link> |
       <router-link to="/Cart">Cart</router-link> |
-      <router-link to="/Products">Clothes</router-link>
+      <router-link to="/Products">Products</router-link>
     </div>
     <router-view />
 
@@ -37,7 +37,7 @@
       color: #414141;
 
       &.router-link-exact-active {
-        color: #42b983;
+        color: #363636;
       }
     }
   }
