@@ -4,7 +4,12 @@
       <router-link to="/">Home</router-link> |
       <router-link to="/about">About</router-link> |
       <router-link to="/Cart">Cart</router-link> |
+<<<<<<< HEAD
       <router-link to="/Products">Products</router-link>
+=======
+      <router-link to="/Products">Clothes</router-link>
+      <router-link to="/OrderConfirm">Orderconfirm</router-link>
+>>>>>>> 44c0e09a04f4a26772f94bfb901850024be7ac62
     </div>
     <router-view />
 

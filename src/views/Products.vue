@@ -135,6 +135,7 @@
         </div>
       </b-row>
     </b-container>
+    <productCard />
   </div>
 </template>
 <script>
