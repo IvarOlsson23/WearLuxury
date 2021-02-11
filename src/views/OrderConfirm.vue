@@ -1,55 +1,60 @@
 <template>
   <div>
-    <div class="OrderConfirm">
+    <div class="order">
       <h1>The order has been processed</h1>
-      <p>Tel 0123456789</p>
+
+     
+  <!-- <b-list-group>
+    <b-list-group-item class="d-flex justify-content-between align-items-right">
+      <b-icon icon="check-circle" scale="2" variant="success" />
+    </b-list-group-item>
+  </b-list-group> -->
+
+
+      
       <h2>You will receive your order:</h2>
       <p>Mon 1 March - Thursday 5 March</p>
 
       <h3>Complete the registration</h3>
-      <p>
-        Save your information for future purchases. You only need to add a
-        password.
-      </p>
+      
 
       <p>E-mail: info@.com</p>
+      <p>Tel 0123456789</p>
+      
+     
+<div>
+  <b-form @submit.stop.prevent>
+    <label for="text-password">Password</label>
+    <b-form-input type="password" id="text-password" aria-describedby="password-help-block"/>
+    <b-form-text id="password-help-block">
+       Save your information for future purchases. You only need to add a
+        password.
+    </b-form-text>
+   </b-form>
+</div>
 
-      <p>
-        I have had the opportunity to read and I understand the Privacy and
+
+<b-list-group>
+    <b-list-group-item class="d-flex justify-content-between align-items-right">
+      <b-icon icon="check-circle" scale="2" variant="success" />
+      I have had the opportunity to read and I understand the Privacy and
         Cookie Policy.
-      </p>
+    </b-list-group-item>
+  </b-list-group>
+      
     </div>
 
-    <b-list-group>
-      <h5>Product</h5>
-      <b-img
-        src="https://picsum.photos/300/150/?image=41"
-        fluid
-        alt="Product image"
-      />
-      <b-list-group-item
-        class="d-flex justify-content-between align-items-center"
-      >
-        <b-icon icon="check-circle" scale="2" variant="success" />
-      </b-list-group-item>
-
-      <b-form @submit.stop.prevent>
-        <label for="text-password">Password</label>
-        <b-form-input
-          type="password"
-          id="text-password"
-          aria-describedby="password-help-block"
-        />
-        <b-button variant="dark">Confirm</b-button>
-      </b-form>
-    </b-list-group>
+    
+      
 
     <b-container class="bv-example-row">
       <b-row>
-        <b-col>Shippmethod</b-col>
+        <b-col>Shipping Method</b-col>
         <b-col> Standard delivery to your home. </b-col>
       </b-row>
     </b-container>
+
+
 
     <b-card-group deck>
       <b-card border-variant="dark" header="Delivery address" align="center">
@@ -61,7 +66,7 @@
 
     <b-container class="bv-example-row">
       <b-row>
-        <b-col>Paymethod</b-col>
+        <b-col>Payment Method</b-col>
         <b-col>PAYPAL</b-col>
       </b-row>
     </b-container>
@@ -74,6 +79,12 @@
         >
       </b-card>
     </b-card-group>
+
+    <h5>Product</h5>
+      <b-img width="200px" 
+        src="https://img01.ztat.net/article/spp-media-p1/5e0b5adffa1338618afdae5031987c3e/0d68e7d30bf0477f93d4d0a7272ae7cc.jpg?imwidth=1800"
+        
+        fluid alt="Product image"/>
 
     <b-card-group deck>
       <b-card border-variant="dark" header="Distribution" align="center">
@@ -90,7 +101,7 @@
       class="d-flex justify-content-between align-items-center"
     />
 
-    <b-button href="#">Back to Home</b-button>
+    <b-button href="/">Back to Home</b-button>
   </div>
 </template>
 
@@ -98,8 +109,41 @@
   export default {
     data() {
       return {
-        rate: 4
+        rate: null
       }
     }
   }
 </script>
+
+
+<style scoped lang="scss">
+  .order {
+    text-align: center;
+    h2 {
+padding: 20px;
+  margin: 20px;
+    }
+
+    p{
+      padding: 10px;
+  margin: 10px;
+    }
+h3 {
+  padding: 20px;
+  margin: 20px;
+}
+b-list-group {
+  text-align: center;
+  align-items: center;
+  padding: 20px;
+  margin: 20px;
+}
+
+h5 {
+  padding: 20px;
+  margin: 20px;
+}
+
+
+  }
+</style>
