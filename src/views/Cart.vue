@@ -24,6 +24,7 @@
                 <strong>
                   2000$
                 </strong>
+                <b-button>Button</b-button>
               </span>
             </template>
           </b-card>
