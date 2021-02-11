@@ -1,22 +1,21 @@
 <template>
   <div id="body">
     <div id="wrapper">
-      img
+      <p id="wrapper-qoute">"WearLuxury is the shit"</p>
     </div>
     <div id="nav">
-      <div>
-        <input
-          @click="productOverlay = !productOverlay"
-          id="button"
-          type="button"
-          value="products"
-        />
-      </div>
+      <p class="nav-select" @click="productOverlay = !productOverlay">Men</p>
+      <p class="nav-select" @click="productOverlay = !productOverlay">
+        Women
+      </p>
     </div>
     <div id="nav-overlay" v-show="!productOverlay">
-      <li class="product-list">
-        Shirts Pants Coats and Jackets Accessoaries Shoes
-      </li>
+      <div id="product-list">
+        <router-link to="/Products">Shirts</router-link>
+        <router-link to="/Products">Pants</router-link>
+        <router-link to="/Products">Coats and Jackets</router-link>
+        <router-link to="/Products">Accessoaries</router-link>
+      </div>
     </div>
     <div id="product-wrapper1">
       <div id="reklam-bild1" class="groove">
@@ -52,6 +51,8 @@
   #body {
     background-color: rgb(232, 232, 233);
   }
+
+  /* Stora bilden  */
   #wrapper {
     position: relative;
     width: 100%;
@@ -60,15 +61,84 @@
     top: 0px;
     background-image: url('~@/assets/wrapper.jpg');
     background-repeat: no-repeat;
-    background-size: 100% 220%;
-  }
-  #nav {
-    width: 100%;
-    background: #202020;
-    left: 0px;
-    margin: 0%;
+    display: flex;
+    justify-content: center;
+    text-align: center;
   }
 
+  #wrapper-qoute {
+    color: lavenderblush;
+    justify-content: center;
+    align-items: center;
+    display: flex;
+    height: 550px;
+    font-size: 50px;
+    transform: rotate(-4deg);
+  }
+
+  /* Stora bilden  */
+
+  /* "Men" och Women - Menyn */
+  #nav {
+    width: 100%;
+    background: #fafafa;
+    left: 0px;
+    margin: 0%;
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    height: 70px;
+  }
+
+  .nav-select {
+    color: rgb(85, 85, 85);
+    margin-left: 20px;
+    margin-right: 20px;
+  }
+
+  .nav-select:hover {
+    cursor: pointer;
+    opacity: 0.6;
+  }
+
+  #nav-overlay {
+    background-color: rgb(247, 247, 247);
+    position: absolute;
+    width: 100%;
+    height: 220px;
+    left: 0px;
+    top: 425px;
+    -webkit-animation: fadein 0.8s;
+    /* Safari, Chrome and Opera > 12.1 */
+    -moz-animation: fadein 0.8s;
+    /* Firefox < 16 */
+    -ms-animation: fadein 0.8s;
+    /* Internet Explorer */
+    -o-animation: fadein 0.8s;
+    /* Opera < 12.1 */
+    animation: fadein 0.8s;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  #product-list a {
+    margin-left: 1em;
+    margin-right: 1em;
+    list-style: none;
+  }
+
+  @keyframes fadein {
+    from {
+      opacity: 0;
+    }
+    to {
+      opacity: 1;
+    }
+  }
+  /* "Men" och Women - Menyn */
+
+  /* Dom tre bilderna  */
   #product-wrapper1 {
     display: flex;
   }
@@ -115,14 +185,6 @@
   #reklam-bild3:hover {
     opacity: 0.8;
   }
-  #qoute {
-    justify-content: center;
-    align-items: center;
-    display: flex;
-    height: 600px;
-    font-size: 50px;
-  }
-
   .reklam-text {
     justify-content: center;
     align-items: center;
@@ -132,80 +194,12 @@
     font-size: 40px;
   }
 
-  h3 {
-    margin: 40px 0 0;
-  }
-
-  ul {
-    list-style-type: none;
-    padding: 0;
-  }
-
-  li {
-    display: inline-block;
-    margin: 0 10px;
-  }
-
-  #nav-overlay {
-    background-color: rgb(221, 221, 221);
-    position: absolute;
-    width: 100%;
-    height: 280px;
-    left: 0px;
-    top: 365px;
-    -webkit-animation: fadein 0.5s;
-    /* Safari, Chrome and Opera > 12.1 */
-    -moz-animation: fadein 0.5s;
-    /* Firefox < 16 */
-    -ms-animation: fadein 0.5s;
-    /* Internet Explorer */
-    -o-animation: fadein 0.5s;
-    /* Opera < 12.1 */
-    animation: fadein 0.5s;
-    display: flex;
+  #qoute {
     justify-content: center;
     align-items: center;
+    display: flex;
+    height: 550px;
+    font-size: 50px;
   }
-
-  .product-list {
-    margin: 10em;
-  }
-
-  @keyframes fadein {
-    from {
-      opacity: 0;
-    }
-    to {
-      opacity: 1;
-    }
-  }
-
-  /* Firefox < 16 */
-  @-moz-keyframes fadein {
-    from {
-      opacity: 0;
-    }
-    to {
-      opacity: 1;
-    }
-  }
-
-  /* Safari, Chrome and Opera > 12.1 */
-  @-webkit-keyframes fadein {
-    from {
-      opacity: 0;
-    }
-    to {
-      opacity: 1;
-    }
-  }
-  /* Opera < 12.1 */
-  @-o-keyframes fadein {
-    from {
-      opacity: 0;
-    }
-    to {
-      opacity: 1;
-    }
-  }
+  /* Dom tre bilderna  */
 </style>
