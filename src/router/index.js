@@ -19,10 +19,10 @@ const routes = [
     component: Cart
   },
   {
-    path:'/Products',
-  name: 'Products',
-  component:Products
-  },
+    path: '/Products',
+    name: 'Products',
+    component: Products
+  }
 ]
 
 const router = new VueRouter({
