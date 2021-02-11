@@ -1,5 +1,5 @@
 <template>
-  <b-container class="mb-10" id="cart">
+  <b-container class="mb-100" id="cart">
     <b-row>
       <!-- CARTITEMS -->
       <b-col>
@@ -15,6 +15,7 @@
             footer-border-variant="light"
             v-for="(product, index) in $store.state.cart"
             :key="index"
+            class="mb-4"
           >
             <b-card-text>
               Color: {{ product.color }}
@@ -326,5 +327,7 @@
 <style scoped lang="scss">
   #cart {
     text-align: start;
+    margin-top: 5em;
+    margin-bottom: 5em;
   }
 </style>

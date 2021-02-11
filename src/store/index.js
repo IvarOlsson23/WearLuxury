@@ -28,9 +28,6 @@ export default new Vuex.Store({
     orders: []
   },
   mutations: {
-    // setCartItems(name) {
-    //   // this.state.cart(name
-    // },
     setOrder(state, order) {
       state.orders.push(order)
     }
