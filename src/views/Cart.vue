@@ -58,10 +58,10 @@
     </b-row>
 
     <!-- PAYMENT METHOD -->
-    <b-row class="mt-5">
-      <b-col>
-        <h2>Payment Method</h2>
-        <b-form @submit.prevent="onSubmitCardDetails">
+    <b-form @submit.prevent="onSubmit">
+      <b-row class="mt-5">
+        <b-col>
+          <h2>Payment Method</h2>
           <b-form-group
             id="paymentMethod-group"
             label="Payment Method"
@@ -126,6 +126,7 @@
                 id="cardSecurity"
                 v-model="receiver.cardSecurity"
                 placeholder="XXX"
+                required
               />
             </b-form-group>
             <b-form-group
@@ -173,13 +174,11 @@
           <div v-else-if="receiver.payMethod == 'Invoice'">
             <p>The invoice will be sent to you.</p>
           </div>
-        </b-form>
-      </b-col>
+        </b-col>
 
-      <!-- ContactINFO -->
-      <b-col>
-        <h2>Contact information</h2>
-        <b-form @submit.prevent="onSubmit">
+        <!-- ContactINFO -->
+        <b-col>
+          <h2>Contact information</h2>
           <b-form-group id="surname-group" label-for="surname" label="Surname">
             <b-form-input
               id="surname"
@@ -261,9 +260,9 @@
             />
           </b-form-group>
           <b-button type="submit" variant="danger">Place order</b-button>
-        </b-form>
-      </b-col>
-    </b-row>
+        </b-col>
+      </b-row>
+    </b-form>
   </b-container>
 </template>
 
