@@ -17,13 +17,12 @@
 
 <style scoped>
   .footerNavbar {
-    color: rgb(229, 230, 231);
+    color: rgb(231, 231, 229);
     text-align: center;
     width: 100%;
   }
 
   .footer-container {
-    margin-top: 10%;
     left: 0;
     bottom: 0;
     width: 100%;
