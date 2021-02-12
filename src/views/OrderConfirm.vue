@@ -11,6 +11,9 @@
       <p>E-mail: yourmail@gmail.com</p>
       <p>Tele: 010 12345 678</p>
     </div>
+    <!-- / Order has been processed -->
+
+    <!-- Create account for saving info -->
     <p>
       *For saving your shopping information and enjoy our offers, you only need
       to create a account.
@@ -43,6 +46,9 @@
         </b-col>
       </b-row>
     </b-container>
+
+    <!-- shipping, delivery, payment @contact info -->
+
     <div>
       <div>
         <div class="mt-3">
@@ -72,6 +78,8 @@
         </div>
       </div>
 
+      <!-- product detail with photo -->
+
       <div>
         <b-card
           no-body
@@ -99,6 +107,8 @@
       </div>
     </div>
 
+    <!-- Rating -->
+
     <div>
       <label for="rating-5" style="padding:15px; margin: 15px"
         >Based on 1900 reviews</label
@@ -112,6 +122,8 @@
       />
       <p class="mt-2">{{ value5 }}</p>
     </div>
+
+    <!-- Back to shop/Home -->
 
     <div>
       <b-button href="/" size="sm" style="padding:25px; margin: 25px"
@@ -132,6 +144,8 @@
   }
 </script>
 
+<!-- Style -->
+
 <style scoped lang="scss">
   .order {
     text-align: center;
@@ -151,11 +165,6 @@
     b-list-group {
       text-align: center;
       align-items: center;
-      padding: 20px;
-      margin: 20px;
-    }
-
-    h5 {
       padding: 20px;
       margin: 20px;
     }
