@@ -32,8 +32,6 @@ export default new Vuex.Store({
       state.orders.push(order)
     },
     removeItem(state, index) {
-      console.log(index)
-      console.log(state.cart[index])
       Vue.delete(state.cart, index)
     }
   },
