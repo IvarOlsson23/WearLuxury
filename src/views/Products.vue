@@ -52,7 +52,6 @@
               id="dropdown-1"
               text="Products"
               class="m-md-2 bg-dark"
-              align-v="left"
             >
               <b-dropdown-item>Women clothes</b-dropdown-item>
               <b-dropdown-item>Men clothes</b-dropdown-item>
@@ -137,7 +136,8 @@
     </b-container>
     <productCard />
   </div>
-</template>
+</template>           align-v="left"
+   
 <script>
   export default {
     data() {

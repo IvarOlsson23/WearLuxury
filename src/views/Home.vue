@@ -1,8 +1,4 @@
 <template>
-
-  <div class="home">
-    <HelloWorld msg="Welcome to Your Vue.js App" />
-
   <div id="body">
     <div id="wrapper">
       <p id="wrapper-qoute">"WearLuxury is the shit"</p>
@@ -35,15 +31,10 @@
     <div id="qoute">
       <p>Nothing but the best</p>
     </div>
-</div>
   </div>
 </template>
 
 <script>
-
-
-
-
   export default {
     name: 'Home',
     components: {},
@@ -60,7 +51,6 @@
   #body {
     background-color: rgb(232, 232, 233);
   }
-
   /* Stora bilden  */
   #wrapper {
     position: relative;
@@ -74,7 +64,6 @@
     justify-content: center;
     text-align: center;
   }
-
   #wrapper-qoute {
     color: lavenderblush;
     justify-content: center;
@@ -84,9 +73,7 @@
     font-size: 50px;
     transform: rotate(-4deg);
   }
-
   /* Stora bilden  */
-
   /* "Men" och Women - Menyn */
   #nav {
     width: 100%;
@@ -98,18 +85,15 @@
     text-align: center;
     height: 70px;
   }
-
   .nav-select {
     color: rgb(85, 85, 85);
     margin-left: 20px;
     margin-right: 20px;
   }
-
   .nav-select:hover {
     cursor: pointer;
     opacity: 0.6;
   }
-
   #nav-overlay {
     background-color: rgb(247, 247, 247);
     position: absolute;
@@ -130,13 +114,11 @@
     justify-content: center;
     align-items: center;
   }
-
   #product-list a {
     margin-left: 1em;
     margin-right: 1em;
     list-style: none;
   }
-
   @keyframes fadein {
     from {
       opacity: 0;
@@ -146,12 +128,10 @@
     }
   }
   /* "Men" och Women - Menyn */
-
   /* Dom tre bilderna  */
   #product-wrapper1 {
     display: flex;
   }
-
   #reklam-bild1 {
     width: 45em;
     height: 30em;
@@ -162,11 +142,9 @@
     border: 10px solid #ffffff;
     margin-left: 2em;
   }
-
   #reklam-bild1:hover {
     opacity: 0.8;
   }
-
   #reklam-bild2 {
     width: 45em;
     height: 30em;
@@ -176,11 +154,9 @@
     opacity: 0.9;
     border: 10px solid #ffffff;
   }
-
   #reklam-bild2:hover {
     opacity: 0.8;
   }
-
   #reklam-bild3 {
     width: 45em;
     height: 30em;
@@ -190,7 +166,6 @@
     border: 10px solid #ffffff;
     margin-right: 2em;
   }
-
   #reklam-bild3:hover {
     opacity: 0.8;
   }
@@ -202,7 +177,6 @@
     color: rgb(255, 255, 255);
     font-size: 40px;
   }
-
   #qoute {
     justify-content: center;
     align-items: center;

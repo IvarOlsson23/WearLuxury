@@ -1,7 +1,13 @@
 <template>
-  <div>
-    This is an about page
+  <div class="ss">
+    f
   </div>
 </template>
 
-<script></script>
+<script>
+ 
+</script>
+
+<style scoped lang="scss">
+
+</style>
