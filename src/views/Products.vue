@@ -139,7 +139,11 @@
   </div>
 </template>
 <script>
+  import productCard from '@/components/productCard.vue'
   export default {
+    components: {
+      productCard
+    },
     data() {
       return {}
     }
