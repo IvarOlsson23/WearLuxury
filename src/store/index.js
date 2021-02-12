@@ -25,7 +25,7 @@ export default new Vuex.Store({
         size: 'sm'
       }
     },
-    orders: []
+    orders: [1, 2]
   },
   mutations: {
     setOrder(state, order) {
@@ -33,5 +33,10 @@ export default new Vuex.Store({
     }
   },
   actions: {},
-  modules: {}
+  modules: {},
+  getters: {
+    countItems: state => {
+      return state.orders
+    }
+  }
 })
