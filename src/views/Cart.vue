@@ -1,5 +1,5 @@
 <template>
-  <b-container id="cart">
+  <b-container class="mb-100" id="cart">
     <b-row>
       <!-- CARTITEMS -->
       <b-col>
@@ -8,23 +8,28 @@
             img-src="https://img01.ztat.net/article/spp-media-p1/5e0b5adffa1338618afdae5031987c3e/0d68e7d30bf0477f93d4d0a7272ae7cc.jpg?imwidth=1800"
             img-left
             img-width="100px"
-            title="Cucci"
-            sub-title="Solglasögon - black/grey"
+            :title="product.brand"
+            :sub-title="product.name"
             footer-tag="footer"
             footer-bg-variant="light"
             footer-border-variant="light"
+            v-for="(product, index) in $store.state.cart"
+            :key="index"
+            class="mb-4"
           >
             <b-card-text>
-              Color: black
+              Color: {{ product.color }}
               <br />
-              Size: XS
+              Size: {{ product.size }}
             </b-card-text>
-            <template #footer class="d-flex justify-content-center">
+            <template #footer>
               <span>
-                <strong>
-                  2000$
-                </strong>
-                <b-button>Button</b-button>
+                <strong> {{ product.price }}$ </strong>
+              </span>
+              <br />
+              <span>
+                <b-icon icon="trash" /> Remove
+                <b-form-select v-model="product.items" :options="options" />
               </span>
             </template>
           </b-card>
@@ -287,16 +292,32 @@
           cardExpYear: '',
           cardSecurity: '',
           paypalEmail: '',
-          bitcoinAdress: ''
+          bitcoinAdress: '',
+          invoice: false
         },
         payMethodOptions: ['Visa', 'Paypal', 'Bitcoin', 'Invoice'],
-        submitted: false
+        submitted: false,
+        options: [1, 2, 3, 4]
       }
     },
     methods: {
       onSubmit() {
         this.submitted = true
-        alert('Din produkt är skickad')
+        this.$store.commit('setOrder', this.receiver)
+        // RESETS DATA
+        Object.keys(this.receiver).forEach(key => (this.receiver[key] = ''))
+        this.$router.go(1)
+        // GOES TO NEXT PAGE
+      }
+    },
+    computed: {
+      name: {
+        get() {
+          return this.$store.state.cart
+        },
+        set(name) {
+          this.$store.commit('setCartItems', name)
+        }
       }
     }
   }
@@ -306,5 +327,7 @@
 <style scoped lang="scss">
   #cart {
     text-align: start;
+    margin-top: 5em;
+    margin-bottom: 5em;
   }
 </style>

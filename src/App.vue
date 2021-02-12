@@ -3,8 +3,8 @@
     <div id="nav">
       <router-link to="/">Home</router-link> |
       <router-link to="/about">About</router-link> |
-      <router-link to="/Cart">Cart</router-link> |
-      <router-link to="/Products">Clothes</router-link>
+      <router-link to="/Products">Clothes</router-link> |
+      <router-link to="/Cart" class="cart"><b-icon-cart-dash /></router-link>
     </div>
     <router-view />
 
@@ -27,6 +27,11 @@
     -moz-osx-font-smoothing: grayscale;
     text-align: center;
     color: #2c3e50;
+  }
+
+  .cart {
+    margin-left: 15em;
+    font-size: 2em;
   }
 
   #nav {
