@@ -2,102 +2,134 @@
   <div>
     <div class="order">
       <h1>The order has been processed</h1>
+      <p>Product Number: 0123456789</p>
 
-      <!-- <b-list-group>
-    <b-list-group-item class="d-flex justify-content-between align-items-right">
-      <b-icon icon="check-circle" scale="2" variant="success" />
-    </b-list-group-item>
-  </b-list-group> -->
-
-      <h2>You will receive your order:</h2>
+      <h2>You will receive your order</h2>
       <p>Mon 1 March - Thursday 5 March</p>
 
       <h3>Complete the registration</h3>
+      <p>E-mail: yourmail@gmail.com</p>
+      <p>Tele: 010 12345 678</p>
+    </div>
+    <!-- / Order has been processed -->
 
-      <p>E-mail: info@.com</p>
-      <p>Tel 0123456789</p>
+    <!-- Create account for saving info -->
+    <p>
+      *For saving your shopping information and enjoy our offers, you only need
+      to create a account.
+    </p>
 
-      <div>
-        <b-form @submit.stop.prevent>
-          <label for="text-password">Password</label>
+    <b-container fluid style="max-width: 540px; padding:30px; margin: 30px">
+      <b-row class="my-1">
+        <b-col sm="3">
+          <label for="input-valid">Username:</label>
+        </b-col>
+        <b-col sm="9">
           <b-form-input
-            type="password"
-            id="text-password"
-            aria-describedby="password-help-block"
+            id="input-valid"
+            :state="null"
+            placeholder="Enter Username"
           />
-          <b-form-text id="password-help-block">
-            Save your information for future purchases. You only need to add a
-            password.
-          </b-form-text>
-        </b-form>
+        </b-col>
+      </b-row>
+
+      <b-row class="my-1">
+        <b-col sm="3">
+          <label for="input-invalid">Password:</label>
+        </b-col>
+        <b-col sm="9">
+          <b-form-input
+            id="input-invalid"
+            :state="null"
+            placeholder="Enter Password"
+          />
+        </b-col>
+      </b-row>
+    </b-container>
+
+    <!-- shipping, delivery, payment @contact info -->
+
+    <div>
+      <div>
+        <div class="mt-3">
+          <b-card-group deck style="padding:30px; margin: 30px">
+            <b-card header="Shipping" class="text-center">
+              <b-card-text>Standard delivery to your home.</b-card-text>
+            </b-card>
+
+            <b-card header="Delivery address:" class="text-center">
+              <b-card-text
+                >Here is info about the customer's delivery
+                address!</b-card-text
+              >
+            </b-card>
+
+            <b-card header="Payment Method:" class="text-center">
+              <b-card-text>PAYPAL</b-card-text>
+            </b-card>
+
+            <b-card header="Contact information:" class="text-center">
+              <b-card-text
+                >Here is info about the customer's contact informations such as
+                phone number, e-mail, etc.!</b-card-text
+              >
+            </b-card>
+          </b-card-group>
+        </div>
       </div>
 
-      <b-list-group>
-        <b-list-group-item
-          class="d-flex justify-content-between align-items-right"
+      <!-- product detail with photo -->
+
+      <div>
+        <b-card
+          no-body
+          class="overflow-hidden"
+          style="max-width: 540px; padding:30px; margin: 30px"
         >
-          <b-icon icon="check-circle" scale="2" variant="success" />
-          I have had the opportunity to read and I understand the Privacy and
-          Cookie Policy.
-        </b-list-group-item>
-      </b-list-group>
+          <b-row no-gutters>
+            <b-col md="6">
+              <b-card-img
+                src="https://img01.ztat.net/article/spp-media-p1/5e0b5adffa1338618afdae5031987c3e/0d68e7d30bf0477f93d4d0a7272ae7cc.jpg?imwidth=1800"
+                alt="Product"
+                class="rounded-0"
+              />
+            </b-col>
+            <b-col md="6">
+              <b-card-body title="Product">
+                <b-card-text>
+                  Here is info about the product's price, shipping fee, total
+                  price and VAT!
+                </b-card-text>
+              </b-card-body>
+            </b-col>
+          </b-row>
+        </b-card>
+      </div>
     </div>
 
-    <b-container class="bv-example-row">
-      <b-row>
-        <b-col>Shipping Method</b-col>
-        <b-col> Standard delivery to your home. </b-col>
-      </b-row>
-    </b-container>
+    <!-- Rating -->
 
-    <b-card-group deck>
-      <b-card border-variant="dark" header="Delivery address" align="center">
-        <b-card-text>
-          Here is info about the customer's delivery address!
-        </b-card-text>
-      </b-card>
-    </b-card-group>
+    <div>
+      <label for="rating-5" style="padding:15px; margin: 15px"
+        >Based on 1900 reviews</label
+      >
+      <b-form-rating
+        style="max-width: 1250px; padding:15px; margin: 15px"
+        id="rating-5"
+        v-model="value5"
+        variant="warning"
+        stars="5"
+      />
+      <p class="mt-2">{{ value5 }}</p>
+    </div>
 
-    <b-container class="bv-example-row">
-      <b-row>
-        <b-col>Payment Method</b-col>
-        <b-col>PAYPAL</b-col>
-      </b-row>
-    </b-container>
+    <!-- Back to shop/Home -->
 
-    <b-card-group deck>
-      <b-card border-variant="dark" header="Contact information" align="center">
-        <b-card-text>
-          Here is info about the customer's contact information such as phone
-          number, e-mail, etc.!</b-card-text
-        >
-      </b-card>
-    </b-card-group>
-
-    <h5>Product</h5>
-    <b-img
-      width="200px"
-      src="https://img01.ztat.net/article/spp-media-p1/5e0b5adffa1338618afdae5031987c3e/0d68e7d30bf0477f93d4d0a7272ae7cc.jpg?imwidth=1800"
-      fluid
-      alt="Product image"
-    />
-
-    <b-card-group deck>
-      <b-card border-variant="dark" header="Distribution" align="center">
-        <b-card-text>
-          Here is info about the product's price, shipping fee, total price and
-          VAT!
-        </b-card-text>
-      </b-card>
-    </b-card-group>
-
-    <b-form-rating v-model="rate" variant="warning" class="mb-2" />
-    <p class="mt-2">Value: {{ rate }}</p>
-    <b-list-group-item
-      class="d-flex justify-content-between align-items-center"
-    />
-
-    <b-button href="/">Back to Home</b-button>
+    <div>
+      <b-button href="/" size="sm" style="padding:25px; margin: 25px"
+        >Back to shop</b-button
+      >
+    </div>
   </div>
 </template>
 
@@ -105,11 +137,14 @@
   export default {
     data() {
       return {
-        rate: null
+        value5: null,
+        text: ''
       }
     }
   }
 </script>
+
+<!-- Style -->
 
 <style scoped lang="scss">
   .order {
@@ -130,11 +165,6 @@
     b-list-group {
       text-align: center;
       align-items: center;
-      padding: 20px;
-      margin: 20px;
-    }
-
-    h5 {
       padding: 20px;
       margin: 20px;
     }

@@ -7,61 +7,27 @@
           <img src="logo.png" width="150px" />
         </b-col>
 
-        <b-col cols="3">
-          <div class="maindropdown float-right bg-dark">
-            <b-dropdown
-              id="dropdown-1"
-              text="Sort by"
-              class="m-md-2 bg-dark sort-by"
-            >
-              <div class="dropdown-1">
-                <div class="dropdown-one sort">
-                  <b-dropdown-item id="color" class="colors">
-                    Color
-                    <div class="dropdown-two">
-                      <div class="colors" id="file" href="/Products">Blue</div>
-                      <div class="colors" id="file" href="/Products">Red</div>
-                      <div class="colors" id="file" href="/Products">Black</div>
-                      <div class="colors" id="file" href="/Products">Brown</div>
-                      <div class="colors" id="file" href="/Products">White</div>
-                      <div class="colors" id="file" href="/Products">
-                        Yellow
-                      </div>
-                    </div>
-                  </b-dropdown-item>
-                  <div class="dropdown-three">
-                    <b-dropdown-item div id="Patern">
-                      Pattern
-                      <div class="dropdown-four">
-                        <div class="patern" id="Patern" href="/Products">
-                          Dotted
-                        </div>
-                        <div class="patern " id="Patern" href="/Products">
-                          Striped
-                        </div>
-                        <div class="patern " id="Patern" href="/Products">
-                          Plain
-                        </div>
-                      </div>
-                    </b-dropdown-item>
-                  </div>
-                </div>
-              </div>
-            </b-dropdown>
-            <b-dropdown
-              id="dropdown-1"
-              text="Products"
-              class="m-md-2 bg-dark"
-              align-v="left"
-            >
-              <b-dropdown-item>Women clothes</b-dropdown-item>
-              <b-dropdown-item>Men clothes</b-dropdown-item>
-              <b-dropdown-item>Accessories</b-dropdown-item>
-              <b-dropdown-divider />
-            </b-dropdown>
-          </div>
-        </b-col>
+       
+<!-- Drowdown menu for sorty by and products -->
+
+    <b-dropdown id="dropdown-left" text="Sort by" variant="secondary" size="sm" class="m-2">
+    <b-dropdown-item href="#">Color</b-dropdown-item>
+    <b-dropdown-item href="#">Pattern</b-dropdown-item>
+    <b-dropdown-item href="#">Low price</b-dropdown-item>
+    <b-dropdown-item href="#">High Price</b-dropdown-item>
+    <b-dropdown-item href="#">Newest</b-dropdown-item>
+  </b-dropdown>
+
+  <b-dropdown id="dropdown-right" right text="Products" variant="secondary" size="sm" class="m-2">
+    <b-dropdown-item href="#">Women clothes</b-dropdown-item>
+    <b-dropdown-item href="#">Men clothes</b-dropdown-item>
+    <b-dropdown-item href="#">Accessories</b-dropdown-item>
+  </b-dropdown>
       </b-row>
+
+
+
+      
       <b-row class="header"><h1>New arrivals</h1></b-row>
       <b-row>
         <div class="dressblack bg-light">
