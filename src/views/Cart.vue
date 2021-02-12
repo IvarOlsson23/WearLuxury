@@ -28,7 +28,7 @@
               </span>
               <br />
               <span>
-                <b-icon icon="trash" /> Remove
+                <b-icon @click="removeItem(index)" icon="trash" /> Remove
                 <b-form-select v-model="product.items" :options="options" />
               </span>
             </template>
@@ -309,6 +309,9 @@
         Object.keys(this.receiver).forEach(key => (this.receiver[key] = ''))
         // GOES TO NEXT PAGE
         this.$router.push({ name: 'OrderConfirm' })
+      },
+      removeItem(index) {
+        this.$store.commit('removeItem', index)
       }
     },
     computed: {

@@ -30,6 +30,11 @@ export default new Vuex.Store({
   mutations: {
     setOrder(state, order) {
       state.orders.push(order)
+    },
+    removeItem(state, index) {
+      console.log(index)
+      console.log(state.cart[index])
+      Vue.delete(state.cart, index)
     }
   },
   actions: {},
