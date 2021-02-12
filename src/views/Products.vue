@@ -8,7 +8,7 @@
         </b-col>
 
        
-<!-- Drowdown menu for sorty by and products -->
+<!-- Drowdown menu for sort by and products -->
 
     <b-dropdown id="dropdown-left" text="Sort by" variant="secondary" size="sm" class="m-2">
     <b-dropdown-item href="#">Color</b-dropdown-item>
@@ -27,7 +27,7 @@
 
 
 
-      
+
       <b-row class="header"><h1>New arrivals</h1></b-row>
       <b-row>
         <div class="dressblack bg-light">
@@ -53,6 +53,7 @@
             </b-row>
           </div>
         </div>
+
         <div class="watch bg-light">
           <b-col
             ><p class="pricetag">1600kr</p>
@@ -105,7 +106,11 @@
   </div>
 </template>
 <script>
+  import productCard from '@/components/productCard.vue'
   export default {
+    components: {
+      productCard
+    },
     data() {
       return {}
     }
