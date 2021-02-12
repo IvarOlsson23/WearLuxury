@@ -1,12 +1,76 @@
 <template>
-  <b-container>
+  <b-container class="mb-100" id="cart">
     <b-row>
+      <!-- CARTITEMS -->
       <b-col>
-        <h2>Betalningssätt</h2>
-        <b-form @submit.prevent="onSubmitCardDetails">
+        <b-card title="Cart (5) products" class="h-100">
+          <b-card
+            img-src="https://img01.ztat.net/article/spp-media-p1/5e0b5adffa1338618afdae5031987c3e/0d68e7d30bf0477f93d4d0a7272ae7cc.jpg?imwidth=1800"
+            img-left
+            img-width="100px"
+            :title="product.brand"
+            :sub-title="product.name"
+            footer-tag="footer"
+            footer-bg-variant="light"
+            footer-border-variant="light"
+            v-for="(product, index) in $store.state.cart"
+            :key="index"
+            class="mb-4"
+          >
+            <b-card-text>
+              Color: {{ product.color }}
+              <br />
+              Size: {{ product.size }}
+            </b-card-text>
+            <template #footer>
+              <span>
+                <strong> {{ product.price }}$ </strong>
+              </span>
+              <br />
+              <span>
+                <b-icon icon="trash" /> Remove
+                <b-form-select v-model="product.items" :options="options" />
+              </span>
+            </template>
+          </b-card>
+        </b-card>
+      </b-col>
+      <!-- TOTAL AMOUNT -->
+      <b-col>
+        <b-card
+          title="Total amount"
+          footer-border-variant="dark"
+          footer-tag="footer"
+        >
+          <b-card-text>
+            <div class="d-flex justify-content-between">
+              <span>Subtotal:</span>
+              <span>2000 $</span>
+            </div>
+
+            <div class="d-flex justify-content-between">
+              <span>Shipping:</span>
+              <span>29 $</span>
+            </div>
+          </b-card-text>
+          <template #footer>
+            <div class="d-flex justify-content-between font-weight-bold  ">
+              <span>Total amount(inc. vat)</span>
+              <span>2029 $</span>
+            </div>
+          </template>
+        </b-card>
+      </b-col>
+    </b-row>
+
+    <!-- PAYMENT METHOD -->
+    <b-form @submit.prevent="onSubmit">
+      <b-row class="mt-5">
+        <b-col>
+          <h2>Payment Method</h2>
           <b-form-group
             id="paymentMethod-group"
-            label="Betalningsmetod"
+            label="Payment Method"
             label-for="paymentMethod"
           >
             <b-form-select
@@ -19,7 +83,7 @@
           <div v-if="receiver.payMethod == 'Visa'">
             <b-form-group
               id="cardNumber-group"
-              label="Kortnummer"
+              label="Card number"
               label-for="cardNumber"
             >
               <b-form-input
@@ -31,8 +95,49 @@
             </b-form-group>
 
             <b-form-group
+              id="cardExp-group"
+              label="Card expires on:"
+              label-for="cardExp"
+            >
+              <b-row id="cardExp">
+                <b-col>
+                  <b-form-input
+                    id="carExpMonth"
+                    required
+                    type="number"
+                    placeholder="Month"
+                    max="12"
+                    min="1"
+                    v-model="receiver.cardExpMonth"
+                  />
+                </b-col>
+                <b-col>
+                  <b-form-input
+                    id="carExpYear"
+                    required
+                    type="number"
+                    placeholder="Year"
+                    min="2021"
+                    v-model="receiver.cardExpYear"
+                  />
+                </b-col>
+              </b-row>
+            </b-form-group>
+            <b-form-group
+              id="cardSecurity-group"
+              label="Card security number"
+              label-for="cardSecurity"
+            >
+              <b-form-input
+                id="cardSecurity"
+                v-model="receiver.cardSecurity"
+                placeholder="XXX"
+                required
+              />
+            </b-form-group>
+            <b-form-group
               id="cardNumberName-group"
-              label="Kortinnehavare"
+              label="Card owner"
               label-for="cardNumberName"
             >
               <b-form-input
@@ -46,7 +151,7 @@
           <div v-else-if="receiver.payMethod == 'Paypal'">
             <b-form-group
               id="paypal-group"
-              label="Paypal Konto"
+              label="Paypal Account"
               label-for="paypal"
             >
               <b-form-input
@@ -72,15 +177,15 @@
               />
             </b-form-group>
           </div>
-          <div v-else-if="receiver.payMethod == 'Faktura'">
-            <p>Fakturan skickas till din adress</p>
+          <div v-else-if="receiver.payMethod == 'Invoice'">
+            <p>The invoice will be sent to you.</p>
           </div>
-        </b-form>
-      </b-col>
-      <b-col>
-        <h2>Kontakt uppgifter</h2>
-        <b-form @submit.prevent="onSubmit">
-          <b-form-group id="surname-group" label-for="surname" label="Förnamn">
+        </b-col>
+
+        <!-- ContactINFO -->
+        <b-col>
+          <h2>Contact information</h2>
+          <b-form-group id="surname-group" label-for="surname" label="Surname">
             <b-form-input
               id="surname"
               placeholder="Jonathan"
@@ -92,7 +197,7 @@
             i
             d="lastname-group"
             label-for="lastname"
-            label="Efternamn"
+            label="Lastname"
           >
             <b-form-input
               id="lastname"
@@ -103,19 +208,19 @@
           </b-form-group>
           <b-form-group
             id="street-group"
-            label="Gata och Husnummer"
+            label="Street & street number"
             label-for="street"
           >
             <b-form-input
               id="street"
-              placeholder="Kungstorget 23"
+              placeholder="Kingstreet 13"
               v-model="receiver.street"
               required
             />
           </b-form-group>
           <b-form-group
             id="postNumber-group"
-            label="Postadress"
+            label="Post number"
             label-for="postAdress"
           >
             <b-form-input
@@ -125,7 +230,7 @@
               v-model="receiver.postAdress"
             />
           </b-form-group>
-          <b-form-group id="city" label="Ort" label-for="city">
+          <b-form-group id="city" label="City" label-for="city">
             <b-form-input
               id="city"
               required
@@ -135,7 +240,7 @@
           </b-form-group>
           <b-form-group
             id="telephone"
-            label="Mobilnummer"
+            label="Phonenumber"
             label-for="telephone"
           >
             <b-form-input
@@ -143,11 +248,12 @@
               placeholder="07XXXXXXX"
               required
               v-model="receiver.telephone"
+              type="tel"
             />
           </b-form-group>
           <b-form-group
             id="email-group"
-            label="Email adress"
+            label="Email"
             label-for="email-adress"
             v-model="receiver.email"
           >
@@ -159,10 +265,10 @@
               v-model="receiver.email"
             />
           </b-form-group>
-          <b-button type="submit" variant="primary">Beställ</b-button>
-        </b-form>
-      </b-col>
-    </b-row>
+          <b-button type="submit" variant="danger">Place order</b-button>
+        </b-col>
+      </b-row>
+    </b-form>
   </b-container>
 </template>
 
@@ -182,21 +288,46 @@
           payMethod: '',
           cardNumber: '',
           cardNumberName: '',
+          cardExpMonth: '',
+          cardExpYear: '',
+          cardSecurity: '',
           paypalEmail: '',
-          bitcoinAdress: ''
+          bitcoinAdress: '',
+          invoice: false
         },
-        payMethodOptions: ['Visa', 'Paypal', 'Bitcoin', 'Faktura'],
-        submitted: false
+        payMethodOptions: ['Visa', 'Paypal', 'Bitcoin', 'Invoice'],
+        submitted: false,
+        options: [1, 2, 3, 4]
       }
     },
     methods: {
       onSubmit() {
         this.submitted = true
-        alert('Din produkt är skickad')
+        this.$store.commit('setOrder', this.receiver)
+        // RESETS DATA
+        Object.keys(this.receiver).forEach(key => (this.receiver[key] = ''))
+        this.$router.go(1)
+        // GOES TO NEXT PAGE
+      }
+    },
+    computed: {
+      name: {
+        get() {
+          return this.$store.state.cart
+        },
+        set(name) {
+          this.$store.commit('setCartItems', name)
+        }
       }
     }
   }
 </script>
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
-<style scoped lang="scss"></style>
+<style scoped lang="scss">
+  #cart {
+    text-align: start;
+    margin-top: 5em;
+    margin-bottom: 5em;
+  }
+</style>
