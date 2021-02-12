@@ -307,8 +307,8 @@
         this.$store.commit('setOrder', this.receiver)
         // RESETS DATA
         Object.keys(this.receiver).forEach(key => (this.receiver[key] = ''))
-        this.$router.go(1)
         // GOES TO NEXT PAGE
+        this.$router.push({ name: 'OrderConfirm' })
       }
     },
     computed: {
