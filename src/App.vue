@@ -1,9 +1,16 @@
 <template>
+
   
  <div id="nav">
    
  <Nav />
+
+  <div id="app">
+    
+
+
     <Footer />
+  </div>
   </div>
   
 </template>
@@ -15,12 +22,34 @@
   export default {
     components: {
       Footer
+
       , Nav
 
     }
   }
 </script>
 <style scoope lang="scss">
+  #app {
+    font-family: Avenir, Helvetica, Arial, sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    text-align: center;
+    color: #2c3e50;
+  }
+
+  .cart {
+    margin-left: 15em;
+    font-size: 2em;
+  }
+
+  #nav {
+    padding: 30px;
+
+
+    }
+  
+
+
   
   
 </style>

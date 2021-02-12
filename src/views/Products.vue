@@ -7,6 +7,7 @@
           <img src="logo.png" width="150px" />
         </b-col>
 
+
         <b-col cols="3">
           <div class="maindropdown float-right bg-dark">
             <b-dropdown
@@ -60,7 +61,29 @@
             </b-dropdown>
           </div>
         </b-col>
+
+       
+<!-- Drowdown menu for sorty by and products -->
+
+    <b-dropdown id="dropdown-left" text="Sort by" variant="secondary" size="sm" class="m-2">
+    <b-dropdown-item href="#">Color</b-dropdown-item>
+    <b-dropdown-item href="#">Pattern</b-dropdown-item>
+    <b-dropdown-item href="#">Low price</b-dropdown-item>
+    <b-dropdown-item href="#">High Price</b-dropdown-item>
+    <b-dropdown-item href="#">Newest</b-dropdown-item>
+  </b-dropdown>
+
+  <b-dropdown id="dropdown-right" right text="Products" variant="secondary" size="sm" class="m-2">
+    <b-dropdown-item href="#">Women clothes</b-dropdown-item>
+    <b-dropdown-item href="#">Men clothes</b-dropdown-item>
+    <b-dropdown-item href="#">Accessories</b-dropdown-item>
+  </b-dropdown>
+
       </b-row>
+
+
+
+      
       <b-row class="header"><h1>New arrivals</h1></b-row>
       <b-row>
         <div class="dressblack bg-light">
@@ -139,7 +162,11 @@
 </template>           align-v="left"
    
 <script>
+  import productCard from '@/components/productCard.vue'
   export default {
+    components: {
+      productCard
+    },
     data() {
       return {}
     }

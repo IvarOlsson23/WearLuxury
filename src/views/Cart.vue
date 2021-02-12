@@ -56,7 +56,7 @@
           <template #footer>
             <div class="d-flex justify-content-between font-weight-bold  ">
               <span>Total amount(inc. vat)</span>
-              <span>2029 $</span>
+              <span>{{ totalAmount }} $</span>
             </div>
           </template>
         </b-card>
@@ -293,7 +293,8 @@
           cardSecurity: '',
           paypalEmail: '',
           bitcoinAdress: '',
-          invoice: false
+          invoice: false,
+          boughtProducts: ''
         },
         payMethodOptions: ['Visa', 'Paypal', 'Bitcoin', 'Invoice'],
         submitted: false,
@@ -302,22 +303,29 @@
     },
     methods: {
       onSubmit() {
-        this.submitted = true
+        this.receiver.boughtProducts = this.$store.state.cart
         this.$store.commit('setOrder', this.receiver)
         // RESETS DATA
         Object.keys(this.receiver).forEach(key => (this.receiver[key] = ''))
-        this.$router.go(1)
         // GOES TO NEXT PAGE
+        this.$router.push({ name: 'OrderConfirm' })
       }
     },
     computed: {
-      name: {
+      items: {
         get() {
           return this.$store.state.cart
         },
-        set(name) {
-          this.$store.commit('setCartItems', name)
+        set(items) {
+          this.$store.commit('setCartItems', items)
         }
+      },
+      totalAmount() {
+        let totalAmount = Object.keys(this.$store.state.cart).forEach(key => {
+          this.$store.state.cart[key].price
+          console.log(totalAmount)
+        })
+        return totalAmount
       }
     }
   }
