@@ -3,7 +3,7 @@
     <b-row>
       <!-- CARTITEMS -->
       <b-col>
-        <b-card title="Cart (5) products" class="h-100">
+        <b-card title="Cart  cartItemLength  products" class="h-100">
           <b-card
             img-src="https://img01.ztat.net/article/spp-media-p1/5e0b5adffa1338618afdae5031987c3e/0d68e7d30bf0477f93d4d0a7272ae7cc.jpg?imwidth=1800"
             img-left
@@ -28,7 +28,7 @@
               </span>
               <br />
               <span>
-                <b-icon icon="trash" /> Remove
+                <b-icon @click="removeItem(index)" icon="trash" /> Remove
                 <b-form-select v-model="product.items" :options="options" />
               </span>
             </template>
@@ -309,6 +309,9 @@
         Object.keys(this.receiver).forEach(key => (this.receiver[key] = ''))
         // GOES TO NEXT PAGE
         this.$router.push({ name: 'OrderConfirm' })
+      },
+      removeItem(index) {
+        this.$store.commit('removeItem', index)
       }
     },
     computed: {
@@ -326,6 +329,9 @@
           console.log(totalAmount)
         })
         return totalAmount
+      },
+      cartItemLength() {
+        return Object.keys(this.$store.state.cart).length
       }
     }
   }
