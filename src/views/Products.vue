@@ -89,8 +89,8 @@
             <!-- Slide with blank fluid image to maintain slide aspect ratio -->
             <b-carousel-slide
               caption="Blank Image"
-              img-blank
               img-alt="Blank image"
+              img-src="https://i.pinimg.com/originals/0b/24/49/0b2449e9677cb58632b1e6c9cb329272.jpg"
             >
               <p>
                 Lorem ipsum dolor sit amet, consectetur adipiscing elit.
