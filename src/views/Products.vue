@@ -1,8 +1,8 @@
 <template>
   <div class="produts">
-    <b-container class="bv-example-row bv-example-row-flex-cols">
+    <b-container class="bv-example-row bv-example-row-flex-cols bg-light">
       <b-row>
-        <b-col cols="3" />
+        <b-col cols="3"><h1 class="header">New arrivals</h1></b-col>
         <b-col cols="6" class="textcenter">
           <img src="logo.png" width="150px" />
         </b-col>
@@ -36,6 +36,27 @@
           <b-dropdown-item href="#">Accessories</b-dropdown-item>
         </b-dropdown>
       </b-row>
+      <template>
+        <div class="mt-5 mb-5">
+          <b-carousel
+            id="carousel-1"
+            v-model="slide"
+            :interval="4000"
+            controls
+            indicators
+            background="#ababab"
+            img-width="400px"
+            img-height="480px"
+            style="text-shadow: 1px 1px 2px #333;"
+            @sliding-start="onSlideStart"
+            @sliding-end="onSlideEnd"
+          >
+            <!-- Text slides with image -->
+            <b-carousel-slide
+              caption="First slide"
+              text="Nulla vitae elit libero, a pharetra augue mollis interdum."
+              img-src="https://www.ucg.org/files/styles/full_grid9_breakpoints_theme_top_hat_mobile_1x/public/image/article/who-are-you-dressing-for-modesty-is-more-than-just-honoring-your-parents.jpg?timestamp=1512417811"
+            />
 
       <b-row class="header"><h1>New arrivals</h1></b-row>
       <b-row>
@@ -50,75 +71,117 @@
             </b-row>
           </div>
         </div>
+      </template>
 
-        <div class="dressbox bg-light">
-          <b-col>
-            <p class="pricetag">2500kr</p>
-            <img src="blackcoat.jpg" width="145px" height="203px" />
-          </b-col>
-          <div class="pricecart pt-10">
-            <b-row>
-              <b-button class="button btn-dark">Add to cart</b-button>
-            </b-row>
+      <b-row class="mt-5">
+        <b-card
+          title="Black lace dress"
+          img-src="blackdress.jpg"
+          img-alt="Image"
+          img-top
+          tag="article"
+          class="mb-2 col-4 productcontainer"
+        >
+          <b-card-text>
+            <b-badge class="pricetag bg-dark">1999kr</b-badge>
+          </b-card-text>
+          <div class="cardbuttoncontainer">
+            <b-button class="cardbutton" href="#" variant="primary"
+              >Add to cart</b-button
+            >
           </div>
-        </div>
-        <div class="watch bg-light">
-          <b-col
-            ><p class="pricetag">1600kr</p>
-            <img src="watch.jpg" width="190px" height="200px"
-          /></b-col>
-          <div class="pricecart">
-            <b-row>
-              <b-button class="button btn-dark">Add to cart</b-button>
-            </b-row>
+        </b-card>
+        <b-card
+          title="Black coat"
+          img-src="blackcoat.jpg"
+          img-alt="Black coat"
+          img-top
+          tag="article"
+          class="mb-2 col-4 productcontainer"
+        >
+          <b-card-text>
+            <b-badge class="pricetag bg-dark">1999kr</b-badge>
+          </b-card-text>
+          <div class="cardbuttoncontainer">
+            <b-button class="cardbutton" href="#" variant="primary"
+              >Add to cart</b-button
+            >
           </div>
-        </div>
-      </b-row>
-      <b-row>
-        <div class="earrings bg-light">
-          <b-col
-            ><p class="pricetag">800kr</p>
-            <img src="earings.jpg" width="170px"
-          /></b-col>
-          <div class="pricecart">
-            <b-row>
-              <b-button class="button btn-dark">Add to cart</b-button>
-            </b-row>
+        </b-card>
+        <b-card
+          title="Golden watch"
+          img-src="watch.jpg"
+          img-alt=""
+          img-top
+          tag="article"
+          class="mb-2 col-4 productcontainer "
+        >
+          <b-card-text>
+            <b-badge class="pricetag bg-dark">1999kr</b-badge>
+          </b-card-text>
+          <div class="cardbuttoncontainer">
+            <b-button class="cardbutton" href="#" variant="primary"
+              >Add to cart</b-button
+            >
           </div>
-        </div>
-        <div class="purse bg-light">
-          <b-col
-            ><p class="pricetag">2800kr</p>
-            <img src="purse.jpg" width="170px"
-          /></b-col>
-          <div class="pricecart">
-            <b-row>
-              <b-button class="button btn-dark">Add to cart</b-button>
-            </b-row>
+        </b-card>
+        <b-card
+          title="Gold earings"
+          img-src="earings.jpg"
+          img-alt=""
+          img-top
+          tag="article"
+          class="mb-2 col-4 productcontainer "
+        >
+          <b-card-text>
+            <b-badge class="pricetag bg-dark">800kr</b-badge>
+          </b-card-text>
+          <div class="cardbuttoncontainer">
+            <b-button class="cardbutton" href="#" variant="primary"
+              >Add to cart</b-button
+            >
           </div>
-        </div>
-        <div class="shoes bg-light">
-          <b-col
-            ><p class="pricetag">3000kr</p>
-            <img src="shoes.jpg" width="170px" height="190px"
-          /></b-col>
-          <div class="pricecart">
-            <b-row>
-              <b-button class="button btn-dark">Add to cart</b-button>
-            </b-row>
+        </b-card>
+        <b-card
+          title="Pear black purse"
+          img-src="purse.jpg"
+          img-alt=""
+          img-top
+          tag="article"
+          class="mb-2 col-4 productcontainer "
+        >
+          <b-card-text>
+            <b-badge class="pricetag bg-dark">2999kr</b-badge>
+          </b-card-text>
+          <div class="cardbuttoncontainer">
+            <b-button class="cardbutton" href="#" variant="primary"
+              >Add to cart</b-button
+            >
           </div>
-        </div>
+        </b-card>
+        <b-card
+          title="Leather shoes"
+          img-src="shoes.jpg"
+          img-alt=""
+          img-top
+          tag="article"
+          class="mb-2 col-4 productcontainer "
+        >
+          <b-card-text>
+            <b-badge class="pricetag bg-dark">3999kr</b-badge>
+          </b-card-text>
+          <div class="cardbuttoncontainer">
+            <b-button class="cardbutton" href="#" variant="primary"
+              >Add to cart</b-button
+            >
+          </div>
+        </b-card>
       </b-row>
     </b-container>
-    <productCard />
   </div>
 </template>
 <script>
-  import productCard from '@/components/productCard.vue'
   export default {
-    components: {
-      productCard
-    },
     data() {
       return {}
     }
@@ -126,137 +189,64 @@
 </script>
 
 <style>
-  .menue {
-    align-content: center;
-    color: white;
-    width: 150px;
-    float: right;
-    padding: 20px;
-  }
-  .dropdown-1 {
-    float: left;
-  }
-  .dressblack {
-    width: 300px;
-    height: 250px;
+  .productbox {
+    /* width: 300px;
+    min-height: 250px; */
     border: solid 1px rgba(185, 184, 184, 0.747);
     font-style: bold;
-    margin-top: 150px;
-  }
-  .dressbox {
-    border: solid 1px rgba(185, 184, 184, 0.747);
-    width: 300px;
-    height: 250px;
-    margin-top: 150px;
-    margin-left: 15px;
-  }
-  .watch {
-    border: solid 1px rgba(185, 184, 184, 0.747);
-    width: 300px;
-    height: 250px;
-    margin-top: 150px;
-    margin-left: 15px;
-  }
-  .purse {
-    border: solid 1px rgba(185, 184, 184, 0.747);
-    width: 300px;
-    height: 250px;
-    margin-top: 150px;
-    margin-left: 15px;
-  }
-  .earrings {
-    border: solid 1px rgba(185, 184, 184, 0.747);
-    width: 300px;
-    height: 250px;
-    margin-top: 150px;
-    margin-left: 15px;
-  }
-  .shoes {
-    border: solid 1px rgba(185, 184, 184, 0.747);
-    width: 300px;
-    height: 250px;
-    margin-top: 150px;
-    margin-left: 15px;
-  }
-  .dropdown {
-    float: left;
-    position: relative;
+    margin-top: 50px;
+    padding: 5px;
   }
 
-  .dropdown .sort-by {
-    font-size: 16px;
-    border: none;
-    outline: none;
-    color: white;
-    padding: 14px 16px;
-    background-color: inherit;
-    font-family: inherit;
-    margin: 0;
-  }
-  .dropdown-one,
-  .dropdown-three {
-    cursor: pointer;
-    display: none;
-    position: absolute;
-    background-color: #f9f9f9;
-    min-width: 160px;
-    box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
-  }
-
-  .dropdown-two {
-    cursor: pointer;
-    display: none;
-    position: absolute;
-    left: 160px;
-    top: 0px;
-    min-width: 160px;
-    background-color: #f9f9f9;
-    box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
-  }
-
-  .dropdown-four {
-    cursor: pointer;
-    display: none;
-    position: absolute;
-    left: 160px;
-    top: 0px;
-    min-width: 160px;
-    background-color: #f9f9f9;
-    box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
-  }
-
-  .dropdown:hover .dropdown-one,
-  #color:hover > .dropdown-two {
-    display: block;
-  }
-  .dropdown:hover .dropdown-three,
-  #Patern:hover > .dropdown-four {
-    display: block;
-  }
-
-  .dropdown-one .colors {
-    color: black;
-    padding: 12px 16px;
-    display: block;
-    text-align: left;
-  }
-
-  .dropdown-one .Pattern:hover,
-  .dropdown-two a:hover {
-    background-color: #ddd;
-  }
   .pricetag {
-    float: left;
-    margin-top: 10px;
+    font-size: 24px !important;
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    /* border-radius: 0px !important; */
     font-style: italic;
-    border: solid 1px rgb(194, 194, 194);
   }
   .pricecart {
     float: left;
     padding-left: 20px;
     margin-top: 5px;
   }
+  .cardbuttoncontainer {
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    width: 100%;
+    height: 100%;
+    background-color: rgb(192, 191, 191);
+    opacity: 0.7;
+    display: none;
+  }
+  .cardbutton {
+    position: absolute;
+    left: 32%;
+    top: 42%;
+    opacity: 1;
+  }
+  .productcontainer:hover .cardbuttoncontainer {
+    display: block;
+  }
+  .productcontainer:hover .cardbutton {
+    opacity: 1;
+  }
+  .productcontainer {
+    padding: 10px !important;
+  }
   .header {
     text-decoration: underline;
+    padding-left: 25px;
+  }
+  .row1 {
+    /* padding-left: 100px; */
+    padding: 10px;
+  }
+  .card-img-top {
+    width: 200px !important;
+    margin-left: auto;
+    margin-right: auto;
   }
 </style>
