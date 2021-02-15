@@ -37,17 +37,7 @@
     color: #2c3e50;
   }
 
-  .cart {
-    margin-left: 15em;
-    font-size: 2em;
-  }
-
-  #nav {
-    padding: 30px;
-
-
-    }
-  
+ 
 
 
   
