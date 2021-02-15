@@ -66,7 +66,7 @@ export default new Vuex.Store({
       }
     },
 
-    orders: [],
+    orders: [1, 2],
     cart: {
       '5895af63-e246-42bc-b629-bf607f004da7': {
         brand: 'Dior',

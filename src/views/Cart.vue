@@ -307,4 +307,8 @@
   #cart {
     text-align: start;
   }
+
+  .cursor {
+    cursor: pointer;
+  }
 </style>

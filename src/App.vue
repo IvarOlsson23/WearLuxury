@@ -8,7 +8,6 @@
     </div>
 
     <router-view />
-    <div>{{ orders.length }}</div>
     <Footer />
   </div>
 </template>
