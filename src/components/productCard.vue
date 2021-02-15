@@ -11,7 +11,11 @@
         <!--  Size picker -->
         <p>Size</p>
         <div id="size">
-          <b-form-select v-model="toCart.size" :options="sizes" label="size" />
+          <b-form-select
+            v-model="toCart.size"
+            :options="product.size"
+            label="size"
+          />
         </div>
 
         <!--  Color dots -->
@@ -19,7 +23,7 @@
           <b-form-group label="Color">
             <b-form-radio-group
               v-model="toCart.color"
-              :options="color"
+              :options="product.color"
               name="Color"
               size="sm"
             />
@@ -52,7 +56,16 @@
       addToCart(product) {
         this.$store.commit('addCart', product)
 
+        /*    this.$store.commit({
+          type: 'addToCart',
+          brand: product.brand,
+          name: product.name,
+          price: product.price,
+          size: this.size,
+          color: this.color
+        })*/
         console.log(this.toCart.size)
+        console.log(this.toCart.color)
       }
     }
   }
