@@ -7,140 +7,69 @@
           <img src="logo.png" width="150px" />
         </b-col>
 
+        <!-- Drowdown menu for sorty by and products -->
 
-        <b-col cols="3">
-          <div class="maindropdown float-right bg-dark">
-            <b-dropdown
-              id="dropdown-1"
-              text="Sort by"
-              class="m-md-2 bg-dark sort-by"
-            >
-              <div class="dropdown-1">
-                <div class="dropdown-one sort">
-                  <b-dropdown-item id="color" class="colors">
-                    Color
-                    <div class="dropdown-two">
-                      <div class="colors" id="file" href="/Products">Blue</div>
-                      <div class="colors" id="file" href="/Products">Red</div>
-                      <div class="colors" id="file" href="/Products">Black</div>
-                      <div class="colors" id="file" href="/Products">Brown</div>
-                      <div class="colors" id="file" href="/Products">White</div>
-                      <div class="colors" id="file" href="/Products">
-                        Yellow
-                      </div>
-                    </div>
-                  </b-dropdown-item>
-                  <div class="dropdown-three">
-                    <b-dropdown-item div id="Patern">
-                      Pattern
-                      <div class="dropdown-four">
-                        <div class="patern" id="Patern" href="/Products">
-                          Dotted
-                        </div>
-                        <div class="patern " id="Patern" href="/Products">
-                          Striped
-                        </div>
-                        <div class="patern " id="Patern" href="/Products">
-                          Plain
-                        </div>
-                      </div>
-                    </b-dropdown-item>
-                  </div>
-                </div>
-              </div>
-            </b-dropdown>
-            <b-dropdown
-              id="dropdown-1"
-              text="Products"
-              class="m-md-2 bg-dark"
-            >
-              <b-dropdown-item>Women clothes</b-dropdown-item>
-              <b-dropdown-item>Men clothes</b-dropdown-item>
-              <b-dropdown-item>Accessories</b-dropdown-item>
-              <b-dropdown-divider />
-            </b-dropdown>
-          </div>
-        </b-col>
+        <b-dropdown
+          id="dropdown-left"
+          text="Sort by"
+          variant="secondary"
+          size="sm"
+          class="m-2"
+        >
+          <b-dropdown-item href="#">Color</b-dropdown-item>
+          <b-dropdown-item href="#">Pattern</b-dropdown-item>
+          <b-dropdown-item href="#">Low price</b-dropdown-item>
+          <b-dropdown-item href="#">High Price</b-dropdown-item>
+          <b-dropdown-item href="#">Newest</b-dropdown-item>
+        </b-dropdown>
 
-       
-<!-- Drowdown menu for sorty by and products -->
-
-    <b-dropdown id="dropdown-left" text="Sort by" variant="secondary" size="sm" class="m-2">
-    <b-dropdown-item href="#">Color</b-dropdown-item>
-    <b-dropdown-item href="#">Pattern</b-dropdown-item>
-    <b-dropdown-item href="#">Low price</b-dropdown-item>
-    <b-dropdown-item href="#">High Price</b-dropdown-item>
-    <b-dropdown-item href="#">Newest</b-dropdown-item>
-  </b-dropdown>
-
-  <b-dropdown id="dropdown-right" right text="Products" variant="secondary" size="sm" class="m-2">
-    <b-dropdown-item href="#">Women clothes</b-dropdown-item>
-    <b-dropdown-item href="#">Men clothes</b-dropdown-item>
-    <b-dropdown-item href="#">Accessories</b-dropdown-item>
-  </b-dropdown>
-
+        <b-dropdown
+          id="dropdown-right"
+          right
+          text="Products"
+          variant="secondary"
+          size="sm"
+          class="m-2"
+        >
+          <b-dropdown-item href="#">Women clothes</b-dropdown-item>
+          <b-dropdown-item href="#">Men clothes</b-dropdown-item>
+          <b-dropdown-item href="#">Accessories</b-dropdown-item>
+        </b-dropdown>
       </b-row>
       <template>
-        <div class="mt-5 mb-5">
-          <b-carousel
-            id="carousel-1"
-            v-model="slide"
-            :interval="4000"
-            controls
-            indicators
-            background="#ababab"
-            img-width="400px"
-            img-height="480px"
-            style="text-shadow: 1px 1px 2px #333;"
-            @sliding-start="onSlideStart"
-            @sliding-end="onSlideEnd"
-          >
-            <!-- Text slides with image -->
-            <b-carousel-slide
-              caption="First slide"
-              text="Nulla vitae elit libero, a pharetra augue mollis interdum."
-              img-src="https://www.ucg.org/files/styles/full_grid9_breakpoints_theme_top_hat_mobile_1x/public/image/article/who-are-you-dressing-for-modesty-is-more-than-just-honoring-your-parents.jpg?timestamp=1512417811"
-            />
+        <div class="mt-5 mb-5" />
+        <b-carousel
+          id="carousel-1"
+          v-model="slide"
+          :interval="4000"
+          controls
+          indicators
+          background="#ababab"
+          img-width="400px"
+          img-height="480px"
+          style="text-shadow: 1px 1px 2px #333;"
+          @sliding-start="onSlideStart"
+          @sliding-end="onSlideEnd"
+        />
+        <!-- Text slides with image -->
+        <b-carousel-slide
+          caption="First slide"
+          text="Nulla vitae elit libero, a pharetra augue mollis interdum."
+          img-src="https://www.ucg.org/files/styles/full_grid9_breakpoints_theme_top_hat_mobile_1x/public/image/article/who-are-you-dressing-for-modesty-is-more-than-just-honoring-your-parents.jpg?timestamp=1512417811"
+        />
 
-            <!-- Slides with custom text -->
-            <b-carousel-slide
-              img-src="https://i.pinimg.com/originals/e1/64/da/e164dafa13c70b1398bed629b817a765.jpg"
-            >
-              <h1>Hello world!</h1>
-            </b-carousel-slide>
+        <b-row class="header"><h1>New arrivals</h1></b-row>
 
-            <!-- Slides with image only -->
-            <b-carousel-slide
-              img-src="https://image.freepik.com/foto-gratis/retrato-moda-joven-empresario-guapo-modelo-hombre-traje-tela-casual-accesorios-manos_158538-9463.jpg"
-            />
-
-            <!-- Slides with img slot -->
-            <!-- Note the classes .d-block and .img-fluid to prevent browser default image alignment -->
-            <b-carousel-slide>
-              <template #img>
-                <img
-                  class="d-block img-fluid w-100"
-                  width="1024"
-                  height="480"
-                  src="https://cdn.cliqueinc.com/posts/282835/cheap-fall-accessories-282835-1569959331281-main.700x0c.jpg"
-                  alt="image slot"
-                />
-              </template>
-            </b-carousel-slide>
-
-            <!-- Slide with blank fluid image to maintain slide aspect ratio -->
-            <b-carousel-slide
-              caption="Blank Image"
-              img-alt="Blank image"
-              img-src="https://i.pinimg.com/originals/0b/24/49/0b2449e9677cb58632b1e6c9cb329272.jpg"
-            >
-              <p>
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                Suspendisse eros felis, tincidunt a tincidunt eget, convallis
-                vel est. Ut pellentesque ut lacus vel interdum.
-              </p>
-            </b-carousel-slide>
-          </b-carousel>
+        <div class="dressblack bg-light">
+          <b-col
+            ><p class="pricetag">1999kr</p>
+            <img src="blackdress.jpg" width="170px" height="200px" />
+          </b-col>
+          <div class="pricecart">
+            <b-row
+              ><b-button class="button btn-dark">Add to cart </b-button>
+            </b-row>
+          </div>
         </div>
       </template>
 
@@ -249,11 +178,18 @@
         </b-card>
       </b-row>
     </b-container>
+    <productCard style="width:300px" />
   </div>
-</template>           align-v="left"
-   
+</template>
+align-v="left"
+
 <script>
+  import productCard from '@/components/productCard.vue'
+
   export default {
+    components: {
+      productCard
+    },
     data() {
       return {}
     }
