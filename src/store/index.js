@@ -10,7 +10,11 @@ export default new Vuex.Store({
         brand: 'Dole & Gobana',
         name: 'Jacket',
         price: '2900',
-        color: '',
+        color: [
+          { text: 'Black', value: 'Black' },
+          { text: 'White', value: 'White' },
+          { text: 'Blue', value: 'blue' }
+        ],
         size: [
           { text: 'XS', value: 'XS' },
           { text: 'S', value: 'S' },

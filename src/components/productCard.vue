@@ -8,30 +8,18 @@
         <h3>{{ product.brand }}</h3>
         <p>{{ product.name }}</p>
 
-        <!-- sizes -->
-        <div id="sizes">
-          <b-form-group label="Size" v-slot="{ ariaDescribedby }">
-            <b-form-radio-group
-              v-model="toCart.size"
-              :options="sizes"
-              :aria-describedby="ariaDescribedby"
-              name="size"
-              size="sm"
-            />
-          </b-form-group>
-        </div>
-        <!--  Size picker 
+        <!--  Size picker -->
+        <p>Size</p>
         <div id="size">
-          <b-form-select v-model="selected.size" :options="sizes" />
-        </div> -->
+          <b-form-select v-model="toCart.size" :options="sizes" label="size" />
+        </div>
 
         <!--  Color dots -->
         <div id="colors">
-          <b-form-group label="Color" v-slot="{ ariaDescribedby }">
+          <b-form-group label="Color">
             <b-form-radio-group
               v-model="toCart.color"
               :options="color"
-              :aria-describedby="ariaDescribedby"
               name="Color"
               size="sm"
             />
@@ -55,35 +43,25 @@
     data() {
       return {
         toCart: {
-          size: '',
-          color: ''
-        },
-        color: [
-          { text: 'Black', value: 'Black' },
-          { text: 'White', value: 'White' },
-          { text: 'Blue', value: 'blue' }
-        ],
-        sizes: [
-          { text: 'XS', value: 'XS' },
-          { text: 'S', value: 'S' },
-          { text: 'M', value: 'M' },
-          { text: 'L', value: 'L' },
-          { text: 'XL', value: 'XL' }
-        ]
+          size: null,
+          color: null
+        }
       }
     },
-
     methods: {
       addToCart(product) {
-        this.$store.commit('addCart', product, this.toCart)
+        this.$store.commit('addCart', product)
 
-        console.log('inne i add to cart metoden')
+        console.log(this.toCart.size)
       }
     }
   }
 </script>
 
 <style scoped>
+  #size {
+    margin-bottom: 20px;
+  }
   img {
     max-width: 100%;
   }
