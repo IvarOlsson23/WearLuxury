@@ -66,7 +66,7 @@ export default new Vuex.Store({
       }
     },
 
-    orders: [1, 2],
+    orders: [1, 2, 3],
     cart: {
       '5895af63-e246-42bc-b629-bf607f004da7': {
         brand: 'Dior',
@@ -99,7 +99,7 @@ export default new Vuex.Store({
   modules: {},
   getters: {
     countItems: state => {
-      return state.orders
+      return state.orders.length
     }
   }
 })
