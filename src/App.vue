@@ -3,8 +3,8 @@
     <div id="nav">
       <router-link to="/">Home</router-link> |
       <router-link to="/about">About</router-link> |
-      <router-link to="/Products">Clothes</router-link> |
-      <router-link to="/Cart" class="cart"><b-icon-cart-dash /></router-link>
+      <router-link to="/Cart">Cart</router-link> |
+      <router-link to="/Products">Products</router-link>
     </div>
     <router-view />
 
