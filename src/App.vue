@@ -14,13 +14,11 @@
 </template>
 
 <script>
-  import { mapState } from 'vuex'
   import Footer from '@/components/Footer.vue'
   export default {
     components: {
       Footer
-    },
-    computed: mapState(['orders'])
+    }
   }
 </script>
 <style lang="scss">

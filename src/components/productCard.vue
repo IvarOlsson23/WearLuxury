@@ -5,34 +5,78 @@
     <b-card :key="product.uuid" v-for="product in $store.state.products">
       <img src="../assets/suit.png" alt="suit" />
       <b-card-text class="text-left">
-        <h3>{{ product.name }}</h3>
-        <!-- Color dots -->
-        <div id="dots">
-          <b-icon icon="circle-fill" variant="success" style="margin: 3px" />
-          <b-icon icon="circle-fill" variant="warning" style="margin: 3px" />
-          <b-icon icon="circle-fill" variant="danger" style="margin: 3px" />
-          <b-icon icon="circle-fill" variant="info" style="margin: 3px" />
+        <h3>{{ product.brand }}</h3>
+        <p>{{ product.name }}</p>
+
+        <!-- sizes -->
+        <div id="sizes">
+          <b-form-group label="Size" v-slot="{ ariaDescribedby }">
+            <b-form-radio-group
+              v-model="toCart.size"
+              :options="size"
+              :aria-describedby="ariaDescribedby"
+              name="size"
+              size="sm"
+            />
+          </b-form-group>
         </div>
+
+        <!--  Color dots -->
+        <div id="colors">
+          <b-form-group label="Color" v-slot="{ ariaDescribedby }">
+            <b-form-radio-group
+              v-model="toCart.color"
+              :options="color"
+              :aria-describedby="ariaDescribedby"
+              name="Color"
+              size="sm"
+            />
+          </b-form-group>
+        </div>
+
         <div class="text-right">
           <p>{{ product.price }} sek</p>
           <!--  Add to cart button -->
-          <b-button pill variant="primary" @click="addToCart(uuid)"
+          <b-button
+            pill
+            variant="primary"
+            @click="addToCart(product, color, size)"
             >Add to cart</b-button
           >
         </div>
       </b-card-text>
     </b-card>
-    console.log(inCart)
   </div>
 </template>
 
 <script>
   export default {
+    data() {
+      return {
+        toCart: {
+          size: '',
+          color: ''
+        },
+        color: [
+          { text: 'Black', value: 'Black' },
+          { text: 'White', value: 'White' },
+          { text: 'Blue', value: 'blue' }
+        ],
+        size: [
+          { text: 'XS', value: 'XS' },
+          { text: 'S', value: 'S' },
+          { text: 'M', value: 'M' },
+          { text: 'L', value: 'L' },
+          { text: 'XL', value: 'XL' }
+        ]
+      }
+    },
+
     methods: {
-      addToCart(uuid) {
-        this.addToCart, uuid
+      addToCart(product) {
+        this.$store.commit('addCart', product)
+
         console.log('inne i add to cart metoden')
-        //this.$store.dispatch('addToCart', uuid)
       }
     }
   }
