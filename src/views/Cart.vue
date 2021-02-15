@@ -51,7 +51,7 @@
           <template #footer>
             <div class="d-flex justify-content-between font-weight-bold  ">
               <span>Total amount(inc. vat)</span>
-              <span>2029 $</span>
+              <span>{{ totalAmount }} $</span>
             </div>
           </template>
         </b-card>

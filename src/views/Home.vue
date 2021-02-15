@@ -8,6 +8,8 @@
       <p class="nav-select" @click="productOverlay = !productOverlay">
         Women
       </p>
+      <router-link to="/Cart" class="cart"><b-icon-cart-dash /> </router-link>
+      <div>{{ orders.length }}</div>
     </div>
     <div id="nav-overlay" v-show="!productOverlay">
       <div id="product-list">
@@ -35,6 +37,7 @@
 </template>
 
 <script>
+  import { mapState } from 'vuex'
   export default {
     name: 'Home',
     components: {},
@@ -42,7 +45,8 @@
       return {
         productOverlay: true
       }
-    }
+    },
+    computed: mapState(['orders'])
   }
 </script>
 
