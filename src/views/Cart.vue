@@ -3,7 +3,7 @@
     <b-row>
       <!-- CARTITEMS -->
       <b-col>
-        <b-card title="Cart  cartItemLength  products" class="h-100">
+        <b-card :title="cartItemLength" class="h-100">
           <b-card
             img-src="https://img01.ztat.net/article/spp-media-p1/5e0b5adffa1338618afdae5031987c3e/0d68e7d30bf0477f93d4d0a7272ae7cc.jpg?imwidth=1800"
             img-left
@@ -336,7 +336,14 @@
         return totalAmount
       },
       cartItemLength() {
-        return Object.keys(this.$store.state.cart).length
+        let productLength = Object.keys(this.$store.state.cart).length
+        let productMessage
+        if (productLength === 1) {
+          productMessage = ' product)'
+        } else {
+          productMessage = ' products)'
+        }
+        return 'Cart ' + '(' + productLength + productMessage
       }
     }
   }
