@@ -144,8 +144,11 @@
         >
       </b-row>
     </b-container>
+    <productCard style="width:300px" />
   </div>
 </template>
+align-v="left"
+
 <script>
   import productCard from '@/components/productCard.vue'
   export default {

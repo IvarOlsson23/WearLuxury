@@ -8,8 +8,8 @@
       <p>Mon 1 March - Thursday 5 March</p>
 
       <h3>Complete the registration</h3>
-      <p>E-mail: yourmail@gmail.com</p>
-      <p>Tele: 010 12345 678</p>
+      <!-- <p>Email: JonathanLuxman@email.com</p>
+      <p>Phonenumber: 07XXXXXXX</p> -->
     </div>
     <!-- / Order has been processed -->
 
@@ -28,7 +28,7 @@
           <b-form-input
             id="input-valid"
             :state="null"
-            placeholder="Enter Username"
+            placeholder="JonathanLuxman@email.com"
           />
         </b-col>
       </b-row>
@@ -48,7 +48,7 @@
     </b-container>
 
     <!-- shipping, delivery, payment @contact info -->
-
+    <h2>Product Information</h2>
     <div>
       <div>
         <div class="mt-3">
@@ -57,21 +57,24 @@
               <b-card-text>Standard delivery to your home.</b-card-text>
             </b-card>
 
-            <b-card header="Delivery address:" class="text-center">
-              <b-card-text
-                >Here is info about the customer's delivery
-                address!</b-card-text
-              >
+            <b-card header="Delivery address" class="text-center">
+              <b-card-text>
+                <p>Street & street number: Kingstreet 13</p>
+                <p>Post number: 41511</p>
+                <p>City: Gothenburg</p>
+              </b-card-text>
             </b-card>
 
-            <b-card header="Payment Method:" class="text-center">
-              <b-card-text>PAYPAL</b-card-text>
+            <b-card header="Payment Method" class="text-center">
+              <b-card-text>Paypal</b-card-text>
             </b-card>
 
-            <b-card header="Contact information:" class="text-center">
+            <b-card header="Contact information" class="text-center">
               <b-card-text
-                >Here is info about the customer's contact informations such as
-                phone number, e-mail, etc.!</b-card-text
+                ><p>Surname: Jonathan</p>
+                <p>Lastname: Luxman</p>
+                <p>Email: JonathanLuxman@email.com</p>
+                <p>Phonenumber: 07XXXXXXX</p></b-card-text
               >
             </b-card>
           </b-card-group>
@@ -95,10 +98,40 @@
               />
             </b-col>
             <b-col md="6">
-              <b-card-body title="Product">
+              <b-card-body title="Dior">
                 <b-card-text>
-                  Here is info about the product's price, shipping fee, total
-                  price and VAT!
+                  <p>Jacket</p>
+                  <p>Color: black</p>
+                  <p>Size: xl</p>
+                  <p>Choose: 2</p>
+                  <h3>2900 $</h3>
+                </b-card-text>
+              </b-card-body>
+            </b-col>
+          </b-row>
+        </b-card>
+
+        <b-card
+          no-body
+          class="overflow-hidden"
+          style="max-width: 540px; padding:30px; margin: 30px"
+        >
+          <b-row no-gutters>
+            <b-col md="6">
+              <b-card-img
+                src="https://img01.ztat.net/article/spp-media-p1/5e0b5adffa1338618afdae5031987c3e/0d68e7d30bf0477f93d4d0a7272ae7cc.jpg?imwidth=1800"
+                alt="Product"
+                class="rounded-0"
+              />
+            </b-col>
+            <b-col md="6">
+              <b-card-body title="Hugo boss">
+                <b-card-text>
+                  <p>Dress</p>
+                  <p>Color: red</p>
+                  <p>Size: sm</p>
+                  <p>Choose: 3</p>
+                  <h3>2499 $</h3>
                 </b-card-text>
               </b-card-body>
             </b-col>
@@ -106,11 +139,29 @@
         </b-card>
       </div>
     </div>
-
+    <div>
+      <div>
+        <b-card-group deck>
+          <b-card
+            header="Total amount"
+            class="text-center"
+            style="max-width: 540px; padding:30px; margin: 30px"
+          >
+            <b-card-text>Subtotal: 2000 $</b-card-text>
+            <b-card-text>Shipping: 29 $</b-card-text>
+            <h3>Total amount(inc. vat)</h3>
+            <p>2129 $</p>
+          </b-card>
+        </b-card-group>
+      </div>
+    </div>
     <!-- Rating -->
 
     <div>
-      <label for="rating-5" style="padding:15px; margin: 15px"
+      <label
+        for="rating-5"
+        class="text-center"
+        style="padding:15px; margin: 15px"
         >Based on 1900 reviews</label
       >
       <b-form-rating
@@ -126,7 +177,11 @@
     <!-- Back to shop/Home -->
 
     <div>
-      <b-button @submit.prevent="onRedirect" to="/" size="sm" style="padding:25px; margin: 25px"
+      <b-button
+        @submit.prevent="onRedirect"
+        to="/"
+        size="md"
+        style=" margin: 30px"
         >Back to Home</b-button
       >
     </div>
@@ -142,15 +197,11 @@
       }
     },
 
-methods: {
-  onRedirect(){
-this.$router.push({name: 'Home'})
-  }
-  
-  
-}
-
-
+    methods: {
+      onRedirect() {
+        this.$router.push({ name: 'Home' })
+      }
+    }
   }
 </script>
 

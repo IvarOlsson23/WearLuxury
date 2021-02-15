@@ -8,26 +8,22 @@
         <h3>{{ product.brand }}</h3>
         <p>{{ product.name }}</p>
 
-        <!-- sizes -->
-        <div id="sizes">
-          <b-form-group label="Size" v-slot="{ ariaDescribedby }">
-            <b-form-radio-group
-              v-model="toCart.size"
-              :options="size"
-              :aria-describedby="ariaDescribedby"
-              name="size"
-              size="sm"
-            />
-          </b-form-group>
+        <!--  Size picker -->
+        <p>Size</p>
+        <div id="size">
+          <b-form-select
+            v-model="toCart.size"
+            :options="product.size"
+            label="size"
+          />
         </div>
 
         <!--  Color dots -->
         <div id="colors">
-          <b-form-group label="Color" v-slot="{ ariaDescribedby }">
+          <b-form-group label="Color">
             <b-form-radio-group
               v-model="toCart.color"
-              :options="color"
-              :aria-describedby="ariaDescribedby"
+              :options="product.color"
               name="Color"
               size="sm"
             />
@@ -35,14 +31,11 @@
         </div>
 
         <div class="text-right">
-          <p>{{ product.price }} sek</p>
+          <p>{{ product.price }} $</p>
           <!--  Add to cart button -->
-          <b-button
-            pill
-            variant="primary"
-            @click="addToCart(product, color, size)"
-            >Add to cart</b-button
-          >
+          <b-button variant="primary" @click="addToCart(product)"
+            ><b-icon icon="cart-plus"
+          /></b-button>
         </div>
       </b-card-text>
     </b-card>
@@ -54,35 +47,34 @@
     data() {
       return {
         toCart: {
-          size: '',
-          color: ''
-        },
-        color: [
-          { text: 'Black', value: 'Black' },
-          { text: 'White', value: 'White' },
-          { text: 'Blue', value: 'blue' }
-        ],
-        size: [
-          { text: 'XS', value: 'XS' },
-          { text: 'S', value: 'S' },
-          { text: 'M', value: 'M' },
-          { text: 'L', value: 'L' },
-          { text: 'XL', value: 'XL' }
-        ]
+          size: null,
+          color: null
+        }
       }
     },
-
     methods: {
       addToCart(product) {
         this.$store.commit('addCart', product)
 
-        console.log('inne i add to cart metoden')
+        /*    this.$store.commit({
+          type: 'addToCart',
+          brand: product.brand,
+          name: product.name,
+          price: product.price,
+          size: this.size,
+          color: this.color
+        })*/
+        console.log(this.toCart.size)
+        console.log(this.toCart.color)
       }
     }
   }
 </script>
 
 <style scoped>
+  #size {
+    margin-bottom: 20px;
+  }
   img {
     max-width: 100%;
   }
