@@ -37,12 +37,9 @@
         <div class="text-right">
           <p>{{ product.price }} sek</p>
           <!--  Add to cart button -->
-          <b-button
-            pill
-            variant="primary"
-            @click="addToCart(product, color, size)"
-            >Add to cart</b-button
-          >
+          <b-button variant="primary" @click="addToCart(product)"
+            ><b-icon icon="cart-plus"
+          /></b-button>
         </div>
       </b-card-text>
     </b-card>
