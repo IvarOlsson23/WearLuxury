@@ -126,8 +126,8 @@
     <!-- Back to shop/Home -->
 
     <div>
-      <b-button href="/" size="sm" style="padding:25px; margin: 25px"
-        >Back to shop</b-button
+      <b-button @submit.prevent="onRedirect" to="/" size="sm" style="padding:25px; margin: 25px"
+        >Back to Home</b-button
       >
     </div>
   </div>
@@ -140,7 +140,17 @@
         value5: null,
         text: ''
       }
-    }
+    },
+
+methods: {
+  onRedirect(){
+this.$router.push({name: 'Home'})
+  }
+  
+  
+}
+
+
   }
 </script>
 

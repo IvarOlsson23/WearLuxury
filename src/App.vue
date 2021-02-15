@@ -1,18 +1,9 @@
 <template>
-
-  
- <div id="nav">
-   
- <Nav />
-
   <div id="app">
-    
-
-
+    <Nav />
+    <router-view />
     <Footer />
   </div>
-  </div>
-  
 </template>
 
 <script>
@@ -21,10 +12,9 @@
   import Nav from '@/components/Nav.vue'
   export default {
     components: {
-      Footer
+      Footer,
 
-      , Nav
-
+      Nav
     }
   }
 </script>
@@ -36,10 +26,4 @@
     text-align: center;
     color: #2c3e50;
   }
-
- 
-
-
-  
-  
 </style>
