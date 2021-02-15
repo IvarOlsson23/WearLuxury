@@ -11,7 +11,13 @@ export default new Vuex.Store({
         name: 'Jacket',
         price: '2900',
         color: '',
-        size: ''
+        size: [
+          { text: 'XS', value: 'XS' },
+          { text: 'S', value: 'S' },
+          { text: 'M', value: 'M' },
+          { text: 'L', value: 'L' },
+          { text: 'XL', value: 'XL' }
+        ]
       },
       'd6b95aeb-70ef-4a85-97d4-e916a2039cf9': {
         name: 'Bluse',
@@ -65,27 +71,8 @@ export default new Vuex.Store({
         size: 'xl'
       }
     },
-
     orders: [],
-    cart: {
-      '5895af63-e246-42bc-b629-bf607f004da7': {
-        brand: 'Dior',
-        name: 'Jacket',
-        price: '2900',
-        items: 2,
-        color: 'black',
-        size: 'xl'
-      },
-
-      '94a1304a-8a25-459c-aa9a-e439e25261a9': {
-        brand: 'Hugo boss',
-        name: 'Dress',
-        price: '2499',
-        items: 3,
-        color: 'red',
-        size: 'sm'
-      }
-    }
+    cart: []
   },
   mutations: {
     setOrder(state, order) {
@@ -93,6 +80,9 @@ export default new Vuex.Store({
     },
     removeItem(state, index) {
       Vue.delete(state.cart, index)
+    },
+    addCart(state, toCart) {
+      state.cart.push(toCart)
     }
   },
   actions: {},

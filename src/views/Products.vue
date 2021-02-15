@@ -37,29 +37,29 @@
         </b-dropdown>
       </b-row>
       <template>
-        <div class="mt-5 mb-5">
-          <b-carousel
-            id="carousel-1"
-            v-model="slide"
-            :interval="4000"
-            controls
-            indicators
-            background="#ababab"
-            img-width="400px"
-            img-height="480px"
-            style="text-shadow: 1px 1px 2px #333;"
-            @sliding-start="onSlideStart"
-            @sliding-end="onSlideEnd"
-          >
-            <!-- Text slides with image -->
-            <b-carousel-slide
-              caption="First slide"
-              text="Nulla vitae elit libero, a pharetra augue mollis interdum."
-              img-src="https://www.ucg.org/files/styles/full_grid9_breakpoints_theme_top_hat_mobile_1x/public/image/article/who-are-you-dressing-for-modesty-is-more-than-just-honoring-your-parents.jpg?timestamp=1512417811"
-            />
+        <div class="mt-5 mb-5" />
+        <b-carousel
+          id="carousel-1"
+          v-model="slide"
+          :interval="4000"
+          controls
+          indicators
+          background="#ababab"
+          img-width="400px"
+          img-height="480px"
+          style="text-shadow: 1px 1px 2px #333;"
+          @sliding-start="onSlideStart"
+          @sliding-end="onSlideEnd"
+        />
+        <!-- Text slides with image -->
+        <b-carousel-slide
+          caption="First slide"
+          text="Nulla vitae elit libero, a pharetra augue mollis interdum."
+          img-src="https://www.ucg.org/files/styles/full_grid9_breakpoints_theme_top_hat_mobile_1x/public/image/article/who-are-you-dressing-for-modesty-is-more-than-just-honoring-your-parents.jpg?timestamp=1512417811"
+        />
 
-      <b-row class="header"><h1>New arrivals</h1></b-row>
-      <b-row>
+        <b-row class="header"><h1>New arrivals</h1></b-row>
+
         <div class="dressblack bg-light">
           <b-col
             ><p class="pricetag">1999kr</p>
@@ -178,10 +178,16 @@
         </b-card>
       </b-row>
     </b-container>
+    <productCard style="width:300px" />
   </div>
 </template>
 <script>
+  import productCard from '@/components/productCard.vue'
+
   export default {
+    components: {
+      productCard
+    },
     data() {
       return {}
     }

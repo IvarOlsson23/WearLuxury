@@ -13,13 +13,17 @@
           <b-form-group label="Size" v-slot="{ ariaDescribedby }">
             <b-form-radio-group
               v-model="toCart.size"
-              :options="size"
+              :options="sizes"
               :aria-describedby="ariaDescribedby"
               name="size"
               size="sm"
             />
           </b-form-group>
         </div>
+        <!--  Size picker 
+        <div id="size">
+          <b-form-select v-model="selected.size" :options="sizes" />
+        </div> -->
 
         <!--  Color dots -->
         <div id="colors">
@@ -35,7 +39,7 @@
         </div>
 
         <div class="text-right">
-          <p>{{ product.price }} sek</p>
+          <p>{{ product.price }} $</p>
           <!--  Add to cart button -->
           <b-button variant="primary" @click="addToCart(product)"
             ><b-icon icon="cart-plus"
@@ -59,7 +63,7 @@
           { text: 'White', value: 'White' },
           { text: 'Blue', value: 'blue' }
         ],
-        size: [
+        sizes: [
           { text: 'XS', value: 'XS' },
           { text: 'S', value: 'S' },
           { text: 'M', value: 'M' },
@@ -71,7 +75,7 @@
 
     methods: {
       addToCart(product) {
-        this.$store.commit('addCart', product)
+        this.$store.commit('addCart', product, this.toCart)
 
         console.log('inne i add to cart metoden')
       }
