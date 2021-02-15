@@ -28,7 +28,12 @@
               </span>
               <br />
               <span>
-                <b-icon @click="removeItem(index)" icon="trash" /> Remove
+                <b-icon
+                  class="cursor"
+                  @click="removeItem(index)"
+                  icon="trash"
+                />
+                Remove
                 <b-form-select v-model="product.items" :options="options" />
               </span>
             </template>
@@ -343,5 +348,9 @@
     text-align: start;
     margin-top: 5em;
     margin-bottom: 5em;
+  }
+
+  .cursor {
+    cursor: pointer;
   }
 </style>
