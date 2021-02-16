@@ -139,7 +139,7 @@ export default new Vuex.Store({
       }
     },
     orders: [],
-    cart: [1, 2, 3, 5]
+    cart: [1, 2, 3]
   },
   mutations: {
     setOrder(state, order) {
@@ -148,8 +148,8 @@ export default new Vuex.Store({
     removeItem(state, index) {
       Vue.delete(state.cart, index)
     },
-    addCart(state, toCart) {
-      state.cart.push(toCart)
+    addCart(state, Cart) {
+      state.cart.push(Cart)
     }
   },
   actions: {},

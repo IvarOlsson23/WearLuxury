@@ -1,7 +1,7 @@
 <template>
   <!-- product card -->
 
-  <div>
+  <div class="test">
     <b-card :key="product.uuid" v-for="product in $store.state.products">
       <img src="../assets/suit.png" alt="suit" />
       <b-card-text class="text-left">
@@ -81,5 +81,11 @@
   }
   img {
     max-width: 100%;
+  }
+
+  .test {
+    display: grid;
+    grid-template-columns: auto auto auto;
+    grid-gap: 50px;
   }
 </style>

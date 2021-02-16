@@ -118,10 +118,12 @@
         </div>
       </template>
 
-      <b-col cols="4"> <productCard style="width:300px"/></b-col>
+      <div id="product-wrapper">
+        <b-col cols="4"> <productCard style="width:1080px"/></b-col>
+      </div>
       <!-- Productcards -->
 
-      <b-row class="mt-5">
+      <!-- <b-row class="mt-5">
         <template v-for="(dress, index) in products">
           <b-card
             :key="index"
@@ -140,11 +142,10 @@
                 >Add to cart</b-button
               >
             </div>
-          </b-card></template
-        >
-      </b-row>
+          </b-card>
+        </template>
+      </b-row> -->
     </b-container>
-    <productCard style="width:300px" />
   </div>
 </template>
 align-v="left"
