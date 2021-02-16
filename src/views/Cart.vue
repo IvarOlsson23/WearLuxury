@@ -3,7 +3,11 @@
     <b-row>
       <!-- CARTITEMS -->
       <b-col>
-        <b-card :title="cartItemLength" class="h-100">
+        <b-card
+          :title="cartItemLength"
+          class="h-100 shadow-sm"
+          border-variant="light"
+        >
           <b-card
             img-src="https://img01.ztat.net/article/spp-media-p1/5e0b5adffa1338618afdae5031987c3e/0d68e7d30bf0477f93d4d0a7272ae7cc.jpg?imwidth=1800"
             img-left
@@ -15,8 +19,9 @@
             footer-border-variant="light"
             v-for="(product, index) in $store.state.cart"
             :key="index"
-            class="mb-4"
-            footer-class="d-flex flex-column justify-content-between bg-white"
+            class="mb-4 "
+            footer-class="d-flex flex-column justify-content-around bg-white"
+            border-variant="light"
           >
             <b-card-text>
               Color: {{ product.color }}
@@ -31,6 +36,7 @@
                 Remove
               </span>
             </b-card-text>
+
             <template #footer>
               <b-form-select v-model="product.items" :options="options" />
               <span class="d-block">
@@ -46,6 +52,8 @@
           title="Total amount"
           footer-border-variant="dark"
           footer-tag="footer"
+          class="shadow-sm"
+          border-variant="light"
         >
           <b-card-text>
             <div class="d-flex justify-content-between">
