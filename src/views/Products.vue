@@ -50,16 +50,11 @@
         <div class="mt-5 mb-5">
           <b-carousel
             id="carousel-1"
-            v-model="slide"
             :interval="4000"
-            controls
-            indicators
             background="#ababab"
             img-width="400px"
             img-height="200px"
             style="text-shadow: 1px 1px 2px #333; max-height:500px; overflow:hidden;"
-            @sliding-start="onSlideStart"
-            @sliding-end="onSlideEnd"
           >
             <!-- Text slides with image -->
             <b-carousel-slide
@@ -123,14 +118,13 @@
       </div>
       <!-- Productcards -->
 
-      <!-- <b-row class="mt-5">
+      <b-row class="mt-5">
         <template v-for="(dress, index) in products">
           <b-card
             :key="index"
             :title="dress.title"
             :img-src="dress.img"
             img-alt="Image"
-            img-top
             tag="article"
             class="mb-2 col-4 productcontainer"
           >
@@ -144,11 +138,10 @@
             </div>
           </b-card>
         </template>
-      </b-row> -->
+      </b-row>
     </b-container>
   </div>
 </template>
-align-v="left"
 
 <script>
   import productCard from '@/components/productCard.vue'
