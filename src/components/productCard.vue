@@ -1,7 +1,7 @@
 <template>
   <!-- product card -->
 
-  <div>
+  <div id="card-wrapper">
     <b-card :key="id" v-for="(product, id) in $store.state.products">
       <img src="../assets/suit.png" alt="suit" />
       <b-card-text class="text-left">
@@ -85,7 +85,7 @@
     max-width: 100%;
   }
 
-  .test {
+  #card-wrapper {
     display: grid;
     grid-template-columns: auto auto auto;
     grid-gap: 50px;

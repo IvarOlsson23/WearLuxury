@@ -49,6 +49,7 @@ export default new Vuex.Store({
         brand: 'Dole & Gobana',
         name: 'Jacket',
         price: '2900',
+
         color: [
           { text: 'Black', value: 'Black' },
           { text: 'White', value: 'White' },
@@ -65,6 +66,7 @@ export default new Vuex.Store({
       'd6b95aeb-70ef-4a85-97d4-e916a2039cf9': {
         name: 'Bluse',
         price: '1200',
+
         color: [
           { text: 'Black', value: 'Black' },
           { text: 'White', value: 'White' },
@@ -81,6 +83,7 @@ export default new Vuex.Store({
       '94a1304a-8a25-459c-aa9a-e439e25261a9': {
         name: 'Dress',
         price: '2499',
+
         color: [
           { text: 'Black', value: 'Black' },
           { text: 'White', value: 'White' },
@@ -98,6 +101,7 @@ export default new Vuex.Store({
         brand: 'Dior',
         name: 'Jacket',
         price: '2900',
+
         color: [
           { text: 'Black', value: 'Black' },
           { text: 'White', value: 'White' },
@@ -115,6 +119,7 @@ export default new Vuex.Store({
         brand: 'Dior',
         name: 'Jacket',
         price: '2900',
+
         color: [
           { text: 'Black', value: 'Black' },
           { text: 'White', value: 'White' }
@@ -131,6 +136,7 @@ export default new Vuex.Store({
         brand: 'Dior',
         name: 'Jacket',
         price: '2900',
+
         color: [
           { text: 'Black', value: 'Black' },
           { text: 'White', value: 'White' },
@@ -148,6 +154,7 @@ export default new Vuex.Store({
         brand: 'Gucci',
         name: 'Handbag',
         price: '19000',
+
         color: '',
         size: ''
       },
@@ -155,6 +162,7 @@ export default new Vuex.Store({
         brand: 'Dior',
         name: 'Jacket',
         price: '2900',
+
         color: [
           { text: 'Black', value: 'Black' },
           { text: 'White', value: 'White' },
@@ -169,7 +177,6 @@ export default new Vuex.Store({
         ]
       }
     },
-
     orders: [],
     cart: []
   },
@@ -180,8 +187,8 @@ export default new Vuex.Store({
     removeItem(state, index) {
       Vue.delete(state.cart, index)
     },
-    addCart(state, Cart) {
-      state.cart.push(Cart)
+    addCart(state, toCart) {
+      state.cart.push(toCart)
     }
   },
   actions: {},
@@ -189,6 +196,9 @@ export default new Vuex.Store({
   getters: {
     newarrivalproducts(state) {
       return state.newarrivalproducts
+    },
+    countItems(state) {
+      return state.cart.length
     }
   }
 })
