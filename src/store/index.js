@@ -138,26 +138,48 @@ export default new Vuex.Store({
         ]
       }
     },
-    orders: [1, 2, 3],
-    cart: {
-      '5895af63-e246-42bc-b629-bf607f004da7': {
-        brand: 'Dior',
-        name: 'Jacket',
-        price: '2900',
-        items: 2,
-        color: 'black',
-        size: 'xl'
+    newarrivalproducts: [
+      {
+        title: 'Black lace dress',
+        img: 'blackdress.jpg',
+        price: '1999kr',
+        cathegory: 'women'
       },
 
-      '94a1304a-8a25-459c-aa9a-e439e25261a9': {
-        brand: 'Hugo boss',
-        name: 'Dress',
-        price: '2499',
-        items: 3,
-        color: 'red',
-        size: 'sm'
+      {
+        title: 'Black coat',
+        img: 'blackcoat.jpg',
+        price: '2809kr',
+        cathegory: 'men'
+      },
+      {
+        title: 'Golden watch',
+        img: 'watch.jpg',
+        price: '2799kr',
+        cathegory: 'accessories'
+      },
+      {
+        title: 'Gold earings',
+        img: 'earings.jpg',
+        price: '800kr',
+        cathegory: 'accessories'
+      },
+      {
+        title: 'Pear black purse',
+        img: 'purse.jpg',
+        price: '2999kr',
+        cathegory: 'bags'
+      },
+      {
+        title: 'Leather shoes',
+        img: 'shoes.jpg',
+        price: '3999kr',
+        cathegory: 'shoes'
       }
-    }
+    ],
+
+    orders: [],
+    cart: [1, 2, 3]
   },
   mutations: {
     setOrder(state, order) {
@@ -173,8 +195,11 @@ export default new Vuex.Store({
   actions: {},
   modules: {},
   getters: {
-    countItems: state => {
-      return state.orders.length
+    newarrivalproducts(state) {
+      return state.newarrivalproducts
+    },
+    countItems(state) {
+      return state.cart.length
     }
   }
 })
