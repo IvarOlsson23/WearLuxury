@@ -1,30 +1,46 @@
 <template>
-  <b-container id="cart">
+  <b-container class="mb-100" id="cart">
     <b-row>
       <!-- CARTITEMS -->
       <b-col>
-        <b-card :title="cartItemLength" class="h-100">
+        <b-card
+          :title="cartItemLength"
+          class="h-100 shadow-sm"
+          border-variant="light"
+        >
           <b-card
             img-src="https://img01.ztat.net/article/spp-media-p1/5e0b5adffa1338618afdae5031987c3e/0d68e7d30bf0477f93d4d0a7272ae7cc.jpg?imwidth=1800"
             img-left
-            img-width="100px"
-            title="Cucci"
-            sub-title="Solglasögon - black/grey"
+            img-width="120px"
+            :title="product.brand"
+            :sub-title="product.name"
             footer-tag="footer"
             footer-bg-variant="light"
             footer-border-variant="light"
+            v-for="(product, index) in $store.state.cart"
+            :key="index"
+            class="mb-4 "
+            footer-class="d-flex flex-column justify-content-around bg-white"
+            border-variant="light"
           >
             <b-card-text>
-              Color: black
+              Color: {{ product.color }}
               <br />
-              Size: XS
+              Size: {{ product.size }}
+              <span class="d-block mt-2">
+                <b-icon
+                  class="cursor"
+                  @click="removeItem(index)"
+                  icon="trash"
+                />
+                Remove
+              </span>
             </b-card-text>
-            <template #footer class="d-flex justify-content-center">
-              <span>
-                <strong>
-                  2000$
-                </strong>
-                <b-button>Button</b-button>
+
+            <template #footer>
+              <b-form-select v-model="product.items" :options="options" />
+              <span class="d-block">
+                <strong> {{ product.price }}$ </strong>
               </span>
             </template>
           </b-card>
@@ -36,6 +52,8 @@
           title="Total amount"
           footer-border-variant="dark"
           footer-tag="footer"
+          class="shadow-sm"
+          border-variant="light"
         >
           <b-card-text>
             <div class="d-flex justify-content-between">
@@ -51,7 +69,7 @@
           <template #footer>
             <div class="d-flex justify-content-between font-weight-bold  ">
               <span>Total amount(inc. vat)</span>
-              <span>{{ totalAmount + 29 }} $</span>
+              <span>{{ totalAmount }} $</span>
             </div>
           </template>
         </b-card>
@@ -287,15 +305,19 @@
           cardExpYear: '',
           cardSecurity: '',
           paypalEmail: '',
-          bitcoinAdress: ''
+          bitcoinAdress: '',
+          boughtProducts: '',
+          totalPrice: ''
         },
         payMethodOptions: ['Visa', 'Paypal', 'Bitcoin', 'Invoice'],
-        submitted: false
+        submitted: false,
+        options: [1, 2, 3, 4]
       }
     },
     methods: {
       onSubmit() {
         this.receiver.boughtProducts = this.$store.state.cart
+        this.receiver.totalPrice = this.totalAmount
         this.$store.commit('setOrder', this.receiver)
         // RESETS DATA
         Object.keys(this.receiver).forEach(key => (this.receiver[key] = ''))
@@ -307,30 +329,19 @@
       }
     },
     computed: {
-      items: {
-        get() {
-          return this.$store.state.cart
-        },
-        set(items) {
-          this.$store.commit('setCartItems', items)
+      totalAmount() {
+        if (this.$store.state.cart.length > 0) {
+          return (
+            this.$store.state.cart
+              .map(item => item.price * item.items)
+              .reduce((total, amount) => total + amount) + 29
+          )
+        } else {
+          return 0
         }
       },
-      totalAmount() {
-        let price = []
-        Object.keys(this.$store.state.cart).forEach(key => {
-          price.push(
-            this.$store.state.cart[key].price *
-              this.$store.state.cart[key].items
-          )
-        })
-
-        return price.reduce(
-          (accumlator, currentvalue) => accumlator + currentvalue,
-          0
-        )
-      },
       cartItemLength() {
-        let productLength = Object.keys(this.$store.state.cart).length
+        let productLength = this.$store.state.cart.length
         let productMessage = productLength === 1 ? ' product)' : ' products)'
         return 'Cart (' + productLength + productMessage
       }
@@ -341,6 +352,8 @@
 <style scoped lang="scss">
   #cart {
     text-align: start;
+    margin-top: 5em;
+    margin-bottom: 5em;
   }
 
   .cursor {
