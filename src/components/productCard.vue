@@ -47,25 +47,29 @@
     data() {
       return {
         toCart: {
-          size: null,
-          color: null
+          size: '',
+          color: ''
         }
       }
     },
     methods: {
       addToCart(product) {
-        this.$store.commit('addCart', product)
+        if (this.toCart.size && this.toCart.color !== '') {
+          this.$store.commit({
+            type: 'addCart',
+            brand: product.brand,
+            name: product.name,
+            price: product.price,
+            item: 1,
+            size: this.toCart.size,
+            color: this.toCart.color
+          })
 
-        /*    this.$store.commit({
-          type: 'addToCart',
-          brand: product.brand,
-          name: product.name,
-          price: product.price,
-          size: this.size,
-          color: this.color
-        })*/
-        console.log(this.toCart.size)
-        console.log(this.toCart.color)
+          console.log(this.toCart.size)
+          console.log(this.toCart.color)
+        } else {
+          return 0
+        }
       }
     }
   }

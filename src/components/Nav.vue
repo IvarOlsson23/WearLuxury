@@ -1,6 +1,6 @@
 <template>
   <div id="appp">
-    <b-container fluid="" id="con" class="bv-example-row">
+    <b-container fluid="" id="con" class="bv-example-row bg-primary">
       <b-row align-v="center">
         <b-col lg="2" id="logo"
           ><img alt="wearluxty logo" src="../assets/logo.png"
