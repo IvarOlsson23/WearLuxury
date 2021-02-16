@@ -1,7 +1,7 @@
 <template>
   <!-- product card -->
 
-  <div>
+  <div id="card-wrapper">
     <b-card :key="id" v-for="(product, id) in $store.state.products">
       <img src="../assets/suit.png" alt="suit" />
       <b-card-text class="text-left">
@@ -13,7 +13,7 @@
         <div id="size">
           <b-form-select
             v-model="toCart.sizes[id]"
-            :options="product.size"
+            :options="Object.values(product.size)"
             label="size"
           />
         </div>
@@ -23,7 +23,7 @@
           <b-form-group label="Color">
             <b-form-radio-group
               v-model="toCart.colors[id]"
-              :options="product.color"
+              :options="Object.values(product.color)"
               name="Color"
               size="sm"
             />
@@ -85,7 +85,7 @@
     max-width: 100%;
   }
 
-  .test {
+  #card-wrapper {
     display: grid;
     grid-template-columns: auto auto auto;
     grid-gap: 50px;

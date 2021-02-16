@@ -1,17 +1,18 @@
 <template>
   <div>
     <div class="order">
-      <h1>The order has been processed</h1>
+      <h1>Your order has been processed</h1>
       <p>Product Number: 0123456789</p>
 
       <h2>You will receive your order</h2>
       <p>Mon 1 March - Thursday 5 March</p>
 
-      <h3>Complete the registration</h3>
-      <!-- <p>Email: JonathanLuxman@email.com</p>
-      <p>Phonenumber: 07XXXXXXX</p> -->
+      <h3>Completed the registration</h3>
     </div>
     <!-- / Order has been processed -->
+
+
+
 
     <!-- Create account for saving info -->
     <p>
@@ -47,6 +48,8 @@
       </b-row>
     </b-container>
 
+
+
     <!-- shipping, delivery, payment @contact info -->
     <h2>Product Information</h2>
     <div>
@@ -81,6 +84,8 @@
         </div>
       </div>
 
+
+
       <!-- product detail with photo -->
 
       <div>
@@ -98,40 +103,13 @@
               />
             </b-col>
             <b-col md="6">
-              <b-card-body title="Dior">
+              <b-card-body title="Gucci">
                 <b-card-text>
-                  <p>Jacket</p>
+                  <p>Solglasögon - black/grey</p>
                   <p>Color: black</p>
-                  <p>Size: xl</p>
-                  <p>Choose: 2</p>
-                  <h3>2900 $</h3>
-                </b-card-text>
-              </b-card-body>
-            </b-col>
-          </b-row>
-        </b-card>
-
-        <b-card
-          no-body
-          class="overflow-hidden"
-          style="max-width: 540px; padding:30px; margin: 30px"
-        >
-          <b-row no-gutters>
-            <b-col md="6">
-              <b-card-img
-                src="https://img01.ztat.net/article/spp-media-p1/5e0b5adffa1338618afdae5031987c3e/0d68e7d30bf0477f93d4d0a7272ae7cc.jpg?imwidth=1800"
-                alt="Product"
-                class="rounded-0"
-              />
-            </b-col>
-            <b-col md="6">
-              <b-card-body title="Hugo boss">
-                <b-card-text>
-                  <p>Dress</p>
-                  <p>Color: red</p>
-                  <p>Size: sm</p>
-                  <p>Choose: 3</p>
-                  <h3>2499 $</h3>
+                  <p>Size: XS</p>
+                  <p>Item/s: 1</p>
+                  <h3>2000 $</h3>
                 </b-card-text>
               </b-card-body>
             </b-col>
@@ -150,11 +128,15 @@
             <b-card-text>Subtotal: 2000 $</b-card-text>
             <b-card-text>Shipping: 29 $</b-card-text>
             <h3>Total amount(inc. vat)</h3>
-            <p>2129 $</p>
+            <p>2029 $</p>
           </b-card>
         </b-card-group>
       </div>
     </div>
+
+
+
+
     <!-- Rating -->
 
     <div>
@@ -162,7 +144,7 @@
         for="rating-5"
         class="text-center"
         style="padding:15px; margin: 15px"
-        >Based on 1900 reviews</label
+        > <h3> Based on 1900 reviews </h3> </label
       >
       <b-form-rating
         style="max-width: 1250px; padding:15px; margin: 15px"
@@ -173,6 +155,8 @@
       />
       <p class="mt-2">{{ value5 }}</p>
     </div>
+
+
 
     <!-- Back to shop/Home -->
 
@@ -187,6 +171,10 @@
     </div>
   </div>
 </template>
+
+
+
+<!-- Script -->
 
 <script>
   export default {
@@ -204,6 +192,8 @@
     }
   }
 </script>
+
+
 
 <!-- Style -->
 
