@@ -10,8 +10,18 @@ export default new Vuex.Store({
         brand: 'Dole & Gobana',
         name: 'Jacket',
         price: '2900',
-        color: '',
-        size: ''
+        color: [
+          { text: 'Black', value: 'Black' },
+          { text: 'White', value: 'White' },
+          { text: 'Blue', value: 'blue' }
+        ],
+        size: [
+          { text: 'XS', value: 'XS' },
+          { text: 'S', value: 'S' },
+          { text: 'M', value: 'M' },
+          { text: 'L', value: 'L' },
+          { text: 'XL', value: 'XL' }
+        ]
       },
       'd6b95aeb-70ef-4a85-97d4-e916a2039cf9': {
         name: 'Bluse',
@@ -65,7 +75,6 @@ export default new Vuex.Store({
         size: 'xl'
       }
     },
-
     orders: [1, 2, 3],
     cart: {
       '5895af63-e246-42bc-b629-bf607f004da7': {
@@ -93,6 +102,9 @@ export default new Vuex.Store({
     },
     removeItem(state, index) {
       Vue.delete(state.cart, index)
+    },
+    addCart(state, toCart) {
+      state.cart.push(toCart)
     }
   },
   actions: {},

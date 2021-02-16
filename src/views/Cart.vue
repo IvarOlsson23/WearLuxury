@@ -3,7 +3,7 @@
     <b-row>
       <!-- CARTITEMS -->
       <b-col>
-        <b-card title="Cart  cartItemLength  products" class="h-100">
+        <b-card :title="cartItemLength" class="h-100">
           <b-card
             img-src="https://img01.ztat.net/article/spp-media-p1/5e0b5adffa1338618afdae5031987c3e/0d68e7d30bf0477f93d4d0a7272ae7cc.jpg?imwidth=1800"
             img-left
@@ -295,8 +295,42 @@
     },
     methods: {
       onSubmit() {
-        this.submitted = true
-        alert('Din produkt är skickad')
+        this.receiver.boughtProducts = this.$store.state.cart
+        this.$store.commit('setOrder', this.receiver)
+        // RESETS DATA
+        Object.keys(this.receiver).forEach(key => (this.receiver[key] = ''))
+        // GOES TO NEXT PAGE
+        this.$router.push({ name: 'OrderConfirm' })
+      },
+      removeItem(index) {
+        this.$store.commit('removeItem', index)
+      }
+    },
+    computed: {
+      items: {
+        get() {
+          return this.$store.state.cart
+        },
+        set(items) {
+          this.$store.commit('setCartItems', items)
+        }
+      },
+      totalAmount() {
+        let totalAmount = Object.keys(this.$store.state.cart).forEach(key => {
+          this.$store.state.cart[key].price
+          console.log(totalAmount)
+        })
+        return totalAmount
+      },
+      cartItemLength() {
+        let productLength = Object.keys(this.$store.state.cart).length
+        let productMessage
+        if (productLength === 1) {
+          productMessage = ' product)'
+        } else {
+          productMessage = ' products)'
+        }
+        return 'Cart ' + '(' + productLength + productMessage
       }
     }
   }
