@@ -67,7 +67,7 @@
             price: product.price,
             color: this.toCart.colors[id],
             size: this.toCart.sizes[id],
-            item: 1
+            items: 1
           })
         } else {
           return 0
