@@ -139,8 +139,8 @@ export default new Vuex.Store({
       }
     },
     orders: [],
-    cart: {
-      '5895af63-e246-42bc-b629-bf607f004da7': {
+    cart: [
+      {
         brand: 'Dior',
         name: 'Jacket',
         price: 2900,
@@ -148,8 +148,7 @@ export default new Vuex.Store({
         color: 'black',
         size: 'xl'
       },
-
-      '94a1304a-8a25-459c-aa9a-e439e25261a9': {
+      {
         brand: 'Hugo boss',
         name: 'Dress',
         price: 2499,
@@ -157,7 +156,7 @@ export default new Vuex.Store({
         color: 'red',
         size: 'sm'
       }
-    }
+    ]
   },
   mutations: {
     setOrder(state, order) {

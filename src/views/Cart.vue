@@ -61,7 +61,7 @@
           <template #footer>
             <div class="d-flex justify-content-between font-weight-bold  ">
               <span>Total amount(inc. vat)</span>
-              <span>{{ totalAmount + 29 }} $</span>
+              <span>{{ totalAmount }} $</span>
             </div>
           </template>
         </b-card>
@@ -298,7 +298,6 @@
           cardSecurity: '',
           paypalEmail: '',
           bitcoinAdress: '',
-          invoice: false,
           boughtProducts: '',
           totalPrice: ''
         },
@@ -310,6 +309,7 @@
     methods: {
       onSubmit() {
         this.receiver.boughtProducts = this.$store.state.cart
+        this.receiver.totalPrice = this.totalAmount
         this.$store.commit('setOrder', this.receiver)
         // RESETS DATA
         Object.keys(this.receiver).forEach(key => (this.receiver[key] = ''))
@@ -321,30 +321,19 @@
       }
     },
     computed: {
-      items: {
-        get() {
-          return this.$store.state.cart
-        },
-        set(items) {
-          this.$store.commit('setCartItems', items)
+      totalAmount() {
+        if (this.$store.state.cart.length > 0) {
+          return (
+            this.$store.state.cart
+              .map(item => item.price * item.items)
+              .reduce((total, amount) => total + amount) + 29
+          )
+        } else {
+          return 0
         }
       },
-      totalAmount() {
-        let price = []
-        Object.keys(this.$store.state.cart).forEach(key => {
-          price.push(
-            this.$store.state.cart[key].price *
-              this.$store.state.cart[key].items
-          )
-        })
-
-        return price.reduce(
-          (accumlator, currentvalue) => accumlator + currentvalue,
-          0
-        )
-      },
       cartItemLength() {
-        let productLength = Object.keys(this.$store.state.cart).length
+        let productLength = this.$store.state.cart.length
         let productMessage = productLength === 1 ? ' product)' : ' products)'
         return 'Cart (' + productLength + productMessage
       }
