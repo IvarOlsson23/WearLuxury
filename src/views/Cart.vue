@@ -7,7 +7,7 @@
           <b-card
             img-src="https://img01.ztat.net/article/spp-media-p1/5e0b5adffa1338618afdae5031987c3e/0d68e7d30bf0477f93d4d0a7272ae7cc.jpg?imwidth=1800"
             img-left
-            img-width="100px"
+            img-width="120px"
             :title="product.brand"
             :sub-title="product.name"
             footer-tag="footer"
@@ -16,25 +16,25 @@
             v-for="(product, index) in $store.state.cart"
             :key="index"
             class="mb-4"
+            footer-class="d-flex flex-column justify-content-between bg-white"
           >
             <b-card-text>
               Color: {{ product.color }}
               <br />
               Size: {{ product.size }}
-            </b-card-text>
-            <template #footer>
-              <span>
-                <strong> {{ product.price }}$ </strong>
-              </span>
-              <br />
-              <span>
+              <span class="d-block mt-2">
                 <b-icon
                   class="cursor"
                   @click="removeItem(index)"
                   icon="trash"
                 />
                 Remove
-                <b-form-select v-model="product.items" :options="options" />
+              </span>
+            </b-card-text>
+            <template #footer>
+              <b-form-select v-model="product.items" :options="options" />
+              <span class="d-block">
+                <strong> {{ product.price }}$ </strong>
               </span>
             </template>
           </b-card>
@@ -50,7 +50,7 @@
           <b-card-text>
             <div class="d-flex justify-content-between">
               <span>Subtotal:</span>
-              <span>2000 $</span>
+              <span>{{ totalAmount }} $</span>
             </div>
 
             <div class="d-flex justify-content-between">
@@ -298,8 +298,8 @@
           cardSecurity: '',
           paypalEmail: '',
           bitcoinAdress: '',
-          invoice: false,
-          boughtProducts: ''
+          boughtProducts: '',
+          totalPrice: ''
         },
         payMethodOptions: ['Visa', 'Paypal', 'Bitcoin', 'Invoice'],
         submitted: false,
@@ -309,6 +309,7 @@
     methods: {
       onSubmit() {
         this.receiver.boughtProducts = this.$store.state.cart
+        this.receiver.totalPrice = this.totalAmount
         this.$store.commit('setOrder', this.receiver)
         // RESETS DATA
         Object.keys(this.receiver).forEach(key => (this.receiver[key] = ''))
@@ -320,36 +321,26 @@
       }
     },
     computed: {
-      items: {
-        get() {
-          return this.$store.state.cart
-        },
-        set(items) {
-          this.$store.commit('setCartItems', items)
-        }
-      },
       totalAmount() {
-        let totalAmount = Object.keys(this.$store.state.cart).forEach(key => {
-          this.$store.state.cart[key].price
-          console.log(totalAmount)
-        })
-        return totalAmount
+        if (this.$store.state.cart.length > 0) {
+          return (
+            this.$store.state.cart
+              .map(item => item.price * item.items)
+              .reduce((total, amount) => total + amount) + 29
+          )
+        } else {
+          return 0
+        }
       },
       cartItemLength() {
-        let productLength = Object.keys(this.$store.state.cart).length
-        let productMessage
-        if (productLength === 1) {
-          productMessage = ' product)'
-        } else {
-          productMessage = ' products)'
-        }
-        return 'Cart ' + '(' + productLength + productMessage
+        let productLength = this.$store.state.cart.length
+        let productMessage = productLength === 1 ? ' product)' : ' products)'
+        return 'Cart (' + productLength + productMessage
       }
     }
   }
 </script>
 
-<!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped lang="scss">
   #cart {
     text-align: start;
