@@ -299,7 +299,8 @@
           paypalEmail: '',
           bitcoinAdress: '',
           invoice: false,
-          boughtProducts: ''
+          boughtProducts: '',
+          totalPrice: ''
         },
         payMethodOptions: ['Visa', 'Paypal', 'Bitcoin', 'Invoice'],
         submitted: false,
