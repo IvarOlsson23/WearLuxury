@@ -139,7 +139,28 @@ export default new Vuex.Store({
       }
     },
     orders: [],
+<<<<<<< HEAD
     cart: [1, 2, 3]
+=======
+    cart: [
+      {
+        brand: 'Dior',
+        name: 'Jacket',
+        price: 2900,
+        items: 2,
+        color: 'black',
+        size: 'xl'
+      },
+      {
+        brand: 'Hugo boss',
+        name: 'Dress',
+        price: 2499,
+        items: 3,
+        color: 'red',
+        size: 'sm'
+      }
+    ]
+>>>>>>> 2f240c0323c516c540c08716b9d14bc5293c23ab
   },
   mutations: {
     setOrder(state, order) {
