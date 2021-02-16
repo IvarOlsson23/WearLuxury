@@ -71,7 +71,7 @@ export default new Vuex.Store({
       '5895af63-e246-42bc-b629-bf607f004da7': {
         brand: 'Dior',
         name: 'Jacket',
-        price: '2900',
+        price: 2900,
         items: 2,
         color: 'black',
         size: 'xl'
@@ -80,7 +80,7 @@ export default new Vuex.Store({
       '94a1304a-8a25-459c-aa9a-e439e25261a9': {
         brand: 'Hugo boss',
         name: 'Dress',
-        price: '2499',
+        price: 2499,
         items: 3,
         color: 'red',
         size: 'sm'

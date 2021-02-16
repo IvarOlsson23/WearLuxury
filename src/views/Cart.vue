@@ -50,7 +50,7 @@
           <b-card-text>
             <div class="d-flex justify-content-between">
               <span>Subtotal:</span>
-              <span>2000 $</span>
+              <span>{{ totalAmount }} $</span>
             </div>
 
             <div class="d-flex justify-content-between">
@@ -61,7 +61,7 @@
           <template #footer>
             <div class="d-flex justify-content-between font-weight-bold  ">
               <span>Total amount(inc. vat)</span>
-              <span>{{ totalAmount }} $</span>
+              <span>{{ totalAmount + 29 }} $</span>
             </div>
           </template>
         </b-card>
@@ -329,27 +329,28 @@
         }
       },
       totalAmount() {
-        let totalAmount = Object.keys(this.$store.state.cart).forEach(key => {
-          this.$store.state.cart[key].price
-          console.log(totalAmount)
+        let price = []
+        Object.keys(this.$store.state.cart).forEach(key => {
+          price.push(
+            this.$store.state.cart[key].price *
+              this.$store.state.cart[key].items
+          )
         })
-        return totalAmount
+
+        return price.reduce(
+          (accumlator, currentvalue) => accumlator + currentvalue,
+          0
+        )
       },
       cartItemLength() {
         let productLength = Object.keys(this.$store.state.cart).length
-        let productMessage
-        if (productLength === 1) {
-          productMessage = ' product)'
-        } else {
-          productMessage = ' products)'
-        }
-        return 'Cart ' + '(' + productLength + productMessage
+        let productMessage = productLength === 1 ? ' product)' : ' products)'
+        return 'Cart (' + productLength + productMessage
       }
     }
   }
 </script>
 
-<!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped lang="scss">
   #cart {
     text-align: start;
