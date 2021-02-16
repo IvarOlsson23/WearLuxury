@@ -7,7 +7,7 @@
           <b-card
             img-src="https://img01.ztat.net/article/spp-media-p1/5e0b5adffa1338618afdae5031987c3e/0d68e7d30bf0477f93d4d0a7272ae7cc.jpg?imwidth=1800"
             img-left
-            img-width="100px"
+            img-width="120px"
             :title="product.brand"
             :sub-title="product.name"
             footer-tag="footer"
@@ -16,25 +16,25 @@
             v-for="(product, index) in $store.state.cart"
             :key="index"
             class="mb-4"
+            footer-class="d-flex flex-column justify-content-between bg-white"
           >
             <b-card-text>
               Color: {{ product.color }}
               <br />
               Size: {{ product.size }}
-            </b-card-text>
-            <template #footer>
-              <span>
-                <strong> {{ product.price }}$ </strong>
-              </span>
-              <br />
-              <span>
+              <span class="d-block mt-2">
                 <b-icon
                   class="cursor"
                   @click="removeItem(index)"
                   icon="trash"
                 />
                 Remove
-                <b-form-select v-model="product.items" :options="options" />
+              </span>
+            </b-card-text>
+            <template #footer>
+              <b-form-select v-model="product.items" :options="options" />
+              <span class="d-block">
+                <strong> {{ product.price }}$ </strong>
               </span>
             </template>
           </b-card>
