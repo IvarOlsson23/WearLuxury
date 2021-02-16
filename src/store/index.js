@@ -130,46 +130,6 @@ export default new Vuex.Store({
         ]
       }
     },
-    newarrivalproducts: [
-      {
-        title: 'Black lace dress',
-        img: 'blackdress.jpg',
-        price: '1999kr',
-        cathegory: 'women'
-      },
-
-      {
-        title: 'Black coat',
-        img: 'blackcoat.jpg',
-        price: '2809kr',
-        cathegory: 'men'
-      },
-      {
-        title: 'Golden watch',
-        img: 'watch.jpg',
-        price: '2799kr',
-        cathegory: 'accessories'
-      },
-      {
-        title: 'Gold earings',
-        img: 'earings.jpg',
-        price: '800kr',
-        cathegory: 'accessories'
-      },
-      {
-        title: 'Pear black purse',
-        img: 'purse.jpg',
-        price: '2999kr',
-        cathegory: 'bags'
-      },
-      {
-        title: 'Leather shoes',
-        img: 'shoes.jpg',
-        price: '3999kr',
-        cathegory: 'shoes'
-      }
-    ],
-
     orders: [],
     cart: []
   },
@@ -180,8 +140,8 @@ export default new Vuex.Store({
     removeItem(state, index) {
       Vue.delete(state.cart, index)
     },
-    addCart(state, toCart) {
-      state.cart.push(toCart)
+    addCart(state, Cart) {
+      state.cart.push(Cart)
     }
   },
   actions: {},
@@ -189,6 +149,9 @@ export default new Vuex.Store({
   getters: {
     newarrivalproducts(state) {
       return state.newarrivalproducts
+    },
+    countItems(state) {
+      return state.cart.length
     }
   }
 })

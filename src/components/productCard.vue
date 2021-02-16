@@ -84,4 +84,10 @@
   img {
     max-width: 100%;
   }
+
+  .test {
+    display: grid;
+    grid-template-columns: auto auto auto;
+    grid-gap: 50px;
+  }
 </style>

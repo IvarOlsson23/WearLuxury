@@ -8,6 +8,14 @@
       <p class="nav-select" @click="productOverlay = !productOverlay">
         Women
       </p>
+      <router-link
+        to="/Cart"
+        class="cart"
+        v-b-popover.hover.top="' - Du har 3 i kundvagnen | Totalt xxxx SEK'"
+        ><b-icon-cart-dash />
+      </router-link>
+
+      <div>{{ countItems }}</div>
     </div>
     <div id="nav-overlay" v-show="!productOverlay">
       <div id="product-list">
@@ -35,6 +43,7 @@
 </template>
 
 <script>
+  import { mapGetters } from 'vuex'
   export default {
     name: 'Home',
     components: {},
@@ -42,7 +51,8 @@
       return {
         productOverlay: true
       }
-    }
+    },
+    computed: mapGetters(['countItems'])
   }
 </script>
 
@@ -98,9 +108,9 @@
     background-color: rgb(247, 247, 247);
     position: absolute;
     width: 100%;
-    height: 220px;
+    height: 180px;
     left: 0px;
-    top: 425px;
+    top: 490px;
     -webkit-animation: fadein 0.8s;
     /* Safari, Chrome and Opera > 12.1 */
     -moz-animation: fadein 0.8s;
