@@ -139,7 +139,7 @@ export default new Vuex.Store({
       }
     },
     orders: [],
-    cart: [1, 2, 3]
+    cart: [1, 2, 3, 5]
   },
   mutations: {
     setOrder(state, order) {
