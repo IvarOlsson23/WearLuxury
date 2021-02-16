@@ -3,9 +3,6 @@
     <b-container class="bv-example-row bv-example-row-flex-cols bg-light">
       <b-row>
         <b-col cols="3"><h1 class="header">New arrivals</h1></b-col>
-        <b-col cols="6" class="textcenter">
-          <img src="logo.png" width="150px" />
-        </b-col>
         <!-- Dropdown menu -->
         <b-col cols="3">
           <div class="maindropdown float-right light">
@@ -47,19 +44,15 @@
       </b-row>
       <!-- Productcards -->
       <template>
-        <div class="mt-5 mb-5">
+        <div class="mt-5 mb-5 carousel">
           <b-carousel
             id="carousel-1"
-            v-model="slide"
-            :interval="4000"
             controls
             indicators
             background="#ababab"
             img-width="400px"
             img-height="200px"
             style="text-shadow: 1px 1px 2px #333; max-height:500px; overflow:hidden;"
-            @sliding-start="onSlideStart"
-            @sliding-end="onSlideEnd"
           >
             <!-- Text slides with image -->
             <b-carousel-slide
@@ -123,7 +116,7 @@
       </div>
       <!-- Productcards -->
 
-      <!-- <b-row class="mt-5">
+      <b-row class="mt-5">
         <template v-for="(dress, index) in products">
           <b-card
             :key="index"
@@ -144,11 +137,10 @@
             </div>
           </b-card>
         </template>
-      </b-row> -->
+      </b-row>
     </b-container>
   </div>
 </template>
-align-v="left"
 
 <script>
   import productCard from '@/components/productCard.vue'
