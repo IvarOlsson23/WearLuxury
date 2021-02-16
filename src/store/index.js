@@ -49,7 +49,6 @@ export default new Vuex.Store({
         brand: 'Dole & Gobana',
         name: 'Jacket',
         price: '2900',
-
         color: [
           { text: 'Black', value: 'Black' },
           { text: 'White', value: 'White' },
@@ -66,7 +65,6 @@ export default new Vuex.Store({
       'd6b95aeb-70ef-4a85-97d4-e916a2039cf9': {
         name: 'Bluse',
         price: '1200',
-
         color: [
           { text: 'Black', value: 'Black' },
           { text: 'White', value: 'White' },
@@ -83,7 +81,6 @@ export default new Vuex.Store({
       '94a1304a-8a25-459c-aa9a-e439e25261a9': {
         name: 'Dress',
         price: '2499',
-
         color: [
           { text: 'Black', value: 'Black' },
           { text: 'White', value: 'White' },
@@ -101,7 +98,6 @@ export default new Vuex.Store({
         brand: 'Dior',
         name: 'Jacket',
         price: '2900',
-
         color: [
           { text: 'Black', value: 'Black' },
           { text: 'White', value: 'White' },
@@ -119,7 +115,6 @@ export default new Vuex.Store({
         brand: 'Dior',
         name: 'Jacket',
         price: '2900',
-
         color: [
           { text: 'Black', value: 'Black' },
           { text: 'White', value: 'White' }
@@ -136,7 +131,6 @@ export default new Vuex.Store({
         brand: 'Dior',
         name: 'Jacket',
         price: '2900',
-
         color: [
           { text: 'Black', value: 'Black' },
           { text: 'White', value: 'White' },
@@ -154,7 +148,6 @@ export default new Vuex.Store({
         brand: 'Gucci',
         name: 'Handbag',
         price: '19000',
-
         color: '',
         size: ''
       },
@@ -162,7 +155,6 @@ export default new Vuex.Store({
         brand: 'Dior',
         name: 'Jacket',
         price: '2900',
-
         color: [
           { text: 'Black', value: 'Black' },
           { text: 'White', value: 'White' },
@@ -178,24 +170,7 @@ export default new Vuex.Store({
       }
     },
     orders: [],
-    cart: [
-      {
-        brand: 'Dior',
-        name: 'Jacket',
-        price: 2900,
-        items: 2,
-        color: 'black',
-        size: 'xl'
-      },
-      {
-        brand: 'Hugo boss',
-        name: 'Dress',
-        price: 2499,
-        items: 3,
-        color: 'red',
-        size: 'sm'
-      }
-    ]
+    cart: []
   },
   mutations: {
     setOrder(state, order) {

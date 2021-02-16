@@ -1,8 +1,8 @@
 <template>
   <!-- product card -->
 
-  <div class="test">
-    <b-card :key="product.uuid" v-for="product in $store.state.products">
+  <div>
+    <b-card :key="id" v-for="(product, id) in $store.state.products">
       <img src="../assets/suit.png" alt="suit" />
       <b-card-text class="text-left">
         <h3>{{ product.brand }}</h3>
@@ -12,7 +12,7 @@
         <p>Size</p>
         <div id="size">
           <b-form-select
-            v-model="toCart.size"
+            v-model="toCart.sizes[id]"
             :options="product.size"
             label="size"
           />
@@ -22,7 +22,7 @@
         <div id="colors">
           <b-form-group label="Color">
             <b-form-radio-group
-              v-model="toCart.color"
+              v-model="toCart.colors[id]"
               :options="product.color"
               name="Color"
               size="sm"
@@ -33,9 +33,9 @@
         <div class="text-right">
           <p>{{ product.price }} $</p>
           <!--  Add to cart button -->
-          <b-button variant="primary" @click="addToCart(product)"
-            ><b-icon icon="cart-plus"
-          /></b-button>
+          <b-button variant="primary" @click="addToCart(product, id)"
+            >Add to cart</b-button
+          >
         </div>
       </b-card-text>
     </b-card>
@@ -47,26 +47,28 @@
     data() {
       return {
         toCart: {
-          size: '',
-          color: ''
+          sizes: {},
+          colors: {}
         }
       }
     },
     methods: {
-      addToCart(product) {
-        if (this.toCart.size && this.toCart.color !== '') {
+      addToCart(product, id) {
+        console.log(product)
+        console.log(this.toCart.sizes)
+        if (
+          this.toCart.sizes[id] !== undefined &&
+          this.toCart.colors[id] !== undefined
+        ) {
           this.$store.commit({
             type: 'addCart',
             brand: product.brand,
             name: product.name,
             price: product.price,
-            item: 1,
-            size: this.toCart.size,
-            color: this.toCart.color
+            color: this.toCart.colors[id],
+            size: this.toCart.sizes[id],
+            items: 1
           })
-
-          console.log(this.toCart.size)
-          console.log(this.toCart.color)
         } else {
           return 0
         }

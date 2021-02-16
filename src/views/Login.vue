@@ -13,7 +13,7 @@
   }
 </script>
 
-<style>
+<style scoped>
   .ma {
     align-content: center;
     color: white;
