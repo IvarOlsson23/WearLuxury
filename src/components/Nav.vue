@@ -9,7 +9,7 @@
           ><router-link to="/" class="white-text">Home</router-link></b-col
         >
 
-        <b-col  id="products-con" >
+        <b-col id="products-con">
           <div class="mousover-div" @mouseover="onOver" @mouseleave="onLeave">
             <b-dropdown
               class="btn-secondary, primary"
@@ -22,10 +22,10 @@
                 </router-link></b-dropdown-item
               >
               <b-dropdown-item
-                ><router-link to="/Products" >Man</router-link></b-dropdown-item
+                ><router-link to="/Products">Man</router-link></b-dropdown-item
               >
               <b-dropdown-item
-                ><router-link to="/Products" 
+                ><router-link to="/Products"
                   >Woman</router-link
                 ></b-dropdown-item
               >
@@ -33,8 +33,10 @@
           </div></b-col
         >
 
-       <b-col id="about-con" class="primary" 
-          ><router-link to="/about" class="white-text">About</router-link></b-col
+        <b-col id="about-con" class="primary"
+          ><router-link to="/about" class="white-text"
+            >About</router-link
+          ></b-col
         >
 
         <b-col id="logincon"
@@ -65,21 +67,30 @@
       <span>{{ countItems }}</span></b-col> 
          <b-col sm="auto"
           ><form class="form-inline">
-           <button
+            <button
               class="btn btn-outline-success my-2 my-sm-0, sok-button"
               type="submit"
             >
-             <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-search, white-text" viewBox="0 0 16 16">
-  <path d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0z"/>
-</svg>
-            </button> <input
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="16"
+                height="16"
+                fill="currentColor"
+                class="bi bi-search, white-text"
+                viewBox="0 0 16 16"
+              >
+                <path
+                  d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0z"
+                />
+              </svg>
+            </button>
+            <input
               class="form-control mr-sm-2, sok-felt"
               type="search"
               placeholder="Search"
               aria-label="Search"
-            />
-          </form></b-col
-        >
+            /></form
+        ></b-col>
       </b-row>
     </b-container>
   </div>
@@ -132,9 +143,8 @@ import { mapGetters } from 'vuex'
 
 
 
-  #home-con{
+  #home-con {
     text-align: right;
-   
   }
 
   #logincon {
@@ -142,11 +152,9 @@ import { mapGetters } from 'vuex'
     max-width: 5%;
   }
 
-
   #con {
     background-color: #182e47;
 
-   
     .sok-felt {
       border-radius: 25px;
       border-color: #ffffff;
@@ -161,15 +169,13 @@ import { mapGetters } from 'vuex'
       background-color: #182e47;
     }
 
- 
     #logo-con {
       width: auto;
       padding-left: 0px;
       margin-left: 0px;
-     
     }
 
-    #logo{
+    #logo {
       height: 50px;
     }
     a::hover {
@@ -186,9 +192,5 @@ import { mapGetters } from 'vuex'
         transition: all 0.2s ease;
       }
     }
- 
-  
   }
-
- 
 </style>

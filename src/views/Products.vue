@@ -51,8 +51,6 @@
           <b-carousel
             id="carousel-1"
             :interval="4000"
-            controls
-            indicators
             background="#ababab"
             img-width="400px"
             img-height="200px"
@@ -120,14 +118,13 @@
       </div>
       <!-- Productcards -->
 
-      <!-- <b-row class="mt-5">
+      <b-row class="mt-5">
         <template v-for="(dress, index) in products">
           <b-card
             :key="index"
             :title="dress.title"
             :img-src="dress.img"
             img-alt="Image"
-            img-top
             tag="article"
             class="mb-2 col-4 productcontainer"
           >
@@ -141,7 +138,7 @@
             </div>
           </b-card>
         </template>
-      </b-row> -->
+      </b-row>
     </b-container>
   </div>
 </template>
