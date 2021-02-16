@@ -13,7 +13,7 @@
         <div id="size">
           <b-form-select
             v-model="toCart.sizes[id]"
-            :options="product.size"
+            :options="Object.values(product.size)"
             label="size"
           />
         </div>
@@ -23,7 +23,7 @@
           <b-form-group label="Color">
             <b-form-radio-group
               v-model="toCart.colors[id]"
-              :options="product.color"
+              :options="Object.values(product.color)"
               name="Color"
               size="sm"
             />

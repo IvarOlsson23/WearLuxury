@@ -50,7 +50,6 @@
         <div class="mt-5 mb-5">
           <b-carousel
             id="carousel-1"
-            v-model="slide"
             :interval="4000"
             controls
             indicators
@@ -58,8 +57,6 @@
             img-width="400px"
             img-height="200px"
             style="text-shadow: 1px 1px 2px #333; max-height:500px; overflow:hidden;"
-            @sliding-start="onSlideStart"
-            @sliding-end="onSlideEnd"
           >
             <!-- Text slides with image -->
             <b-carousel-slide
@@ -148,7 +145,6 @@
     </b-container>
   </div>
 </template>
-align-v="left"
 
 <script>
   import productCard from '@/components/productCard.vue'
