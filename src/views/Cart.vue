@@ -320,9 +320,9 @@
         this.receiver.totalPrice = this.totalAmount
         this.$store.commit('setOrder', this.receiver)
         // RESETS DATA
+        this.$router.push({ name: 'OrderConfirm' })
         Object.keys(this.receiver).forEach(key => (this.receiver[key] = ''))
         // GOES TO NEXT PAGE
-        this.$router.push({ name: 'OrderConfirm' })
       },
       removeItem(index) {
         this.$store.commit('removeItem', index)
