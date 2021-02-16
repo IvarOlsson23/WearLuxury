@@ -53,7 +53,7 @@
           footer-border-variant="dark"
           footer-tag="footer"
           class="shadow-sm"
-          border-variant="light"
+          border-variant="light "
         >
           <b-card-text>
             <div class="d-flex justify-content-between">
@@ -79,7 +79,7 @@
     <!-- PAYMENT METHOD -->
     <b-form @submit.prevent="onSubmit">
       <b-row class="mt-5">
-        <b-col>
+        <b-col cols="12" md="6">
           <h2>Payment Method</h2>
           <b-form-group
             id="paymentMethod-group"
@@ -196,7 +196,7 @@
         </b-col>
 
         <!-- ContactINFO -->
-        <b-col>
+        <b-col cols="12" md="6">
           <h2>Contact information</h2>
           <b-form-group id="surname-group" label-for="surname" label="Surname">
             <b-form-input
@@ -320,9 +320,9 @@
         this.receiver.totalPrice = this.totalAmount
         this.$store.commit('setOrder', this.receiver)
         // RESETS DATA
+        this.$router.push({ name: 'OrderConfirm' })
         Object.keys(this.receiver).forEach(key => (this.receiver[key] = ''))
         // GOES TO NEXT PAGE
-        this.$router.push({ name: 'OrderConfirm' })
       },
       removeItem(index) {
         this.$store.commit('removeItem', index)
