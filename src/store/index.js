@@ -139,9 +139,6 @@ export default new Vuex.Store({
       }
     },
     orders: [],
-<<<<<<< HEAD
-    cart: [1, 2, 3]
-=======
     cart: [
       {
         brand: 'Dior',
@@ -160,7 +157,6 @@ export default new Vuex.Store({
         size: 'sm'
       }
     ]
->>>>>>> 2f240c0323c516c540c08716b9d14bc5293c23ab
   },
   mutations: {
     setOrder(state, order) {
