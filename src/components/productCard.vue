@@ -20,7 +20,6 @@
             v-model="toCart.sizes[id]"
             :options="Object.values(product.size)"
             label="size"
-            required
           />
         </div>
 
@@ -32,7 +31,6 @@
               :options="Object.values(product.color)"
               name="Color"
               size="sm"
-              required
             />
           </b-form-group>
         </div>
@@ -93,9 +91,9 @@
           this.toCart.sizes[id] !== undefined &&
           this.toCart.colors[id] !== undefined
         ) {
-          return alert('Item added to cart')
+          alert('Item added to cart')
         } else {
-          return alert('Please pick color and size')
+          alert('Please pick color and size')
         }
       }
     }
