@@ -41,7 +41,7 @@
             to="/Cart"
             class="cart"
             v-b-popover.hover.top="
-              ' - Du har ' + countItems + ' i kundvagnen | Totalt xxxx SEK'
+              ' - Your shopping car contains ' + countItems + ' item | Totalt ' + totalAmount + ' $'
             "
             ><svg
               xmlns="http://www.w3.org/2000/svg"
@@ -57,7 +57,7 @@
             </svg>
           </router-link>
 
-          <span>{{ countItems }}</span></b-col
+          <span id="countitems">{{ countItems }}</span></b-col
         >
         <b-col sm="auto"
           ><form class="form-inline">
@@ -118,14 +118,17 @@
 <script>
   import { mapGetters } from 'vuex'
   export default {
-    name: 'Home',
+    name: 'Home, Cart' ,
     components: {},
     data() {
       return {
-        productOverlay: true
+        productOverlay: true,
+        
       }
     },
-    computed: mapGetters(['countItems']),
+    computed: mapGetters(['countItems'], ['totalAmount']),
+    
+    
     methods: {
       onOver() {
         this.$refs.dropdown.visible = true
@@ -133,7 +136,8 @@
       onLeave() {
         this.$refs.dropdown.visible = false
       }
-    }
+    },
+   
   }
 </script>
 
@@ -192,6 +196,13 @@
   #korg-con {
     text-align: left;
     max-width: 5%;
+  }
+  #countitems{
+    border: 1px red solid;
+    background-color: red;
+    border-radius: 50%;
+    padding: 0px 3px 0px 3px;
+    margin-bottom: 4px;
   }
   .list li {
     list-style: none;
@@ -264,4 +275,38 @@
     margin: 0;
     width: 25%;
   }
+
+  @media only screen and (max-width: 1491px) {
+#korg-con {
+  max-width: 8%;
+}
+
+  }
+
+   @media only screen and (max-width: 1100px) {
+#home-con {
+  max-width: 5%;
+}
+
+#logo-con {
+margin-top: 10px;
+
+}
+
+  }
+
+   @media only screen and (max-width: 890px) {
+#korg-con {
+  max-width: 10%;
+}
+
+  }
+    @media only screen and (max-width: 580px) {
+#countitems {
+  display: none;
+}
+
+  }
+    
+  
 </style>
