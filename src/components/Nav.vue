@@ -10,7 +10,7 @@
           ><router-link to="/" class="white-text">Home</router-link></b-col
         >
         <b-col id="products-con" class="primary">
-          <p class="white-text" @click="productOverlay = !productOverlay">
+          <p  id="products-text" class="white-text" @click="productOverlay = !productOverlay">
             Products
           </p>
         </b-col>
@@ -175,12 +175,16 @@
   }
   #products-con {
     text-align: center;
+  
   }
 
   #product-list {
     width: 100%;
     text-align: left;
   }
+#products-text{
+  cursor: pointer;
+}
 
   #woman-list-con {
     width: 50%;
@@ -201,7 +205,7 @@
     border: 1px red solid;
     background-color: red;
     border-radius: 50%;
-    padding: 0px 3px 0px 3px;
+    padding: 0px 5px 0px 5px;
     margin-bottom: 4px;
   }
   .list li {
@@ -276,7 +280,7 @@
     width: 25%;
   }
 
-  @media only screen and (max-width: 1491px) {
+  @media only screen and (max-width: 1518px) {
 #korg-con {
   max-width: 8%;
 }
@@ -295,7 +299,7 @@ margin-top: 10px;
 
   }
 
-   @media only screen and (max-width: 890px) {
+   @media only screen and (max-width: 949px) {
 #korg-con {
   max-width: 10%;
 }
