@@ -22,13 +22,7 @@
             v-model="toCart.sizes[id]"
             :options="Object.values(product.size)"
             label="size"
-          >
-            <template #first>
-              <b-form-select-option :value="null" disabled
-                >-- Please select size --</b-form-select-option
-              >
-            </template>
-          </b-form-select>
+          />
         </div>
 
         <!--  Color dots -->
@@ -46,7 +40,14 @@
         <div class="text-right">
           <!--  Add to cart button -->
 
-          <b-button block variant="primary" @click="addToCart(product, id)"
+          <b-button
+            v-b-modal.modal-no-backdrop
+            block
+            variant="primary"
+            @click="
+              addToCart(product, id)
+              textPop(id)
+            "
             >Add to cart</b-button
           >
         </div>
@@ -78,10 +79,22 @@
             price: product.price,
             color: this.toCart.colors[id],
             size: this.toCart.sizes[id],
-            items: 1
+            items: 1,
+            image: product.img
           })
+          alert('item added to cart')
         } else {
           return 0
+        }
+      },
+      textPop(id) {
+        if (
+          this.toCart.sizes[id] !== undefined &&
+          this.toCart.colors[id] !== undefined
+        ) {
+          alert('Item added to cart')
+        } else {
+          alert('Please pick color and size')
         }
       }
     }
