@@ -2,7 +2,7 @@
   <b-container class="mb-100" id="cart">
     <b-row>
       <!-- CARTITEMS -->
-      <b-col>
+      <b-col class="mb-4">
         <b-card
           :title="cartItemLength"
           class="h-100 shadow-sm"
@@ -47,7 +47,7 @@
         </b-card>
       </b-col>
       <!-- TOTAL AMOUNT -->
-      <b-col cols="12" md="6" class="mt-4 mt-lg-0 ">
+      <b-col cols="12" md="6" class="mb-4">
         <b-card
           title="Total amount"
           footer-border-variant="dark"
@@ -78,7 +78,7 @@
 
     <!-- PAYMENT METHOD -->
     <b-form @submit.prevent="onSubmit">
-      <b-row class="mt-5">
+      <b-row>
         <b-col cols="12" md="6">
           <h2>Payment Method</h2>
           <b-form-group
@@ -282,9 +282,7 @@
       </b-row>
       <b-row align-h="center" class="mt-4">
         <b-col cols="12" md="6">
-          <b-button type="submit" variant="danger" class=" w-100 "
-            >Place order</b-button
-          >
+          <b-button block type="submit" variant="danger">Place order</b-button>
         </b-col>
       </b-row>
     </b-form>
@@ -326,9 +324,9 @@
         this.receiver.totalPrice = this.totalAmount
         this.$store.commit('setOrder', this.receiver)
         // RESETS DATA
-        this.$router.push({ name: 'OrderConfirm' })
         Object.keys(this.receiver).forEach(key => (this.receiver[key] = ''))
         // GOES TO NEXT PAGE
+        this.$router.push({ name: 'OrderConfirm' })
       },
       removeItem(index) {
         this.$store.commit('removeItem', index)
