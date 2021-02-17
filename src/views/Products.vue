@@ -1,11 +1,7 @@
 <template>
   <div class="produts">
-    <b-container class="bv-example-row bv-example-row-flex-cols bg-light">
+    <b-container class="bv-example-row bv-example-row-flex-cols">
       <b-row>
-        <b-col cols="3"><h1 class="header">New arrivals</h1></b-col>
-        <b-col cols="6" class="textcenter">
-          <img src="logo.png" width="150px" />
-        </b-col>
         <!-- Dropdown menu -->
         <b-col cols="3">
           <div class="maindropdown float-right light">
@@ -49,12 +45,13 @@
       <template>
         <div class="mt-5 mb-5">
           <b-carousel
+            class="carousel"
             id="carousel-1"
             :interval="4000"
             background="#ababab"
             img-width="400px"
             img-height="200px"
-            style="text-shadow: 1px 1px 2px #333; max-height:500px; overflow:hidden;"
+            style="text-shadow: 1px 1px 2px #333;"
           >
             <!-- Text slides with image -->
             <b-carousel-slide
@@ -114,10 +111,13 @@
       </template>
 
       <div id="product-wrapper">
-        <b-col cols="4"> <productCard style="width:1080px"/></b-col>
+        <b-row>
+          <b-col cols="12"> <productCard /></b-col>
+        </b-row>
       </div>
       <!-- Productcards -->
-
+      <h3 class="other-products pb-10px">Also check out new arrivals</h3>
+      <hr />
       <b-row class="mt-5">
         <template v-for="(dress, index) in products">
           <b-card
@@ -126,10 +126,10 @@
             :img-src="dress.img"
             img-alt="Image"
             tag="article"
-            class="mb-2 col-4 productcontainer"
+            class="mb-2  col-sm-12 col-md-4 productcontainer"
           >
             <b-card-text>
-              <p class="pricetag">1999kr</p>
+              <p class="pricetag">1999$</p>
             </b-card-text>
             <div class="cardbuttoncontainer">
               <b-button class="cardbutton" href="#" variant="primary"
@@ -233,5 +233,19 @@
     width: 200px !important;
     margin-left: auto;
     margin-right: auto;
+  }
+  .other-products {
+    margin-top: 60px;
+  }
+
+  .carousel {
+    max-height: 500px;
+    overflow: hidden;
+  }
+  @media only screen and (max-width: 600px) {
+    .carousel {
+      max-height: 200px;
+      overflow: hidden;
+    }
   }
 </style>
