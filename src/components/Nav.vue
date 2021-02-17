@@ -305,11 +305,26 @@ margin-top: 10px;
 }
 
   }
-    @media only screen and (max-width: 580px) {
+
+    @media only screen and (max-width: 779px) {
+#korg-con {
+  max-width: 15%;
+}
+
+  }
+
+    @media only screen and (max-width: 700px) {
 #countitems {
   display: none;
 }
 
+  }
+
+   @media only screen and (max-width: 400px) {
+#logo-con
+{
+  margin-bottom: 10px;
+}
   }
     
   
