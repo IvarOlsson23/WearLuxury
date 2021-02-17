@@ -47,7 +47,7 @@
         </b-card>
       </b-col>
       <!-- TOTAL AMOUNT -->
-      <b-col>
+      <b-col cols="12" md="6" class="mt-sm-4 mt-md-0 mt-4">
         <b-card
           title="Total amount"
           footer-border-variant="dark"
@@ -196,7 +196,7 @@
         </b-col>
 
         <!-- ContactINFO -->
-        <b-col cols="12" md="6">
+        <b-col cols="12" md="6" class="mt-sm-4 mt-md-0 mt-4">
           <h2>Contact information</h2>
           <b-form-group id="surname-group" label-for="surname" label="Surname">
             <b-form-input
@@ -278,8 +278,12 @@
               v-model="receiver.email"
             />
           </b-form-group>
-          <b-button type="submit" variant="danger">Place order</b-button>
         </b-col>
+      </b-row>
+      <b-row>
+        <b-button type="submit" variant="danger" class="mx-auto"
+          >Place order</b-button
+        >
       </b-row>
     </b-form>
   </b-container>
