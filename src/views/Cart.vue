@@ -77,7 +77,7 @@
     </b-row>
 
     <!-- PAYMENT METHOD -->
-    <b-form @submit.prevent="onSubmit">
+    <b-form @submit.stop.prevent="onSubmit">
       <b-row>
         <b-col cols="12" md="6">
           <h2>Payment Method</h2>
@@ -325,6 +325,16 @@
         this.$store.commit('setOrder', this.receiver)
         // RESETS DATA
         Object.keys(this.receiver).forEach(key => (this.receiver[key] = ''))
+        //RESET CART
+        let cartKeys = this.$store.state.cart.keys()
+
+        for (const key of cartKeys) {
+          this.$store.commit('removeItem', 0)
+          this.$store.commit('removeItem', key)
+        }
+
+        cartKeys = []
+
         // GOES TO NEXT PAGE
         this.$router.push({ name: 'OrderConfirm' })
       },
