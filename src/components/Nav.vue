@@ -10,7 +10,11 @@
           ><router-link to="/" class="white-text">Home</router-link></b-col
         >
         <b-col id="products-con" class="primary">
-          <p  id="products-text" class="white-text" @click="productOverlay = !productOverlay">
+          <p
+            id="products-text"
+            class="white-text"
+            @click="productOverlay = !productOverlay"
+          >
             Products
           </p>
         </b-col>
@@ -41,7 +45,11 @@
             to="/Cart"
             class="cart"
             v-b-popover.hover.top="
-              ' - Your shopping car contains ' + countItems + ' item | Totalt ' + totalAmount + ' $'
+              ' - Your shopping car contains ' +
+                countItems +
+                ' item | Totalt ' +
+                totalAmount +
+                ' $'
             "
             ><svg
               xmlns="http://www.w3.org/2000/svg"
@@ -118,17 +126,15 @@
 <script>
   import { mapGetters } from 'vuex'
   export default {
-    name: 'Home, Cart' ,
+    name: 'Home',
     components: {},
     data() {
       return {
-        productOverlay: true,
-        
+        productOverlay: true
       }
     },
     computed: mapGetters(['countItems'], ['totalAmount']),
-    
-    
+
     methods: {
       onOver() {
         this.$refs.dropdown.visible = true
@@ -136,8 +142,7 @@
       onLeave() {
         this.$refs.dropdown.visible = false
       }
-    },
-   
+    }
   }
 </script>
 
@@ -175,16 +180,15 @@
   }
   #products-con {
     text-align: center;
-  
   }
 
   #product-list {
     width: 100%;
     text-align: left;
   }
-#products-text{
-  cursor: pointer;
-}
+  #products-text {
+    cursor: pointer;
+  }
 
   #woman-list-con {
     width: 50%;
@@ -201,7 +205,7 @@
     text-align: left;
     max-width: 5%;
   }
-  #countitems{
+  #countitems {
     border: 1px red solid;
     background-color: red;
     border-radius: 50%;
@@ -281,36 +285,29 @@
   }
 
   @media only screen and (max-width: 1518px) {
-#korg-con {
-  max-width: 8%;
-}
-
+    #korg-con {
+      max-width: 8%;
+    }
   }
 
-   @media only screen and (max-width: 1100px) {
-#home-con {
-  max-width: 5%;
-}
+  @media only screen and (max-width: 1100px) {
+    #home-con {
+      max-width: 5%;
+    }
 
-#logo-con {
-margin-top: 10px;
-
-}
-
+    #logo-con {
+      margin-top: 10px;
+    }
   }
 
-   @media only screen and (max-width: 949px) {
-#korg-con {
-  max-width: 10%;
-}
-
+  @media only screen and (max-width: 949px) {
+    #korg-con {
+      max-width: 10%;
+    }
   }
-    @media only screen and (max-width: 580px) {
-#countitems {
-  display: none;
-}
-
+  @media only screen and (max-width: 580px) {
+    #countitems {
+      display: none;
+    }
   }
-    
-  
 </style>
