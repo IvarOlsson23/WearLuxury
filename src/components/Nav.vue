@@ -67,7 +67,7 @@
 
           <span id="countitems">{{ countItems }}</span></b-col
         >
-        <b-col sm="auto"
+        <b-col id="sok-con" sm="auto"
           ><form class="form-inline">
             <button
               class="btn btn-outline-success my-2 my-sm-0, sok-button"
@@ -286,28 +286,39 @@
 
   @media only screen and (max-width: 1518px) {
     #korg-con {
-      max-width: 8%;
+      max-width: 9%;
+    }
+     #home-con {
+      max-width: 4%;
     }
   }
 
   @media only screen and (max-width: 1100px) {
-    #home-con {
-      max-width: 5%;
-    }
-
+   
     #logo-con {
       margin-top: 10px;
     }
-  }
-
-  @media only screen and (max-width: 949px) {
     #korg-con {
-      max-width: 10%;
+      max-width: 12%;
     }
   }
+
+
   @media only screen and (max-width: 580px) {
     #countitems {
       display: none;
+    }
+    .sok-button{
+      display: none;
+    }
+    #logo-con {
+      margin-top: 10px;
+      margin-bottom: 10px;
+    }
+  
+    #sok-con{
+       padding-top: 5px;
+        padding-bottom: 5px;
     }
   }
 </style>
