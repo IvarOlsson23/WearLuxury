@@ -28,10 +28,9 @@ export default new Vuex.Store({
     ],
     products: {
       '5895af63-e246-42bc-b629-bf607f004da7': {
-        brand: 'Dole & Gobana',
+        brand: 'Gucci',
         name: 'Jacket',
         price: '2900',
-
         color: [
           { text: 'Black', value: 'Black' },
           { text: 'White', value: 'White' },
@@ -46,9 +45,9 @@ export default new Vuex.Store({
         ]
       },
       'd6b95aeb-70ef-4a85-97d4-e916a2039cf9': {
+        brand: 'Dolce & Gabbana',
         name: 'Bluse',
         price: '1200',
-
         color: [
           { text: 'Black', value: 'Black' },
           { text: 'White', value: 'White' },
@@ -63,9 +62,9 @@ export default new Vuex.Store({
         ]
       },
       '94a1304a-8a25-459c-aa9a-e439e25261a9': {
+        brand: 'Dolce & Gabbana',
         name: 'Dress',
         price: '2499',
-
         color: [
           { text: 'Black', value: 'Black' },
           { text: 'White', value: 'White' },
@@ -115,7 +114,7 @@ export default new Vuex.Store({
         ]
       },
       '99f75432-4cf4-4e32-964a-1d4815d94f55': {
-        brand: 'Dior',
+        brand: 'Louis Vuitton',
         name: 'Jacket',
         price: '2900',
 
@@ -133,11 +132,13 @@ export default new Vuex.Store({
         ]
       },
       'f8079e75-a3cf-42b3-90f0-f962d8cd1142': {
-        brand: 'Gucci',
+        brand: 'Louis Vuitton',
         name: 'Handbag',
-        price: '19000',
-
-        color: '',
+        price: '1900',
+        color: [
+          { text: 'Brown', value: 'Brown' },
+          { text: 'White', value: 'White' }
+        ],
         size: ''
       },
       'e53eefe1-6e93-4336-8da0-5a6d699ce98e': {

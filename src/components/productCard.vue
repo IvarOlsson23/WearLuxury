@@ -2,7 +2,12 @@
   <!-- product card -->
 
   <div id="card-wrapper">
-    <b-card :key="id" v-for="(product, id) in $store.state.products">
+    <b-card
+      :key="id"
+      v-for="(product, id) in $store.state.products"
+      class="h-100 shadow-sm"
+      border-variant="light"
+    >
       <img src="../assets/suit.png" alt="suit" />
       <b-card-text class="text-left">
         <h3>{{ product.brand }}</h3>
@@ -40,7 +45,8 @@
 
         <div class="text-right">
           <!--  Add to cart button -->
-          <b-button variant="primary" @click="addToCart(product, id)"
+
+          <b-button block variant="primary" @click="addToCart(product, id)"
             >Add to cart</b-button
           >
         </div>
@@ -61,8 +67,6 @@
     },
     methods: {
       addToCart(product, id) {
-        console.log(product)
-        console.log(this.toCart.sizes)
         if (
           this.toCart.sizes[id] !== undefined &&
           this.toCart.colors[id] !== undefined
