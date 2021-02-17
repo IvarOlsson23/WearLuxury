@@ -294,7 +294,7 @@
   }
 
   @media only screen and (max-width: 1100px) {
-   
+
     #logo-con {
       margin-top: 10px;
     }
@@ -315,7 +315,7 @@
       margin-top: 10px;
       margin-bottom: 10px;
     }
-  
+
     #sok-con{
        padding-top: 5px;
         padding-bottom: 5px;
