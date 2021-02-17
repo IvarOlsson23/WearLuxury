@@ -54,18 +54,24 @@
                 d="M8 8a3 3 0 1 0 0-6 3 3 0 0 0 0 6zm2-3a2 2 0 1 1-4 0 2 2 0 0 1 4 0zm4 8c0 1-1 1-1 1H3s-1 0-1-1 1-4 6-4 6 3 6 4zm-1-.004c-.001-.246-.154-.986-.832-1.664C11.516 10.68 10.289 10 8 10c-2.29 0-3.516.68-4.168 1.332-.678.678-.83 1.418-.832 1.664h10z"
               /></svg></router-link
         ></b-col>
-        <b-col id="korg-con"  class="white-text"
-          ><router-link 
-        to="/Cart"
-        class="cart"
-        v-b-popover.hover.top="' - Du har 3 i kundvagnen | Totalt xxxx SEK'"
-        ><svg xmlns="http://www.w3.org/2000/svg" width="24" height="20" fill="currentColor" class="bi bi-handbag, white-text" viewBox="0 0 16 16">
-  <path d="M8 1a2 2 0 0 1 2 2v2H6V3a2 2 0 0 1 2-2zm3 4V3a3 3 0 1 0-6 0v2H3.361a1.5 1.5 0 0 0-1.483 1.277L.85 13.13A2.5 2.5 0 0 0 3.322 16h9.356a2.5 2.5 0 0 0 2.472-2.87l-1.028-6.853A1.5 1.5 0 0 0 12.64 5H11zm-1 1v1.5a.5.5 0 0 0 1 0V6h1.639a.5.5 0 0 1 .494.426l1.028 6.851A1.5 1.5 0 0 1 12.678 15H3.322a1.5 1.5 0 0 1-1.483-1.723l1.028-6.851A.5.5 0 0 1 3.36 6H5v1.5a.5.5 0 0 0 1 0V6h4z"/>
-</svg>
-      </router-link>
-
-      <span>{{ countItems }}</span></b-col> 
-         <b-col sm="auto"
+        <b-col id="korg-con"
+          ><router-link to="/cart"
+            ><svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="24"
+              height="24"
+              fill="currentColor"
+              class="bi bi-basket2, white-text"
+              viewBox="0 0 16 16"
+            >
+              <path
+                d="M4 10a1 1 0 0 1 2 0v2a1 1 0 0 1-2 0v-2zm3 0a1 1 0 0 1 2 0v2a1 1 0 0 1-2 0v-2zm3 0a1 1 0 1 1 2 0v2a1 1 0 0 1-2 0v-2z"
+              />
+              <path
+                d="M5.757 1.071a.5.5 0 0 1 .172.686L3.383 6h9.234L10.07 1.757a.5.5 0 1 1 .858-.514L13.783 6H15.5a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5h-.623l-1.844 6.456a.75.75 0 0 1-.722.544H3.69a.75.75 0 0 1-.722-.544L1.123 8H.5a.5.5 0 0 1-.5-.5v-1A.5.5 0 0 1 .5 6h1.717L5.07 1.243a.5.5 0 0 1 .686-.172zM2.163 8l1.714 6h8.246l1.714-6H2.163z"
+              /></svg></router-link
+        ></b-col>
+        <b-col sm="auto"
           ><form class="form-inline">
             <button
               class="btn btn-outline-success my-2 my-sm-0, sok-button"
@@ -97,9 +103,8 @@
 </template>
 
 <script>
-import { mapGetters } from 'vuex'
+  import { mapGetters } from 'vuex'
   export default {
-    
     name: 'Home',
     components: {},
     data() {
@@ -107,8 +112,7 @@ import { mapGetters } from 'vuex'
         productOverlay: true
       }
     },
-    computed: mapGetters(['countItems'])
-  ,
+    computed: mapGetters(['countItems']),
     methods: {
       onOver() {
         this.$refs.dropdown.visible = true
@@ -118,30 +122,20 @@ import { mapGetters } from 'vuex'
       }
     }
   }
-  
 </script>
 
 <style scoped lang="scss">
-
-
-   .white-text {
-      color: #ffffff !important;
-    
-    }
-
+  .white-text {
+    color: #ffffff !important;
+  }
 
   #korg-con {
     text-align: left;
     max-width: 5%;
-   
   }
-
-
-#about-con{
-  text-align: left;
-}
-
-
+  #about-con {
+    text-align: left;
+  }
 
   #home-con {
     text-align: right;
@@ -165,7 +159,7 @@ import { mapGetters } from 'vuex'
       border-radius: 5px;
       color: black;
       border-color: #182e47;
-      opacity: 0.8;
+      opacity: 0.6;
       background-color: #182e47;
     }
 

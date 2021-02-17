@@ -11,10 +11,12 @@
       <img src="../assets/suit.png" alt="suit" />
       <b-card-text class="text-left">
         <h3>{{ product.brand }}</h3>
-        <p>{{ product.name }}</p>
+        <span id="prod-info">
+          <p>{{ product.name }}</p>
+          <p>{{ product.price }} $</p>
+        </span>
 
         <!--  Size picker -->
-        <p>Size</p>
         <div id="size">
           <b-form-select
             v-model="toCart.sizes[id]"
@@ -36,7 +38,6 @@
         </div>
 
         <div class="text-right">
-          <p>{{ product.price }} $</p>
           <!--  Add to cart button -->
 
           <b-button
@@ -112,5 +113,10 @@
     display: grid;
     grid-template-columns: auto auto auto;
     grid-gap: 50px;
+  }
+
+  #prod-info {
+    display: flex;
+    justify-content: space-between;
   }
 </style>

@@ -1,9 +1,12 @@
 <template>
   <div id="body">
     <div id="wrapper">
-      <p id="wrapper-qoute">"WearLuxury is the shit"</p>
+      <div>
+        <img src="@/assets/logowl.png" alt="logo" class="logo-main" />
+        <h1 id="wrapper-qoute">WearLuxury</h1>
+      </div>
     </div>
-    <div id="nav">
+    <!-- <div id="nav">
       <p class="nav-select" @click="productOverlay = !productOverlay">Men</p>
       <p class="nav-select" @click="productOverlay = !productOverlay">
         Women
@@ -16,15 +19,16 @@
       </router-link>
 
       <div>{{ countItems }}</div>
-    </div>
-    <div id="nav-overlay" v-show="!productOverlay">
+    </div> -->
+    <!-- <div id="nav-overlay" v-show="!productOverlay">
       <div id="product-list">
         <router-link to="/Products">Shirts</router-link>
         <router-link to="/Products">Pants</router-link>
         <router-link to="/Products">Coats and Jackets</router-link>
         <router-link to="/Products">Accessoaries</router-link>
       </div>
-    </div>
+    </div> -->
+    <img src="@/assets/divider.svg" alt="divider" class="divider" />
     <div id="product-wrapper1">
       <div id="reklam-bild1" class="groove">
         <p class="reklam-text">Our Vision</p>
@@ -37,7 +41,12 @@
       </div>
     </div>
     <div id="qoute">
-      <p>Nothing but the best</p>
+      <h2 id="qoute-header">Nothing but the best</h2>
+      <p>
+        Lorem Ipsum is simply dummy text of the printing and typesetting
+        industry. Lorem Ipsum has been the industry's standard dummy text ever
+        since the 1500s,
+      </p>
     </div>
   </div>
 </template>
@@ -59,7 +68,7 @@
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
   #body {
-    background-color: rgb(232, 232, 233);
+    background-color: rgb(255, 255, 255);
   }
   /* Stora bilden  */
   #wrapper {
@@ -79,9 +88,14 @@
     justify-content: center;
     align-items: center;
     display: flex;
-    height: 550px;
+    height: 100px;
     font-size: 50px;
-    transform: rotate(-4deg);
+  }
+
+  .logo-main {
+    margin-top: 5em;
+    height: 200px;
+    align-items: center;
   }
   /* Stora bilden  */
   /* "Men" och Women - Menyn */
@@ -138,6 +152,9 @@
     }
   }
   /* "Men" och Women - Menyn */
+  .divider {
+    margin-top: 120px;
+  }
   /* Dom tre bilderna  */
   #product-wrapper1 {
     display: flex;
@@ -187,12 +204,18 @@
     color: rgb(255, 255, 255);
     font-size: 40px;
   }
+  /* Dom tre bilderna  */
   #qoute {
     justify-content: center;
     align-items: center;
     display: flex;
+    flex-direction: column;
     height: 550px;
-    font-size: 50px;
   }
-  /* Dom tre bilderna  */
+  #qoute-header {
+    font-size: 4em;
+    font-family: 'Romanesco', cursive;
+    margin-bottom: 1em;
+  }
+  @import url('https://fonts.googleapis.com/css2?family=Libre+Baskerville&family=Romanesco&display=swap');
 </style>
