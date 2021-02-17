@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div class="my-4">
     <div class="order">
       <h1>Your order has been processed</h1>
       <p>Product Number: 0123456789</p>
@@ -10,9 +10,6 @@
       <h3>Completed the registration</h3>
     </div>
     <!-- / Order has been processed -->
-
-
-
 
     <!-- Create account for saving info -->
     <p>
@@ -48,8 +45,6 @@
       </b-row>
     </b-container>
 
-
-
     <!-- shipping, delivery, payment @contact info -->
     <h2>Product Information</h2>
     <div>
@@ -83,8 +78,6 @@
           </b-card-group>
         </div>
       </div>
-
-
 
       <!-- product detail with photo -->
 
@@ -134,9 +127,6 @@
       </div>
     </div>
 
-
-
-
     <!-- Rating -->
 
     <div>
@@ -144,8 +134,9 @@
         for="rating-5"
         class="text-center"
         style="padding:15px; margin: 15px"
-        > <h3> Based on 1900 reviews </h3> </label
       >
+        <h3>Based on 1900 reviews</h3>
+      </label>
       <b-form-rating
         style="max-width: 1250px; padding:15px; margin: 15px"
         id="rating-5"
@@ -155,8 +146,6 @@
       />
       <p class="mt-2">{{ value5 }}</p>
     </div>
-
-
 
     <!-- Back to shop/Home -->
 
@@ -171,8 +160,6 @@
     </div>
   </div>
 </template>
-
-
 
 <!-- Script -->
 
@@ -192,8 +179,6 @@
     }
   }
 </script>
-
-
 
 <!-- Style -->
 

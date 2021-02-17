@@ -1,5 +1,5 @@
 <template>
-  <div class="produts">
+  <div class="produts my-4">
     <b-container class="bv-example-row bv-example-row-flex-cols">
       <b-row>
         <!-- Dropdown menu -->
