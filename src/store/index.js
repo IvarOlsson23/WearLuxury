@@ -14,12 +14,6 @@ export default new Vuex.Store({
       },
 
       {
-        title: 'Black coat',
-        img: 'blackcoat.jpg',
-        price: '2809kr',
-        cathegory: 'men'
-      },
-      {
         title: 'Golden watch',
         img: 'watch.jpg',
         price: '2799kr',
@@ -30,18 +24,6 @@ export default new Vuex.Store({
         img: 'earings.jpg',
         price: '800kr',
         cathegory: 'accessories'
-      },
-      {
-        title: 'Pear black purse',
-        img: 'purse.jpg',
-        price: '2999kr',
-        cathegory: 'bags'
-      },
-      {
-        title: 'Leather shoes',
-        img: 'shoes.jpg',
-        price: '3999kr',
-        cathegory: 'shoes'
       }
     ],
     products: {
