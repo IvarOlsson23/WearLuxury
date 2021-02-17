@@ -41,7 +41,7 @@
             to="/Cart"
             class="cart"
             v-b-popover.hover.top="
-              ' - Your shopping car contains ' + countItems + ' item | Totalt ' + totalAmount + ' $'
+              ' - Your shopping car contains ' + countItems + ' item | Totalt XXX $'
             "
             ><svg
               xmlns="http://www.w3.org/2000/svg"
@@ -119,7 +119,7 @@
 <script>
   import { mapGetters } from 'vuex'
   export default {
-    name: 'Home, Cart' ,
+    name: 'Home' ,
     components: {},
     data() {
       return {
@@ -127,7 +127,7 @@
         
       }
     },
-    computed: mapGetters(['countItems'], ['totalAmount']),
+    computed: mapGetters(['countItems']),
     
     
     methods: {
