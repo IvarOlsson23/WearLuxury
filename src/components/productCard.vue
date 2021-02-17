@@ -32,6 +32,7 @@
               :options="Object.values(product.color)"
               name="Color"
               size="sm"
+              required
             />
           </b-form-group>
         </div>
@@ -40,7 +41,14 @@
           <p>{{ product.price }} $</p>
           <!--  Add to cart button -->
 
-          <b-button block variant="primary" @click="addToCart(product, id)"
+          <b-button
+            v-b-modal.modal-no-backdrop
+            block
+            variant="primary"
+            @click="
+              addToCart(product, id)
+              textPop(id)
+            "
             >Add to cart</b-button
           >
         </div>
@@ -72,10 +80,22 @@
             price: product.price,
             color: this.toCart.colors[id],
             size: this.toCart.sizes[id],
-            items: 1
+            items: 1,
+            image: product.img
           })
+          alert('item added to cart')
         } else {
           return 0
+        }
+      },
+      textPop(id) {
+        if (
+          this.toCart.sizes[id] !== undefined &&
+          this.toCart.colors[id] !== undefined
+        ) {
+          return alert('Item added to cart')
+        } else {
+          return alert('Please pick color and size')
         }
       }
     }
