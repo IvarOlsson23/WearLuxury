@@ -77,7 +77,7 @@
     </b-row>
 
     <!-- PAYMENT METHOD -->
-    <b-form @submit.prevent="onSubmit" validated>
+    <b-form @submit.stop.prevent="onSubmit">
       <b-row>
         <b-col cols="12" md="6">
           <h2>Payment Method</h2>
