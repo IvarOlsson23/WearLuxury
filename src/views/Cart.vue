@@ -47,7 +47,7 @@
         </b-card>
       </b-col>
       <!-- TOTAL AMOUNT -->
-      <b-col cols="12" md="6" class="mt-sm-4 mt-xl-0 mt-4 mt-md-4">
+      <b-col cols="12" md="6" class="mt-4 mt-lg-0 ">
         <b-card
           title="Total amount"
           footer-border-variant="dark"
@@ -282,7 +282,7 @@
       </b-row>
       <b-row align-h="center" class="mt-4">
         <b-col cols="12" md="6">
-          <b-button type="submit" variant="danger" class=" w-100"
+          <b-button type="submit" variant="danger" class=" w-100 "
             >Place order</b-button
           >
         </b-col>
