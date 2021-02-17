@@ -72,6 +72,7 @@
                 fill="currentColor"
                 class="bi bi-search, white-text"
                 viewBox="0 0 16 16"
+               
               >
                 <path
                   d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0z"
@@ -287,6 +288,16 @@
 
   }
 
+    @media only screen and (max-width: 1400px) {
+#about-con {
+  text-align: center;
+}
+#home-con {
+  max-width: 20%;
+}
+
+  }
+
    @media only screen and (max-width: 1100px) {
 #home-con {
   max-width: 5%;
@@ -299,7 +310,7 @@ margin-top: 10px;
 
   }
 
-   @media only screen and (max-width: 949px) {
+   @media only screen and (max-width: 970px) {
 #korg-con {
   max-width: 10%;
 }
@@ -324,6 +335,15 @@ margin-top: 10px;
 #logo-con
 {
   margin-bottom: 10px;
+}
+
+.sok-button{
+  display: none;
+}
+
+.sok-felt{
+  margin-bottom: 5px;
+   margin-top: 5px;
 }
   }
     
