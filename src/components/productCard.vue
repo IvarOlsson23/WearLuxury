@@ -109,14 +109,15 @@
     max-width: 100%;
   }
 
-  #card-wrapper {
-    display: grid;
-    grid-template-columns: auto auto auto;
-    grid-gap: 50px;
-  }
-
   #prod-info {
     display: flex;
     justify-content: space-between;
+  }
+  @media screen and (min-width: 800px) {
+    #card-wrapper {
+      display: grid;
+      grid-template-columns: auto auto auto;
+      grid-gap: 50px;
+    }
   }
 </style>

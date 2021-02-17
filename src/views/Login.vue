@@ -1,10 +1,9 @@
 <template>
   <div class="login">
-   <div id="ma">asdasdadasdasdas</div>
-
-          </div>
+    <div id="ma">asdasdadasdasdas</div>
+  </div>
 </template>
-   
+
 <script>
   export default {
     data() {
@@ -21,5 +20,4 @@
     float: right;
     padding: 20px;
   }
-  
 </style>
