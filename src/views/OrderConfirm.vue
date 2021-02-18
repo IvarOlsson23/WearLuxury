@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div class="my-4">
     <div class="order">
       <h1>Your order has been processed</h1>
       <p>Product Number: 0123456789</p>

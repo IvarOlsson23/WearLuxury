@@ -1,15 +1,98 @@
 <template>
   <div class="footer-container">
     <nav class="navbar navbar-light bg-primary p-0">
-      <div class="footerNavbar pt-5 pb-5">
-        <p class="footerNavbar">Contact info:</p>
-        <p class="footerNavbar">Tel: 032843417</p>
+      <div class="footerNavbar mt-5">
+        <b-row>
+          <b-col cols="8" offset="2"
+            ><b-row>
+              <b-col cols="3" class="text-left">
+                <strong>Help</strong>
+                <ul class="footerlist">
+                  <li>
+                    <router-link to="/About" class="footerlink"
+                      >Order status</router-link
+                    >
+                  </li>
+                  <li>
+                    <router-link to="/About" class="footerlink"
+                      >My account</router-link
+                    >
+                  </li>
+                  <li>
+                    <router-link to="/About" class="footerlink"
+                      >Contact us</router-link
+                    >
+                  </li>
+                  <li>
+                    <router-link to="/About" class="footerlink"
+                      >Shipping info</router-link
+                    >
+                  </li>
+                </ul>
+              </b-col>
+              <b-col cols="3" class="text-left">
+                <strong>Company info</strong>
+                <ul class="footerlist">
+                  <li>
+                    <router-link to="/About" class="footerlink"
+                      >About us</router-link
+                    >
+                  </li>
+                  <li>
+                    <router-link to="/About" class="footerlink"
+                      >Social responsibility</router-link
+                    >
+                  </li>
+                  <li>
+                    <router-link to="/About" class="footerlink"
+                      >Our policy</router-link
+                    >
+                  </li>
+                </ul>
+              </b-col>
+              <b-col cols="3" class="text-left">
+                <strong>Membership</strong>
+                <ul class="footerlist">
+                  <li>
+                    <router-link to="/About" class="footerlink"
+                      >Get 20% off by <br />
+                      becoming a member</router-link
+                    >
+                  </li>
+                </ul>
+              </b-col>
+              <b-col cols="3" class="text-left">
+                <strong>Quick links</strong>
+                <ul class="footerlist">
+                  <li>
+                    <router-link to="/Products" class="footerlink"
+                      >Special offers</router-link
+                    >
+                  </li>
+                  <li>
+                    <router-link to="/About" class="footerlink"
+                      >Blog</router-link
+                    >
+                  </li>
+                  <li>
+                    <router-link to="/About" class="footerlink"
+                      >Gift cards</router-link
+                    >
+                  </li>
+                </ul>
+              </b-col>
+            </b-row></b-col
+          >
+        </b-row>
+        <!-- <p class="footerNavbar">Tel: 032843417</p>
 
-        <p class="footerNavbar">E-mail: WLShop@hotmail.com</p>
+        <p class="footerNavbar">E-mail: WLShop@hotmail.com</p> -->
 
-        <b-icon style="margin-left:1.5em" icon="facebook" font-scale="1" />
-        <b-icon style="margin-left:1.5em" icon="instagram" font-scale="1" />
-        <b-icon style="margin-left:1.5em" icon="twitter" font-scale="1" />
+        <div class="icons pt-5">
+          <b-icon style="margin-left:1.5em" icon="facebook" font-scale="1" />
+          <b-icon style="margin-left:1.5em" icon="instagram" font-scale="1" />
+          <b-icon style="margin-left:1.5em" icon="twitter" font-scale="1" />
+        </div>
       </div>
     </nav>
   </div>
@@ -18,7 +101,7 @@
 <style scoped>
   .footerNavbar {
     color: rgb(231, 231, 229);
-    text-align: center;
+
     width: 100%;
   }
 
@@ -26,5 +109,15 @@
     left: 0;
     bottom: 0;
     width: 100%;
+  }
+  .footerlink {
+    color: white;
+    font-size: 11px;
+    font-weight: lighter;
+  }
+  .footerlist {
+    list-style: none;
+    text-align: left;
+    padding: 0px;
   }
 </style>

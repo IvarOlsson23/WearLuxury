@@ -65,7 +65,7 @@
 
           <span id="countitems">{{ countItems }}</span></b-col
         >
-        <b-col sm="auto"
+        <b-col id="sok-con" sm="auto"
           ><form class="form-inline">
             <button
               class="btn btn-outline-success my-2 my-sm-0, sok-button"
@@ -122,221 +122,261 @@
 </template>
 
 <script>
-  import { mapGetters } from 'vuex'
-  export default {
-    name: 'Home',
-    components: {},
-    data() {
-      return {
-        productOverlay: true
-      }
-    },
-    computed: mapGetters(['countItems']),
-
-    methods: {
-      onOver() {
-        this.$refs.dropdown.visible = true
+    import { mapGetters } from 'vuex'
+    export default {
+      name: 'Home',
+      components: {},
+      data() {
+        return {
+          productOverlay: true
+        }
       },
-      onLeave() {
-        this.$refs.dropdown.visible = false
+  <<<<<<< HEAD
+      computed: mapGetters(['countItems']),
+  =======
+      computed: mapGetters(['countItems'], ['totalAmount']),
+  >>>>>>> 1ce69759fa411a3a097cd1747480095c43e608c0
+
+      methods: {
+        onOver() {
+          this.$refs.dropdown.visible = true
+        },
+        onLeave() {
+          this.$refs.dropdown.visible = false
+        }
       }
     }
-  }
 </script>
 
 <style scoped lang="scss">
-  @import url('https://fonts.googleapis.com/css2?family=Great+Vibes&display=swap');
-  .white-text {
-    color: #ffffff !important;
-    text-decoration: none;
-  }
-
-  #nav-overlay {
-    background-color: rgb(247, 247, 247);
-    position: absolute;
-    width: 100%;
-    height: 180px;
-    left: 0px;
-    top: 0x;
-    -webkit-animation: fadein 0.8s;
-    /* Safari, Chrome and Opera > 12.1 */
-    -moz-animation: fadein 0.8s;
-    /* Firefox < 16 */
-    -ms-animation: fadein 0.8s;
-    /* Internet Explorer */
-    -o-animation: fadein 0.8s;
-    /* Opera < 12.1 */
-    animation: fadein 0.8s;
-    display: flex;
-
-    align-items: center;
-    z-index: 1000;
-  }
-  #all-products-con {
-    text-align: center;
-    margin: 10px;
-  }
-  #products-con {
-    text-align: center;
-  }
-
-  #product-list {
-    width: 100%;
-    text-align: left;
-  }
-  #products-text {
-    cursor: pointer;
-  }
-
-  #woman-list-con {
-    width: 50%;
-  }
-  #man-list-con {
-    width: 50%;
-  }
-
-  .inline {
-    display: inline-block;
-  }
-
-  #korg-con {
-    text-align: left;
-    max-width: 5%;
-  }
-  #countitems {
-    border: 1px red solid;
-    background-color: red;
-    border-radius: 50%;
-    padding: 0px 5px 0px 5px;
-    margin-bottom: 4px;
-  }
-  .list li {
-    list-style: none;
-    text-decoration: none;
-  }
-  .list li:first-child {
-    border-bottom: 1px solid;
-  }
-
-  #about-con {
-    text-align: left;
-  }
-
-  .logo-icon {
-    color: #182e47 !important;
-    background-color: #ffffff;
-    font-family: 'Great Vibes', cursive;
-    padding: 10px 5px 10px 5px;
-    border: 1px #ffffff solid;
-    border-radius: 50%;
-    text-decoration: none;
-    font-weight: bold;
-  }
-
-  .logo-text {
-    color: #dcc3a7 !important;
-    padding-left: 10px;
-    text-decoration: none;
-
-    font-family: 'Libre Baskerville', serif;
-  }
-
-  #home-con {
-    text-align: right;
-  }
-
-  #logincon {
-    text-align: right;
-    max-width: 5%;
-  }
-
-  #con {
-    background-color: #182e47;
-
-    .sok-felt {
-      border-radius: 25px;
-      border-color: #ffffff;
-      opacity: 0.6;
-    }
-
-    .sok-button {
-      border-radius: 5px;
-      color: black;
-      border-color: #182e47;
-      opacity: 0.8;
-      background-color: #182e47;
-    }
-
-    a::hover {
+    @import url('https://fonts.googleapis.com/css2?family=Great+Vibes&display=swap');
+    .white-text {
+      color: #ffffff !important;
       text-decoration: none;
-      color: #ffffff;
     }
-    a {
-      color: black;
+
+    #nav-overlay {
+      background-color: rgb(247, 247, 247);
+      position: absolute;
+      width: 100%;
+      height: 180px;
+      left: 0px;
+      top: 0x;
+      -webkit-animation: fadein 0.8s;
+      /* Safari, Chrome and Opera > 12.1 */
+      -moz-animation: fadein 0.8s;
+      /* Firefox < 16 */
+      -ms-animation: fadein 0.8s;
+      /* Internet Explorer */
+      -o-animation: fadein 0.8s;
+      /* Opera < 12.1 */
+      animation: fadein 0.8s;
+      display: flex;
+
+      align-items: center;
+      z-index: 1000;
     }
-  }
-
-  p {
-    display: inline-block;
-    margin: 0;
-    width: 25%;
-  }
-
-  @media only screen and (max-width: 1518px) {
-    #korg-con {
-      max-width: 8%;
+    #all-products-con {
+      text-align: center;
+      margin: 10px;
     }
-  }
-
-  @media only screen and (max-width: 1400px) {
-    #about-con {
+    #products-con {
       text-align: center;
     }
-    #home-con {
-      max-width: 20%;
-    }
-  }
 
-  @media only screen and (max-width: 1100px) {
+    #product-list {
+      width: 100%;
+      text-align: left;
+    }
+    #products-text {
+      cursor: pointer;
+    }
+
+    #woman-list-con {
+      width: 50%;
+    }
+    #man-list-con {
+      width: 50%;
+    }
+
+    .inline {
+      display: inline-block;
+    }
+
+    #korg-con {
+      text-align: left;
+      max-width: 5%;
+    }
+    #countitems {
+      border: 1px red solid;
+      background-color: red;
+      border-radius: 50%;
+      padding: 0px 5px 0px 5px;
+      margin-bottom: 4px;
+    }
+    .list li {
+      list-style: none;
+      text-decoration: none;
+    }
+    .list li:first-child {
+      border-bottom: 1px solid;
+    }
+
+    #about-con {
+      text-align: left;
+    }
+
+    .logo-icon {
+      color: #182e47 !important;
+      background-color: #ffffff;
+      font-family: 'Great Vibes', cursive;
+      padding: 10px 5px 10px 5px;
+      border: 1px #ffffff solid;
+      border-radius: 50%;
+      text-decoration: none;
+      font-weight: bold;
+    }
+
+    .logo-text {
+      color: #dcc3a7 !important;
+      padding-left: 10px;
+      text-decoration: none;
+
+      font-family: 'Libre Baskerville', serif;
+    }
+
     #home-con {
+      text-align: right;
+    }
+
+    #logincon {
+      text-align: right;
       max-width: 5%;
     }
 
-    #logo-con {
-      margin-top: 10px;
-    }
-  }
+    #con {
+      background-color: #182e47;
 
-  @media only screen and (max-width: 970px) {
-    #korg-con {
-      max-width: 10%;
-    }
-  }
+      .sok-felt {
+        border-radius: 25px;
+        border-color: #ffffff;
+        opacity: 0.6;
+      }
 
-  @media only screen and (max-width: 779px) {
-    #korg-con {
-      max-width: 15%;
-    }
-  }
+      .sok-button {
+        border-radius: 5px;
+        color: black;
+        border-color: #182e47;
+        opacity: 0.8;
+        background-color: #182e47;
+      }
 
-  @media only screen and (max-width: 700px) {
-    #countitems {
-      display: none;
-    }
-  }
-
-  @media only screen and (max-width: 400px) {
-    #logo-con {
-      margin-bottom: 10px;
+      a::hover {
+        text-decoration: none;
+        color: #ffffff;
+      }
+      a {
+        color: black;
+      }
     }
 
-    .sok-button {
-      display: none;
+    p {
+      display: inline-block;
+      margin: 0;
+      width: 25%;
     }
 
-    .sok-felt {
-      margin-bottom: 5px;
-      margin-top: 5px;
+    @media only screen and (max-width: 1518px) {
+      #korg-con {
+  <<<<<<< HEAD
+        max-width: 8%;
+      }
     }
-  }
+
+    @media only screen and (max-width: 1400px) {
+      #about-con {
+        text-align: center;
+      }
+      #home-con {
+        max-width: 20%;
+      }
+    }
+
+    @media only screen and (max-width: 1100px) {
+      #home-con {
+        max-width: 5%;
+      }
+
+      #logo-con {
+        margin-top: 10px;
+      }
+    }
+
+    @media only screen and (max-width: 970px) {
+      #korg-con {
+        max-width: 10%;
+      }
+    }
+
+    @media only screen and (max-width: 779px) {
+      #korg-con {
+        max-width: 15%;
+      }
+    }
+
+    @media only screen and (max-width: 700px) {
+      #countitems {
+        display: none;
+      }
+    }
+
+    @media only screen and (max-width: 400px) {
+      #logo-con {
+        margin-bottom: 10px;
+      }
+
+      .sok-button {
+        display: none;
+      }
+
+      .sok-felt {
+        margin-bottom: 5px;
+        margin-top: 5px;
+  =======
+        max-width: 9%;
+      }
+       #home-con {
+        max-width: 4%;
+      }
+    }
+
+    @media only screen and (max-width: 1100px) {
+
+      #logo-con {
+        margin-top: 10px;
+      }
+      #korg-con {
+        max-width: 12%;
+      }
+    }
+
+
+    @media only screen and (max-width: 580px) {
+      #countitems {
+        display: none;
+      }
+      .sok-button{
+        display: none;
+      }
+      #logo-con {
+        margin-top: 10px;
+        margin-bottom: 10px;
+      }
+
+      #sok-con{
+         padding-top: 5px;
+          padding-bottom: 5px;
+  >>>>>>> 1ce69759fa411a3a097cd1747480095c43e608c0
+      }
+    }
 </style>
