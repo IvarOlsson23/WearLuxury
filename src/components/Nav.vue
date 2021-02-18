@@ -10,7 +10,11 @@
           ><router-link to="/" class="white-text">Home</router-link></b-col
         >
         <b-col id="products-con" class="primary">
-          <p  id="products-text" class="white-text" @click="productOverlay = !productOverlay">
+          <p
+            id="products-text"
+            class="white-text"
+            @click="productOverlay = !productOverlay"
+          >
             Products
           </p>
         </b-col>
@@ -41,7 +45,9 @@
             to="/Cart"
             class="cart"
             v-b-popover.hover.top="
-              ' - Your shopping car contains ' + countItems + ' item | Totalt XXX $'
+              ' - Your shopping car contains ' +
+                countItems +
+                ' item | Totalt XXX $'
             "
             ><svg
               xmlns="http://www.w3.org/2000/svg"
@@ -72,7 +78,6 @@
                 fill="currentColor"
                 class="bi bi-search, white-text"
                 viewBox="0 0 16 16"
-               
               >
                 <path
                   d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0z"
@@ -119,17 +124,15 @@
 <script>
   import { mapGetters } from 'vuex'
   export default {
-    name: 'Home' ,
+    name: 'Home',
     components: {},
     data() {
       return {
-        productOverlay: true,
-        
+        productOverlay: true
       }
     },
     computed: mapGetters(['countItems']),
-    
-    
+
     methods: {
       onOver() {
         this.$refs.dropdown.visible = true
@@ -137,8 +140,7 @@
       onLeave() {
         this.$refs.dropdown.visible = false
       }
-    },
-   
+    }
   }
 </script>
 
@@ -176,16 +178,15 @@
   }
   #products-con {
     text-align: center;
-  
   }
 
   #product-list {
     width: 100%;
     text-align: left;
   }
-#products-text{
-  cursor: pointer;
-}
+  #products-text {
+    cursor: pointer;
+  }
 
   #woman-list-con {
     width: 50%;
@@ -202,7 +203,7 @@
     text-align: left;
     max-width: 5%;
   }
-  #countitems{
+  #countitems {
     border: 1px red solid;
     background-color: red;
     border-radius: 50%;
@@ -282,70 +283,60 @@
   }
 
   @media only screen and (max-width: 1518px) {
-#korg-con {
-  max-width: 8%;
-}
-
+    #korg-con {
+      max-width: 8%;
+    }
   }
 
-    @media only screen and (max-width: 1400px) {
-#about-con {
-  text-align: center;
-}
-#home-con {
-  max-width: 20%;
-}
-
+  @media only screen and (max-width: 1400px) {
+    #about-con {
+      text-align: center;
+    }
+    #home-con {
+      max-width: 20%;
+    }
   }
 
-   @media only screen and (max-width: 1100px) {
-#home-con {
-  max-width: 5%;
-}
+  @media only screen and (max-width: 1100px) {
+    #home-con {
+      max-width: 5%;
+    }
 
-#logo-con {
-margin-top: 10px;
-
-}
-
+    #logo-con {
+      margin-top: 10px;
+    }
   }
 
-   @media only screen and (max-width: 970px) {
-#korg-con {
-  max-width: 10%;
-}
-
+  @media only screen and (max-width: 970px) {
+    #korg-con {
+      max-width: 10%;
+    }
   }
 
-    @media only screen and (max-width: 779px) {
-#korg-con {
-  max-width: 15%;
-}
-
+  @media only screen and (max-width: 779px) {
+    #korg-con {
+      max-width: 15%;
+    }
   }
 
-    @media only screen and (max-width: 700px) {
-#countitems {
-  display: none;
-}
-
+  @media only screen and (max-width: 700px) {
+    #countitems {
+      display: none;
+    }
   }
 
-   @media only screen and (max-width: 400px) {
-#logo-con
-{
-  margin-bottom: 10px;
-}
+  @media only screen and (max-width: 400px) {
+    #logo-con {
+      margin-bottom: 10px;
+    }
 
-.sok-button{
-  display: none;
-}
+    .sok-button {
+      display: none;
+    }
 
-.sok-felt{
-  margin-bottom: 5px;
-   margin-top: 5px;
-}
+    .sok-felt {
+      margin-bottom: 5px;
+      margin-top: 5px;
+    }
   }
-    
-  
 </style>
