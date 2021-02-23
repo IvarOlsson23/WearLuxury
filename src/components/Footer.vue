@@ -5,7 +5,7 @@
         <b-row>
           <b-col cols="8" offset="2"
             ><b-row>
-              <b-col cols="3" class="text-left">
+              <b-col class="text-left col-sm-12 col-md-3">
                 <strong>Help</strong>
                 <ul class="footerlist">
                   <li>
@@ -30,7 +30,7 @@
                   </li>
                 </ul>
               </b-col>
-              <b-col cols="3" class="text-left">
+              <b-col class="text-left col-sm-12 col-md-3">
                 <strong>Company info</strong>
                 <ul class="footerlist">
                   <li>
@@ -50,7 +50,7 @@
                   </li>
                 </ul>
               </b-col>
-              <b-col cols="3" class="text-left">
+              <b-col class="text-left col-sm-12 col-md-3">
                 <strong>Membership</strong>
                 <ul class="footerlist">
                   <li>
@@ -61,7 +61,7 @@
                   </li>
                 </ul>
               </b-col>
-              <b-col cols="3" class="text-left">
+              <b-col class="text-left col-sm-12 col-md-3">
                 <strong>Quick links</strong>
                 <ul class="footerlist">
                   <li>
@@ -88,10 +88,10 @@
 
         <p class="footerNavbar">E-mail: WLShop@hotmail.com</p> -->
 
-        <div class="icons pt-5">
-          <b-icon style="margin-left:1.5em" icon="facebook" font-scale="1" />
-          <b-icon style="margin-left:1.5em" icon="instagram" font-scale="1" />
-          <b-icon style="margin-left:1.5em" icon="twitter" font-scale="1" />
+        <div class="icons" style="margin-bottom:25px">
+          <b-icon style="margin-left:1.5em" icon="facebook" font-scale="1.5" />
+          <b-icon style="margin-left:1.5em" icon="instagram" font-scale="1.5" />
+          <b-icon style="margin-left:1.5em" icon="twitter" font-scale="1.5" />
         </div>
       </div>
     </nav>
@@ -99,6 +99,17 @@
 </template>
 
 <style scoped>
+  .footerlink {
+    color: white;
+    font-size: 11px;
+    font-weight: lighter;
+  }
+  .footerlist {
+    list-style: none;
+    text-align: left;
+    padding: 0px;
+  }
+
   .footerNavbar {
     color: rgb(231, 231, 229);
 
@@ -110,14 +121,9 @@
     bottom: 0;
     width: 100%;
   }
-  .footerlink {
-    color: white;
-    font-size: 11px;
-    font-weight: lighter;
-  }
-  .footerlist {
-    list-style: none;
-    text-align: left;
-    padding: 0px;
-  }
+  /* @media only screen and (max-width: 800px) {
+    .footerNavbar {
+      width: 100%;
+    }
+  } */
 </style>
