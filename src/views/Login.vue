@@ -41,6 +41,7 @@
             Remember me
           </b-form-checkbox>
 
+<<<<<<< HEAD
           <div>
             <div class="mt-3" v-b-modal.modal-prevent-closing style="max-width: 540px; padding: 10px; margin-left: 100px;">
               Forgot password?
@@ -74,6 +75,10 @@
                 </b-form-group>
               </form>
             </b-modal>
+=======
+          <div style="max-width: 540px; padding: 10px; margin-left: 200px">
+            <b-link href="#">Forgot password? </b-link>
+>>>>>>> e7c38134fee4e27d0a3c0763bc03b338ad3db0cc
           </div>
         </div>
 
@@ -103,6 +108,7 @@
   export default {
     data() {
       return {
+<<<<<<< HEAD
         email: '',
         emailState: null,
         submittedEmail: ''
@@ -135,6 +141,18 @@
         this.$nextTick(() => {
           this.$bvModal.hide('modal-prevent-closing')
         })
+=======
+        newpassword: ''
+      }
+    },
+    methods: {
+      getnewpassword() {
+        if (this.newpassword != null) {
+          this.newpassword.style.display = 'none'
+        } else {
+          this.newpassword.style.display = 'block'
+        }
+>>>>>>> e7c38134fee4e27d0a3c0763bc03b338ad3db0cc
       }
     }
   }
@@ -151,9 +169,9 @@
   .vh-100 {
     height: 100vh;
     margin-top: 25px;
-    background-color: rgb(175, 175, 175);
-    margin-right: 20px;
-    margin-left: 20px;
+    background-color: rgb(209, 209, 209);
+    margin-right: 40px !important;
+    margin-left: 40px !important;
     padding-top: 20px;
     margin-bottom: 30px;
   }

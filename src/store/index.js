@@ -1,6 +1,6 @@
 import Vue from 'vue'
 import Vuex from 'vuex'
-import products from '../products.js'
+//import products from '../products.js'
 Vue.use(Vuex)
 
 export default new Vuex.Store({
@@ -27,7 +27,6 @@ export default new Vuex.Store({
       }
     ],
     products: {
-      products,
       '5895af63-e246-42bc-b629-bf607f004da7': {
         brand: 'Gucci',
         name: 'Jacket',
