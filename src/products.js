@@ -25,7 +25,7 @@ let brands = [
   'Amina Muaddi',
   'Ancient Greek Sandals',
   'Anissa Kermiche',
-  'Ann Demeulemeester  coming soon',
+  'Ann Demeulemeester',
   'Anna Kosturova',
   'Aquazzura',
   'Asceno',
