@@ -299,22 +299,34 @@ let colours = [
 ]
 
 let products = {}
-
+// CREATES RANDOM PRICE
 let randomPrice = (min = 400, max = 50000) => {
   let num = Math.random() * (max - min) + min
   Math.floor(num)
   return Math.round(num / 100) * 100 - 1
 }
-console.log(randomPrice(200, 5000))
 
 names.forEach(name => {
+  // CREATES RANDOM ARRAY
+  function randomGenerator(array, length) {
+    let randomArray = array.slice(
+      Math.floor(Math.random() * array.length),
+      array.length
+    )
+    for (let i = randomArray.length; i > length; i--) {
+      randomArray.pop()
+    }
+    return randomArray
+  }
+
+  // CREATES RANDOM PRODUCTS
   for (let i = 0; i < 6; i++) {
     products[uuid.v4()] = {
       brand: brands[Math.floor(Math.random() * brands.length)],
       name: name,
-      colour: colours,
+      colour: randomGenerator(colours, 4),
       price: randomPrice(200, 5000),
-      size: sizes
+      size: randomGenerator(sizes, 5)
     }
   }
 })
@@ -322,3 +334,19 @@ names.forEach(name => {
 export default {
   products
 }
+
+// colours.slice(
+//         Math.floor(Math.random() * colours.length),
+//         colours.length
+//       )
+
+// function randomGenerator() {
+//   let randomColours = colours.slice(
+//     Math.floor(Math.random() * colours.length),
+//     colours.length
+//   )
+//   for (let i = randomColours.length; i > 4; i--) {
+//     randomColours.pop()
+//   }
+//   return randomColours
+// }
