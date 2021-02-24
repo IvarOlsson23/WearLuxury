@@ -6,11 +6,11 @@
           ><router-link to="/" class="logo-icon">WL </router-link
           ><router-link to="/" class="logo-text">WearLuxury</router-link></b-col
         >
-        <b-col id="home-con" class="primary" 
+        <b-col id="home-con" class="primary"
           ><router-link to="/" class="white-text">Home</router-link></b-col
         >
-        <b-col 
-      @mouseover="listhover = true"
+        <b-col
+          @mouseover="listhover = true"
           id="products-con"
           class="primary, menu"
         >
@@ -38,7 +38,7 @@
                 d="M8 8a3 3 0 1 0 0-6 3 3 0 0 0 0 6zm2-3a2 2 0 1 1-4 0 2 2 0 0 1 4 0zm4 8c0 1-1 1-1 1H3s-1 0-1-1 1-4 6-4 6 3 6 4zm-1-.004c-.001-.246-.154-.986-.832-1.664C11.516 10.68 10.289 10 8 10c-2.29 0-3.516.68-4.168 1.332-.678.678-.83 1.418-.832 1.664h10z"
               /></svg></router-link
         ></b-col>
-        <b-col  xl="13" id="korg-con" class="white-text" 
+        <b-col xl="13" id="korg-con" class="white-text"
           ><router-link to="/Cart" class="cart"
             ><svg
               xmlns="http://www.w3.org/2000/svg"
@@ -95,14 +95,18 @@
         <li><router-link to="/products" class="text-dec">Man</router-link></li>
         <li><router-link to="/" class="text-dec">Shirts</router-link></li>
         <li><router-link to="/" class="text-dec">Pants</router-link></li>
-        <li><router-link to="/" class="text-dec">Coats and Jackets</router-link></li>
+        <li>
+          <router-link to="/" class="text-dec">Coats and Jackets</router-link>
+        </li>
         <li><router-link to="/" class="text-dec">Accessoaries</router-link></li>
       </ul>
       <ul id="woman-list">
         <li><router-link to="/" class="text-dec">Woman</router-link></li>
         <li><router-link to="/" class="text-dec">Shirts</router-link></li>
         <li><router-link to="/" class="text-dec">Pants</router-link></li>
-        <li><router-link to="/" class="text-dec">Coats and Jackets</router-link></li>
+        <li>
+          <router-link to="/" class="text-dec">Coats and Jackets</router-link>
+        </li>
         <li><router-link to="/" class="text-dec">Accessoaries</router-link></li>
       </ul>
     </div>
@@ -135,11 +139,11 @@
 <style scoped lang="scss">
   @import url('https://fonts.googleapis.com/css2?family=Great+Vibes&display=swap');
 
-#nav {
-  position: sticky;
-  top: 0px;
-  z-index: 1000;
-}
+  #nav {
+    position: sticky;
+    top: 0px;
+    z-index: 1000;
+  }
   .white-text {
     color: #ffffff !important;
     text-decoration: none;
@@ -147,9 +151,9 @@
   .inline {
     display: inline-block;
   }
-.text-dec{
-  text-decoration: none;
-}
+  .text-dec {
+    text-decoration: none;
+  }
 
   #products-con {
     text-align: center;
@@ -157,7 +161,6 @@
 
   #korg-con {
     text-align: left;
-    
   }
   #countitems {
     border: 1px red solid;
@@ -252,7 +255,7 @@
     padding-top: 20px;
   }
 
-  #man-list li:first-child{
+  #man-list li:first-child {
     border-bottom: 1px solid;
   }
 
@@ -260,7 +263,7 @@
     width: 50%;
     padding-top: 20px;
   }
-   #woman-list li:first-child{
+  #woman-list li:first-child {
     border-bottom: 1px solid;
   }
 
@@ -272,16 +275,10 @@
     list-style: none;
   }
 
- 
   @media only screen and (max-width: 1200px) {
-   
-    .logo-icon{
+    .logo-icon {
       display: none;
     }
-    
-     
-    
-
   }
 
   @media only screen and (max-width: 580px) {
@@ -299,10 +296,9 @@
     #sok-con {
       padding-top: 5px;
       padding-bottom: 5px;
-       
     }
 
-    #home-con{
+    #home-con {
       padding-left: 0px;
     }
   }

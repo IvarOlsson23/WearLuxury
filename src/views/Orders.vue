@@ -3,7 +3,7 @@
     <div id="order-nav">
       <div id="order">Orders</div>
       <div id="canceled">Canceled Orders</div>
-</div>
+    </div>
     <div>
       <b-row id="ongoing-con">
         <!-- CARTITEMS -->
@@ -29,7 +29,7 @@
               border-variant="light"
             >
               <b-card-text>
-                Color: {{ product.color}}  
+                Color: {{ product.color }}
                 <br />
                 Size: {{ product.size }}
                 <span class="d-block mt-2">
@@ -76,7 +76,6 @@
             </b-card>
           </b-card>
         </b-col>
-        
       </b-row>
     </div>
   </div>
@@ -108,8 +107,7 @@
         },
         payMethodOptions: ['Visa', 'Paypal', 'Bitcoin', 'Invoice'],
         submitted: false,
-        options: [1, 2, 3, 4],
-        
+        options: [1, 2, 3, 4]
       }
     },
     methods: {
@@ -128,8 +126,6 @@
         }
 
         cartKeys = []
-         
-        
 
         // GOES TO NEXT PAGE
         this.$router.push({ name: 'OrderConfirm' })
@@ -152,32 +148,30 @@
       },
       cartItemLength() {
         let productLength = this.$store.state.orders.length
-       
-        let orderMessage = productLength === 1 ? ' order ' : ' orders '
-        return ' Ongoing ' + orderMessage + productLength 
-      }
-    }, mutations: {
-    setOrder(state, order) {
-      state.orders.push(order)
-    },
-   
-    addCart(state, toCart) {
-      state.cart.push(toCart)
-    }
-  },
-    
-     }
 
+        let orderMessage = productLength === 1 ? ' order ' : ' orders '
+        return ' Ongoing ' + orderMessage + productLength
+      }
+    },
+    mutations: {
+      setOrder(state, order) {
+        state.orders.push(order)
+      },
+
+      addCart(state, toCart) {
+        state.cart.push(toCart)
+      }
+    }
+  }
 </script>
 
 <style scoped>
-#con{
-   width: 50%;
+  #con {
+    width: 50%;
     margin: auto;
-}
+  }
 
   #order-nav {
-    
     margin-top: 20px;
     background-color: #f8f8f4;
   }
@@ -201,6 +195,4 @@
   #canceled:hover {
     background-color: bisque;
   }
-
-  
 </style>

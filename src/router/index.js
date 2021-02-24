@@ -9,7 +9,6 @@ import About from '../views/About.vue'
 import Profil from '../views/Profil.vue'
 import Orders from '../views/Orders.vue'
 
-
 Vue.use(VueRouter)
 
 const routes = [
