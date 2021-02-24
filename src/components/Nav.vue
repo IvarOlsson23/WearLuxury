@@ -252,18 +252,18 @@
   #dropdown li {
     list-style: none;
   }
- #man-list {
+  #man-list {
     width: 50%;
     padding-top: 20px;
   }
-   #man-list li:first-child{
+  #man-list li:first-child {
     border-bottom: 1px solid;
   }
   #woman-list {
     width: 50%;
     padding-top: 20px;
   }
-    #woman-list li:first-child{
+  #woman-list li:first-child {
     border-bottom: 1px solid;
   }
 
@@ -280,9 +280,8 @@
     }
 
     #sok-con {
-      padding-top: 5px;
-      padding-bottom: 5px;
+      padding-top: 6px;
+      padding-bottom: 6px;
     }
-    
   }
 </style>
