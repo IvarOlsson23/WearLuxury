@@ -6,6 +6,9 @@ import OrderConfirm from '../views/OrderConfirm.vue'
 import Products from '../views/Products.vue'
 import Login from '../views/Login.vue'
 import About from '../views/About.vue'
+import Profil from '../views/Profil.vue'
+import Orders from '../views/Orders.vue'
+
 
 Vue.use(VueRouter)
 
@@ -40,6 +43,16 @@ const routes = [
     path: '/about',
     name: 'about',
     component: About
+  },
+  {
+    path: '/profil',
+    name: 'profil',
+    component: Profil
+  },
+  {
+    path: '/orders',
+    name: 'orders',
+    component: Orders
   }
 ]
 
