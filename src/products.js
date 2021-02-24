@@ -1,5 +1,6 @@
 import { uuid } from 'vue-uuid'
 
+// BRANDS
 let brands = [
   'A.P.C.',
   'Acne Studios',
@@ -251,7 +252,7 @@ let brands = [
   'Zeynep Arçay',
   'Zimmermann'
 ]
-
+// NAMES
 let names = [
   'Dresses',
   'Tops',
@@ -270,7 +271,7 @@ let names = [
   'Shoes',
   'Bags'
 ]
-
+// SIZES
 let sizes = [
   { text: 'XS', value: 'XS' },
   { text: 'S', value: 'S' },
@@ -278,7 +279,7 @@ let sizes = [
   { text: 'L', value: 'L' },
   { text: 'XL', value: 'XL' }
 ]
-
+// COLOURS
 let colours = [
   { text: 'beige', value: 'beige' },
   { text: 'black', value: 'black' },
@@ -297,15 +298,16 @@ let colours = [
   { text: 'white', value: 'white' },
   { text: 'yellow', value: 'yellow' }
 ]
-
+// INITIATES PRODUCTS VAR
 let products = {}
+
 // CREATES RANDOM PRICE
 let randomPrice = (min = 400, max = 50000) => {
   let num = Math.random() * (max - min) + min
   Math.floor(num)
   return Math.round(num / 100) * 100 - 1
 }
-
+// LOOPS TROUGH NAMES AND CREATES 6 products in EACH CATEGORIE
 names.forEach(name => {
   // CREATES RANDOM ARRAY
   function randomGenerator(array, length) {
@@ -319,7 +321,7 @@ names.forEach(name => {
     return randomArray
   }
 
-  // CREATES RANDOM PRODUCTS
+  // CREATES 6 RANDOM PRODUCTS
   for (let i = 0; i < 6; i++) {
     products[uuid.v4()] = {
       brand: brands[Math.floor(Math.random() * brands.length)],
