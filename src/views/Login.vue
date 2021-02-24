@@ -41,13 +41,18 @@
             Remember me
           </b-form-checkbox>
 
-<<<<<<< HEAD
           <div>
-            <div class="mt-3" v-b-modal.modal-prevent-closing style="max-width: 540px; padding: 10px; margin-left: 100px;">
+            <div
+              class="mt-3"
+              v-b-modal.modal-prevent-closing
+              style="max-width: 540px; padding: 10px; margin-left: 100px;"
+            >
               Forgot password?
               <div v-if="submittedEmail.length === 0" />
               <ul v-else class="mb-0 pl-3">
-                <li v-for="email in submittedEmail" :key="email">{{ email }}</li>
+                <li v-for="email in submittedEmail" :key="email">
+                  {{ email }}
+                </li>
               </ul>
             </div>
 
@@ -75,10 +80,6 @@
                 </b-form-group>
               </form>
             </b-modal>
-=======
-          <div style="max-width: 540px; padding: 10px; margin-left: 200px">
-            <b-link href="#">Forgot password? </b-link>
->>>>>>> e7c38134fee4e27d0a3c0763bc03b338ad3db0cc
           </div>
         </div>
 
@@ -108,7 +109,6 @@
   export default {
     data() {
       return {
-<<<<<<< HEAD
         email: '',
         emailState: null,
         submittedEmail: ''
@@ -141,18 +141,6 @@
         this.$nextTick(() => {
           this.$bvModal.hide('modal-prevent-closing')
         })
-=======
-        newpassword: ''
-      }
-    },
-    methods: {
-      getnewpassword() {
-        if (this.newpassword != null) {
-          this.newpassword.style.display = 'none'
-        } else {
-          this.newpassword.style.display = 'block'
-        }
->>>>>>> e7c38134fee4e27d0a3c0763bc03b338ad3db0cc
       }
     }
   }
