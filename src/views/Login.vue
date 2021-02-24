@@ -71,7 +71,18 @@
 <script>
   export default {
     data() {
-      return {}
+      return {
+        newpassword: ''
+      }
+    },
+    methods: {
+      getnewpassword() {
+        if (this.newpassword != null) {
+          this.newpassword.style.display = 'none'
+        } else {
+          this.newpassword.style.display = 'block'
+        }
+      }
     }
   }
 </script>
@@ -87,9 +98,9 @@
   .vh-100 {
     height: 100vh;
     margin-top: 25px;
-    background-color: rgb(175, 175, 175);
-    margin-right: 20px;
-    margin-left: 20px;
+    background-color: rgb(209, 209, 209);
+    margin-right: 40px !important;
+    margin-left: 40px !important;
     padding-top: 20px;
     margin-bottom: 30px;
   }
