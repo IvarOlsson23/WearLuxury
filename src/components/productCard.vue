@@ -15,6 +15,38 @@
           <p>{{ product.name }}</p>
           <p>{{ product.price }} $</p>
         </span>
+        <!-- Show more info -->
+        <div>
+          <button id="more" v-b-modal.modal-tall>More info</button>
+
+          <b-modal
+            id="modal-tall"
+            hide-footer
+            hide-backdrop
+            content-class="shadow"
+            title="Brand"
+          >
+            <img src="../assets/suit.png" alt="suit" />
+            <p>
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+              eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
+              enim ad minim veniam, quis nostrud exercitation ullamco laboris
+              nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in
+              reprehenderit in voluptate velit esse cillum dolore eu fugiat
+              nulla pariatur. Lorem ipsum dolor sit amet, consectetur adipiscing
+              elit, sed do eiusmod tempor incididunt ut labore et dolore magna
+              aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco
+              laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure
+              dolor in reprehenderit in voluptate velit esse cillum dolore eu
+              fugiat nulla pariatur. Lorem ipsum dolor sit amet, consectetur
+              adipiscing elit, sed do eiusmod tempor incididunt ut labore et
+              dolore magna aliqua. Ut enim ad minim veniam, quis nostrud
+              exercitation ullamco laboris nisi ut aliquip ex ea commodo
+              consequat. Duis aute irure dolor in reprehenderit in voluptate
+              velit esse cillum dolore eu fugiat nulla pariatur.
+            </p>
+          </b-modal>
+        </div>
 
         <!--  Size picker -->
         <div id="size">
@@ -63,7 +95,8 @@
         toCart: {
           sizes: {},
           colors: {}
-        }
+        },
+        modalShow: false
       }
     },
     methods: {
@@ -108,10 +141,22 @@
   img {
     max-width: 100%;
   }
-
+  #more {
+    margin-bottom: 8px;
+    border: none;
+    background-color: #fff;
+    font-size: 12px;
+  }
   #prod-info {
     display: flex;
     justify-content: space-between;
+  }
+  @media (min-width: 500px) and (max-width: 799px) {
+    #card-wrapper {
+      display: grid;
+      grid-template-columns: auto auto;
+      grid-gap: 50px;
+    }
   }
   @media screen and (min-width: 800px) {
     #card-wrapper {
