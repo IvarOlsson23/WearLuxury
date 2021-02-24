@@ -1,68 +1,116 @@
 <template>
   <div class="login">
-    <b-row class="vh-100 text-center">
-      <b-col>
-        <h1>Login</h1>
-        <div>
-          <b-form
-            @submit.stop.prevent
-            style="max-width: 540px; padding:10px; margin: 15px"
-          >
-            <label for="text-email">E-mail</label>
-            <b-form-input
-              type="email"
-              id="text-email"
-              aria-describedby="email-help-block"
-            />
-          </b-form>
+    <b-row>
+      <b-col cols="8" offset="2">
+        <b-form
+          v-if="mode == 'login'"
+          @submit.stop.prevent
+          v-model="login"
+          style=" padding:10px; margin: 15px"
+        >
+          <b-row class="login-bg">
+            <b-col>
+              <h1>Login</h1>
+              <div class="text-left mt-5">
+                <label for="text-email">E-mail</label>
+                <b-form-input
+                  type="email"
+                  id="text-email"
+                  v-model="email"
+                  aria-describedby="email-help-block"
+                />
+                <label for="text-password">Password</label>
+                <b-form-input
+                  type="password"
+                  id="text-password"
+                  aria-describedby="password-help-block"
+                />
+              </div>
 
-          <b-form
-            @submit.stop.prevent
-            style="max-width: 540px; padding: 10px; margin: 15px"
-          >
-            <label for="text-password">Password</label>
-            <b-form-input
-              type="password"
-              id="text-password"
-              aria-describedby="password-help-block"
-            />
-          </b-form>
-        </div>
+              <div>
+                <div style=" padding: 10px; margin-top: 20px">
+                  <b-link href="#">Forgot password? </b-link>
+                </div>
+              </div>
 
-        <div>
-          <b-form-checkbox
-            style="max-width: 540px; padding: 10px; margin-left: -100px"
-            id="checkbox-1"
-            v-model="status"
-            name="checkbox-1"
-            value="accepted"
-            unchecked-value="not_accepted"
-          >
-            Remember me
-          </b-form-checkbox>
+              <div>
+                <b-button
+                  block
+                  variant="secondary"
+                  style=" padding: 15px; margin-top: 15px"
+                  >Login</b-button
+                >
+              </div>
 
-          <div style="max-width: 540px; padding: 10px; margin-left: 200px">
-            <b-link href="#">Forgot password? </b-link>
-          </div>
-        </div>
+              <div>
+                <b-button
+                  block
+                  variant="secondary"
+                  style=" padding: 15px; margin-top: 15px"
+                  @click="mode = 'register'"
+                  >Create Account</b-button
+                >
+              </div>
+            </b-col>
+          </b-row>
+        </b-form>
+        <b-form
+          v-if="mode == 'register'"
+          @submit.stop.prevent
+          v-model="login"
+          style=" padding:10px; margin: 15px"
+        >
+          <b-row class="login-bg">
+            <b-col>
+              <h1>Create account</h1>
+              <div class="text-left mt-5">
+                <label for="text-name">Name</label>
+                <b-form-input
+                  type="text"
+                  id="text-name"
+                  v-model="name"
+                  aria-describedby="email-help-block"
+                />
+                <label for="text-email">E-mail</label>
+                <b-form-input
+                  type="email"
+                  id="text-email"
+                  v-model="email"
+                  aria-describedby="email-help-block"
+                />
+                <label for="text-password">Password</label>
+                <b-form-input
+                  type="password"
+                  id="text-password"
+                  aria-describedby="password-help-block"
+                />
+              </div>
 
-        <div>
-          <b-button
-            block
-            variant="secondary"
-            style="max-width: 540px; padding: 15px; margin: 15px"
-            >Login</b-button
-          >
-        </div>
-
-        <div>
-          <b-button
-            block
-            variant="secondary"
-            style="max-width: 540px; padding: 15px; margin: 15px"
-            >Create Account</b-button
-          >
-        </div>
+              <div>
+                <div style=" padding: 10px; margin-top: 20px">
+                  <b-link href="#">Forgot password? </b-link>
+                </div>
+              </div>
+              <div>
+                <b-button
+                  block
+                  variant="secondary"
+                  style=" padding: 15px; margin-top: 15px"
+                  >Create Account</b-button
+                >
+              </div>
+              <div>
+                <b-button
+                  block
+                  variant="secondary"
+                  style=" padding: 15px; margin-top: 15px"
+                  @click="mode = 'login'"
+                  >Login</b-button
+                >
+              </div>
+            </b-col>
+          </b-row>
+        </b-form>
       </b-col>
     </b-row>
   </div>
@@ -72,22 +120,17 @@
   export default {
     data() {
       return {
-        newpassword: ''
+        email: '',
+        login: '',
+        name: '',
+        mode: 'login'
       }
     },
-    methods: {
-      getnewpassword() {
-        if (this.newpassword != null) {
-          this.newpassword.style.display = 'none'
-        } else {
-          this.newpassword.style.display = 'block'
-        }
-      }
-    }
+    methods: {}
   }
 </script>
 
-<style>
+<style scoped>
   .ma {
     align-content: center;
     color: white;
@@ -95,13 +138,10 @@
     float: right;
     padding: 20px;
   }
-  .vh-100 {
-    height: 100vh;
+  .login-bg {
     margin-top: 25px;
     background-color: rgb(209, 209, 209);
-    margin-right: 40px !important;
-    margin-left: 40px !important;
-    padding-top: 20px;
+    padding: 20px;
     margin-bottom: 30px;
   }
   .forgot {
