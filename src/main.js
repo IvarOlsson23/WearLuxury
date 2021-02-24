@@ -3,6 +3,7 @@ import App from './App.vue'
 import './registerServiceWorker'
 import router from './router'
 import store from './store'
+import UUID from 'vue-uuid'
 
 import { BootstrapVue, IconsPlugin } from 'bootstrap-vue'
 
@@ -12,6 +13,7 @@ import 'bootstrap-vue/dist/bootstrap-vue.css'
 import './main.scss'
 Vue.use(BootstrapVue)
 Vue.use(IconsPlugin)
+Vue.use(UUID)
 
 Vue.config.productionTip = false
 

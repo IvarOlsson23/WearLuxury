@@ -47,9 +47,7 @@
             v-b-popover.hover.top="
               ' - Your shopping car contains ' +
                 countItems +
-                ' item | Totalt ' +
-                totalAmount +
-                ' $'
+                ' item | Totalt XXX $'
             "
             ><svg
               xmlns="http://www.w3.org/2000/svg"
@@ -133,6 +131,7 @@
         productOverlay: true
       }
     },
+
     computed: mapGetters(['countItems'], ['totalAmount']),
 
     methods: {
@@ -286,15 +285,68 @@
 
   @media only screen and (max-width: 1518px) {
     #korg-con {
+      max-width: 8%;
+    }
+  }
+
+  @media only screen and (max-width: 1400px) {
+    #about-con {
+      text-align: center;
+    }
+    #home-con {
+      max-width: 20%;
+    }
+  }
+
+  @media only screen and (max-width: 1100px) {
+    #home-con {
+      max-width: 5%;
+    }
+
+    #logo-con {
+      margin-top: 10px;
+    }
+  }
+
+  @media only screen and (max-width: 970px) {
+    #korg-con {
+      max-width: 10%;
+    }
+  }
+
+  @media only screen and (max-width: 779px) {
+    #korg-con {
+      max-width: 15%;
+    }
+  }
+
+  @media only screen and (max-width: 700px) {
+    #countitems {
+      display: none;
+    }
+  }
+
+  @media only screen and (max-width: 400px) {
+    #logo-con {
+      margin-bottom: 10px;
+    }
+
+    .sok-button {
+      display: none;
+    }
+
+    .sok-felt {
+      margin-bottom: 5px;
+      margin-top: 5px;
+
       max-width: 9%;
     }
-     #home-con {
+    #home-con {
       max-width: 4%;
     }
   }
 
   @media only screen and (max-width: 1100px) {
-
     #logo-con {
       margin-top: 10px;
     }
@@ -303,12 +355,11 @@
     }
   }
 
-
   @media only screen and (max-width: 580px) {
     #countitems {
       display: none;
     }
-    .sok-button{
+    .sok-button {
       display: none;
     }
     #logo-con {
@@ -316,9 +367,9 @@
       margin-bottom: 10px;
     }
 
-    #sok-con{
-       padding-top: 5px;
-        padding-bottom: 5px;
+    #sok-con {
+      padding-top: 5px;
+      padding-bottom: 5px;
     }
   }
 </style>
