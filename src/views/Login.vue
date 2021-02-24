@@ -42,11 +42,7 @@
           </b-form-checkbox>
 
           <div style="max-width: 540px; padding: 10px; margin-left: 200px">
-            <b-link
-              
-              href="#" 
-              >Forgot password?
-            </b-link>
+            <b-link href="#">Forgot password? </b-link>
           </div>
         </div>
 
@@ -96,6 +92,5 @@
     margin-left: 20px;
     padding-top: 20px;
     margin-bottom: 30px;
-    
   }
 </style>
