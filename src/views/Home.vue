@@ -69,6 +69,7 @@
 <style scoped>
   #body {
     background-color: rgb(255, 255, 255);
+    width: 100%;
   }
   /* Stora bilden  */
   #wrapper {
@@ -84,7 +85,7 @@
     text-align: center;
   }
   #wrapper-qoute {
-    color: lavenderblush;
+    color: rgb(252, 252, 252);
     justify-content: center;
     align-items: center;
     display: flex;
@@ -96,6 +97,9 @@
     margin-top: 5em;
     height: 200px;
     align-items: center;
+  }
+  .divider {
+    width: 100%;
   }
   /* Stora bilden  */
   /* "Men" och Women - Menyn */
@@ -218,4 +222,32 @@
     margin-bottom: 1em;
   }
   @import url('https://fonts.googleapis.com/css2?family=Libre+Baskerville&family=Romanesco&display=swap');
+
+  @media (max-width: 720px) {
+    #product-wrapper1 {
+      flex-direction: column;
+    }
+
+    #reklam-bild1 {
+      width: 100%;
+      margin-left: 0em;
+      height: 25em;
+      margin-top: 8vh;
+    }
+    #reklam-bild2 {
+      width: 100%;
+      margin-top: 1vh;
+      height: 25em;
+      margin-left: 0em;
+    }
+    #reklam-bild3 {
+      width: 100%;
+      margin-left: 0em;
+      margin-top: 1vh;
+      height: 25em;
+    }
+    #wrapper {
+      height: 30em;
+    }
+  }
 </style>
