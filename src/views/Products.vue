@@ -1,5 +1,5 @@
 <template>
-  <div class="produts">
+  <div class="produts my-4">
     <b-container class="bv-example-row bv-example-row-flex-cols">
       <b-row>
         <!-- Dropdown menu -->
@@ -174,8 +174,6 @@
 
 <style>
   .productbox {
-    /* width: 300px;
-    min-height: 250px; */
     border: solid 1px rgba(185, 184, 184, 0.747);
     font-style: bold;
     margin-top: 50px;
