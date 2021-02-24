@@ -174,8 +174,6 @@
 
 <style>
   .productbox {
-    /* width: 300px;
-    min-height: 250px; */
     border: solid 1px rgba(185, 184, 184, 0.747);
     font-style: bold;
     margin-top: 50px;
