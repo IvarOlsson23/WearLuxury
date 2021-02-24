@@ -6,17 +6,15 @@
           ><router-link to="/" class="logo-icon">WL </router-link
           ><router-link to="/" class="logo-text">WearLuxury</router-link></b-col
         >
-        <b-col id="home-con" class="primary" lg="3"
+        <b-col id="home-con" class="primary"
           ><router-link to="/" class="white-text">Home</router-link></b-col
         >
-        <b-col id="products-con" class="primary">
-          <p
-            id="products-text"
-            class="white-text"
-            @click="productOverlay = !productOverlay"
-          >
-            Products
-          </p>
+        <b-col
+          @mouseover="listhover = true"
+          id="products-con"
+          class="primary, menu"
+        >
+          <router-link to="/Products" class="white-text">Products</router-link>
         </b-col>
 
         <b-col id="about-con" class="primary"
@@ -26,7 +24,7 @@
         >
 
         <b-col id="logincon"
-          ><router-link to="/Login"
+          ><router-link to="/profil"
             ><svg
               xmlns="http://www.w3.org/2000/svg"
               width="24"
@@ -40,31 +38,22 @@
                 d="M8 8a3 3 0 1 0 0-6 3 3 0 0 0 0 6zm2-3a2 2 0 1 1-4 0 2 2 0 0 1 4 0zm4 8c0 1-1 1-1 1H3s-1 0-1-1 1-4 6-4 6 3 6 4zm-1-.004c-.001-.246-.154-.986-.832-1.664C11.516 10.68 10.289 10 8 10c-2.29 0-3.516.68-4.168 1.332-.678.678-.83 1.418-.832 1.664h10z"
               /></svg></router-link
         ></b-col>
-        <b-col id="korg-con" class="white-text"
-          ><router-link
-            to="/Cart"
-            class="cart"
-            v-b-popover.hover.top="
-              ' - Your shopping car contains ' +
-                countItems +
-                ' item | Totalt XXX $'
-            "
-            ><svg
-              xmlns="http://www.w3.org/2000/svg"
-              width="24"
-              height="20"
-              fill="currentColor"
-              class="bi bi-handbag, white-text"
-              viewBox="0 0 16 16"
-            >
-              <path
-                d="M8 1a2 2 0 0 1 2 2v2H6V3a2 2 0 0 1 2-2zm3 4V3a3 3 0 1 0-6 0v2H3.361a1.5 1.5 0 0 0-1.483 1.277L.85 13.13A2.5 2.5 0 0 0 3.322 16h9.356a2.5 2.5 0 0 0 2.472-2.87l-1.028-6.853A1.5 1.5 0 0 0 12.64 5H11zm-1 1v1.5a.5.5 0 0 0 1 0V6h1.639a.5.5 0 0 1 .494.426l1.028 6.851A1.5 1.5 0 0 1 12.678 15H3.322a1.5 1.5 0 0 1-1.483-1.723l1.028-6.851A.5.5 0 0 1 3.36 6H5v1.5a.5.5 0 0 0 1 0V6h4z"
-              />
-            </svg>
-          </router-link>
 
-          <span id="countitems">{{ countItems }}</span></b-col
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          width="24"
+          height="20"
+          fill="currentColor"
+          class="bi bi-handbag, white-text"
+          viewBox="0 0 16 16"
         >
+          <path
+            d="M8 1a2 2 0 0 1 2 2v2H6V3a2 2 0 0 1 2-2zm3 4V3a3 3 0 1 0-6 0v2H3.361a1.5 1.5 0 0 0-1.483 1.277L.85 13.13A2.5 2.5 0 0 0 3.322 16h9.356a2.5 2.5 0 0 0 2.472-2.87l-1.028-6.853A1.5 1.5 0 0 0 12.64 5H11zm-1 1v1.5a.5.5 0 0 0 1 0V6h1.639a.5.5 0 0 1 .494.426l1.028 6.851A1.5 1.5 0 0 1 12.678 15H3.322a1.5 1.5 0 0 1-1.483-1.723l1.028-6.851A.5.5 0 0 1 3.36 6H5v1.5a.5.5 0 0 0 1 0V6h4z"
+          />
+        </svg>
+
+        <span id="countitems">{{ countItems }}</span>
+
         <b-col id="sok-con" sm="auto"
           ><form class="form-inline">
             <button
@@ -93,30 +82,30 @@
         ></b-col>
       </b-row>
     </b-container>
-    <div id="nav-overlay" v-show="!productOverlay">
-      <div id="product-list">
-        <div id="all-products-con">
-          <router-link to="/Products">All Products</router-link>
-        </div>
-        <div id="man-list-con" class="inline">
-          <ul class="list">
-            <li><router-link to="/Products">MAN</router-link></li>
-            <li><router-link to="/Products">Shirts</router-link></li>
-            <li><router-link to="/Products">Pants</router-link></li>
-            <li><router-link to="/Products">Coats and Jackets</router-link></li>
-            <li><router-link to="/Products">Accessoaries</router-link></li>
-          </ul>
-        </div>
-        <div id="woman-list-con" class="inline">
-          <ul class="list">
-            <li><router-link to="/Products">Woman</router-link></li>
-            <li><router-link to="/Products">Shirts</router-link></li>
-            <li><router-link to="/Products">Pants</router-link></li>
-            <li><router-link to="/Products">Coats and Jackets</router-link></li>
-            <li><router-link to="/Products">Accessoaries</router-link></li>
-          </ul>
-        </div>
-      </div>
+    <div
+      id="dropdown"
+      v-if="listhover"
+      @click="listhover = false"
+      @mouseleave="listhover = false"
+    >
+      <ul id="man-list">
+        <li><router-link to="/products" class="text-dec">Man</router-link></li>
+        <li><router-link to="/" class="text-dec">Shirts</router-link></li>
+        <li><router-link to="/" class="text-dec">Pants</router-link></li>
+        <li>
+          <router-link to="/" class="text-dec">Coats and Jackets</router-link>
+        </li>
+        <li><router-link to="/" class="text-dec">Accessoaries</router-link></li>
+      </ul>
+      <ul id="woman-list">
+        <li><router-link to="/" class="text-dec">Woman</router-link></li>
+        <li><router-link to="/" class="text-dec">Shirts</router-link></li>
+        <li><router-link to="/" class="text-dec">Pants</router-link></li>
+        <li>
+          <router-link to="/" class="text-dec">Coats and Jackets</router-link>
+        </li>
+        <li><router-link to="/" class="text-dec">Accessoaries</router-link></li>
+      </ul>
     </div>
   </div>
 </template>
@@ -128,11 +117,11 @@
     components: {},
     data() {
       return {
-        productOverlay: true
+        listhover: false
       }
     },
 
-    computed: mapGetters(['countItems'], ['totalAmount']),
+    computed: mapGetters(['countItems']),
 
     methods: {
       onOver() {
@@ -147,62 +136,29 @@
 
 <style scoped lang="scss">
   @import url('https://fonts.googleapis.com/css2?family=Great+Vibes&display=swap');
+
+  #nav {
+    position: sticky;
+    top: 0px;
+    z-index: 1000;
+  }
   .white-text {
     color: #ffffff !important;
     text-decoration: none;
   }
-
-  #nav-overlay {
-    background-color: rgb(247, 247, 247);
-    position: absolute;
-    width: 100%;
-    height: 180px;
-    left: 0px;
-    top: 0x;
-    -webkit-animation: fadein 0.8s;
-    /* Safari, Chrome and Opera > 12.1 */
-    -moz-animation: fadein 0.8s;
-    /* Firefox < 16 */
-    -ms-animation: fadein 0.8s;
-    /* Internet Explorer */
-    -o-animation: fadein 0.8s;
-    /* Opera < 12.1 */
-    animation: fadein 0.8s;
-    display: flex;
-
-    align-items: center;
-    z-index: 1000;
+  .inline {
+    display: inline-block;
   }
-  #all-products-con {
-    text-align: center;
-    margin: 10px;
+  .text-dec {
+    text-decoration: none;
   }
+
   #products-con {
     text-align: center;
   }
 
-  #product-list {
-    width: 100%;
-    text-align: left;
-  }
-  #products-text {
-    cursor: pointer;
-  }
-
-  #woman-list-con {
-    width: 50%;
-  }
-  #man-list-con {
-    width: 50%;
-  }
-
-  .inline {
-    display: inline-block;
-  }
-
   #korg-con {
     text-align: left;
-    max-width: 5%;
   }
   #countitems {
     border: 1px red solid;
@@ -211,12 +167,14 @@
     padding: 0px 5px 0px 5px;
     margin-bottom: 4px;
   }
-  .list li {
-    list-style: none;
-    text-decoration: none;
-  }
-  .list li:first-child {
-    border-bottom: 1px solid;
+
+  #korg-block {
+    background-color: white;
+    display: flex;
+    position: absolute;
+    width: 100px;
+    height: 100px;
+    z-index: 2000;
   }
 
   #about-con {
@@ -250,7 +208,10 @@
     text-align: right;
     max-width: 5%;
   }
-
+  .modal {
+    position: absolute !important;
+    padding-left: 2000px !important;
+  }
   #con {
     background-color: #182e47;
 
@@ -277,82 +238,33 @@
     }
   }
 
-  p {
-    display: inline-block;
-    margin: 0;
-    width: 25%;
+  #dropdown {
+    display: flex;
+    position: absolute;
+    width: 100%;
+    left: 0px;
+    top: 0x;
+    align-items: center;
+    z-index: 1000;
+    background-color: #ffffff;
   }
 
-  @media only screen and (max-width: 1518px) {
-    #korg-con {
-      max-width: 8%;
-    }
+  #dropdown li {
+    list-style: none;
   }
-
-  @media only screen and (max-width: 1400px) {
-    #about-con {
-      text-align: center;
-    }
-    #home-con {
-      max-width: 20%;
-    }
+  #man-list {
+    width: 50%;
+    padding-top: 20px;
   }
-
-  @media only screen and (max-width: 1100px) {
-    #home-con {
-      max-width: 5%;
-    }
-
-    #logo-con {
-      margin-top: 10px;
-    }
+  #man-list li:first-child {
+    border-bottom: 1px solid;
   }
-
-  @media only screen and (max-width: 970px) {
-    #korg-con {
-      max-width: 10%;
-    }
+  #woman-list {
+    width: 50%;
+    padding-top: 20px;
   }
-
-  @media only screen and (max-width: 779px) {
-    #korg-con {
-      max-width: 15%;
-    }
-  }
-
-  @media only screen and (max-width: 700px) {
-    #countitems {
-      display: none;
-    }
-  }
-
-  @media only screen and (max-width: 400px) {
-    #logo-con {
-      margin-bottom: 10px;
-    }
-
-    .sok-button {
-      display: none;
-    }
-
-    .sok-felt {
-      margin-bottom: 5px;
-      margin-top: 5px;
-
-      max-width: 9%;
-    }
-    #home-con {
-      max-width: 4%;
-    }
-  }
-
-  @media only screen and (max-width: 1100px) {
-    #logo-con {
-      margin-top: 10px;
-    }
-    #korg-con {
-      max-width: 12%;
-    }
+  #woman-list li:first-child {
+    border-bottom: 1px solid;
   }
 
   @media only screen and (max-width: 580px) {
@@ -368,8 +280,8 @@
     }
 
     #sok-con {
-      padding-top: 5px;
-      padding-bottom: 5px;
+      padding-top: 6px;
+      padding-bottom: 6px;
     }
   }
 </style>

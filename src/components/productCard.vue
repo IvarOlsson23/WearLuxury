@@ -1,6 +1,5 @@
 <template>
   <!-- product card -->
-
   <div id="card-wrapper">
     <b-card
       :key="id"
@@ -16,17 +15,22 @@
           <p>{{ product.price }} $</p>
         </span>
         <!-- Show more info -->
-        <div>
-          <button id="more" v-b-modal.modal-tall>More info</button>
 
+        <button id="more" v-b-modal="'infoModal' + id" variant="primary">
+          More info
+        </button>
+        <div>
           <b-modal
-            id="modal-tall"
+            :id="'infoModal' + id"
             hide-footer
             hide-backdrop
             content-class="shadow"
-            title="Brand"
+            class="no-border"
           >
-            <img src="../assets/suit.png" alt="suit" />
+            <img src="../assets/suit.png" alt="suit" class="img-modal" />
+            <h2>{{ product.brand }}</h2>
+            <h4>{{ product.name }}</h4>
+
             <p>
               Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
               eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
@@ -95,8 +99,7 @@
         toCart: {
           sizes: {},
           colors: {}
-        },
-        modalShow: false
+        }
       }
     },
     methods: {
@@ -140,6 +143,12 @@
   }
   img {
     max-width: 100%;
+  }
+
+  .img-modal {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
   }
   #more {
     margin-bottom: 8px;

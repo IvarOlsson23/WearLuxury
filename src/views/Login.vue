@@ -144,16 +144,4 @@
     padding: 20px;
     margin-bottom: 30px;
   }
-  .forgot {
-    margin-left: 30px !important;
-    margin-top: 20px;
-  }
-  .email {
-    text-align: left;
-    margin-top: 40px !important;
-  }
-  .password {
-    text-align: left;
-    margin-top: 40px !important;
-  }
 </style>
