@@ -86,11 +86,6 @@
                 />
               </div>
 
-              <!-- <div>
-                <div style=" padding: 10px; margin-top: 20px">
-                  <b-link href="#">Forgot password? </b-link>
-                </div>
-              </div> -->
 
               <div>
                 <div
