@@ -86,11 +86,48 @@
                 />
               </div>
 
+
               <div>
-                <div style=" padding: 10px; margin-top: 20px">
-                  <b-link href="#">Forgot password? </b-link>
+                <div
+                  class="mt-3"
+                  v-b-modal.modal-prevent-closing
+                  style=" padding: 10px; margin-top: 20px"
+                >
+                  Forgot password?
+                  <div v-if="submittedForgot.length === 0" />
+                  <ul v-else class="mb-0 pl-3">
+                    <li v-for="forgot in submittedForgot" :key="forgot">
+                      {{ forgot }}
+                    </li>
+                  </ul>
                 </div>
+
+                <b-modal
+                  id="modal-prevent-closing"
+                  ref="modal"
+                  title="Forgotten password?"
+                  @show="resetModal"
+                  @hidden="resetModal"
+                  @ok="handleOk"
+                >
+                  <form ref="form" @submit.stop.prevent="handleSubmit">
+                    <b-form-group
+                      label="Enter your E-mail"
+                      label-for="forgot-input"
+                      invalid-feedback="E-mail is correct"
+                      :state="forgotState"
+                    >
+                      <b-form-input
+                        id="forgot-input"
+                        v-model="forgot"
+                        :state="forgotState"
+                        required
+                      />
+                    </b-form-group>
+                  </form>
+                </b-modal>
               </div>
+
               <div>
                 <b-button
                   block
@@ -121,12 +158,41 @@
     data() {
       return {
         email: '',
+        forgot: '',
         login: '',
         name: '',
-        mode: 'login'
+        mode: 'login',
+        forgotState: null,
+        submittedForgot: ''
       }
     },
-    methods: {}
+    methods: {
+      checkFormValidity() {
+        const valid = this.$refs.form.checkValidity()
+        this.forgotState = valid
+        return valid
+      },
+      resetModal() {
+        this.email = ''
+        this.forgotState = null
+      },
+      handleOk(bvModalEvt) {
+        bvModalEvt.preventDefault()
+
+        this.handleSubmit()
+      },
+      handleSubmit() {
+        if (!this.checkFormValidity()) {
+          return
+        }
+
+        this.submittedEmail.push(this.email)
+
+        this.$nextTick(() => {
+          this.$bvModal.hide('modal-prevent-closing')
+        })
+      }
+    }
   }
 </script>
 
