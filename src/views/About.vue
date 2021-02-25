@@ -2,20 +2,20 @@
   <div class="mb-4">
     <b-row>
       <b-col cols="12">
-        <b-row>
-          <b-col cols="12">
-            <div>
-              <b-card
-                overlay
-                img-src="about.jpg"
-                img-alt="Card Image"
-                text-variant="white"
-                title="WL"
-                sub-title="About us"
-                img-width="400px"
-                img-height="500px"
-              />
+        <b-row class="p-5">
+          <b-col cols="4">
+            <div class="flexbox" style="background-image: url('/social.jpeg');">
+              Social responsibility
             </div>
+            <p>dfs</p>
+          </b-col>
+          <b-col cols="4">
+            <div class="flexbox" style="background-image: url('/policy.jpg');">
+              Our policy
+            </div>
+          </b-col>
+          <b-col cols="4">
+            <div class="flexbox" style="background-image: url('/blog.jpg');" />
           </b-col>
         </b-row>
       </b-col>
@@ -29,9 +29,10 @@
   div {
     height: 100vh;
   }
-  .img {
-    background-repeat: no-repeat;
-    background-size: 1000px;
-    height: 560px;
+  .flexbox {
+    display: grid;
+    align-items: center;
+    height: 200px;
+    background-size: cover;
   }
 </style>

@@ -14,6 +14,7 @@
               <div class="text-left mt-5">
                 <label for="text-email">E-mail</label>
                 <b-form-input
+                  required
                   type="email"
                   id="text-email"
                   v-model="email"
@@ -21,8 +22,10 @@
                 />
                 <label for="text-password">Password</label>
                 <b-form-input
+                  required
                   type="password"
                   id="text-password"
+                  v-model="password"
                   aria-describedby="password-help-block"
                 />
               </div>
@@ -45,10 +48,11 @@
 
               <div>
                 <b-button
+                  @click="doLogin"
+                  type="submit"
                   block
                   variant="secondary"
                   style=" padding: 15px; margin-top: 15px"
-                  @click="redirect"
                   >Login</b-button
                 >
               </div>
@@ -77,6 +81,7 @@
               <div class="text-left mt-5">
                 <label for="text-name">Name</label>
                 <b-form-input
+                  required
                   type="text"
                   id="text-name"
                   v-model="name"
@@ -86,6 +91,7 @@
                   >E-mail</label
                 >
                 <b-form-input
+                  required
                   type="email"
                   id="text-email"
                   v-model="email"
@@ -97,6 +103,8 @@
                   >Password</label
                 >
                 <b-form-input
+                  v-model="password"
+                  required
                   type="password"
                   id="text-password"
                   aria-describedby="password-help-block"
@@ -108,6 +116,8 @@
                   >Repeat Password</label
                 >
                 <b-form-input
+                  v-model="repeatpassword"
+                  required
                   type="password"
                   id="text-password"
                   aria-describedby="password-help-block"
@@ -119,6 +129,8 @@
                   block
                   variant="secondary"
                   style=" padding: 15px; margin-top: 15px"
+                  @click="doregister"
+                  type="submit"
                   >Create Account</b-button
                 >
               </div>
@@ -171,14 +183,31 @@
         forgot: '',
         login: '',
         name: '',
+        password: '',
+        repeatpassword: '',
         mode: 'login',
         forgotState: null,
         submittedForgot: ''
       }
     },
     methods: {
+      doLogin() {
+        if (this.email != '' && this.password != '') {
+          this.redirect()
+        }
+      },
+      doregister() {
+        if (
+          this.email != '' &&
+          this.repeatpassword != '' &&
+          this.password != '' &&
+          this.name != ''
+        ) {
+          this.redirect()
+        }
+      },
       redirect() {
-        this.$router.push({ name: 'Home' })
+        this.$router.push({ name: 'profil' })
       },
       checkFormValidity() {
         const valid = this.$refs.form.checkValidity()
