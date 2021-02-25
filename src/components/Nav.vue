@@ -7,7 +7,7 @@
           ><router-link to="/" class="logo-text">WearLuxury</router-link></b-col
         >
         <b-col id="home-con" class="primary" lg="3"
-          ><router-link to="/" class="white-text">Home</router-link></b-col
+          ><router-link to="/" class="white-text">HOME</router-link></b-col
         >
         <b-col id="products-con" class="primary">
           <p
@@ -15,13 +15,13 @@
             class="white-text"
             @click="productOverlay = !productOverlay"
           >
-            Products
+            PRODUCTS
           </p>
         </b-col>
 
         <b-col id="about-con" class="primary"
           ><router-link to="/about" class="white-text"
-            >About</router-link
+            >ABOUT</router-link
           ></b-col
         >
 
@@ -65,32 +65,34 @@
 
           <span id="countitems">{{ countItems }}</span></b-col
         >
-        <b-col id="sok-con" sm="auto"
-          ><form class="form-inline">
-            <button
-              class="btn btn-outline-success my-2 my-sm-0, sok-button"
-              type="submit"
-            >
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                width="16"
-                height="16"
-                fill="currentColor"
-                class="bi bi-search, white-text"
-                viewBox="0 0 16 16"
+        <div>
+          <b-col sm="auto"
+            ><form class="form-inline">
+              <button
+                class="btn btn-outline-success my-2 my-sm-0, sok-button"
+                type="submit"
               >
-                <path
-                  d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0z"
-                />
-              </svg>
-            </button>
-            <input
-              class="form-control mr-sm-2, sok-felt"
-              type="search"
-              placeholder="Search"
-              aria-label="Search"
-            /></form
-        ></b-col>
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="16"
+                  height="16"
+                  fill="currentColor"
+                  class="bi bi-search, white-text"
+                  viewBox="0 0 16 16"
+                >
+                  <path
+                    d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0z"
+                  />
+                </svg>
+              </button>
+              <input
+                class="form-control mr-sm-2, sok-felt"
+                type="search"
+                placeholder="Search"
+                aria-label="Search"
+              /></form
+          ></b-col>
+        </div>
       </b-row>
     </b-container>
     <div id="nav-overlay" v-show="!productOverlay">
@@ -131,8 +133,7 @@
         productOverlay: true
       }
     },
-
-    computed: mapGetters(['countItems'], ['totalAmount']),
+    computed: mapGetters(['countItems']),
 
     methods: {
       onOver() {
@@ -151,7 +152,9 @@
     color: #ffffff !important;
     text-decoration: none;
   }
-
+  #nav {
+    font-size: 85%;
+  }
   #nav-overlay {
     background-color: rgb(247, 247, 247);
     position: absolute;
@@ -187,6 +190,8 @@
   }
   #products-text {
     cursor: pointer;
+    margin-right: 1em;
+    margin-left: 1em;
   }
 
   #woman-list-con {
@@ -283,7 +288,7 @@
     width: 25%;
   }
 
-  @media only screen and (max-width: 1518px) {
+  @media only screen and (max-width: 1600px) {
     #korg-con {
       max-width: 8%;
     }
@@ -326,50 +331,15 @@
     }
   }
 
-  @media only screen and (max-width: 400px) {
+  @media only screen and (max-width: 600px) {
     #logo-con {
       margin-bottom: 10px;
-    }
-
-    .sok-button {
-      display: none;
     }
 
     .sok-felt {
       margin-bottom: 5px;
       margin-top: 5px;
-
-      max-width: 9%;
-    }
-    #home-con {
-      max-width: 4%;
-    }
-  }
-
-  @media only screen and (max-width: 1100px) {
-    #logo-con {
-      margin-top: 10px;
-    }
-    #korg-con {
-      max-width: 12%;
-    }
-  }
-
-  @media only screen and (max-width: 580px) {
-    #countitems {
       display: none;
-    }
-    .sok-button {
-      display: none;
-    }
-    #logo-con {
-      margin-top: 10px;
-      margin-bottom: 10px;
-    }
-
-    #sok-con {
-      padding-top: 5px;
-      padding-bottom: 5px;
     }
   }
 </style>
