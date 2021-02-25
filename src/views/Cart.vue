@@ -321,14 +321,14 @@
       onSubmit() {
         this.receiver.boughtProducts = this.$store.state.cart
         this.receiver.totalPrice = this.totalAmount
-        this.$store.commit('setOrder', this.receiver)
+        this.$store.commit('setOrder', Object.assign({}, this.receiver))
         // RESETS RECEIVER DATA
         Object.keys(this.receiver).forEach(key => (this.receiver[key] = ''))
 
         //RESET CART
         let cartKeys = this.$store.state.cart.keys()
         for (const key of cartKeys) {
-          // this.$store.commit('removeItem', 0)
+          this.$store.commit('removeItem', 0)
           this.$store.commit('removeItem', key)
         }
 

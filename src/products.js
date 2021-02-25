@@ -338,6 +338,4 @@ names.forEach(name => {
   }
 })
 
-console.log(products)
-console.log(JSON.stringify(products))
 export default products
