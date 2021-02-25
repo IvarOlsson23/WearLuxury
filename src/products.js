@@ -302,6 +302,8 @@ let colors = [
   { text: 'yellow', value: 'yellow' }
 ]
 
+let sex = ['Man', 'Woman']
+
 // INITIATES PRODUCTS VAR
 let products = {}
 
@@ -328,12 +330,15 @@ names.forEach(name => {
 
   // CREATES 6 RANDOM PRODUCTS
   for (let i = 0; i < 6; i++) {
+    i % 2 ? 0 : 1
+
     products[uuid.v4()] = {
       brand: brands[Math.floor(Math.random() * brands.length)],
       name: name,
       color: randomGenerator(colors, 4),
       price: randomPrice(200, 5000),
-      size: randomGenerator(sizes, 5)
+      size: randomGenerator(sizes, 5),
+      sex: sex[i % 2 ? 0 : 1]
     }
   }
 })
