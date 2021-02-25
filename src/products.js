@@ -252,6 +252,7 @@ let brands = [
   'Zeynep Arçay',
   'Zimmermann'
 ]
+
 // NAMES
 let names = [
   'Dresses',
@@ -271,6 +272,7 @@ let names = [
   'Shoes',
   'Bags'
 ]
+
 // SIZES
 let sizes = [
   { text: 'XS', value: 'XS' },
@@ -279,8 +281,9 @@ let sizes = [
   { text: 'L', value: 'L' },
   { text: 'XL', value: 'XL' }
 ]
+
 // COLOURS
-let colours = [
+let colors = [
   { text: 'beige', value: 'beige' },
   { text: 'black', value: 'black' },
   { text: 'blue', value: 'blue' },
@@ -298,6 +301,7 @@ let colours = [
   { text: 'white', value: 'white' },
   { text: 'yellow', value: 'yellow' }
 ]
+
 // INITIATES PRODUCTS VAR
 let products = {}
 
@@ -307,6 +311,7 @@ let randomPrice = (min = 400, max = 50000) => {
   Math.floor(num)
   return Math.round(num / 100) * 100 - 1
 }
+
 // LOOPS TROUGH NAMES AND CREATES 6 products in EACH CATEGORIE
 names.forEach(name => {
   // CREATES RANDOM ARRAY
@@ -326,29 +331,13 @@ names.forEach(name => {
     products[uuid.v4()] = {
       brand: brands[Math.floor(Math.random() * brands.length)],
       name: name,
-      colour: randomGenerator(colours, 4),
+      color: randomGenerator(colors, 4),
       price: randomPrice(200, 5000),
       size: randomGenerator(sizes, 5)
     }
   }
 })
 
-export default {
-  products
-}
-
-// colours.slice(
-//         Math.floor(Math.random() * colours.length),
-//         colours.length
-//       )
-
-// function randomGenerator() {
-//   let randomColours = colours.slice(
-//     Math.floor(Math.random() * colours.length),
-//     colours.length
-//   )
-//   for (let i = randomColours.length; i > 4; i--) {
-//     randomColours.pop()
-//   }
-//   return randomColours
-// }
+console.log(products)
+console.log(JSON.stringify(products))
+export default products
