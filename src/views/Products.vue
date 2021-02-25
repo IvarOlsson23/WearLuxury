@@ -172,7 +172,7 @@
   }
 </script>
 
-<style>
+<style scoped>
   .productbox {
     border: solid 1px rgba(185, 184, 184, 0.747);
     font-style: bold;
