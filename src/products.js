@@ -330,8 +330,6 @@ names.forEach(name => {
 
   // CREATES 6 RANDOM PRODUCTS
   for (let i = 0; i < 6; i++) {
-    i % 2 ? 0 : 1
-
     products[uuid.v4()] = {
       brand: brands[Math.floor(Math.random() * brands.length)],
       name: name,
