@@ -9,7 +9,7 @@
     >
       <img src="../assets/suit.png" alt="suit" />
       <b-card-text class="text-left">
-        <h3>{{ product.brand }}</h3>
+        <h4>{{ product.brand }}</h4>
         <span id="prod-info">
           <p>{{ product.name }}</p>
           <p>{{ product.price }} $</p>
@@ -98,6 +98,8 @@
           hide-backdrop
           ok-only
           size="sm"
+          centered
+          no-close-on-backdrop
         >
           <p>{{ msg }}</p>
         </b-modal>
@@ -144,7 +146,7 @@
         ) {
           this.msg = 'Product added to cart'
         } else {
-          this.msg = 'Please pick color and size'
+          this.msg = 'Please pick color & size'
         }
       }
     }
