@@ -82,14 +82,31 @@
                   v-model="name"
                   aria-describedby="email-help-block"
                 />
-                <label for="text-email">E-mail</label>
+                <label style=" padding: 10px; margin-top: 10px" for="text-email"
+                  >E-mail</label
+                >
                 <b-form-input
                   type="email"
                   id="text-email"
                   v-model="email"
                   aria-describedby="email-help-block"
                 />
-                <label for="text-password">Password</label>
+                <label
+                  style=" padding: 10px; margin-top: 10px"
+                  for="text-password"
+                  >Password</label
+                >
+                <b-form-input
+                  type="password"
+                  id="text-password"
+                  aria-describedby="password-help-block"
+                />
+
+                <label
+                  style=" padding: 10px; margin-top: 10px"
+                  for="text-password"
+                  >Repeat Password</label
+                >
                 <b-form-input
                   type="password"
                   id="text-password"
