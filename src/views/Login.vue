@@ -85,7 +85,7 @@
                   aria-describedby="password-help-block"
                 />
 
-                <label style=" padding: 10px; margin-top: 10px" for="text-password">Repeat Password</label>
+                <label style=" padding: 10px; margin-top: 10px" for="text-password">RepeatPassword</label>
                 <b-form-input
                   type="password"
                   id="text-password"
