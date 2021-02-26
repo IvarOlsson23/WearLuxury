@@ -7,7 +7,11 @@
       class="h-100 shadow-sm"
       v-for="(product, id) in $store.state.products"
     >
-      <img v-bind:src="require('../assets' + product.img)" alt="product" />
+      <img
+        v-bind:src="require('../assets' + product.img)"
+        v-b-modal="'infoModal' + id"
+        alt="product"
+      />
       <b-card-text class="text-left">
         <h4>{{ product.brand }}</h4>
         <span id="prod-info">
@@ -44,6 +48,7 @@
         <!--  Add to cart button -->
 
         <b-button
+          id="add-btn"
           block
           variant="primary"
           v-b-modal="'addText' + id"
