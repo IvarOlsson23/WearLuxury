@@ -8,11 +8,16 @@
           v-model="login"
           style=" padding:10px; margin: 15px"
         >
+
+        <!-- Login -->
+
           <b-row class="login-bg">
             <b-col>
               <h1>Login</h1>
               <div class="text-left mt-5">
-                <label for="text-email">E-mail</label>
+                <label style=" padding: 10px; margin-top: 10px" for="text-email"
+                  >E-mail</label
+                >
                 <b-form-input
                   required
                   type="email"
@@ -20,7 +25,11 @@
                   v-model="email"
                   aria-describedby="email-help-block"
                 />
-                <label for="text-password">Password</label>
+                <label
+                  style=" padding: 10px; margin-top: 10px"
+                  for="text-password"
+                  >Password</label
+                >
                 <b-form-input
                   required
                   type="password"
@@ -29,6 +38,9 @@
                   aria-describedby="password-help-block"
                 />
               </div>
+
+
+ <!-- Forgot password -->
 
               <div>
                 <div
@@ -56,6 +68,9 @@
                   >Login</b-button
                 >
               </div>
+
+
+ <!-- Create account -->
 
               <div>
                 <b-button
@@ -97,6 +112,7 @@
                   v-model="email"
                   aria-describedby="email-help-block"
                 />
+
                 <label
                   style=" padding: 10px; margin-top: 10px"
                   for="text-password"
@@ -111,7 +127,7 @@
                 <label
                   style=" padding: 10px; margin-top: 10px"
                   for="text-password"
-                  >RepeatPassword</label
+                  >Repeat Password</label
                 >
                 <b-form-input
                   v-model="password"
@@ -121,6 +137,8 @@
                   aria-describedby="password-help-block"
                 />
               </div>
+
+ <!-- Forgot password -->
 
               <div>
                 <div
@@ -136,19 +154,6 @@
                     </li>
                   </ul>
                 </div>
-
-                <label
-                  style=" padding: 10px; margin-top: 10px"
-                  for="text-password"
-                  >Repeat Password</label
-                >
-                <b-form-input
-                  v-model="repeatpassword"
-                  required
-                  type="password"
-                  id="text-password"
-                  aria-describedby="password-help-block"
-                />
               </div>
 
               <div>
@@ -201,6 +206,8 @@
     </b-modal>
   </div>
 </template>
+
+ <!-- Script -->
 
 <script>
   export default {
@@ -265,6 +272,9 @@
   }
 </script>
 
+
+ <!-- Style -->
+ 
 <style scoped>
   .ma {
     align-content: center;
