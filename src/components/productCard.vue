@@ -7,13 +7,17 @@
       class="h-100 shadow-sm"
       v-for="(product, id) in $store.state.products"
     >
-      <img
-        v-bind:src="require('../assets' + product.img)"
-        v-b-modal="'infoModal' + id"
-        alt="product"
-      />
+      <div id="card-img">
+        <img
+          v-bind:src="require('../assets' + product.img)"
+          v-b-modal="'infoModal' + id"
+          alt="product"
+        />
+      </div>
       <b-card-text class="text-left">
-        <h4>{{ product.brand }}</h4>
+        <div id="brand">
+          <h4>{{ product.brand }}</h4>
+        </div>
         <span id="prod-info">
           <p>{{ product.name }}</p>
           <p>{{ product.price }} $</p>
@@ -162,8 +166,19 @@
 </script>
 
 <style scoped>
+  #brand {
+    height: 80px;
+    padding-top: 20px;
+  }
+  #card-img {
+    height: 220px;
+  }
+  #colors {
+    height: 100px;
+  }
   img {
     max-width: 100%;
+    max-height: 100%;
   }
 
   .img-modal {
@@ -185,14 +200,14 @@
   #size {
     margin-bottom: 20px;
   }
-  @media (min-width: 500px) and (max-width: 799px) {
+  @media (min-width: 535px) and (max-width: 984px) {
     #card-wrapper {
       display: grid;
       grid-template-columns: auto auto;
       grid-gap: 50px;
     }
   }
-  @media screen and (min-width: 800px) {
+  @media screen and (min-width: 984px) {
     #card-wrapper {
       display: grid;
       grid-template-columns: auto auto auto;
