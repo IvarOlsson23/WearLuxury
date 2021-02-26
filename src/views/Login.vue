@@ -97,22 +97,22 @@
                   v-model="email"
                   aria-describedby="email-help-block"
                 />
-<<<<<<< HEAD
-                <label style=" padding: 10px; margin-top: 10px" for="text-password">Password</label>
+                <label
+                  style=" padding: 10px; margin-top: 10px"
+                  for="text-password"
+                  >Password</label
+                >
                 <b-form-input
                   type="password"
                   id="text-password"
                   aria-describedby="password-help-block"
                 />
 
-                <label style=" padding: 10px; margin-top: 10px" for="text-password">RepeatPassword</label>
-=======
                 <label
                   style=" padding: 10px; margin-top: 10px"
                   for="text-password"
-                  >Password</label
+                  >RepeatPassword</label
                 >
->>>>>>> 51d0c250fc8eea8ce14d0ea18ad4863266379be1
                 <b-form-input
                   v-model="password"
                   required
