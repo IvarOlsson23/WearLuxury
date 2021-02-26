@@ -7,7 +7,7 @@
       class="h-100 shadow-sm"
       v-for="(product, id) in $store.state.products"
     >
-      <img src="../assets/suit.png" alt="suit" />
+      <img v-bind:src="require('../assets' + product.img)" alt="suit" />
       <b-card-text class="text-left">
         <h4>{{ product.brand }}</h4>
         <span id="prod-info">
@@ -41,20 +41,19 @@
           </b-form-group>
         </div>
 
-        <div class="text-right">
-          <!--  Add to cart button -->
+        <!--  Add to cart button -->
 
-          <b-button
-            block
-            variant="primary"
-            v-b-modal="'addText' + id"
-            @click="
-              addToCart(product, id)
-              textPop(id)
-            "
-            >Add to cart</b-button
-          >
-        </div>
+        <b-button
+          block
+          variant="primary"
+          v-b-modal="'addText' + id"
+          @click="
+            addToCart(product, id)
+            textPop(id)
+          "
+          >Add to cart</b-button
+        >
+
         <div>
           <!-- More info modal -->
           <b-modal
