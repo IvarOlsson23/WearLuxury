@@ -36,22 +36,20 @@
             >
               <path
                 d="M8 8a3 3 0 1 0 0-6 3 3 0 0 0 0 6zm2-3a2 2 0 1 1-4 0 2 2 0 0 1 4 0zm4 8c0 1-1 1-1 1H3s-1 0-1-1 1-4 6-4 6 3 6 4zm-1-.004c-.001-.246-.154-.986-.832-1.664C11.516 10.68 10.289 10 8 10c-2.29 0-3.516.68-4.168 1.332-.678.678-.83 1.418-.832 1.664h10z"
-              /></svg></router-link
-        ></b-col><router-link to="/cart"
-            >
-
-        <svg
-          xmlns="http://www.w3.org/2000/svg"
-          width="24"
-          height="20"
-          fill="currentColor"
-          class="bi bi-handbag, white-text"
-          viewBox="0 0 16 16"
-        >
-          <path
-            d="M8 1a2 2 0 0 1 2 2v2H6V3a2 2 0 0 1 2-2zm3 4V3a3 3 0 1 0-6 0v2H3.361a1.5 1.5 0 0 0-1.483 1.277L.85 13.13A2.5 2.5 0 0 0 3.322 16h9.356a2.5 2.5 0 0 0 2.472-2.87l-1.028-6.853A1.5 1.5 0 0 0 12.64 5H11zm-1 1v1.5a.5.5 0 0 0 1 0V6h1.639a.5.5 0 0 1 .494.426l1.028 6.851A1.5 1.5 0 0 1 12.678 15H3.322a1.5 1.5 0 0 1-1.483-1.723l1.028-6.851A.5.5 0 0 1 3.36 6H5v1.5a.5.5 0 0 0 1 0V6h4z"
-          />
-        </svg></router-link>
+              /></svg></router-link></b-col
+        ><router-link to="/cart">
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="24"
+            height="20"
+            fill="currentColor"
+            class="bi bi-handbag, white-text"
+            viewBox="0 0 16 16"
+          >
+            <path
+              d="M8 1a2 2 0 0 1 2 2v2H6V3a2 2 0 0 1 2-2zm3 4V3a3 3 0 1 0-6 0v2H3.361a1.5 1.5 0 0 0-1.483 1.277L.85 13.13A2.5 2.5 0 0 0 3.322 16h9.356a2.5 2.5 0 0 0 2.472-2.87l-1.028-6.853A1.5 1.5 0 0 0 12.64 5H11zm-1 1v1.5a.5.5 0 0 0 1 0V6h1.639a.5.5 0 0 1 .494.426l1.028 6.851A1.5 1.5 0 0 1 12.678 15H3.322a1.5 1.5 0 0 1-1.483-1.723l1.028-6.851A.5.5 0 0 1 3.36 6H5v1.5a.5.5 0 0 0 1 0V6h4z"
+            /></svg
+        ></router-link>
 
         <span id="countitems">{{ countItems }}</span>
 
@@ -253,18 +251,18 @@
   #dropdown li {
     list-style: none;
   }
- #man-list {
+  #man-list {
     width: 50%;
     padding-top: 20px;
   }
-   #man-list li:first-child{
+  #man-list li:first-child {
     border-bottom: 1px solid;
   }
   #woman-list {
     width: 50%;
     padding-top: 20px;
   }
-    #woman-list li:first-child{
+  #woman-list li:first-child {
     border-bottom: 1px solid;
   }
 
@@ -284,6 +282,5 @@
       padding-top: 5px;
       padding-bottom: 5px;
     }
-    
   }
 </style>

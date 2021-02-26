@@ -11,8 +11,6 @@ import Orders from '../views/Orders.vue'
 import Userinfo from '../views/Userinfo.vue'
 Vue.use(VueRouter)
 
-
-
 const routes = [
   {
     path: '/',
@@ -60,12 +58,10 @@ const routes = [
     name: 'Userinfo',
     component: Userinfo
   }
- 
 ]
 
 const router = new VueRouter({
   routes
 })
 
-export default  router
- 
+export default router
