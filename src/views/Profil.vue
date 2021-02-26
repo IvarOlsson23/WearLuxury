@@ -16,7 +16,7 @@
           ></b-col
         >
         <b-col class="cols"
-          ><router-link to="/orders"
+          ><router-link to="/"
             ><div class="img-div">
               <img class="full-wd" src="../assets/card.png" alt="suit" />
             </div>
@@ -24,7 +24,7 @@
           ></b-col
         >
         <b-col class="cols"
-          ><router-link to="/orders"
+          ><router-link to="/Userinfo"
             ><div class="img-div">
               <img class="full-wd" src="../assets/info.png" alt="suit" />
             </div>

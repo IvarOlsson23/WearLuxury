@@ -88,6 +88,7 @@
 </script>
 
 <style>
+
   .ma {
     align-content: center;
     color: white;
