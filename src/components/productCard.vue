@@ -3,31 +3,71 @@
   <div id="card-wrapper">
     <b-card
       :key="id"
-      v-for="(product, id) in $store.state.products"
-      class="h-100 shadow-sm"
       border-variant="light"
+      class="h-100 shadow-sm"
+      v-for="(product, id) in $store.state.products"
     >
-      <img src="../assets/suit.png" alt="suit" />
+      <img v-bind:src="require('../assets' + product.img)" alt="product" />
       <b-card-text class="text-left">
-        <h3>{{ product.brand }}</h3>
+        <h4>{{ product.brand }}</h4>
         <span id="prod-info">
           <p>{{ product.name }}</p>
           <p>{{ product.price }} $</p>
         </span>
-        <!-- Show more info -->
+        <!-- Show more info button -->
 
-        <button id="more" v-b-modal="'infoModal' + id" variant="primary">
+        <button id="more" v-b-modal="'infoModal' + id">
           More info
         </button>
+
+        <!--  Size picker -->
+        <div id="size">
+          <b-form-select
+            :options="Object.values(product.size)"
+            label="size"
+            v-model="toCart.sizes[id]"
+          />
+        </div>
+
+        <!--  Color dots -->
+        <div id="colors">
+          <b-form-group label="Color">
+            <b-form-radio-group
+              :options="Object.values(product.color)"
+              v-model="toCart.colors[id]"
+              name="Color"
+              size="sm"
+            />
+          </b-form-group>
+        </div>
+
+        <!--  Add to cart button -->
+
+        <b-button
+          block
+          variant="primary"
+          v-b-modal="'addText' + id"
+          @click="
+            addToCart(product, id)
+            textPop(id)
+          "
+          >Add to cart</b-button
+        >
+
         <div>
+          <!-- More info modal -->
           <b-modal
             :id="'infoModal' + id"
-            hide-footer
-            hide-backdrop
-            content-class="shadow"
             class="no-border"
+            content-class="shadow"
+            hide-backdrop
+            hide-footer
           >
-            <img src="../assets/suit.png" alt="suit" class="img-modal" />
+            <img
+              v-bind:src="require('../assets' + product.img)"
+              alt="product"
+              class="img-modal"
+            />
             <h2>{{ product.brand }}</h2>
             <h4>{{ product.name }}</h4>
 
@@ -51,42 +91,21 @@
             </p>
           </b-modal>
         </div>
+        <!--  Add to cart modal -->
 
-        <!--  Size picker -->
-        <div id="size">
-          <b-form-select
-            v-model="toCart.sizes[id]"
-            :options="Object.values(product.size)"
-            label="size"
-          />
-        </div>
-
-        <!--  Color dots -->
-        <div id="colors">
-          <b-form-group label="Color">
-            <b-form-radio-group
-              v-model="toCart.colors[id]"
-              :options="Object.values(product.color)"
-              name="Color"
-              size="sm"
-            />
-          </b-form-group>
-        </div>
-
-        <div class="text-right">
-          <!--  Add to cart button -->
-
-          <b-button
-            v-b-modal.modal-no-backdrop
-            block
-            variant="primary"
-            @click="
-              addToCart(product, id)
-              textPop(id)
-            "
-            >Add to cart</b-button
-          >
-        </div>
+        <b-modal
+          :id="'addText' + id"
+          button-size="sm"
+          class="no-border"
+          content-class="shadow"
+          hide-backdrop
+          ok-only
+          size="sm"
+          centered
+          no-close-on-backdrop
+        >
+          <p>{{ msg }}</p>
+        </b-modal>
       </b-card-text>
     </b-card>
   </div>
@@ -99,7 +118,8 @@
         toCart: {
           sizes: {},
           colors: {}
-        }
+        },
+        msg: ''
       }
     },
     methods: {
@@ -116,9 +136,8 @@
             color: this.toCart.colors[id],
             size: this.toCart.sizes[id],
             items: 1,
-            image: product.img
+            img: product.img
           })
-          alert('item added to cart')
         } else {
           return 0
         }
@@ -128,9 +147,9 @@
           this.toCart.sizes[id] !== undefined &&
           this.toCart.colors[id] !== undefined
         ) {
-          alert('Item added to cart')
+          this.msg = 'Product added to cart'
         } else {
-          alert('Please pick color and size')
+          this.msg = 'Please pick color & size'
         }
       }
     }
@@ -138,9 +157,6 @@
 </script>
 
 <style scoped>
-  #size {
-    margin-bottom: 20px;
-  }
   img {
     max-width: 100%;
   }
@@ -150,6 +166,7 @@
     margin-left: auto;
     margin-right: auto;
   }
+
   #more {
     margin-bottom: 8px;
     border: none;
@@ -159,6 +176,9 @@
   #prod-info {
     display: flex;
     justify-content: space-between;
+  }
+  #size {
+    margin-bottom: 20px;
   }
   @media (min-width: 500px) and (max-width: 799px) {
     #card-wrapper {

@@ -1,5 +1,6 @@
 import { uuid } from 'vue-uuid'
 
+// BRANDS
 let brands = [
   'A.P.C.',
   'Acne Studios',
@@ -25,7 +26,7 @@ let brands = [
   'Amina Muaddi',
   'Ancient Greek Sandals',
   'Anissa Kermiche',
-  'Ann Demeulemeester  coming soon',
+  'Ann Demeulemeester',
   'Anna Kosturova',
   'Aquazzura',
   'Asceno',
@@ -252,25 +253,10 @@ let brands = [
   'Zimmermann'
 ]
 
-let names = [
-  'Dresses',
-  'Tops',
-  'Knitwear',
-  'Jackets',
-  'Suits',
-  'Pants',
-  'Jeans',
-  'Skirts',
-  'Coats',
-  'Skiwear',
-  'Activewear',
-  'Beachwear',
-  'Shorts',
-  'Jumpsuits',
-  'Shoes',
-  'Bags'
-]
+// NAMES
+let names = ['Dress', 'Jacket', 'Suit', 'Ties', 'Shoes', 'Bag']
 
+// SIZES
 let sizes = [
   { text: 'XS', value: 'XS' },
   { text: 'S', value: 'S' },
@@ -279,7 +265,8 @@ let sizes = [
   { text: 'XL', value: 'XL' }
 ]
 
-let colours = [
+// COLOURS
+let colors = [
   { text: 'beige', value: 'beige' },
   { text: 'black', value: 'black' },
   { text: 'blue', value: 'blue' },
@@ -298,27 +285,44 @@ let colours = [
   { text: 'yellow', value: 'yellow' }
 ]
 
+let sex = ['Man', 'Woman']
+
+// INITIATES PRODUCTS VAR
 let products = {}
 
+// CREATES RANDOM PRICE
 let randomPrice = (min = 400, max = 50000) => {
   let num = Math.random() * (max - min) + min
   Math.floor(num)
   return Math.round(num / 100) * 100 - 1
 }
-console.log(randomPrice(200, 5000))
 
+// LOOPS TROUGH NAMES AND CREATES 6 products in EACH CATEGORIE
 names.forEach(name => {
+  // CREATES RANDOM ARRAY
+  function randomGenerator(array, length) {
+    let randomArray = array.slice(
+      Math.floor(Math.random() * array.length),
+      array.length
+    )
+    for (let i = randomArray.length; i > length; i--) {
+      randomArray.pop()
+    }
+    return randomArray
+  }
+
+  // CREATES 6 RANDOM PRODUCTS
   for (let i = 0; i < 6; i++) {
     products[uuid.v4()] = {
       brand: brands[Math.floor(Math.random() * brands.length)],
       name: name,
-      colour: colours,
+      color: randomGenerator(colors, 4),
       price: randomPrice(200, 5000),
-      size: sizes
+      size: randomGenerator(sizes, 5),
+      sex: sex[i % 2 ? 0 : 1],
+      img: `/${sex[i % 2 ? 0 : 1]}/${name}/${name + i}.png`
     }
   }
 })
 
-export default {
-  products
-}
+export default products

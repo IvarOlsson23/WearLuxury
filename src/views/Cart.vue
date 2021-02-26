@@ -280,6 +280,37 @@
           </b-form-group>
         </b-col>
       </b-row>
+
+<div>
+    <b-form-checkbox style=" padding: 5px; margin-top: 5px"
+      id="checkbox-1"
+      v-model="status"
+      name="checkbox-1"
+      value="accepted"
+      unchecked-value="not_accepted"
+    >
+      I accept all information and terms on WearLuxury
+    </b-form-checkbox>
+
+   
+  </div>
+
+
+
+  <div>
+    <b-form-checkbox style=" padding: 5px; margin-top: 5px"
+      id="checkbox-1"
+      v-model="status"
+      name="checkbox-1"
+      value="accepted"
+      unchecked-value="not_accepted"
+    >
+      Yes, I want to subscribe to WearLuxury newsletters
+    </b-form-checkbox>
+
+   
+  </div>
+
       <b-row align-h="center" class="mt-4">
         <b-col cols="12" md="6">
           <b-button block type="submit" variant="danger">Place order</b-button>
@@ -311,10 +342,10 @@
           paypalEmail: '',
           bitcoinAdress: '',
           boughtProducts: '',
-          totalPrice: ''
+          totalPrice: '',
+          choice: ''
         },
         payMethodOptions: ['Visa', 'Paypal', 'Bitcoin', 'Invoice'],
-        submitted: false,
         options: [1, 2, 3, 4]
       }
     },
@@ -322,18 +353,16 @@
       onSubmit() {
         this.receiver.boughtProducts = this.$store.state.cart
         this.receiver.totalPrice = this.totalAmount
-        this.$store.commit('setOrder', this.receiver)
-        // RESETS DATA
+        this.$store.commit('setOrder', Object.assign({}, this.receiver))
+        // RESETS RECEIVER DATA
         Object.keys(this.receiver).forEach(key => (this.receiver[key] = ''))
+
         //RESET CART
         let cartKeys = this.$store.state.cart.keys()
-
         for (const key of cartKeys) {
           this.$store.commit('removeItem', 0)
           this.$store.commit('removeItem', key)
         }
-
-        cartKeys = []
 
         // GOES TO NEXT PAGE
         this.$router.push({ name: 'OrderConfirm' })
