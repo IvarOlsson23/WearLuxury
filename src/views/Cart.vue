@@ -12,7 +12,7 @@
             :img-src="require('../assets' + product.img)"
             img-left
             img-width="120px"
-            img-height="120px"
+            img-height="100%"
             :title="product.brand"
             :sub-title="product.name"
             footer-tag="footer"
