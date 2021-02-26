@@ -326,10 +326,9 @@
         Object.keys(this.receiver).forEach(key => (this.receiver[key] = ''))
 
         //RESET CART
-        let cartKeys = this.$store.state.cart.keys()
-        for (const key of cartKeys) {
+
+        while (this.$store.state.cart.length > 0) {
           this.$store.commit('removeItem', 0)
-          this.$store.commit('removeItem', key)
         }
 
         // GOES TO NEXT PAGE
