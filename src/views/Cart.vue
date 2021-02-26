@@ -280,6 +280,37 @@
           </b-form-group>
         </b-col>
       </b-row>
+
+<div>
+    <b-form-checkbox style=" padding: 5px; margin-top: 5px"
+      id="checkbox-1"
+      v-model="status"
+      name="checkbox-1"
+      value="accepted"
+      unchecked-value="not_accepted"
+    >
+      I accept all information and terms on WearLuxury
+    </b-form-checkbox>
+
+   
+  </div>
+
+
+
+  <div>
+    <b-form-checkbox style=" padding: 5px; margin-top: 5px"
+      id="checkbox-1"
+      v-model="status"
+      name="checkbox-1"
+      value="accepted"
+      unchecked-value="not_accepted"
+    >
+      Yes, I want to subscribe to WearLuxury newsletters
+    </b-form-checkbox>
+
+   
+  </div>
+
       <b-row align-h="center" class="mt-4">
         <b-col cols="12" md="6">
           <b-button block type="submit" variant="danger">Place order</b-button>
@@ -311,7 +342,8 @@
           paypalEmail: '',
           bitcoinAdress: '',
           boughtProducts: '',
-          totalPrice: ''
+          totalPrice: '',
+          choice: ''
         },
         payMethodOptions: ['Visa', 'Paypal', 'Bitcoin', 'Invoice'],
         options: [1, 2, 3, 4]
