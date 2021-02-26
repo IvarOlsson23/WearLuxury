@@ -109,6 +109,22 @@
                   id="text-password"
                   aria-describedby="password-help-block"
                 />
+              </div>
+
+              <div>
+                <div
+                  class="mt-3"
+                  v-b-modal.modal-prevent-closing
+                  style=" padding: 10px; margin-top: 20px"
+                >
+                  Forgot password?
+                  <div v-if="submittedForgot.length === 0" />
+                  <ul v-else class="mb-0 pl-3">
+                    <li v-for="forgot in submittedForgot" :key="forgot">
+                      {{ forgot }}
+                    </li>
+                  </ul>
+                </div>
 
                 <label
                   style=" padding: 10px; margin-top: 10px"
