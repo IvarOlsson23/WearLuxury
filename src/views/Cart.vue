@@ -277,9 +277,19 @@
               required
               v-model="receiver.email"
             />
+
+
+      <b-form-checkbox style=" padding: 10px; margin-top: 10px"> I accept all information and terms on WearLuxury</b-form-checkbox>
+
+     <b-form-checkbox style=" padding: 10px; margin-top: 10px"> Yes, I want to subscribe to WearLuxury newsletters </b-form-checkbox>
           </b-form-group>
         </b-col>
       </b-row>
+
+ 
+
+
+
       <b-row align-h="center" class="mt-4">
         <b-col cols="12" md="6">
           <b-button block type="submit" variant="danger">Place order</b-button>
@@ -311,7 +321,8 @@
           paypalEmail: '',
           bitcoinAdress: '',
           boughtProducts: '',
-          totalPrice: ''
+          totalPrice: '',
+          choice: ''
         },
         payMethodOptions: ['Visa', 'Paypal', 'Bitcoin', 'Invoice'],
         options: [1, 2, 3, 4]

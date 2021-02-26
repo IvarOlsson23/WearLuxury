@@ -71,7 +71,7 @@
                   </li>
                   <li>
                     <router-link to="/About" class="footerlink"
-                      >Blog</router-link
+                      >Careers</router-link
                     >
                   </li>
                   <li>
