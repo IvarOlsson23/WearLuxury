@@ -8,7 +8,7 @@ import Login from '../views/Login.vue'
 import About from '../views/About.vue'
 import Profil from '../views/Profil.vue'
 import Orders from '../views/Orders.vue'
-
+import Userinfo from '../views/Userinfo.vue'
 Vue.use(VueRouter)
 
 const routes = [
@@ -52,6 +52,11 @@ const routes = [
     path: '/orders',
     name: 'orders',
     component: Orders
+  },
+  {
+    path: '/userinfo',
+    name: 'Userinfo',
+    component: Userinfo
   }
 ]
 
