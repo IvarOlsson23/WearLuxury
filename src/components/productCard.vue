@@ -7,7 +7,7 @@
       class="h-100 shadow-sm"
       v-for="(product, id) in $store.state.products"
     >
-      <img v-bind:src="require('../assets' + product.img)" alt="suit" />
+      <img v-bind:src="require('../assets' + product.img)" alt="product" />
       <b-card-text class="text-left">
         <h4>{{ product.brand }}</h4>
         <span id="prod-info">
@@ -63,7 +63,11 @@
             hide-backdrop
             hide-footer
           >
-            <img src="../assets/suit.png" alt="suit" class="img-modal" />
+            <img
+              v-bind:src="require('../assets' + product.img)"
+              alt="product"
+              class="img-modal"
+            />
             <h2>{{ product.brand }}</h2>
             <h4>{{ product.name }}</h4>
 
@@ -132,7 +136,7 @@
             color: this.toCart.colors[id],
             size: this.toCart.sizes[id],
             items: 1,
-            image: product.img
+            img: product.img
           })
         } else {
           return 0
