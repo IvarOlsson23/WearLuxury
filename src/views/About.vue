@@ -77,8 +77,11 @@
             </div>
 
             <b-card-text>
-              <p class="text">
-                <strong>Questions?</strong> <br />
+              <h6 style="margin-top:10px; text-decoration:underline;">
+                Questions?
+              </h6>
+              <br />
+              <p>
                 If you have any questions regarding shipping, payment, etc
                 contact us right here in the form.
               </p>
