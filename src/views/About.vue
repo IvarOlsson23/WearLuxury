@@ -63,6 +63,66 @@
             </b-card-text>
           </b-card>
         </b-col>
+        <b-col cols="4">
+          <b-card style="width: 100%; padding:0px;" class="mb-2">
+            <div
+              class="flexbox"
+              :style="
+                'background-image:url(' +
+                  require('../assets/contact-us.jpg') +
+                  '); height:200px; background-size:cover; '
+              "
+            >
+              <span>Contact us</span>
+            </div>
+
+            <b-card-text>
+              <p class="text">
+                <strong>Questions?</strong> <br />
+                If you have any questions regarding shipping, payment, etc
+                contact us right here in the form.
+              </p>
+            </b-card-text>
+            <form>
+              <div class="mb-3" style="text-align:left;">
+                <label for="exampleInputName" class="form-label">Name</label>
+                <input
+                  type="Name"
+                  class="form-control"
+                  id="exampleInputName"
+                  aria-describedby="Name"
+                />
+                <div id="Name" class="form-text" />
+              </div>
+              <div class="mb-3" style="text-align:left;">
+                <label for="exampleInputEmail1" class="form-label"
+                  >E-mail</label
+                >
+                <input
+                  type="email"
+                  class="form-control"
+                  id="exampleInputEmail1"
+                  aria-describedby="emailHelp"
+                />
+                <div id="emailHelp" class="form-text" />
+              </div>
+              <div>
+                <b-form-textarea
+                  id="textarea-rows"
+                  placeholder="Enter text"
+                  rows="8"
+                />
+              </div>
+              <button
+                type="submit"
+                class="btn btn-primary"
+                style="margin-top:20px; width:250px"
+              >
+                Submit
+              </button>
+            </form>
+          </b-card>
+        </b-col>
       </b-row>
     </b-col>
   </b-row>
