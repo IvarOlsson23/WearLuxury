@@ -49,6 +49,9 @@ export default new Vuex.Store({
     },
     countItems(state) {
       return state.cart.length
+    },
+    totalPrice(state) {
+      return state.orders.city
     }
   }
 })

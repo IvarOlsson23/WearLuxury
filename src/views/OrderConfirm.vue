@@ -2,22 +2,24 @@
   <div class="my-4">
     <div class="order">
       <h1>Your order has been processed</h1>
-      <p>Product Number: 0123456789</p>
-
+      <p>Order Number: 0123456789</p>
       <h2>You will receive your order</h2>
       <p>Mon 1 March - Thursday 5 March</p>
-
-      <h3>Completed the registration</h3>
+      <img src="@/assets/divider.svg" alt="divider" class="divider" />
     </div>
+    <ul>
+      <li v-for="(product, index) in $store.state.cart" :key="index">
+        <div id="order-products">
+          <p>{{ product.brand + ' ' + product.name }}</p>
+        </div>
+      </li>
+    </ul>
+    <p>{{ totalPrice }}</p>
     <!-- / Order has been processed -->
 
     <!-- Create account for saving info -->
-    <p>
-      *For saving your shopping information and enjoy our offers, you only need
-      to create a account.
-    </p>
 
-    <b-container fluid style="max-width: 540px; padding:30px; margin: 30px">
+    <!-- <b-container fluid style="max-width: 540px; padding:30px; margin: 30px">
       <b-row class="my-1">
         <b-col sm="3">
           <label for="input-valid">Username:</label>
@@ -43,10 +45,9 @@
           />
         </b-col>
       </b-row>
-    </b-container>
+    </b-container> -->
 
     <!-- shipping, delivery, payment @contact info -->
-    <h2>Product Information</h2>
     <div>
       <div>
         <div class="mt-3">
@@ -82,11 +83,12 @@
       <!-- product detail with photo -->
 
       <div>
-        <b-card
+        <!-- <b-card
           no-body
           class="overflow-hidden"
           style="max-width: 540px; padding:30px; margin: 30px"
         >
+        
           <b-row no-gutters>
             <b-col md="6">
               <b-card-img
@@ -107,7 +109,7 @@
               </b-card-body>
             </b-col>
           </b-row>
-        </b-card>
+        </b-card> -->
       </div>
     </div>
     <div>
@@ -118,7 +120,7 @@
             class="text-center"
             style="max-width: 540px; padding:30px; margin: 30px"
           >
-            <b-card-text>Subtotal: 2000 $</b-card-text>
+            <b-card-text>price</b-card-text>
             <b-card-text>Shipping: 29 $</b-card-text>
             <h3>Total amount(inc. vat)</h3>
             <p>2029 $</p>
@@ -164,17 +166,22 @@
 <!-- Script -->
 
 <script>
+  import { mapGetters } from 'vuex'
   export default {
+    name: 'OrderConfirm',
     data() {
       return {
         value5: null,
         text: ''
       }
     },
-
+    computed: mapGetters(['totalPrice']),
     methods: {
       onRedirect() {
         this.$router.push({ name: 'Home' })
+      },
+      price() {
+        return this.$state.store.cart
       }
     }
   }
@@ -204,5 +211,9 @@
       padding: 20px;
       margin: 20px;
     }
+  }
+  .divider {
+    margin-top: 10vh;
+    margin-bottom: 10vh;
   }
 </style>
