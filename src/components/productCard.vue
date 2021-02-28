@@ -7,9 +7,17 @@
       class="h-100 shadow-sm"
       v-for="(product, id) in $store.state.products"
     >
-      <img src="../assets/suit.png" alt="suit" />
+      <div id="card-img">
+        <img
+          v-bind:src="require('../assets' + product.img)"
+          v-b-modal="'infoModal' + id"
+          alt="product"
+        />
+      </div>
       <b-card-text class="text-left">
-        <h3>{{ product.brand }}</h3>
+        <div id="brand">
+          <h4>{{ product.brand }}</h4>
+        </div>
         <span id="prod-info">
           <p>{{ product.name }}</p>
           <p>{{ product.price }} $</p>
@@ -41,20 +49,20 @@
           </b-form-group>
         </div>
 
-        <div class="text-right">
-          <!--  Add to cart button -->
+        <!--  Add to cart button -->
 
-          <b-button
-            block
-            variant="primary"
-            v-b-modal="'addText' + id"
-            @click="
-              addToCart(product, id)
-              textPop(id)
-            "
-            >Add to cart</b-button
-          >
-        </div>
+        <b-button
+          id="add-btn"
+          block
+          variant="primary"
+          v-b-modal="'addText' + id"
+          @click="
+            addToCart(product, id)
+            textPop(id)
+          "
+          >Add to cart</b-button
+        >
+
         <div>
           <!-- More info modal -->
           <b-modal
@@ -64,7 +72,11 @@
             hide-backdrop
             hide-footer
           >
-            <img src="../assets/suit.png" alt="suit" class="img-modal" />
+            <img
+              v-bind:src="require('../assets' + product.img)"
+              alt="product"
+              class="img-modal"
+            />
             <h2>{{ product.brand }}</h2>
             <h4>{{ product.name }}</h4>
 
@@ -98,6 +110,8 @@
           hide-backdrop
           ok-only
           size="sm"
+          centered
+          no-close-on-backdrop
         >
           <p>{{ msg }}</p>
         </b-modal>
@@ -131,7 +145,7 @@
             color: this.toCart.colors[id],
             size: this.toCart.sizes[id],
             items: 1,
-            image: product.img
+            img: product.img
           })
         } else {
           return 0
@@ -144,7 +158,7 @@
         ) {
           this.msg = 'Product added to cart'
         } else {
-          this.msg = 'Please pick color and size'
+          this.msg = 'Please pick color & size'
         }
       }
     }
@@ -152,8 +166,19 @@
 </script>
 
 <style scoped>
+  #brand {
+    height: 80px;
+    padding-top: 20px;
+  }
+  #card-img {
+    height: 220px;
+  }
+  #colors {
+    height: 100px;
+  }
   img {
     max-width: 100%;
+    max-height: 100%;
   }
 
   .img-modal {
@@ -175,14 +200,14 @@
   #size {
     margin-bottom: 20px;
   }
-  @media (min-width: 500px) and (max-width: 799px) {
+  @media (min-width: 535px) and (max-width: 984px) {
     #card-wrapper {
       display: grid;
       grid-template-columns: auto auto;
       grid-gap: 50px;
     }
   }
-  @media screen and (min-width: 800px) {
+  @media screen and (min-width: 984px) {
     #card-wrapper {
       display: grid;
       grid-template-columns: auto auto auto;

@@ -254,24 +254,7 @@ let brands = [
 ]
 
 // NAMES
-let names = [
-  'Dresses',
-  'Tops',
-  'Knitwear',
-  'Jackets',
-  'Suits',
-  'Pants',
-  'Jeans',
-  'Skirts',
-  'Coats',
-  'Skiwear',
-  'Activewear',
-  'Beachwear',
-  'Shorts',
-  'Jumpsuits',
-  'Shoes',
-  'Bags'
-]
+let names = ['Dress', 'Jacket', 'Suit', 'Ties', 'Shoes', 'Bag']
 
 // SIZES
 let sizes = [
@@ -301,6 +284,8 @@ let colors = [
   { text: 'white', value: 'white' },
   { text: 'yellow', value: 'yellow' }
 ]
+
+let sex = ['Man', 'Woman']
 
 // INITIATES PRODUCTS VAR
 let products = {}
@@ -333,7 +318,9 @@ names.forEach(name => {
       name: name,
       color: randomGenerator(colors, 4),
       price: randomPrice(200, 5000),
-      size: randomGenerator(sizes, 5)
+      size: randomGenerator(sizes, 5),
+      sex: sex[i % 2 ? 0 : 1],
+      img: `/${sex[i % 2 ? 0 : 1]}/${name}/${name + i}.png`
     }
   }
 })

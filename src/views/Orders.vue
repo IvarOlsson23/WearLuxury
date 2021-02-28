@@ -104,10 +104,7 @@
           boughtProducts: '',
           totalPrice: '',
           price: ''
-        },
-        payMethodOptions: ['Visa', 'Paypal', 'Bitcoin', 'Invoice'],
-        submitted: false,
-        options: [1, 2, 3, 4]
+        }
       }
     },
     methods: {
@@ -134,18 +131,8 @@
         this.$store.commit('removeItem', index)
       }
     },
+
     computed: {
-      totalAmount() {
-        if (this.$store.state.orders.length > 0) {
-          return (
-            this.$store.state.orders
-              .map(item => item.price * item.items)
-              .reduce((total, amount) => total + amount) + 29
-          )
-        } else {
-          return 0
-        }
-      },
       cartItemLength() {
         let productLength = this.$store.state.orders.length
 

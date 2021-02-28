@@ -8,39 +8,69 @@
           v-model="login"
           style=" padding:10px; margin: 15px"
         >
+
+        <!-- Login -->
+
           <b-row class="login-bg">
             <b-col>
               <h1>Login</h1>
               <div class="text-left mt-5">
-                <label for="text-email">E-mail</label>
+                <label style=" padding: 10px; margin-top: 10px" for="text-email"
+                  >E-mail</label
+                >
                 <b-form-input
+                  required
                   type="email"
                   id="text-email"
                   v-model="email"
                   aria-describedby="email-help-block"
                 />
-                <label for="text-password">Password</label>
+                <label
+                  style=" padding: 10px; margin-top: 10px"
+                  for="text-password"
+                  >Password</label
+                >
                 <b-form-input
+                  required
                   type="password"
                   id="text-password"
+                  v-model="password"
                   aria-describedby="password-help-block"
                 />
               </div>
 
+
+ <!-- Forgot password -->
+
               <div>
-                <div style=" padding: 10px; margin-top: 20px">
-                  <b-link href="#">Forgot password? </b-link>
+                <div
+                  class="mt-3"
+                  v-b-modal.modal-prevent-closing
+                  style=" padding: 10px; margin-top: 20px"
+                >
+                  Forgot password?
+                  <div v-if="submittedForgot.length === 0" />
+                  <ul v-else class="mb-0 pl-3">
+                    <li v-for="forgot in submittedForgot" :key="forgot">
+                      {{ forgot }}
+                    </li>
+                  </ul>
                 </div>
               </div>
 
               <div>
                 <b-button
+                  @click="doLogin"
+                  type="submit"
                   block
                   variant="secondary"
                   style=" padding: 15px; margin-top: 15px"
                   >Login</b-button
                 >
               </div>
+
+
+ <!-- Create account -->
 
               <div>
                 <b-button
@@ -66,26 +96,49 @@
               <div class="text-left mt-5">
                 <label for="text-name">Name</label>
                 <b-form-input
+                  required
                   type="text"
                   id="text-name"
                   v-model="name"
                   aria-describedby="email-help-block"
                 />
-                <label for="text-email">E-mail</label>
+                <label style=" padding: 10px; margin-top: 10px" for="text-email"
+                  >E-mail</label
+                >
                 <b-form-input
+                  required
                   type="email"
                   id="text-email"
                   v-model="email"
                   aria-describedby="email-help-block"
                 />
-                <label for="text-password">Password</label>
+
+                <label
+                  style=" padding: 10px; margin-top: 10px"
+                  for="text-password"
+                  >Password</label
+                >
                 <b-form-input
+                  type="password"
+                  id="text-password"
+                  aria-describedby="password-help-block"
+                />
+
+                <label
+                  style=" padding: 10px; margin-top: 10px"
+                  for="text-password"
+                  >Repeat Password</label
+                >
+                <b-form-input
+                  v-model="password"
+                  required
                   type="password"
                   id="text-password"
                   aria-describedby="password-help-block"
                 />
               </div>
 
+ <!-- Forgot password -->
 
               <div>
                 <div
@@ -101,31 +154,6 @@
                     </li>
                   </ul>
                 </div>
-
-                <b-modal
-                  id="modal-prevent-closing"
-                  ref="modal"
-                  title="Forgotten password?"
-                  @show="resetModal"
-                  @hidden="resetModal"
-                  @ok="handleOk"
-                >
-                  <form ref="form" @submit.stop.prevent="handleSubmit">
-                    <b-form-group
-                      label="Enter your E-mail"
-                      label-for="forgot-input"
-                      invalid-feedback="E-mail is correct"
-                      :state="forgotState"
-                    >
-                      <b-form-input
-                        id="forgot-input"
-                        v-model="forgot"
-                        :state="forgotState"
-                        required
-                      />
-                    </b-form-group>
-                  </form>
-                </b-modal>
               </div>
 
               <div>
@@ -133,6 +161,8 @@
                   block
                   variant="secondary"
                   style=" padding: 15px; margin-top: 15px"
+                  @click="doregister"
+                  type="submit"
                   >Create Account</b-button
                 >
               </div>
@@ -150,8 +180,34 @@
         </b-form>
       </b-col>
     </b-row>
+    <b-modal
+      id="modal-prevent-closing"
+      ref="modal"
+      title="Forgotten password?"
+      @show="resetModal"
+      @hidden="resetModal"
+      @ok="handleOk"
+    >
+      <form ref="form" @submit.stop.prevent="handleSubmit">
+        <b-form-group
+          label="Enter your E-mail"
+          label-for="forgot-input"
+          invalid-feedback="E-mail is correct"
+          :state="forgotState"
+        >
+          <b-form-input
+            id="forgot-input"
+            v-model="forgot"
+            :state="forgotState"
+            required
+          />
+        </b-form-group>
+      </form>
+    </b-modal>
   </div>
 </template>
+
+ <!-- Script -->
 
 <script>
   export default {
@@ -161,12 +217,32 @@
         forgot: '',
         login: '',
         name: '',
+        password: '',
+        repeatpassword: '',
         mode: 'login',
         forgotState: null,
         submittedForgot: ''
       }
     },
     methods: {
+      doLogin() {
+        if (this.email != '' && this.password != '') {
+          this.redirect()
+        }
+      },
+      doregister() {
+        if (
+          this.email != '' &&
+          this.repeatpassword != '' &&
+          this.password != '' &&
+          this.name != ''
+        ) {
+          this.redirect()
+        }
+      },
+      redirect() {
+        this.$router.push({ name: 'profil' })
+      },
       checkFormValidity() {
         const valid = this.$refs.form.checkValidity()
         this.forgotState = valid
@@ -196,6 +272,9 @@
   }
 </script>
 
+
+ <!-- Style -->
+ 
 <style scoped>
   .ma {
     align-content: center;
