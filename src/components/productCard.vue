@@ -9,7 +9,7 @@
     >
       <div id="card-img">
         <img
-          v-bind:src="require('../assets' + product.img)"
+          :src="require('../assets' + product.img)"
           v-b-modal="'infoModal' + id"
           alt="product"
         />
@@ -73,7 +73,7 @@
             hide-footer
           >
             <img
-              v-bind:src="require('../assets' + product.img)"
+              :src="require('../assets' + product.img)"
               alt="product"
               class="img-modal"
             />
