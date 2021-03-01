@@ -1,12 +1,12 @@
 <template>
   <div id="con">
-    <div>Your Informations</div>
+    <div id="xcon">
+    <div id="you">Your Informations</div>
 
     <b-container>
       <b-row>
         <b-col id="name">
           <div class="inline">Username:</div>
-
           <div class="inline">{{ username }}</div>
         </b-col>
         <b-col id="ico">
@@ -27,7 +27,7 @@
         <b-col>
           <div class="inline">Password:</div>
           <div class="inline">
-            <input type="password" value="'password'" disabled="disabled" />
+            &bull;&bull;&bull;&bull;&bull;&bull;
           </div>
         </b-col>
         <b-col>
@@ -161,7 +161,7 @@
       <p class="my-4">Email changed!</p>
     </b-modal>
     <b-modal id="confirm-phone">
-      <p class="my-4">Phonenumber changed!</p>
+      <p class="my-4">PhoneNumber changed!</p>
     </b-modal>
     <b-modal id="confirm-zip">
       <p class="my-4">Zip-code changed!</p>
@@ -172,23 +172,35 @@
     <b-modal id="confirm-adress">
       <p class="my-4">Your delivery adress has changed!</p>
     </b-modal>
-    <b-button variant="danger" @click="logout">Log out</b-button>
+    <b-button id="logut" variant="danger" @click="logout">Log out</b-button>
+    </div>
   </div>
 </template>
 <style scoped>
   #con {
     width: 50%;
     margin: auto;
+    
   }
 
-  #name {
-    width: 33%;
-  }
-  #ico {
-    width: 33%;
-  }
+#xcon{
+  margin-top: 30px;
+  
+}
+ 
+#logut{
+  margin-bottom: 10px;
+}
   .inline {
     display: inline-block;
+    width: 33%;
+    margin-bottom: 30px;
+    text-align: left;
+  }
+
+  #you {
+    font-size: 24px;
+    padding-bottom: 30px;
   }
 </style>
 <script>
