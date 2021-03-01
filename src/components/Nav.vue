@@ -179,13 +179,7 @@
   }
 
   #countitems {
-    // border: 1px white solid;
-    //   background-color: white;
-    //    border-radius: 50%;
     color: white;
-    padding: 0px 5px 0px 5px;
-    margin-bottom: 4px;
-    margin-right: 5px;
   }
 
   #about-con {
@@ -251,7 +245,6 @@
     position: absolute;
     width: 100%;
     left: 0px;
-    top: 0x;
     align-items: center;
     z-index: 1000;
     background-color: #ffffff;
@@ -269,7 +262,6 @@
   }
   #woman-list {
     width: 50%;
-    padding-top: 20px;
   }
   #woman-list li:first-child {
     border-bottom: 1px solid;
@@ -300,7 +292,7 @@
       padding-right: 30px;
     }
     #shopping-cart {
-      margin-right: 10px;
+      margin-right: 15px;
     }
     #sok-con {
       padding-top: 10px;
