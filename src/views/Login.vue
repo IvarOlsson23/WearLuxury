@@ -12,7 +12,9 @@
             <b-col>
               <h1>Login</h1>
               <div class="text-left mt-5">
-                <label  style=" padding: 10px; margin-top: 10px" for="text-email">E-mail</label>
+                <label style=" padding: 10px; margin-top: 10px" for="text-email"
+                  >E-mail</label
+                >
                 <b-form-input
                   required
                   type="email"
@@ -20,7 +22,11 @@
                   v-model="email"
                   aria-describedby="email-help-block"
                 />
-                <label  style=" padding: 10px; margin-top: 10px" for="text-password">Password</label>
+                <label
+                  style=" padding: 10px; margin-top: 10px"
+                  for="text-password"
+                  >Password</label
+                >
                 <b-form-input
                   required
                   type="password"
@@ -137,8 +143,6 @@
                     </li>
                   </ul>
                 </div>
-
-              
               </div>
 
               <div>

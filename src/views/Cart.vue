@@ -278,17 +278,16 @@
               v-model="receiver.email"
             />
 
+            <b-form-checkbox style=" padding: 10px; margin-top: 10px">
+              I accept all information and terms on WearLuxury</b-form-checkbox
+            >
 
-      <b-form-checkbox style=" padding: 10px; margin-top: 10px"> I accept all information and terms on WearLuxury</b-form-checkbox>
-
-     <b-form-checkbox style=" padding: 10px; margin-top: 10px"> Yes, I want to subscribe to WearLuxury newsletters </b-form-checkbox>
+            <b-form-checkbox style=" padding: 10px; margin-top: 10px">
+              Yes, I want to subscribe to WearLuxury newsletters
+            </b-form-checkbox>
           </b-form-group>
         </b-col>
       </b-row>
-
- 
-
-
 
       <b-row align-h="center" class="mt-4">
         <b-col cols="12" md="6">

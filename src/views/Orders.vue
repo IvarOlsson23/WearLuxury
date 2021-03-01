@@ -104,10 +104,7 @@
           boughtProducts: '',
           totalPrice: '',
           price: ''
-        },
-
-      
-        
+        }
       }
     },
     methods: {
@@ -134,9 +131,8 @@
         this.$store.commit('removeItem', index)
       }
     },
-    
-        computed: { 
-      
+
+    computed: {
       cartItemLength() {
         let productLength = this.$store.state.orders.length
 
