@@ -14,20 +14,20 @@
             border-variant="light"
           >
             <b-card
-               :img-src="require('../assets' + product.img)"
-            img-left
-            img-width="120px"
-            img-height="100%"
-            :title="product.brand"
-            :sub-title="product.name"
-            footer-tag="footer"
-            footer-bg-variant="light"
-            footer-border-variant="light"
-            v-for="(order, index) in $store.state.order"
-            :key="index"
-            class="mb-4 "
-            footer-class="d-flex flex-column justify-content-around bg-white"
-            border-variant="light"
+              :img-src="require('../assets' + product.img)"
+              img-left
+              img-width="120px"
+              img-height="100%"
+              :title="product.brand"
+              :sub-title="product.name"
+              footer-tag="footer"
+              footer-bg-variant="light"
+              footer-border-variant="light"
+              v-for="(order, index) in $store.state.order"
+              :key="index"
+              class="mb-4 "
+              footer-class="d-flex flex-column justify-content-around bg-white"
+              border-variant="light"
             >
               <b-card-text>
                 Color: {{ product.color }}
@@ -82,23 +82,18 @@
   </div>
 </template>
 <script>
-import { mapGetters } from 'vuex'
- export default {
+  import { mapGetters } from 'vuex'
+  export default {
     name: 'Orders',
     data() {
-      return {
-     
-       
-      }
+      return {}
     },
-    
+
     methods: {
       onSubmit() {
         this.receiver.boughtProducts = this.$store.state.orders.slice()
         this.receiver.totalPrice = this.totalAmount
-      
-      },
-   
+      }
     },
 
     computed: {
@@ -107,13 +102,8 @@ import { mapGetters } from 'vuex'
         let orderMessage = productLength === 1 ? ' order ' : ' orders '
         return ' Ongoing ' + orderMessage + productLength
       },
-       computed: mapGetters(['totalAmount']),}
-     
-
-   
-
-
-    
+      computed: mapGetters(['totalAmount'])
+    }
   }
 </script>
 

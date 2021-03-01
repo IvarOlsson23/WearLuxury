@@ -1,178 +1,186 @@
 <template>
   <div id="con">
     <div id="xcon">
-    <div id="you">Your Informations</div>
+      <div id="you">Your Informations</div>
 
-    <b-container>
-      <b-row>
-        <b-col id="name">
-          <div class="inline">Username:</div>
-          <div class="inline">{{ username }}</div>
-        </b-col>
-        <b-col id="ico">
-          <b-button v-b-modal.username-modal size="sm" variant="light"
-            ><b-icon class="ml-2" icon="box-arrow-in-down-left" />
-          </b-button>
-          <b-modal id="username-modal" title="Change Username" @ok="name">
-            <form ref="form">
-              <b-form-group label="Username" label-for="username-input">
-                <b-form-input id="username-input" v-model="username" />
-              </b-form-group>
-            </form>
-          </b-modal>
-        </b-col>
-      </b-row>
+      <b-container>
+        <b-row>
+          <b-col id="name">
+            <div class="inline">Username:</div>
+            <div class="inline">{{ username }}</div>
+          </b-col>
+          <b-col id="ico">
+            <b-button v-b-modal.username-modal size="sm" variant="light"
+              ><b-icon class="ml-2" icon="box-arrow-in-down-left" />
+            </b-button>
+            <b-modal id="username-modal" title="Change Username" @ok="name">
+              <form ref="form">
+                <b-form-group label="Username" label-for="username-input">
+                  <b-form-input id="username-input" v-model="username" />
+                </b-form-group>
+              </form>
+            </b-modal>
+          </b-col>
+        </b-row>
 
-      <b-row>
-        <b-col>
-          <div class="inline">Password:</div>
-          <div class="inline">
-            &bull;&bull;&bull;&bull;&bull;&bull;
-          </div>
-        </b-col>
-        <b-col>
-          <b-button v-b-modal.password-modal size="sm" variant="light"
-            ><b-icon class="ml-2" icon="box-arrow-in-down-left" />
-          </b-button>
-          <b-modal id="password-modal" title="Change password" @ok="Password">
-            <form ref="form">
-              <b-form-group label="Password" label-for="password-input">
-                <b-form-input
-                  type="password"
-                  id="password-input"
-                  v-model="password"
-                />
-              </b-form-group>
-            </form>
-          </b-modal>
-        </b-col>
-      </b-row>
-      <b-row>
-        <b-col>
-          <div class="inline">Phone:</div>
-          <div class="inline">{{ phone }}</div>
-        </b-col>
-        <b-col>
-          <b-button v-b-modal.phone-modal size="sm" variant="light"
-            ><b-icon class="ml-2" icon="box-arrow-in-down-left"
-          /></b-button>
-          <b-modal id="phone-modal" title="Change phone" @ok="Phone">
-            <form ref="form">
-              <b-form-group label="Phone" label-for="phone-input">
-                <b-form-input type="number" id="phone-input" v-model="phone" />
-              </b-form-group>
-            </form>
-          </b-modal>
-        </b-col>
-      </b-row>
-      <b-row>
-        <b-col>
-          <div class="inline">Email:</div>
+        <b-row>
+          <b-col>
+            <div class="inline">Password:</div>
+            <div class="inline">
+              &bull;&bull;&bull;&bull;&bull;&bull;
+            </div>
+          </b-col>
+          <b-col>
+            <b-button v-b-modal.password-modal size="sm" variant="light"
+              ><b-icon class="ml-2" icon="box-arrow-in-down-left" />
+            </b-button>
+            <b-modal id="password-modal" title="Change password" @ok="Password">
+              <form ref="form">
+                <b-form-group label="Password" label-for="password-input">
+                  <b-form-input
+                    type="password"
+                    id="password-input"
+                    v-model="password"
+                  />
+                </b-form-group>
+              </form>
+            </b-modal>
+          </b-col>
+        </b-row>
+        <b-row>
+          <b-col>
+            <div class="inline">Phone:</div>
+            <div class="inline">{{ phone }}</div>
+          </b-col>
+          <b-col>
+            <b-button v-b-modal.phone-modal size="sm" variant="light"
+              ><b-icon class="ml-2" icon="box-arrow-in-down-left"
+            /></b-button>
+            <b-modal id="phone-modal" title="Change phone" @ok="Phone">
+              <form ref="form">
+                <b-form-group label="Phone" label-for="phone-input">
+                  <b-form-input
+                    type="number"
+                    id="phone-input"
+                    v-model="phone"
+                  />
+                </b-form-group>
+              </form>
+            </b-modal>
+          </b-col>
+        </b-row>
+        <b-row>
+          <b-col>
+            <div class="inline">Email:</div>
 
-          <div class="inline">{{ email }}</div>
-        </b-col>
-        <b-col>
-          <b-button v-b-modal.email-modal size="sm" variant="light"
-            ><b-icon class="ml-2" icon="box-arrow-in-down-left"
-          /></b-button>
-          <b-modal id="email-modal" title="Change email" @ok="Email">
-            <form ref="form">
-              <b-form-group label="Email" label-for="email-input">
-                <b-form-input type="email" id="email-input" v-model="email" />
-              </b-form-group>
-            </form>
-          </b-modal>
-        </b-col>
-      </b-row>
-      <b-row>
-        <b-col>
-          <div class="inline">Zip-code:</div>
+            <div class="inline">{{ email }}</div>
+          </b-col>
+          <b-col>
+            <b-button v-b-modal.email-modal size="sm" variant="light"
+              ><b-icon class="ml-2" icon="box-arrow-in-down-left"
+            /></b-button>
+            <b-modal id="email-modal" title="Change email" @ok="Email">
+              <form ref="form">
+                <b-form-group label="Email" label-for="email-input">
+                  <b-form-input type="email" id="email-input" v-model="email" />
+                </b-form-group>
+              </form>
+            </b-modal>
+          </b-col>
+        </b-row>
+        <b-row>
+          <b-col>
+            <div class="inline">Zip-code:</div>
 
-          <div class="inline">{{ zip }}</div>
-        </b-col>
-        <b-col>
-          <b-button v-b-modal.zip-modal size="sm" variant="light"
-            ><b-icon class="ml-2" icon="box-arrow-in-down-left"
-          /></b-button>
-          <b-modal id="zip-modal" title="Change Zip-code" @ok="Email">
-            <form ref="form">
-              <b-form-group label="Zip-code" label-for="zip-input">
-                <b-form-input type="text" id="zip-input" v-model="zip" />
-              </b-form-group>
-            </form>
-          </b-modal>
-        </b-col>
-      </b-row>
-      <b-row>
-        <b-col>
-          <div class="inline">Country:</div>
+            <div class="inline">{{ zip }}</div>
+          </b-col>
+          <b-col>
+            <b-button v-b-modal.zip-modal size="sm" variant="light"
+              ><b-icon class="ml-2" icon="box-arrow-in-down-left"
+            /></b-button>
+            <b-modal id="zip-modal" title="Change Zip-code" @ok="Email">
+              <form ref="form">
+                <b-form-group label="Zip-code" label-for="zip-input">
+                  <b-form-input type="text" id="zip-input" v-model="zip" />
+                </b-form-group>
+              </form>
+            </b-modal>
+          </b-col>
+        </b-row>
+        <b-row>
+          <b-col>
+            <div class="inline">Country:</div>
 
-          <div class="inline">{{ country }}</div>
-        </b-col>
-        <b-col>
-          <b-button v-b-modal.country-modal size="sm" variant="light"
-            ><b-icon class="ml-2" icon="box-arrow-in-down-left"
-          /></b-button>
-          <b-modal id="country-modal" title="Change country" @ok="Country">
-            <form ref="form">
-              <b-form-group label="Country" label-for="Country-input">
-                <b-form-input
-                  type="text"
-                  id="country-input"
-                  v-model="country"
-                />
-              </b-form-group>
-            </form>
-          </b-modal>
-        </b-col>
-      </b-row>
-      <b-row>
-        <b-col>
-          <div class="inline">Delivery adress:</div>
+            <div class="inline">{{ country }}</div>
+          </b-col>
+          <b-col>
+            <b-button v-b-modal.country-modal size="sm" variant="light"
+              ><b-icon class="ml-2" icon="box-arrow-in-down-left"
+            /></b-button>
+            <b-modal id="country-modal" title="Change country" @ok="Country">
+              <form ref="form">
+                <b-form-group label="Country" label-for="Country-input">
+                  <b-form-input
+                    type="text"
+                    id="country-input"
+                    v-model="country"
+                  />
+                </b-form-group>
+              </form>
+            </b-modal>
+          </b-col>
+        </b-row>
+        <b-row>
+          <b-col>
+            <div class="inline">Delivery adress:</div>
 
-          <div class="inline">{{ adress }}</div>
-        </b-col>
-        <b-col>
-          <b-button v-b-modal.adress-modal size="sm" variant="light"
-            ><b-icon class="ml-2" icon="box-arrow-in-down-left"
-          /></b-button>
-          <b-modal
-            id="adress-modal"
-            title="Change delivery adress"
-            @ok="Adress"
-          >
-            <form ref="form">
-              <b-form-group label="Adress" label-for="Adress-input">
-                <b-form-input type="text" id="Adress-input" v-model="adress" />
-              </b-form-group>
-            </form>
-          </b-modal>
-        </b-col>
-      </b-row>
-    </b-container>
+            <div class="inline">{{ adress }}</div>
+          </b-col>
+          <b-col>
+            <b-button v-b-modal.adress-modal size="sm" variant="light"
+              ><b-icon class="ml-2" icon="box-arrow-in-down-left"
+            /></b-button>
+            <b-modal
+              id="adress-modal"
+              title="Change delivery adress"
+              @ok="Adress"
+            >
+              <form ref="form">
+                <b-form-group label="Adress" label-for="Adress-input">
+                  <b-form-input
+                    type="text"
+                    id="Adress-input"
+                    v-model="adress"
+                  />
+                </b-form-group>
+              </form>
+            </b-modal>
+          </b-col>
+        </b-row>
+      </b-container>
 
-    <b-modal id="confirm-username">
-      <p class="my-4">Username changed!</p>
-    </b-modal>
-    <b-modal id="confirm-password">
-      <p class="my-4">Password changed!</p>
-    </b-modal>
-    <b-modal id="confirm-email">
-      <p class="my-4">Email changed!</p>
-    </b-modal>
-    <b-modal id="confirm-phone">
-      <p class="my-4">PhoneNumber changed!</p>
-    </b-modal>
-    <b-modal id="confirm-zip">
-      <p class="my-4">Zip-code changed!</p>
-    </b-modal>
-    <b-modal id="confirm-country">
-      <p class="my-4">Your country has changed!</p>
-    </b-modal>
-    <b-modal id="confirm-adress">
-      <p class="my-4">Your delivery adress has changed!</p>
-    </b-modal>
-    <b-button id="logut" variant="danger" @click="logout">Log out</b-button>
+      <b-modal id="confirm-username">
+        <p class="my-4">Username changed!</p>
+      </b-modal>
+      <b-modal id="confirm-password">
+        <p class="my-4">Password changed!</p>
+      </b-modal>
+      <b-modal id="confirm-email">
+        <p class="my-4">Email changed!</p>
+      </b-modal>
+      <b-modal id="confirm-phone">
+        <p class="my-4">PhoneNumber changed!</p>
+      </b-modal>
+      <b-modal id="confirm-zip">
+        <p class="my-4">Zip-code changed!</p>
+      </b-modal>
+      <b-modal id="confirm-country">
+        <p class="my-4">Your country has changed!</p>
+      </b-modal>
+      <b-modal id="confirm-adress">
+        <p class="my-4">Your delivery adress has changed!</p>
+      </b-modal>
+      <b-button id="logut" variant="danger" @click="logout">Log out</b-button>
     </div>
   </div>
 </template>
@@ -180,17 +188,15 @@
   #con {
     width: 50%;
     margin: auto;
-    
   }
 
-#xcon{
-  margin-top: 30px;
-  
-}
- 
-#logut{
-  margin-bottom: 10px;
-}
+  #xcon {
+    margin-top: 30px;
+  }
+
+  #logut {
+    margin-bottom: 10px;
+  }
   .inline {
     display: inline-block;
     width: 33%;
