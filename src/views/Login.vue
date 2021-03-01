@@ -285,4 +285,8 @@
     padding: 40px;
     margin-bottom: 30px;
   }
+  .login {
+    padding-left: 20px;
+    padding-right: 20px;
+  }
 </style>

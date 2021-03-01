@@ -1,46 +1,6 @@
 <template>
   <div class="produts my-4">
     <b-container class="bv-example-row bv-example-row-flex-cols">
-      <b-row>
-        <!-- Dropdown menu -->
-        <b-col cols="3">
-          <div class="maindropdown float-right light">
-            <b-dropdown
-              id="dropdown-left"
-              text="Sort by"
-              variant="secondary"
-              size="sm"
-              class="m-2"
-            >
-              <b-dropdown-item href="#">Color</b-dropdown-item>
-              <b-dropdown-item href="#">Pattern</b-dropdown-item>
-              <b-dropdown-item href="#">Low price</b-dropdown-item>
-              <b-dropdown-item href="#">High Price</b-dropdown-item>
-              <b-dropdown-item href="#">Newest</b-dropdown-item>
-            </b-dropdown>
-
-            <b-dropdown
-              id="dropdown-right"
-              right
-              text="Products"
-              variant="secondary"
-              size="sm"
-              class="m-2"
-            >
-              <b-dropdown-item @click="setCathegory('')">All</b-dropdown-item>
-              <b-dropdown-item @click="setCathegory('women')"
-                >Women clothes</b-dropdown-item
-              >
-              <b-dropdown-item @click="setCathegory('men')"
-                >Men clothes</b-dropdown-item
-              >
-              <b-dropdown-item @click="setCathegory('accessories')"
-                >Accessories</b-dropdown-item
-              >
-            </b-dropdown>
-          </div>
-        </b-col>
-      </b-row>
       <!-- Productcards -->
       <template>
         <div class="mt-5 mb-5">
@@ -100,6 +60,44 @@
           </b-carousel>
         </div>
       </template>
+      <b-row>
+        <!-- Dropdown menu -->
+
+        <div class="maindropdown ">
+          <b-dropdown
+            id="dropdown-right"
+            right
+            text="Products"
+            variant="primary"
+            size="sm"
+            class="m-2"
+          >
+            <b-dropdown-item @click="setCathegory('')">All</b-dropdown-item>
+            <b-dropdown-item @click="setCathegory('women')"
+              >Women clothes</b-dropdown-item
+            >
+            <b-dropdown-item @click="setCathegory('men')"
+              >Men clothes</b-dropdown-item
+            >
+            <b-dropdown-item @click="setCathegory('accessories')"
+              >Accessories</b-dropdown-item
+            >
+          </b-dropdown>
+          <b-dropdown
+            id="dropdown-left"
+            text="Sort by"
+            variant="primary"
+            size="sm"
+            class="m-2"
+          >
+            <b-dropdown-item href="#">Color</b-dropdown-item>
+            <b-dropdown-item href="#">Pattern</b-dropdown-item>
+            <b-dropdown-item href="#">Low price</b-dropdown-item>
+            <b-dropdown-item href="#">High Price</b-dropdown-item>
+            <b-dropdown-item href="#">Newest</b-dropdown-item>
+          </b-dropdown>
+        </div>
+      </b-row>
 
       <div id="product-wrapper">
         <b-row>
@@ -226,7 +224,10 @@
   .other-products {
     margin-top: 60px;
   }
-
+  .maindropdown {
+    margin-bottom: 20px;
+    margin-left: 10px;
+  }
   .carousel {
     max-height: 500px;
     overflow: hidden;

@@ -36,23 +36,26 @@
             >
               <path
                 d="M8 8a3 3 0 1 0 0-6 3 3 0 0 0 0 6zm2-3a2 2 0 1 1-4 0 2 2 0 0 1 4 0zm4 8c0 1-1 1-1 1H3s-1 0-1-1 1-4 6-4 6 3 6 4zm-1-.004c-.001-.246-.154-.986-.832-1.664C11.516 10.68 10.289 10 8 10c-2.29 0-3.516.68-4.168 1.332-.678.678-.83 1.418-.832 1.664h10z"
-              /></svg></router-link></b-col
-        ><router-link to="/cart">
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            width="24"
-            height="20"
-            fill="currentColor"
-            class="bi bi-handbag, white-text"
-            viewBox="0 0 16 16"
-          >
-            <path
-              d="M8 1a2 2 0 0 1 2 2v2H6V3a2 2 0 0 1 2-2zm3 4V3a3 3 0 1 0-6 0v2H3.361a1.5 1.5 0 0 0-1.483 1.277L.85 13.13A2.5 2.5 0 0 0 3.322 16h9.356a2.5 2.5 0 0 0 2.472-2.87l-1.028-6.853A1.5 1.5 0 0 0 12.64 5H11zm-1 1v1.5a.5.5 0 0 0 1 0V6h1.639a.5.5 0 0 1 .494.426l1.028 6.851A1.5 1.5 0 0 1 12.678 15H3.322a1.5 1.5 0 0 1-1.483-1.723l1.028-6.851A.5.5 0 0 1 3.36 6H5v1.5a.5.5 0 0 0 1 0V6h4z"
-            /></svg
-        ></router-link>
+              /></svg></router-link
+        ></b-col>
+        <div id="shopping-cart">
+          <router-link to="/cart">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="24"
+              height="20"
+              fill="currentColor"
+              class="bi bi-handbag, white-text"
+              viewBox="0 0 16 16"
+            >
+              <path
+                d="M8 1a2 2 0 0 1 2 2v2H6V3a2 2 0 0 1 2-2zm3 4V3a3 3 0 1 0-6 0v2H3.361a1.5 1.5 0 0 0-1.483 1.277L.85 13.13A2.5 2.5 0 0 0 3.322 16h9.356a2.5 2.5 0 0 0 2.472-2.87l-1.028-6.853A1.5 1.5 0 0 0 12.64 5H11zm-1 1v1.5a.5.5 0 0 0 1 0V6h1.639a.5.5 0 0 1 .494.426l1.028 6.851A1.5 1.5 0 0 1 12.678 15H3.322a1.5 1.5 0 0 1-1.483-1.723l1.028-6.851A.5.5 0 0 1 3.36 6H5v1.5a.5.5 0 0 0 1 0V6h4z"
+              />
+            </svg>
+          </router-link>
 
-        <span id="countitems">{{ countItems }}</span>
-
+          <span id="countitems">{{ countItems }}</span>
+        </div>
         <b-col id="sok-con" sm="auto"
           ><form class="form-inline">
             <button
@@ -89,21 +92,39 @@
     >
       <ul id="man-list">
         <li><router-link to="/products" class="text-dec">Man</router-link></li>
-        <li><router-link to="/" class="text-dec">Shirts</router-link></li>
-        <li><router-link to="/" class="text-dec">Pants</router-link></li>
         <li>
-          <router-link to="/" class="text-dec">Coats and Jackets</router-link>
+          <router-link to="/products" class="text-dec">Suit</router-link>
         </li>
-        <li><router-link to="/" class="text-dec">Accessoaries</router-link></li>
+        <li>
+          <router-link to="/products" class="text-dec">Ties</router-link>
+        </li>
+        <li>
+          <router-link to="/products" class="text-dec">Jackets</router-link>
+        </li>
+        <li>
+          <router-link to="/products" class="text-dec">Shoes</router-link>
+        </li>
+        <li>
+          <router-link to="/products" class="text-dec">Bags</router-link>
+        </li>
       </ul>
+
       <ul id="woman-list">
-        <li><router-link to="/" class="text-dec">Woman</router-link></li>
-        <li><router-link to="/" class="text-dec">Shirts</router-link></li>
-        <li><router-link to="/" class="text-dec">Pants</router-link></li>
         <li>
-          <router-link to="/" class="text-dec">Coats and Jackets</router-link>
+          <router-link to="/products" class="text-dec">Woman</router-link>
         </li>
-        <li><router-link to="/" class="text-dec">Accessoaries</router-link></li>
+        <li>
+          <router-link to="/products" class="text-dec">Dresses</router-link>
+        </li>
+        <li>
+          <router-link to="/products" class="text-dec">Shoes</router-link>
+        </li>
+        <li>
+          <router-link to="/products" class="text-dec">Jackets</router-link>
+        </li>
+        <li>
+          <router-link to="/products" class="text-dec">Bags</router-link>
+        </li>
       </ul>
     </div>
   </div>
@@ -141,6 +162,7 @@
     top: 0px;
     z-index: 1000;
   }
+
   .white-text {
     color: #ffffff !important;
     text-decoration: none;
@@ -156,24 +178,8 @@
     text-align: center;
   }
 
-  #korg-con {
-    text-align: left;
-  }
   #countitems {
-    border: 1px red solid;
-    background-color: red;
-    border-radius: 50%;
-    padding: 0px 5px 0px 5px;
-    margin-bottom: 4px;
-  }
-
-  #korg-block {
-    background-color: white;
-    display: flex;
-    position: absolute;
-    width: 100px;
-    height: 100px;
-    z-index: 2000;
+    color: white;
   }
 
   #about-con {
@@ -207,10 +213,7 @@
     text-align: right;
     max-width: 5%;
   }
-  .modal {
-    position: absolute !important;
-    padding-left: 2000px !important;
-  }
+
   #con {
     background-color: #182e47;
 
@@ -242,7 +245,6 @@
     position: absolute;
     width: 100%;
     left: 0px;
-    top: 0x;
     align-items: center;
     z-index: 1000;
     background-color: #ffffff;
@@ -260,7 +262,6 @@
   }
   #woman-list {
     width: 50%;
-    padding-top: 20px;
   }
   #woman-list li:first-child {
     border-bottom: 1px solid;
@@ -282,13 +283,20 @@
     .sok-button {
       display: none;
     }
-
+    #logo-con {
+      font-size: 30px;
+      margin-top: 20px;
+      margin-bottom: 20px;
+    }
     #logincon {
-      padding-right: 40px;
+      padding-right: 30px;
+    }
+    #shopping-cart {
+      margin-right: 15px;
     }
     #sok-con {
-      padding-top: 5px;
-      padding-bottom: 5px;
+      padding-top: 10px;
+      padding-bottom: 10px;
     }
   }
 </style>

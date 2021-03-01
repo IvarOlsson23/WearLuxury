@@ -114,12 +114,13 @@
 
             <b-card-text>
               <p class="text">
-                <strong>Wear Luxury</strong> strives to have a positive
-                <br />impact not only within our stores and corporate family,
-                but also upon the<br />
-                environment and on the hundreds of vendor manufacturing
-                facilities<br />
-                throughout the world and their employees.
+                Due to Covid-19, many of our shipping carriers are experiencing
+                delays in delivering orders. Please expect that after your order
+                has shipped, it might experience<br />
+                carrier delays and may take longer than usual to receive.
+                <br />The health and safety of our customers and teams is our #1
+                priority and we appreciate your patience and understanding as we
+                work to ship your order.
               </p>
             </b-card-text>
           </b-card>

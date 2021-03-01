@@ -5,14 +5,14 @@
       <b-col class="mb-4">
         <b-card
           :title="cartItemLength"
-          class="h-100 shadow-sm"
+          class="h-100 shadow-sm "
           border-variant="light"
         >
           <b-card
             :img-src="require('../assets' + product.img)"
             img-left
             img-width="120px"
-            img-height="100%"
+            img-height="220px"
             :title="product.brand"
             :sub-title="product.name"
             footer-tag="footer"
@@ -20,7 +20,7 @@
             footer-border-variant="light"
             v-for="(product, index) in $store.state.cart"
             :key="index"
-            class="mb-4 "
+            class="mb-4 cards"
             footer-class="d-flex flex-column justify-content-around bg-white"
             border-variant="light"
           >
@@ -30,16 +30,22 @@
               Size: {{ product.size }}
               <span class="d-block mt-2">
                 <b-icon
-                  class="cursor"
+                  class="cursor "
                   @click="removeItem(index)"
                   icon="trash"
                 />
-                Remove
+                <span class="d-none d-sm-inline">
+                  Remove
+                </span>
               </span>
             </b-card-text>
 
             <template #footer>
-              <b-form-select v-model="product.items" :options="options" />
+              <b-form-select
+                class="w-auto"
+                v-model="product.items"
+                :options="options"
+              />
               <span class="d-block">
                 <strong> {{ product.price }}$ </strong>
               </span>
@@ -275,19 +281,20 @@
             />
           </b-form-group>
           <!-- Subscribe to newsletter -->
+          <b-form-group class="mx-2">
+            <b-form-checkbox style=" padding: 10px; margin-top: 10px" required>
+              I accept all information and terms on WearLuxury</b-form-checkbox
+            >
 
-          <b-form-checkbox style=" padding: 10px; margin-top: 10px" required>
-            I accept all information and terms on WearLuxury</b-form-checkbox
-          >
-
-          <b-form-checkbox
-            style=" padding: 10px; margin-top: 10px"
-            v-model="receiver.newsLetter"
-            value="accepted"
-            unchecked-value="not_accepted"
-          >
-            Yes, I want to subscribe to WearLuxury newsletters
-          </b-form-checkbox>
+            <b-form-checkbox
+              style=" padding: 10px; margin-top: 10px"
+              v-model="receiver.newsLetter"
+              value="accepted"
+              unchecked-value="not_accepted"
+            >
+              Yes, I want to subscribe to WearLuxury newsletters
+            </b-form-checkbox>
+          </b-form-group>
         </b-col>
       </b-row>
 
@@ -371,6 +378,16 @@
 </script>
 
 <style scoped lang="scss">
+  img {
+    max-width: 100%;
+    max-height: 100%;
+    overflow: hidden;
+    object-fit: contain;
+  }
+  .cards {
+    padding: 0px;
+    max-width: 100%;
+  }
   #cart {
     text-align: start;
     margin-top: 5em;
