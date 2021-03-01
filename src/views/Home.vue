@@ -70,6 +70,7 @@
   #body {
     background-color: rgb(255, 255, 255);
     width: 100%;
+    overflow: hidden;
   }
   /* Stora bilden  */
   #wrapper {

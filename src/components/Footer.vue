@@ -112,14 +112,14 @@
 
   .footerNavbar {
     color: rgb(231, 231, 229);
-
     width: 100%;
   }
 
   .footer-container {
     left: 0;
     bottom: 0;
-    width: 100%;
+    max-width: 100%;
+    overflow: hidden;
   }
   /* @media only screen and (max-width: 800px) {
     .footerNavbar {
