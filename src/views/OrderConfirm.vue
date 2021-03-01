@@ -46,12 +46,13 @@
         <Strong>Contact information</Strong>
         <div class="adress">
           <p>Jonathan Luxman</p>
-          <p>JonathanLuxman@email.com</p>
+          <p>JonathanLuxman @email.com</p>
           <p>07XXXXXXX</p>
         </div>
       </div>
     </div>
 
+    <img src="@/assets/divider.svg" alt="divider" class="divider" />
     <!-- / Order has been processed -->
 
     <!-- Create account for saving info -->
@@ -225,6 +226,9 @@
 <!-- Style -->
 
 <style scoped lang="scss">
+  * {
+    list-style: none;
+  }
   .order {
     text-align: center;
     h2 {
@@ -252,10 +256,6 @@
     margin-bottom: 10vh;
   }
 
-  #order-number {
-    margin-right: 110px;
-  }
-
   #adress-section {
     margin-top: 5em;
     display: flex;
@@ -277,8 +277,8 @@
     display: flex;
     justify-content: center;
     justify-content: space-between;
-    margin-left: 41%;
-    margin-right: 40%;
+    margin-left: 35%;
+    margin-right: 30%;
   }
   #login-form {
     justify-content: flex;
@@ -292,7 +292,7 @@
     display: flex;
     justify-content: center;
     justify-content: space-between;
-    margin-left: 45%;
+    margin-left: 40%;
     margin-right: 40%;
     margin-top: 3em;
     font-size: 1.5em;
@@ -302,5 +302,19 @@
     display: flex;
     justify-content: center;
     flex-direction: column;
+  }
+
+  @media (max-width: 500px) {
+    #order-products {
+      margin-left: 0%;
+      margin-right: 10%;
+    }
+
+    #total-sum {
+      margin-left: 30%;
+      margin-right: 30%;
+      margin-top: 3em;
+      font-size: 1.5em;
+    }
   }
 </style>

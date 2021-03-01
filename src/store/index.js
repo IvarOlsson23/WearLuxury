@@ -101,6 +101,9 @@ export default new Vuex.Store({
     },
     totalPrice(state) {
       return state.orders[0].totalPrice
+    },
+    adress(state) {
+      return state.orders[0].totalPrice
     }
   }
 })
