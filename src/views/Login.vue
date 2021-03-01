@@ -8,8 +8,7 @@
           v-model="login"
           style=" padding:10px; margin: 15px"
         >
-
-        <!-- Login -->
+          <!-- Login -->
 
           <b-row class="login-bg">
             <b-col>
@@ -39,8 +38,7 @@
                 />
               </div>
 
-
- <!-- Forgot password -->
+              <!-- Forgot password -->
 
               <div>
                 <div
@@ -69,8 +67,7 @@
                 >
               </div>
 
-
- <!-- Create account -->
+              <!-- Create account -->
 
               <div>
                 <b-button
@@ -138,7 +135,7 @@
                 />
               </div>
 
- <!-- Forgot password -->
+              <!-- Forgot password -->
 
               <div>
                 <div
@@ -207,7 +204,7 @@
   </div>
 </template>
 
- <!-- Script -->
+<!-- Script -->
 
 <script>
   export default {
@@ -272,9 +269,8 @@
   }
 </script>
 
+<!-- Style -->
 
- <!-- Style -->
- 
 <style scoped>
   .ma {
     align-content: center;
