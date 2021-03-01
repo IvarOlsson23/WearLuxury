@@ -100,7 +100,7 @@ export default new Vuex.Store({
       return state.cart.length
     },
     totalPrice(state) {
-      return state.orders.city
+      return state.orders[0].totalPrice
     }
   }
 })
