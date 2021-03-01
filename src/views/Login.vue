@@ -1,7 +1,7 @@
 <template>
   <div class="login">
     <b-row>
-      <b-col cols="8" offset="2">
+      <b-col cols="12">
         <b-form
           v-if="mode == 'login'"
           @submit.stop.prevent
@@ -10,7 +10,7 @@
         >
           <!-- Login -->
 
-          <b-row class="login-bg">
+          <b-row class="login-bg" style="">
             <b-col>
               <h1>Login</h1>
               <div class="text-left mt-5">
@@ -282,7 +282,7 @@
   .login-bg {
     margin-top: 25px;
     background-color: rgb(209, 209, 209);
-    padding: 20px;
+    padding: 40px;
     margin-bottom: 30px;
   }
 </style>

@@ -45,7 +45,7 @@
                   </li>
                   <li>
                     <router-link to="/About" class="footerlink"
-                      >Our policy</router-link
+                      >Privacy policy</router-link
                     >
                   </li>
                 </ul>
