@@ -9,9 +9,10 @@
           border-variant="light"
         >
           <b-card
-            img-src="https://img01.ztat.net/article/spp-media-p1/5e0b5adffa1338618afdae5031987c3e/0d68e7d30bf0477f93d4d0a7272ae7cc.jpg?imwidth=1800"
+            :img-src="require('../assets' + product.img)"
             img-left
             img-width="120px"
+            img-height="100%"
             :title="product.brand"
             :sub-title="product.name"
             footer-tag="footer"
@@ -264,12 +265,7 @@
               type="tel"
             />
           </b-form-group>
-          <b-form-group
-            id="email-group"
-            label="Email"
-            label-for="email-adress"
-            v-model="receiver.email"
-          >
+          <b-form-group id="email-group" label="Email" label-for="email-adress">
             <b-form-input
               id="email-adress"
               type="email"
@@ -277,32 +273,23 @@
               required
               v-model="receiver.email"
             />
-            <b-form-checkbox
-              style=" padding: 5px; margin-top: 5px"
-              id="checkbox-1"
-              v-model="status"
-              name="checkbox-1"
-              value="accepted"
-              unchecked-value="not_accepted"
-            >
-              I accept all information and terms on WearLuxury
-            </b-form-checkbox>
           </b-form-group>
+          <!-- Subscribe to newsletter -->
+
+          <b-form-checkbox style=" padding: 10px; margin-top: 10px" required>
+            I accept all information and terms on WearLuxury</b-form-checkbox
+          >
+
+          <b-form-checkbox
+            style=" padding: 10px; margin-top: 10px"
+            v-model="receiver.newsLetter"
+            value="accepted"
+            unchecked-value="not_accepted"
+          >
+            Yes, I want to subscribe to WearLuxury newsletters
+          </b-form-checkbox>
         </b-col>
       </b-row>
-
-      <div>
-        <b-form-checkbox
-          style=" padding: 5px; margin-top: 5px"
-          id="checkbox-1"
-          v-model="status"
-          name="checkbox-1"
-          value="accepted"
-          unchecked-value="not_accepted"
-        >
-          Yes, I want to subscribe to WearLuxury newsletters
-        </b-form-checkbox>
-      </div>
 
       <b-row align-h="center" class="mt-4">
         <b-col cols="12" md="6">
@@ -336,7 +323,7 @@
           bitcoinAdress: '',
           boughtProducts: '',
           totalPrice: '',
-          choice: ''
+          newsLetter: ''
         },
         payMethodOptions: ['Visa', 'Paypal', 'Bitcoin', 'Invoice'],
         options: [1, 2, 3, 4]
@@ -344,14 +331,13 @@
     },
     methods: {
       onSubmit() {
-        this.receiver.boughtProducts = this.$store.state.cart
+        this.receiver.boughtProducts = this.$store.state.cart.slice()
         this.receiver.totalPrice = this.totalAmount
         this.$store.commit('setOrder', Object.assign({}, this.receiver))
         // RESETS RECEIVER DATA
         Object.keys(this.receiver).forEach(key => (this.receiver[key] = ''))
 
         //RESET CART
-
         while (this.$store.state.cart.length > 0) {
           this.$store.commit('removeItem', 0)
         }
