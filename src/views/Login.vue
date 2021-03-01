@@ -8,6 +8,9 @@
           v-model="login"
           style=" padding:10px; margin: 15px"
         >
+
+        <!-- Login -->
+
           <b-row class="login-bg">
             <b-col>
               <h1>Login</h1>
@@ -36,6 +39,9 @@
                 />
               </div>
 
+
+ <!-- Forgot password -->
+
               <div>
                 <div
                   class="mt-3"
@@ -62,6 +68,9 @@
                   >Login</b-button
                 >
               </div>
+
+
+ <!-- Create account -->
 
               <div>
                 <b-button
@@ -128,6 +137,8 @@
                   aria-describedby="password-help-block"
                 />
               </div>
+
+ <!-- Forgot password -->
 
               <div>
                 <div
@@ -196,6 +207,8 @@
   </div>
 </template>
 
+ <!-- Script -->
+
 <script>
   export default {
     data() {
@@ -259,6 +272,9 @@
   }
 </script>
 
+
+ <!-- Style -->
+ 
 <style scoped>
   .ma {
     align-content: center;

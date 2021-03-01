@@ -56,7 +56,6 @@
             <!-- Text slides with image -->
             <b-carousel-slide
               caption="First slide"
-              text="Nulla vitae elit libero, a pharetra augue mollis interdum."
               img-width="400px"
               img-height="200px"
               img-src="https://www.ucg.org/files/styles/full_grid9_breakpoints_theme_top_hat_mobile_1x/public/image/article/who-are-you-dressing-for-modesty-is-more-than-just-honoring-your-parents.jpg?timestamp=1512417811"
@@ -67,9 +66,7 @@
               img-width="400px"
               img-height="200px"
               img-src="https://i.pinimg.com/originals/e1/64/da/e164dafa13c70b1398bed629b817a765.jpg"
-            >
-              <h1>Hello world!</h1>
-            </b-carousel-slide>
+            />
 
             <!-- Slides with image only -->
             <b-carousel-slide
@@ -99,13 +96,7 @@
               img-width="400px"
               img-height="200px"
               img-src="https://i.pinimg.com/originals/0b/24/49/0b2449e9677cb58632b1e6c9cb329272.jpg"
-            >
-              <p>
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                Suspendisse eros felis, tincidunt a tincidunt eget, convallis
-                vel est. Ut pellentesque ut lacus vel interdum.
-              </p>
-            </b-carousel-slide>
+            />
           </b-carousel>
         </div>
       </template>
@@ -123,7 +114,7 @@
           <b-card
             :key="index"
             :title="dress.title"
-            :img-src="dress.img"
+            :img-src="require('@/assets/blackdress.jpg')"
             img-alt="Image"
             tag="article"
             class="mb-2  col-sm-12 col-md-4 productcontainer"

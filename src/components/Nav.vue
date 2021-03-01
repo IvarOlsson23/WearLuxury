@@ -158,6 +158,7 @@
 
   #korg-con {
     text-align: left;
+   
   }
   #countitems {
     border: 1px red solid;
@@ -248,6 +249,8 @@
     background-color: #ffffff;
   }
 
+  
+
   #dropdown li {
     list-style: none;
   }
@@ -266,6 +269,18 @@
     border-bottom: 1px solid;
   }
 
+@media only screen and (max-width: 1162px)
+{
+.logo-icon {
+     
+      display: none;
+      
+    }
+    #logincon{
+    padding-right: 40px;
+  }
+}
+
   @media only screen and (max-width: 580px) {
     #countitems {
       display: none;
@@ -273,11 +288,11 @@
     .sok-button {
       display: none;
     }
-    #logo-con {
-      margin-top: 10px;
-      margin-bottom: 10px;
-    }
 
+   
+#logincon{
+    padding-right: 40px;
+  }
     #sok-con {
       padding-top: 5px;
       padding-bottom: 5px;

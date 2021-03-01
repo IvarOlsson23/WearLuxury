@@ -14,19 +14,20 @@
             border-variant="light"
           >
             <b-card
-              img-src="https://img01.ztat.net/article/spp-media-p1/5e0b5adffa1338618afdae5031987c3e/0d68e7d30bf0477f93d4d0a7272ae7cc.jpg?imwidth=1800"
-              img-left
-              img-width="120px"
-              :title="product.brand"
-              :sub-title="product.name"
-              footer-tag="footer"
-              footer-bg-variant="light"
-              footer-border-variant="light"
-              v-for="(product, index) in $store.state.orders"
-              :key="index"
-              class="mb-4 "
-              footer-class="d-flex flex-column justify-content-around bg-white"
-              border-variant="light"
+               :img-src="require('../assets' + product.img)"
+            img-left
+            img-width="120px"
+            img-height="100%"
+            :title="product.brand"
+            :sub-title="product.name"
+            footer-tag="footer"
+            footer-bg-variant="light"
+            footer-border-variant="light"
+            v-for="(order, index) in $store.state.order"
+            :key="index"
+            class="mb-4 "
+            footer-class="d-flex flex-column justify-content-around bg-white"
+            border-variant="light"
             >
               <b-card-text>
                 Color: {{ product.color }}
@@ -81,74 +82,38 @@
   </div>
 </template>
 <script>
-  export default {
-    name: 'orders',
+import { mapGetters } from 'vuex'
+ export default {
+    name: 'Orders',
     data() {
       return {
-        receiver: {
-          surename: '',
-          lastname: '',
-          street: '',
-          postAdress: '',
-          city: '',
-          telephone: '',
-          email: '',
-          payMethod: '',
-          cardNumber: '',
-          cardNumberName: '',
-          cardExpMonth: '',
-          cardExpYear: '',
-          cardSecurity: '',
-          paypalEmail: '',
-          bitcoinAdress: '',
-          boughtProducts: '',
-          totalPrice: '',
-          price: ''
-        }
+     
+       
       }
     },
+    
     methods: {
       onSubmit() {
-        this.receiver.boughtProducts = this.$store.state.orders
+        this.receiver.boughtProducts = this.$store.state.orders.slice()
         this.receiver.totalPrice = this.totalAmount
-        this.$store.commit('setOrder', this.receiver)
-        // RESETS DATA
-        Object.keys(this.receiver).forEach(key => (this.receiver[key] = ''))
-        //RESET CART
-        let cartKeys = this.$store.state.orders.keys()
-
-        for (const key of cartKeys) {
-          this.$store.commit('removeItem', 0)
-          this.$store.commit('removeItem', key)
-        }
-
-        cartKeys = []
-
-        // GOES TO NEXT PAGE
-        this.$router.push({ name: 'OrderConfirm' })
+      
       },
-      removeItem(index) {
-        this.$store.commit('removeItem', index)
-      }
+   
     },
 
     computed: {
       cartItemLength() {
         let productLength = this.$store.state.orders.length
-
         let orderMessage = productLength === 1 ? ' order ' : ' orders '
         return ' Ongoing ' + orderMessage + productLength
-      }
-    },
-    mutations: {
-      setOrder(state, order) {
-        state.orders.push(order)
       },
+       computed: mapGetters(['totalAmount']),}
+     
 
-      addCart(state, toCart) {
-        state.cart.push(toCart)
-      }
-    }
+   
+
+
+    
   }
 </script>
 
