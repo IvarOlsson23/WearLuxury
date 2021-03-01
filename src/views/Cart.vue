@@ -30,11 +30,13 @@
               Size: {{ product.size }}
               <span class="d-block mt-2">
                 <b-icon
-                  class="cursor"
+                  class="cursor "
                   @click="removeItem(index)"
                   icon="trash"
                 />
-                Remove
+                <span class="d-none d-sm-inline">
+                  Remove
+                </span>
               </span>
             </b-card-text>
 

@@ -124,7 +124,6 @@
     list-style: none;
     text-align: left;
     padding: 0px;
-
     max-width: 120px;
   }
 
