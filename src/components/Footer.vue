@@ -1,5 +1,5 @@
 <template>
-  <div class="footer-container">
+  <div class="footer-container overflow-hidden">
     <nav class="navbar navbar-light bg-primary p-0">
       <div class="footerNavbar mt-5">
         <b-row>
