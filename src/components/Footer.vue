@@ -2,12 +2,8 @@
   <div class="footer-container overflow-hidden">
     <nav class="navbar navbar-light bg-primary p-0">
       <div class="footerNavbar mt-5">
-        <b-row cols="2" class="borders d-flex justify-content-center ">
-          <b-col
-            sm="6"
-            md="3"
-            class="text-left borders d-flex justify-content-center"
-          >
+        <b-row cols="2" class=" d-flex justify-content-center ">
+          <b-col sm="6" md="3" class="text-left  d-flex justify-content-center">
             <ul class="footerlist ">
               <li>
                 <h5>
@@ -65,7 +61,7 @@
           <b-col
             sm="6"
             md="3"
-            class="text-left borders d-flex justify-content-center "
+            class="text-left  d-flex justify-content-center "
           >
             <ul class="footerlist ">
               <li>
@@ -128,8 +124,7 @@
     list-style: none;
     text-align: left;
     padding: 0px;
-    /* border: 2px solid red; */
-    /* text-align: center; */
+
     max-width: 120px;
   }
 
@@ -145,9 +140,6 @@
     overflow: hidden;
   }
 
-  .borders {
-    /* border: 2px solid green; */
-  }
   .cursor:hover {
     cursor: pointer;
   }
