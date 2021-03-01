@@ -81,17 +81,17 @@
                   </li>
                 </ul>
               </b-col>
-            </b-row></b-col
-          >
+            </b-row>
+          </b-col>
         </b-row>
         <!-- <p class="footerNavbar">Tel: 032843417</p>
 
         <p class="footerNavbar">E-mail: WLShop@hotmail.com</p> -->
 
-        <div class="icons" style="margin-bottom:25px">
-          <b-icon style="margin-left:1.5em" icon="facebook" font-scale="1.5" />
-          <b-icon style="margin-left:1.5em" icon="instagram" font-scale="1.5" />
-          <b-icon style="margin-left:1.5em" icon="twitter" font-scale="1.5" />
+        <div class="icons my-4">
+          <b-icon class="mx-4" icon="facebook" font-scale="1.5" />
+          <b-icon class="mx-4" icon="instagram" font-scale="1.5" />
+          <b-icon class="mx-4" icon="twitter" font-scale="1.5" />
         </div>
       </div>
     </nav>
