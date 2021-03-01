@@ -96,7 +96,7 @@
               </li>
               <li>
                 <router-link to="/About" class="footerlink"
-                  >Gift cards</router-link
+                  >Terms of use</router-link
                 >
               </li>
             </ul>
