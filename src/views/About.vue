@@ -1,163 +1,165 @@
 <template>
-  <b-row>
-    <div
-      class="about"
-      :style="'background-image:url(' + require('../assets/About.png') + ')'"
-    />
-    <div class="abouttext">
-      <h4 style="text-decoration:underline; text-align:center; margin-top:10px">
-        About WearLuxury
-      </h4>
-      <p>
-        Wearluxury, is an Swedish fast fashion retailer headquartered in
-        Gothenburg, Stockholm. <br />Originally known as WearLuxury, the first
-        store was founded in Gothenburg in 1984.Wearluxury is known for its
-        Luxury, exclusive brands and tailored clothes. The company sells
-        accessories, dresses, suits and more, for men and women.
-      </p>
-    </div>
-    <b-col cols="12">
-      <b-row class="p-5">
-        <b-col cols="4">
-          <b-card style="width: 100%; padding:0px;" class="mb-2">
-            <div
-              class="flexbox"
-              :style="
-                'background-image:url(' +
-                  require('../assets/Earth.png') +
-                  '); height:200px; background-size:cover; '
-              "
-            >
-              <span>Social responsibility</span>
-            </div>
+  <b-col cols="12">
+    <b-row>
+      <div
+        class="about overflow-hidden col-md-12"
+        :style="'background-image:url(' + require('../assets/About.png') + ')'"
+      />
+      <div class="abouttext mt-5 col-md-12 pl-5 pr-5">
+        <h4
+          style="text-decoration:underline; text-align:center; margin-top:10px"
+        >
+          About WearLuxury
+        </h4>
+        <p>
+          Wearluxury, is an Swedish fast fashion retailer headquartered in
+          Gothenburg, Stockholm. Originally known as WearLuxury, the first store
+          was founded in Gothenburg in 1984.Wearluxury is known for its Luxury,
+          exclusive brands and tailored clothes. The company sells accessories,
+          dresses, suits and more, for men and women.
+        </p>
+      </div>
+      <b-col cols="12">
+        <b-row class="p-5">
+          <b-col class="col-md-4 col-sm-12">
+            <b-card style="width: 100%; padding:0px;" class="mb-2">
+              <div
+                class="flexbox"
+                :style="
+                  'background-image:url(' +
+                    require('../assets/Earth.png') +
+                    '); height:200px; background-size:cover; '
+                "
+              >
+                <span>Social responsibility</span>
+              </div>
 
-            <b-card-text>
-              <p class="text">
-                <strong>Wear Luxury</strong> strives to have a positive
-                <br />impact not only within our stores and corporate family,
-                but also upon the<br />
-              </p>
-              <p class="text">
-                environment and on the hundreds of vendor manufacturing
-                facilities<br />
-                throughout the world and their employees.
-              </p>
-            </b-card-text>
-          </b-card>
-        </b-col>
-        <b-col cols="4">
-          <b-card style="width: 100%; padding:0px;" class="mb-2">
-            <div
-              class="flexbox"
-              :style="
-                'background-image:url(' +
-                  require('../assets/Privacy.png') +
-                  '); height:200px; background-size:cover; '
-              "
-            >
-              <span>Privacy policy</span>
-            </div>
+              <b-card-text>
+                <p class="text">
+                  <strong>Wear Luxury</strong> strives to have a positive
+                  <br />impact not only within our stores and corporate family,
+                  but also upon the<br />
+                </p>
+                <p class="text">
+                  environment and on the hundreds of vendor manufacturing
+                  facilities<br />
+                  throughout the world and their employees.
+                </p>
+              </b-card-text>
+            </b-card>
+          </b-col>
+          <b-col class="col-md-4 col-sm-12">
+            <b-card style="width: 100%; padding:0px;" class="mb-2">
+              <div
+                class="flexbox"
+                :style="
+                  'background-image:url(' +
+                    require('../assets/Privacy.png') +
+                    '); height:200px; background-size:cover; '
+                "
+              >
+                <span>Privacy policy</span>
+              </div>
 
-            <b-card-text>
+              <b-card-text>
+                <p class="text">
+                  <strong>our main goals</strong> are to gain and maintain your
+                  trust, including by addressing any questions or concerns you
+                  might have about the privacy and
+                </p>
+                <p class="text">
+                  safety of yourpersonal information when it is in our hands. In
+                  this regard, we have partnered with One Trust, a leading
+                </p>
+                <p class="text">
+                  technology platform, to allow us to better communicate with
+                  you and to respond to your requests more efficiently.
+                </p>
+              </b-card-text>
+            </b-card>
+          </b-col>
+          <b-col class="col-md-4 col-sm-12">
+            <b-card style="width: 100%; padding:0px;" class="mb-2">
+              <div
+                class="flexbox"
+                :style="
+                  'background-image:url(' +
+                    require('../assets/Carrers.png') +
+                    '); height:200px; background-size:cover; '
+                "
+              >
+                <span>Carrers</span>
+              </div>
               <p class="text">
-                <strong>our main goals</strong> are to gain and maintain your
-                trust, including by addressing any questions or concerns you
-                might have about the privacy and
+                <strong>WearLuxury</strong> is always looking for talented, hard
+                working people to join our team. <br />If you have what it
+                takes, check our Current Openings or stop by any of our stores
+                and fill out an application today. Be sure to check back
+                frequently as opportunities change daily.
               </p>
-              <p class="text">
-                safety of yourpersonal information when it is in our hands. In
-                this regard, we have partnered with One Trust, a leading
-              </p>
-              <p class="text">
-                technology platform, to allow us to better communicate with you
-                and to respond to your requests more efficiently.
-              </p>
-            </b-card-text>
-          </b-card>
-        </b-col>
-        <b-col cols="4">
-          <b-card style="width: 100%; padding:0px;" class="mb-2">
-            <div
-              class="flexbox"
-              :style="
-                'background-image:url(' +
-                  require('../assets/Carrers.png') +
-                  '); height:200px; background-size:cover; '
-              "
-            >
-              <span>Carrers</span>
-            </div>
-            <p class="text">
-              <strong>WearLuxury</strong> is always looking for talented, hard
-              working people to join our team. <br />If you have what it takes,
-              check our Current Openings or stop by any of our stores and fill
-              out an application today. Be sure to check back frequently as
-              opportunities change daily.
-            </p>
-          </b-card>
-        </b-col>
-      </b-row>
-      <hr />
-      <b-row class="p-5">
-        <b-col cols="6">
-          <b-card style="width: 100%; padding:0px;" class="mb-2">
-            <div
-              class="flexbox"
-              :style="
-                'background-image:url(' +
-                  require('../assets/Shipping.png') +
-                  '); height:200px; background-size:cover; '
-              "
-            >
-              <span>Shipping info</span>
-            </div>
-
-            <b-card-text>
-              <p class="text">
-                Due to Covid-19, many of our shipping carriers are experiencing
-                delays in delivering orders. Please expect that after your order
-                has shipped, it might experience<br />
-                carrier delays and may take longer than usual to receive.
-                <br />The health and safety of our customers and teams is our #1
-                priority and we appreciate your patience and understanding as we
-                work to ship your order.
-              </p>
-            </b-card-text>
-          </b-card>
-        </b-col>
-        <b-col cols="6">
-          <b-card style="width: 100%; padding:0px;" class="mb-2">
-            <div
-              class="flexbox"
-              :style="
-                'background-image:url(' +
-                  require('../assets/terms.jpg') +
-                  '); height:200px; background-size:cover; '
-              "
-            >
-              <span>Terms of use</span>
-            </div>
-
-            <b-card-text>
-              <p class="text">
-                Your access to and use of the Sites is conditioned on your
-                acceptance of and compliance with these Terms. These Terms apply
-                to all visitors, users and others who access or use the Site
-                (collectively, "Users"). By accessing or using the Site you
-                agree to be bound by these Terms. If you disagree with any part
-                of the Terms, then you should discontinue access or use of the
-                Site. Attributions -
-                <a href="https://www.vecteezy.com/free-vector/clothing"
-                  >Clothing Vectors by Vecteezy</a
-                >
-              </p>
-            </b-card-text>
-          </b-card>
-        </b-col>
-
+            </b-card>
+          </b-col>
+        </b-row>
         <hr />
         <b-row class="p-5">
-          <b-col cols="12" offset="3">
+          <b-col class="col-md-6 col-sm-12">
+            <b-card style="width: 100%; padding:0px;" class="mb-2">
+              <div
+                class="flexbox"
+                :style="
+                  'background-image:url(' +
+                    require('../assets/Shipping.png') +
+                    '); height:200px; background-size:cover; '
+                "
+              >
+                <span>Shipping info</span>
+              </div>
+
+              <b-card-text>
+                <p class="text">
+                  Due to Covid-19, many of our shipping carriers are
+                  experiencing delays in delivering orders. Please expect that
+                  after your order has shipped, it might experience<br />
+                  carrier delays and may take longer than usual to receive.
+                  <br />The health and safety of our customers and teams is our
+                  #1 priority and we appreciate your patience and understanding
+                  as we work to ship your order.
+                </p>
+              </b-card-text>
+            </b-card>
+          </b-col>
+          <b-col class="col-md-6 col-sm-12">
+            <b-card style="width: 100%; padding:0px;" class="mb-2">
+              <div
+                class="flexbox"
+                :style="
+                  'background-image:url(' +
+                    require('../assets/Terms.png') +
+                    '); height:200px; background-size:cover; '
+                "
+              >
+                <span>Terms of use</span>
+              </div>
+
+              <b-card-text>
+                <p class="text">
+                  Your access to and use of the Sites is conditioned on your
+                  acceptance of and compliance with these Terms. These Terms
+                  apply to all visitors, users and others who access or use the
+                  Site (collectively, "Users"). By accessing or using the Site
+                  you agree to be bound by these Terms. If you disagree with any
+                  part of the Terms, then you should discontinue access or use
+                  of the Site. Attributions -
+                  <a href="https://www.vecteezy.com/free-vector/clothing"
+                    >Clothing Vectors by Vecteezy</a
+                  >
+                </p>
+              </b-card-text>
+            </b-card>
+          </b-col>
+
+          <b-col cols="12" class="mb-4"><hr /></b-col>
+          <b-col class="col-md-6 col-sm-12 offset-md-3">
             <b-card style="width: 100%; padding:0px;" class="mb-2">
               <div
                 class="flexbox"
@@ -221,9 +223,9 @@
             </b-card>
           </b-col></b-row
         >
-      </b-row>
-    </b-col>
-  </b-row>
+      </b-col>
+    </b-row>
+  </b-col>
 </template>
 
 <script>
@@ -244,7 +246,6 @@
   }
   .abouttext {
     text-align: center;
-    padding: 5px;
   }
 
   .text {
@@ -257,7 +258,6 @@
     margin-bottom: 3px;
   }
   .about {
-    width: 100%;
     height: 400px;
     background-size: cover;
     background-position: center;

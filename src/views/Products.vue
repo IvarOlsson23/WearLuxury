@@ -69,16 +69,10 @@
             size="sm"
             class="m-2"
           >
-            <b-dropdown-item @click="setCathegory('')">All</b-dropdown-item>
-            <b-dropdown-item @click="setCathegory('women')"
-              >Women clothes</b-dropdown-item
-            >
-            <b-dropdown-item @click="setCathegory('men')"
-              >Men clothes</b-dropdown-item
-            >
-            <b-dropdown-item @click="setCathegory('accessories')"
-              >Accessories</b-dropdown-item
-            >
+            <b-dropdown-item>All</b-dropdown-item>
+            <b-dropdown-item>Women clothes</b-dropdown-item>
+            <b-dropdown-item>Men clothes</b-dropdown-item>
+            <b-dropdown-item>Accessories</b-dropdown-item>
           </b-dropdown>
           <b-dropdown
             id="dropdown-left"
@@ -105,27 +99,139 @@
       <h3 class="other-products pb-10px">Also check out new arrivals</h3>
       <hr />
       <b-row class="mt-5">
-        <template v-for="(dress, index) in products">
-          <b-card
-            :key="index"
-            :title="dress.title"
-            :img-src="require('@/assets/blackdress.jpg')"
-            img-alt="Image"
-            tag="article"
-            class="mb-2  col-sm-12 col-md-4 productcontainer"
-          >
-            <b-card-text>
-              <p class="pricetag">1999$</p>
-            </b-card-text>
-            <div class="cardbuttoncontainer">
-              <b-button class="cardbutton" href="#" variant="primary"
-                >Add to cart</b-button
-              >
-            </div>
-          </b-card>
+        <template>
+          <div class="mb-2  col-sm-12 col-md-4">
+            <b-card
+              title="Pink tie suit"
+              :img-src="require('@/assets/Man/Suit/Suit1.png')"
+              img-alt="Image"
+              tag="article"
+              class="productcontainer p-5"
+            >
+              <b-card-text>
+                <p class="pricetag">$1999</p>
+              </b-card-text>
+              <div class="cardbuttoncontainer">
+                <b-button
+                  style="width:100px"
+                  class="cardbutton"
+                  v-b-modal.pink-suit
+                  href="#"
+                  variant="primary"
+                  >View</b-button
+                >
+              </div>
+            </b-card>
+          </div>
+          <div class="mb-2  col-sm-12 col-md-4">
+            <b-card
+              title="Blue tie suit"
+              :img-src="require('@/assets/Man/Suit/Suit0.png')"
+              img-alt="Image"
+              tag="article"
+              class="productcontainer p-5"
+            >
+              <b-card-text>
+                <p class="pricetag">$2999</p>
+              </b-card-text>
+              <div class="cardbuttoncontainer">
+                <b-button
+                  class="cardbutton"
+                  style="width:100px"
+                  href="#"
+                  variant="primary"
+                  v-b-modal.blue-suit
+                  >View</b-button
+                >
+              </div>
+            </b-card>
+          </div>
+          <div class="mb-2  col-sm-12 col-md-4">
+            <b-card
+              title="Yellow tie suit"
+              :img-src="require('@/assets/Man/Suit/Suit3.png')"
+              img-alt="Image"
+              tag="article"
+              class="productcontainer p-5"
+            >
+              <b-card-text>
+                <p class="pricetag">$3999</p>
+              </b-card-text>
+              <div class="cardbuttoncontainer">
+                <b-button
+                  class="cardbutton"
+                  style="width:100px"
+                  href="#"
+                  variant="primary"
+                  v-b-modal.yellow-suit
+                  >View</b-button
+                >
+              </div>
+            </b-card>
+          </div>
         </template>
       </b-row>
     </b-container>
+    <b-modal
+      id="pink-suit"
+      class="no-border"
+      content-class="shadow"
+      hide-backdrop
+      hide-footer
+    >
+      <img
+        :src="require('../assets/Man/Suit/Suit1.png')"
+        alt="product"
+        class="img-modal"
+      />
+      <h2>Pink tie suit</h2>
+      <p>
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
+        tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim
+        veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea
+        commodo consequat. Duis aute irure dolor in
+      </p>
+    </b-modal>
+    <b-modal
+      id="blue-suit"
+      class="no-border"
+      content-class="shadow"
+      hide-backdrop
+      hide-footer
+    >
+      <img
+        :src="require('../assets/Man/Suit/Suit0.png')"
+        alt="product"
+        class="img-modal"
+      />
+      <h2>Blue suit tie</h2>
+      <p>
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
+        tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim
+        veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea
+        commodo consequat. Duis aute irure dolor in
+      </p>
+    </b-modal>
+    <b-modal
+      id="yellow-suit"
+      class="no-border"
+      content-class="shadow"
+      hide-backdrop
+      hide-footer
+    >
+      <img
+        :src="require('../assets/Man/Suit/Suit3.png')"
+        alt="product"
+        class="img-modal"
+      />
+      <h2>Yellow tie suit</h2>
+      <p>
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
+        tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim
+        veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea
+        commodo consequat. Duis aute irure dolor in
+      </p>
+    </b-modal>
   </div>
 </template>
 
@@ -136,24 +242,7 @@
       productCard
     },
     data() {
-      return {
-        cathegory: ''
-      }
-    },
-    computed: {
-      products() {
-        if (this.cathegory == '') {
-          return this.$store.getters.newarrivalproducts
-        }
-        return this.$store.getters.newarrivalproducts.filter(
-          u => u.cathegory == this.cathegory
-        )
-      }
-    },
-    methods: {
-      setCathegory(cathegory) {
-        this.cathegory = cathegory
-      }
+      return {}
     }
   }
 </script>
@@ -175,35 +264,19 @@
     /* border-radius: 0px !important; */
     font-style: italic;
   }
-  .pricecart {
-    float: left;
-    padding-left: 20px;
-    margin-top: 5px;
-  }
   .cardbuttoncontainer {
-    position: absolute;
-    top: 0px;
-    left: 0px;
-    width: 100%;
-    height: 100%;
-    background-color: rgb(192, 191, 191);
-    opacity: 0.7;
-    display: none;
+    position: relative;
+    bottom: 0px;
   }
+
   .cardbutton {
     position: absolute;
     left: 32%;
     top: 42%;
     opacity: 1;
   }
-  .productcontainer:hover .cardbuttoncontainer {
-    display: block;
-  }
-  .productcontainer:hover .cardbutton {
-    opacity: 1;
-  }
   .productcontainer {
-    padding: 10px !important;
+    padding: 40px !important;
   }
   .header {
     text-decoration: underline;

@@ -208,6 +208,11 @@
 
 <script>
   export default {
+    created() {
+      if (localStorage.getItem('loggedin') == 1) {
+        this.$router.push('profil')
+      }
+    },
     data() {
       return {
         email: '',
@@ -224,6 +229,7 @@
     methods: {
       doLogin() {
         if (this.email != '' && this.password != '') {
+          localStorage.setItem('loggedin', 1)
           this.redirect()
         }
       },
