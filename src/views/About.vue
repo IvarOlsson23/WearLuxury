@@ -131,7 +131,7 @@
               class="flexbox"
               :style="
                 'background-image:url(' +
-                  require('../assets/Terms.png') +
+                  require('../assets/terms.jpg') +
                   '); height:200px; background-size:cover; '
               "
             >

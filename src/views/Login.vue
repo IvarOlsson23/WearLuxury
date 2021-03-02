@@ -1,7 +1,7 @@
 <template>
   <div class="login">
-    <b-row>
-      <b-col cols="12">
+    <b-row class="d-flex justify-content-center">
+      <b-col sm="12" md="6">
         <b-form
           v-if="mode == 'login'"
           @submit.stop.prevent
