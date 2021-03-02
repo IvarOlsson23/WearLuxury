@@ -14,16 +14,16 @@
             border-variant="light"
           >
             <b-card
-              :img-src="require('../assets' + product.img)"
+              :img-src="require('../assets' + boughtProducts.img)"
               img-left
               img-width="120px"
               img-height="100%"
-              :title="product.brand"
-              :sub-title="product.name"
+              :title="orders.brand"
+              :sub-title="orders.name"
               footer-tag="footer"
               footer-bg-variant="light"
               footer-border-variant="light"
-              v-for="(order, index) in $store.state.order"
+             v-for="(boughtProducts, index) in $store.state.orders"
               :key="index"
               class="mb-4 "
               footer-class="d-flex flex-column justify-content-around bg-white"
@@ -82,29 +82,8 @@
   </div>
 </template>
 <script>
-  import { mapGetters } from 'vuex'
-  export default {
-    name: 'Orders',
-    data() {
-      return {}
-    },
-
-    methods: {
-      onSubmit() {
-        this.receiver.boughtProducts = this.$store.state.orders.slice()
-        this.receiver.totalPrice = this.totalAmount
-      }
-    },
-
-    computed: {
-      cartItemLength() {
-        let productLength = this.$store.state.orders.length
-        let orderMessage = productLength === 1 ? ' order ' : ' orders '
-        return ' Ongoing ' + orderMessage + productLength
-      },
-      computed: mapGetters(['totalAmount'])
-    }
-  }
+ 
+ 
 </script>
 
 <style scoped>
