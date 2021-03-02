@@ -15,7 +15,6 @@
           >
             <!-- Text slides with image -->
             <b-carousel-slide
-              caption="First slide"
               img-width="400px"
               img-height="200px"
               img-src="https://i0.wp.com/queenandberry.com/wp-content/uploads/2019/03/We-Love-Luxury-Brands-And-You-Do-Too-_-Trae-Bundrant.png?fit=1920%2C1080&ssl=1"
@@ -51,8 +50,6 @@
 
             <!-- Slide with blank fluid image to maintain slide aspect ratio -->
             <b-carousel-slide
-              caption="Blank Image"
-              img-alt="Blank image"
               img-width="400px"
               img-height="200px"
               img-src="https://i.pinimg.com/originals/0b/24/49/0b2449e9677cb58632b1e6c9cb329272.jpg"
