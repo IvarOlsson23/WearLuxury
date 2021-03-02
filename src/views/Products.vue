@@ -18,7 +18,7 @@
               caption="First slide"
               img-width="400px"
               img-height="200px"
-              img-src="https://www.ucg.org/files/styles/full_grid9_breakpoints_theme_top_hat_mobile_1x/public/image/article/who-are-you-dressing-for-modesty-is-more-than-just-honoring-your-parents.jpg?timestamp=1512417811"
+              img-src="https://i0.wp.com/queenandberry.com/wp-content/uploads/2019/03/We-Love-Luxury-Brands-And-You-Do-Too-_-Trae-Bundrant.png?fit=1920%2C1080&ssl=1"
             />
 
             <!-- Slides with custom text -->
