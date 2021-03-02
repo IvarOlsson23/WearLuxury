@@ -146,7 +146,10 @@
                 (collectively, "Users"). By accessing or using the Site you
                 agree to be bound by these Terms. If you disagree with any part
                 of the Terms, then you should discontinue access or use of the
-                Site.
+                Site. Attributions -
+                <a href="https://www.vecteezy.com/free-vector/clothing"
+                  >Clothing Vectors by Vecteezy</a
+                >
               </p>
             </b-card-text>
           </b-card>
