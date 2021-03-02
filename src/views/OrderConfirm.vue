@@ -37,17 +37,17 @@
       <div>
         <Strong>Delivery Adress</Strong>
         <div class="adress">
-          <p>Street & street number: Kingstreet 13</p>
-          <p>Post number: 41511</p>
-          <p>City: Gothenburg</p>
+          <p>{{ street }}</p>
+          <p>{{ zipCode }}</p>
+          <p>{{ city }}</p>
         </div>
       </div>
       <div>
         <Strong>Contact information</Strong>
         <div class="adress">
-          <p>Jonathan Luxman</p>
-          <p>JonathanLuxman @email.com</p>
-          <p>07XXXXXXX</p>
+          <p>{{ surName }} {{ lastName }}</p>
+          <p>{{ eMail }}</p>
+          <p>{{ phoneNumber }}</p>
         </div>
       </div>
     </div>
@@ -214,7 +214,19 @@
         text: ''
       }
     },
-    computed: mapGetters(['totalPrice']),
+    computed: {
+      ...mapGetters([
+        'totalPrice',
+        'surName',
+        'lastName',
+        'eMail',
+        'phoneNumber',
+        'street',
+        'zipCode',
+        'city'
+      ])
+    },
+
     methods: {
       onRedirect() {
         this.$router.push({ name: 'Home' })

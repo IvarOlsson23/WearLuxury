@@ -3,7 +3,9 @@
     <div id="wrapper">
       <div>
         <img src="@/assets/logowl.png" alt="logo" class="logo-main" />
-        <h1 id="wrapper-qoute">WearLuxury</h1>
+        <h1 id="wrapper-h1">WearLuxury</h1>
+        <p id="slogan">Clothes of the world</p>
+        <router-link id="shop-now" to="/Products">Shop now</router-link>
       </div>
     </div>
     <!-- <div id="nav">
@@ -44,8 +46,9 @@
       <h2 id="qoute-header">Nothing but the best</h2>
       <p>
         Lorem Ipsum is simply dummy text of the printing and typesetting
-        industry. Lorem Ipsum has been the industry's standard dummy text ever
-        since the 1500s,
+        industry. <br />
+        Lorem Ipsum has been the industry's standard dummy text ever since the
+        1500s,
       </p>
     </div>
   </div>
@@ -75,26 +78,37 @@
   #wrapper {
     position: relative;
     width: 100%;
-    height: 560px;
+    height: 780px;
     left: 0px;
     top: 0px;
     background-image: url('~@/assets/wrapper.jpg');
-    background-repeat: no-repeat;
     display: flex;
     justify-content: center;
     text-align: center;
+    color: rgb(255, 255, 255);
   }
-  #wrapper-qoute {
+  #wrapper-h1 {
     color: rgb(252, 252, 252);
     justify-content: center;
     align-items: center;
     display: flex;
     height: 100px;
     font-size: 50px;
+    margin-bottom: 0%;
+  }
+
+  #slogan {
+    font-size: 20px;
+  }
+
+  #shop-now {
+    color: rgb(255, 255, 255);
+    font-size: 30px;
+    text-decoration: underline;
   }
 
   .logo-main {
-    margin-top: 5em;
+    margin-top: 8em;
     height: 200px;
     align-items: center;
   }
@@ -122,39 +136,7 @@
     cursor: pointer;
     opacity: 0.6;
   }
-  #nav-overlay {
-    background-color: rgb(247, 247, 247);
-    position: absolute;
-    width: 100%;
-    height: 180px;
-    left: 0px;
-    top: 490px;
-    -webkit-animation: fadein 0.8s;
-    /* Safari, Chrome and Opera > 12.1 */
-    -moz-animation: fadein 0.8s;
-    /* Firefox < 16 */
-    -ms-animation: fadein 0.8s;
-    /* Internet Explorer */
-    -o-animation: fadein 0.8s;
-    /* Opera < 12.1 */
-    animation: fadein 0.8s;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-  }
-  #product-list a {
-    margin-left: 1em;
-    margin-right: 1em;
-    list-style: none;
-  }
-  @keyframes fadein {
-    from {
-      opacity: 0;
-    }
-    to {
-      opacity: 1;
-    }
-  }
+
   /* "Men" och Women - Menyn */
   .divider {
     margin-top: 120px;
@@ -162,6 +144,7 @@
   /* Dom tre bilderna  */
   #product-wrapper1 {
     display: flex;
+    justify-content: center;
   }
   #reklam-bild1 {
     width: 45em;
@@ -171,7 +154,7 @@
     background-image: url('~@/assets/reklam1.jpg');
     opacity: 0.9;
     border: 10px solid #ffffff;
-    margin-left: 2em;
+    margin-left: 4em;
   }
   #reklam-bild1:hover {
     opacity: 0.8;
@@ -182,6 +165,7 @@
     margin-top: 20vh;
     background-image: url('~@/assets/reklam2.jpg');
     background-position: left;
+    background-repeat: no-repeat;
     opacity: 0.9;
     border: 10px solid #ffffff;
   }
@@ -193,6 +177,7 @@
     height: 30em;
     margin-top: 20vh;
     background-image: url('~@/assets/reklam3.jpg');
+    background-repeat: no-repeat;
     opacity: 0.9;
     border: 10px solid #ffffff;
     margin-right: 2em;
