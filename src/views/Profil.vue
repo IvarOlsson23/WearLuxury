@@ -3,6 +3,11 @@
     <b-container class="bv-example-row">
       <div id="your">Your Account</div>
       <b-row>
+        <b-button style="margin-left:40px; width:100px" @click="logout"
+          >Logout</b-button
+        >
+      </b-row>
+      <b-row>
         <b-col class="cols"
           ><router-link to="/orders"
             ><div class="img-div">
@@ -90,7 +95,19 @@
   </div>
 </template>
 
-<script></script>
+<script>
+  export default {
+    data() {
+      return {}
+    },
+    methods: {
+      logout() {
+        localStorage.removeItem('loggedin')
+        this.$router.push('Login')
+      }
+    }
+  }
+</script>
 
 <style scoped lang="scss">
   #con {

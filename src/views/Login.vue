@@ -228,8 +228,8 @@
     },
     methods: {
       doLogin() {
-        if (this.email != '' && this.password != '') {
-          localStorage.setItem('loggedin', 1)
+        if (this.email != '' && this.password != 'true') {
+          localStorage.setItem('loggedin', true)
           this.redirect()
         }
       },
