@@ -274,6 +274,9 @@
     #logincon {
       padding-right: 40px;
     }
+    #logo-con {
+      font-size: 20px;
+    }
   }
 
   @media only screen and (max-width: 580px) {

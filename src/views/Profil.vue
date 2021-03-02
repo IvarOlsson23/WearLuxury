@@ -33,8 +33,7 @@
         >
       </b-row>
 
-  
-       <b-row>
+      <b-row>
         <b-col class="cols"
           ><router-link to="/orders"
             ><div class="img-div a">
@@ -126,10 +125,9 @@
     border-top: 1px solid;
     border-bottom: 1px solid;
   }
-@media only screen and (max-width:450px) {
-  #gift-card{
-    display: block;
+  @media only screen and (max-width: 450px) {
+    #gift-card {
+      display: block;
+    }
   }
-}
-
 </style>

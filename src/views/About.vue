@@ -2,7 +2,7 @@
   <b-row>
     <div
       class="about"
-      :style="'background-image:url(' + require('../assets/about.jpg') + ')'"
+      :style="'background-image:url(' + require('../assets/About.png') + ')'"
     />
     <div class="abouttext">
       <h4 style="text-decoration:underline; text-align:center; margin-top:10px">
@@ -24,7 +24,7 @@
               class="flexbox"
               :style="
                 'background-image:url(' +
-                  require('../assets/social.jpeg') +
+                  require('../assets/Earth.png') +
                   '); height:200px; background-size:cover; '
               "
             >
@@ -51,7 +51,7 @@
               class="flexbox"
               :style="
                 'background-image:url(' +
-                  require('../assets/policy.jpg') +
+                  require('../assets/Privacy.png') +
                   '); height:200px; background-size:cover; '
               "
             >
@@ -81,7 +81,7 @@
               class="flexbox"
               :style="
                 'background-image:url(' +
-                  require('../assets/career.jpg') +
+                  require('../assets/Carrers.png') +
                   '); height:200px; background-size:cover; '
               "
             >
@@ -105,7 +105,7 @@
               class="flexbox"
               :style="
                 'background-image:url(' +
-                  require('../assets/shipping.jpeg') +
+                  require('../assets/Shipping.png') +
                   '); height:200px; background-size:cover; '
               "
             >
@@ -131,7 +131,7 @@
               class="flexbox"
               :style="
                 'background-image:url(' +
-                  require('../assets/terms.jpg') +
+                  require('../assets/Terms.png') +
                   '); height:200px; background-size:cover; '
               "
             >
@@ -160,7 +160,7 @@
                 class="flexbox"
                 :style="
                   'background-image:url(' +
-                    require('../assets/contact-us.jpg') +
+                    require('../assets/Contact.png') +
                     '); height:200px; background-size:cover; '
                 "
               >
@@ -274,9 +274,8 @@
     text-align: left;
   }
   .flexbox span {
-    background-color: #000;
-    color: #fff;
-    opacity: 0.7;
+    font-size: 38px;
+    color: white;
     padding: 10px;
   }
 </style>

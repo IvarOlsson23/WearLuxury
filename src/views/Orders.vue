@@ -23,7 +23,7 @@
               footer-tag="footer"
               footer-bg-variant="light"
               footer-border-variant="light"
-             v-for="(boughtProducts, index) in $store.state.orders"
+              v-for="(boughtProducts, index) in $store.state.orders"
               :key="index"
               class="mb-4 "
               footer-class="d-flex flex-column justify-content-around bg-white"
@@ -81,10 +81,7 @@
     </div>
   </div>
 </template>
-<script>
- 
- 
-</script>
+<script></script>
 
 <style scoped>
   #con {
