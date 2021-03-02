@@ -177,13 +177,14 @@
       >
         <h3>Based on 1900 reviews</h3>
       </label>
+
       <b-form-rating
-        style="max-width: 1250px; padding:15px; margin: 15px"
         id="rating-5"
         v-model="value5"
         variant="warning"
         stars="5"
       />
+
       <p class="mt-2">{{ value5 }}</p>
     </div>
 
@@ -315,6 +316,8 @@
     display: flex;
     justify-content: center;
     flex-direction: column;
+    margin-left: 100px;
+    margin-right: 100px;
   }
 
   @media (max-width: 500px) {
@@ -322,7 +325,10 @@
       margin-left: 0%;
       margin-right: 10%;
     }
-
+    #rating {
+      margin-left: 20px;
+      margin-right: 20px;
+    }
     #total-sum {
       margin-left: 30%;
       margin-right: 30%;

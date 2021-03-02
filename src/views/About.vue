@@ -84,11 +84,11 @@
                 class="flexbox"
                 :style="
                   'background-image:url(' +
-                    require('../assets/Carrers.png') +
+                    require('../assets/Careers.png') +
                     '); height:200px; background-size:cover; '
                 "
               >
-                <span>Carrers</span>
+                <span>Careers</span>
               </div>
               <p class="text">
                 <strong>WearLuxury</strong> is always looking for talented, hard
