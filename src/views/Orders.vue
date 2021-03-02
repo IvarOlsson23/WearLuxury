@@ -13,43 +13,14 @@
             class="h-100 shadow-sm"
             border-variant="light"
           >
-            <b-card
-              :img-src="require('../assets' + product.img)"
-              img-left
-              img-width="120px"
-              img-height="100%"
-              :title="product.brand"
-              :sub-title="product.name"
-              footer-tag="footer"
-              footer-bg-variant="light"
-              footer-border-variant="light"
-              v-for="(order, index) in $store.state.order"
-              :key="index"
-              class="mb-4 "
-              footer-class="d-flex flex-column justify-content-around bg-white"
-              border-variant="light"
-            >
-              <b-card-text>
-                Color: {{ product.color }}
-                <br />
-                Size: {{ product.size }}
-                <span class="d-block mt-2">
-                  <b-icon
-                    class="cursor"
-                    @click="removeItem(index)"
-                    icon="trash"
-                  />
-                  Cancel Order
-                </span>
-              </b-card-text>
-
-              <template #footer>
-                <b-form-select v-model="product.items" :options="options" />
-                <span class="d-block">
-                  <strong> {{ product.price }}$ </strong>
-                </span>
-              </template>
-            </b-card>
+            <ul>
+              <li v-for="(product, index) in $store.state.cart" :key="index">
+                <div id="order-products">
+                  <p>{{ product.brand + ' ' + product.name }}</p>
+                  <p>{{ product.price }}$</p>
+                </div>
+              </li>
+            </ul>
             <b-card
               title="Total amount"
               footer-border-variant="dark"
@@ -82,7 +53,6 @@
   </div>
 </template>
 <script>
-  import { mapGetters } from 'vuex'
   export default {
     name: 'Orders',
     data() {
@@ -91,26 +61,44 @@
 
     methods: {
       onSubmit() {
-        this.receiver.boughtProducts = this.$store.state.orders.slice()
+        this.receiver.boughtProducts = this.$store.state.cart.slice()
         this.receiver.totalPrice = this.totalAmount
       }
     },
 
     computed: {
       cartItemLength() {
-        let productLength = this.$store.state.orders.length
+        let productLength = this.$store.state.cart.length
         let orderMessage = productLength === 1 ? ' order ' : ' orders '
         return ' Ongoing ' + orderMessage + productLength
       },
-      computed: mapGetters(['totalAmount'])
+      totalAmount() {
+        if (this.$store.state.cart.length > 0) {
+          return (
+            this.$store.state.cart
+              .map(item => item.price * item.items)
+              .reduce((total, amount) => total + amount) + 29
+          )
+        } else {
+          return 0
+        }
+      }
     }
   }
 </script>
 
 <style scoped>
+  * {
+    list-style: none;
+  }
   #con {
     width: 50%;
     margin: auto;
+  }
+  #order-products {
+    display: flex;
+    justify-content: center;
+    justify-content: space-between;
   }
 
   #order-nav {

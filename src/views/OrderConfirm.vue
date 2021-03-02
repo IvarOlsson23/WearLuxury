@@ -12,7 +12,6 @@
       <!-- Divider  -->
       <img src="@/assets/divider.svg" alt="divider" class="divider" />
     </div>
-    <p id="order-number"><strong> Order Number: 0123456789</strong></p>
     <ul>
       <li
         v-for="(product, index) in $store.state.orders[0].boughtProducts"
@@ -32,7 +31,7 @@
       <strong>Total:</strong>
       <p>{{ totalPrice }}$</p>
     </div>
-
+    <p id="order-number"><strong> Order Number: 0123456789</strong></p>
     <div id="adress-section">
       <div>
         <Strong>Delivery Adress</Strong>
@@ -56,7 +55,7 @@
     <!-- / Order has been processed -->
 
     <!-- Create account for saving info -->
-    <div id="login-form">
+    <!-- <div id="login-form">
       <b-container fluid style="max-width: 540px; padding:30px;">
         <b-row class="my-1">
           <b-col sm="3">
@@ -84,7 +83,7 @@
           </b-col>
         </b-row>
       </b-container>
-    </div>
+    </div> -->
 
     <!-- shipping, delivery, payment @contact info -->
     <div>
@@ -266,11 +265,13 @@
   .divider {
     margin-top: 10vh;
     margin-bottom: 10vh;
+    width: 100%;
   }
 
   #adress-section {
     margin-top: 5em;
     display: flex;
+    flex-direction: column;
     justify-content: center;
   }
 
