@@ -109,7 +109,6 @@
           <b-card
             :key="index"
             :title="dress.title"
-            :img-src="require('@/assets/blackdress.jpg')"
             img-alt="Image"
             tag="article"
             class="mb-2  col-sm-12 col-md-4 productcontainer"
