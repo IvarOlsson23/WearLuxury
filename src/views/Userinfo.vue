@@ -186,8 +186,14 @@
 </template>
 <style scoped>
   #con {
-    width: 50%;
+    width: 40%;
     margin: auto;
+  }
+  #ico {
+    width: 25%;
+  }
+  #name {
+    width: 75%;
   }
 
   #xcon {
@@ -199,9 +205,7 @@
   }
   .inline {
     display: inline-block;
-    width: 33%;
     margin-bottom: 30px;
-    text-align: left;
   }
 
   #you {
