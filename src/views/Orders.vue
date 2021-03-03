@@ -13,42 +13,14 @@
             class="h-100 shadow-sm"
             border-variant="light"
           >
-            <b-card
-              img-src="https://img01.ztat.net/article/spp-media-p1/5e0b5adffa1338618afdae5031987c3e/0d68e7d30bf0477f93d4d0a7272ae7cc.jpg?imwidth=1800"
-              img-left
-              img-width="120px"
-              :title="product.brand"
-              :sub-title="product.name"
-              footer-tag="footer"
-              footer-bg-variant="light"
-              footer-border-variant="light"
-              v-for="(product, index) in $store.state.orders"
-              :key="index"
-              class="mb-4 "
-              footer-class="d-flex flex-column justify-content-around bg-white"
-              border-variant="light"
-            >
-              <b-card-text>
-                Color: {{ product.color }}
-                <br />
-                Size: {{ product.size }}
-                <span class="d-block mt-2">
-                  <b-icon
-                    class="cursor"
-                    @click="removeItem(index)"
-                    icon="trash"
-                  />
-                  Cancel Order
-                </span>
-              </b-card-text>
-
-              <template #footer>
-                <b-form-select v-model="product.items" :options="options" />
-                <span class="d-block">
-                  <strong> {{ product.price }}$ </strong>
-                </span>
-              </template>
-            </b-card>
+            <ul>
+              <li v-for="(product, index) in $store.state.cart" :key="index">
+                <div id="order-products">
+                  <p>{{ product.brand + ' ' + product.name }}</p>
+                  <p>{{ product.price }}$</p>
+                </div>
+              </li>
+            </ul>
             <b-card
               title="Total amount"
               footer-border-variant="dark"
@@ -82,8 +54,9 @@
 </template>
 <script>
   export default {
-    name: 'orders',
+    name: 'Orders',
     data() {
+<<<<<<< HEAD
       return {
         receiver: {
           surename: '',
@@ -106,56 +79,58 @@
           price: ''
         }
       }
+=======
+      return {}
+>>>>>>> 7333c553a43c1e8264ed3bcf537fa52771f84100
     },
+
     methods: {
       onSubmit() {
-        this.receiver.boughtProducts = this.$store.state.orders
+        this.receiver.boughtProducts = this.$store.state.cart.slice()
         this.receiver.totalPrice = this.totalAmount
-        this.$store.commit('setOrder', this.receiver)
-        // RESETS DATA
-        Object.keys(this.receiver).forEach(key => (this.receiver[key] = ''))
-        //RESET CART
-        let cartKeys = this.$store.state.orders.keys()
-
-        for (const key of cartKeys) {
-          this.$store.commit('removeItem', 0)
-          this.$store.commit('removeItem', key)
-        }
-
-        cartKeys = []
-
-        // GOES TO NEXT PAGE
-        this.$router.push({ name: 'OrderConfirm' })
-      },
-      removeItem(index) {
-        this.$store.commit('removeItem', index)
       }
     },
+<<<<<<< HEAD
 
     computed: {
       cartItemLength() {
         let productLength = this.$store.state.orders.length
+=======
+>>>>>>> 7333c553a43c1e8264ed3bcf537fa52771f84100
 
+    computed: {
+      cartItemLength() {
+        let productLength = this.$store.state.cart.length
         let orderMessage = productLength === 1 ? ' order ' : ' orders '
         return ' Ongoing ' + orderMessage + productLength
-      }
-    },
-    mutations: {
-      setOrder(state, order) {
-        state.orders.push(order)
       },
-
-      addCart(state, toCart) {
-        state.cart.push(toCart)
+      totalAmount() {
+        if (this.$store.state.cart.length > 0) {
+          return (
+            this.$store.state.cart
+              .map(item => item.price * item.items)
+              .reduce((total, amount) => total + amount) + 29
+          )
+        } else {
+          return 0
+        }
       }
     }
   }
 </script>
 
 <style scoped>
+  * {
+    list-style: none;
+  }
   #con {
     width: 50%;
     margin: auto;
+  }
+  #order-products {
+    display: flex;
+    justify-content: center;
+    justify-content: space-between;
   }
 
   #order-nav {

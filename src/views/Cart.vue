@@ -5,13 +5,14 @@
       <b-col class="mb-4">
         <b-card
           :title="cartItemLength"
-          class="h-100 shadow-sm"
+          class="h-100 shadow-sm "
           border-variant="light"
         >
           <b-card
-            img-src="https://img01.ztat.net/article/spp-media-p1/5e0b5adffa1338618afdae5031987c3e/0d68e7d30bf0477f93d4d0a7272ae7cc.jpg?imwidth=1800"
+            :img-src="require('../assets' + product.img)"
             img-left
             img-width="120px"
+            img-height="220px"
             :title="product.brand"
             :sub-title="product.name"
             footer-tag="footer"
@@ -19,7 +20,7 @@
             footer-border-variant="light"
             v-for="(product, index) in $store.state.cart"
             :key="index"
-            class="mb-4 "
+            class="mb-4 cards"
             footer-class="d-flex flex-column justify-content-around bg-white"
             border-variant="light"
           >
@@ -29,16 +30,22 @@
               Size: {{ product.size }}
               <span class="d-block mt-2">
                 <b-icon
-                  class="cursor"
+                  class="cursor "
                   @click="removeItem(index)"
                   icon="trash"
                 />
-                Remove
+                <span class="d-none d-sm-inline">
+                  Remove
+                </span>
               </span>
             </b-card-text>
 
             <template #footer>
-              <b-form-select v-model="product.items" :options="options" />
+              <b-form-select
+                class="w-auto"
+                v-model="product.items"
+                :options="options"
+              />
               <span class="d-block">
                 <strong> {{ product.price }}$ </strong>
               </span>
@@ -198,66 +205,79 @@
         <!-- ContactINFO -->
         <b-col cols="12" md="6" class="mt-sm-4 mt-md-0 mt-4">
           <h2>Contact information</h2>
-          <b-form-group id="surname-group" label-for="surname" label="Surname">
-            <b-form-input
-              id="surname"
-              placeholder="Jonathan"
-              required
-              v-model="receiver.surname"
-            />
-          </b-form-group>
           <b-form-group
-            i
-            d="lastname-group"
-            label-for="lastname"
-            label="Lastname"
+            id="loginChoice-group"
+            label="Log in choice"
+            label-for="loginChoice"
           >
-            <b-form-input
-              id="lastname"
-              placeholder="Luxman"
-              v-model="receiver.lastname"
+            <b-form-select
+              id="loginChoice"
               required
+              :options="loginOptions"
+              v-model="loginChoice"
             />
           </b-form-group>
-          <b-form-group
-            id="street-group"
-            label="Street & street number"
-            label-for="street"
-          >
-            <b-form-input
-              id="street"
-              placeholder="Kingstreet 13"
-              v-model="receiver.street"
-              required
-            />
-          </b-form-group>
-          <b-form-group
-            id="postNumber-group"
-            label="Post number"
-            label-for="postAdress"
-          >
-            <b-form-input
-              id="postAdress"
-              required
-              placeholder="41511"
-              v-model="receiver.postAdress"
-            />
-          </b-form-group>
-          <b-form-group id="city" label="City" label-for="city">
-            <b-form-input
-              id="city"
-              required
-              placeholder="Gothenburg"
-              v-model="receiver.city"
-            />
-          </b-form-group>
-          <b-form-group
-            id="telephone"
-            label="Phonenumber"
-            label-for="telephone"
-          >
-            <b-form-input
+          <div v-if="loginChoice === 'Or continue as guest'">
+            <b-form-group
+              id="firstname-group"
+              label-for="firstname"
+              label="Firstname"
+            >
+              <b-form-input
+                id="firstname"
+                placeholder="Jonathan"
+                required
+                v-model="receiver.firstname"
+              />
+            </b-form-group>
+            <b-form-group
+              i
+              d="lastname-group"
+              label-for="lastname"
+              label="Lastname"
+            >
+              <b-form-input
+                id="lastname"
+                placeholder="Luxman"
+                v-model="receiver.lastname"
+                required
+              />
+            </b-form-group>
+            <b-form-group
+              id="street-group"
+              label="Street & street number"
+              label-for="street"
+            >
+              <b-form-input
+                id="street"
+                placeholder="Kingstreet 13"
+                v-model="receiver.street"
+                required
+              />
+            </b-form-group>
+            <b-form-group
+              id="postNumber-group"
+              label="Post number"
+              label-for="postAdress"
+            >
+              <b-form-input
+                id="postAdress"
+                required
+                placeholder="41511"
+                v-model="receiver.postAdress"
+              />
+            </b-form-group>
+            <b-form-group id="city" label="City" label-for="city">
+              <b-form-input
+                id="city"
+                required
+                placeholder="Gothenburg"
+                v-model="receiver.city"
+              />
+            </b-form-group>
+            <b-form-group
               id="telephone"
+<<<<<<< HEAD
               placeholder="07XXXXXXX"
               required
               v-model="receiver.telephone"
@@ -282,12 +302,52 @@
 
             <b-form-checkbox style=" padding: 10px; margin-top: 10px">
               I accept all informations and terms on WearLuxury</b-form-checkbox
+=======
+              label="Phonenumber"
+              label-for="telephone"
+>>>>>>> 7333c553a43c1e8264ed3bcf537fa52771f84100
             >
+              <b-form-input
+                id="telephone"
+                placeholder="07XXXXXXX"
+                required
+                v-model="receiver.telephone"
+                type="tel"
+              />
+            </b-form-group>
+            <b-form-group
+              id="email-group"
+              label="Email"
+              label-for="email-adress"
+            >
+              <b-form-input
+                id="email-adress"
+                type="email"
+                placeholder="JonathanLuxman@email.com"
+                required
+                v-model="receiver.email"
+              />
+            </b-form-group>
+            <!-- Subscribe to newsletter -->
+            <b-form-group class="mx-2">
+              <b-form-checkbox
+                style=" padding: 10px; margin-top: 10px"
+                required
+              >
+                I accept all information and terms on
+                WearLuxury</b-form-checkbox
+              >
 
-            <b-form-checkbox style=" padding: 10px; margin-top: 10px">
-              Yes, I want to subscribe to WearLuxury newsletters
-            </b-form-checkbox>
-          </b-form-group>
+              <b-form-checkbox
+                style=" padding: 10px; margin-top: 10px"
+                v-model="receiver.newsLetter"
+                value="accepted"
+                unchecked-value="not_accepted"
+              >
+                Yes, I want to subscribe to WearLuxury newsletters
+              </b-form-checkbox>
+            </b-form-group>
+          </div>
         </b-col>
       </b-row>
 
@@ -306,7 +366,7 @@
     data() {
       return {
         receiver: {
-          surename: '',
+          firstname: '',
           lastname: '',
           street: '',
           postAdress: '',
@@ -322,26 +382,26 @@
           paypalEmail: '',
           bitcoinAdress: '',
           boughtProducts: '',
-          totalPrice: '',
-          choice: ''
+          totalPrice: 0,
+          newsLetter: ''
         },
         payMethodOptions: ['Visa', 'Paypal', 'Bitcoin', 'Invoice'],
-        options: [1, 2, 3, 4]
+        options: [1, 2, 3, 4],
+        loginOptions: ['Use your account information', 'Or continue as guest'],
+        loginChoice: ''
       }
     },
     methods: {
       onSubmit() {
-        this.receiver.boughtProducts = this.$store.state.cart
+        this.receiver.boughtProducts = this.$store.state.cart.slice()
         this.receiver.totalPrice = this.totalAmount
         this.$store.commit('setOrder', Object.assign({}, this.receiver))
         // RESETS RECEIVER DATA
         Object.keys(this.receiver).forEach(key => (this.receiver[key] = ''))
 
         //RESET CART
-        let cartKeys = this.$store.state.cart.keys()
-        for (const key of cartKeys) {
+        while (this.$store.state.cart.length > 0) {
           this.$store.commit('removeItem', 0)
-          this.$store.commit('removeItem', key)
         }
 
         // GOES TO NEXT PAGE
@@ -373,6 +433,16 @@
 </script>
 
 <style scoped lang="scss">
+  img {
+    max-width: 100%;
+    max-height: 100%;
+    overflow: hidden;
+    object-fit: contain;
+  }
+  .cards {
+    padding: 0px;
+    max-width: 100%;
+  }
   #cart {
     text-align: start;
     margin-top: 5em;

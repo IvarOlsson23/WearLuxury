@@ -3,6 +3,11 @@
     <b-container class="bv-example-row">
       <div id="your">Your Account</div>
       <b-row>
+        <b-button style="margin-left:40px; width:100px" @click="logout"
+          >Logout</b-button
+        >
+      </b-row>
+      <b-row>
         <b-col class="cols"
           ><router-link to="/orders"
             ><div class="img-div">
@@ -36,7 +41,7 @@
       <b-row>
         <b-col class="cols"
           ><router-link to="/orders"
-            ><div class="img-div">
+            ><div class="img-div a">
               <img class="full-wd" src="../assets/security.png" alt="suit" />
             </div>
             <div class="img-div">Security</div></router-link
@@ -47,13 +52,13 @@
             ><div class="img-div">
               <img class="full-wd" src="../assets/friend.png" alt="suit" />
             </div>
-            <div class="img-div">Invite friend</div></router-link
+            <div class="img-div">InviteFriend</div></router-link
           ></b-col
         >
-        <b-col class="cols"
+        <b-col class="cols a"
           ><router-link to="/orders"
-            ><div class="img-div a">
-              <img class="full-wd " src="../assets/gift-card.png" alt="suit" />
+            ><div class="img-div">
+              <img class="full-wd" src="../assets/gift-card.png" alt="suit" />
             </div>
             <div class="img-div">Gift cards</div></router-link
           ></b-col
@@ -90,7 +95,19 @@
   </div>
 </template>
 
-<script></script>
+<script>
+  export default {
+    data() {
+      return {}
+    },
+    methods: {
+      logout() {
+        localStorage.removeItem('loggedin')
+        this.$router.push('Login')
+      }
+    }
+  }
+</script>
 
 <style scoped lang="scss">
   #con {
@@ -124,5 +141,10 @@
     font-size: 24px;
     border-top: 1px solid;
     border-bottom: 1px solid;
+  }
+  @media only screen and (max-width: 450px) {
+    #gift-card {
+      display: block;
+    }
   }
 </style>

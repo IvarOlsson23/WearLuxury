@@ -19,8 +19,21 @@ export default new Vuex.Store({
         password: 'admin123',
         email: 'admin123@test.com',
         phone: '0712312312'
+      },
+      {
+        id: 3,
+        username: 'tl',
+        password: 'losen',
+        firstname: 'Thomas',
+        lastname: 'Laukkanen',
+        street: 'Kungsgatan 7',
+        postAdress: '41523',
+        city: 'Gothenburg',
+        telephone: '0733449955',
+        email: 'tl@gmail.com'
       }
     ],
+    loggedIn: true,
     newarrivalproducts: [
       {
         title: 'Black lace dress',
@@ -93,11 +106,32 @@ export default new Vuex.Store({
   actions: {},
   modules: {},
   getters: {
-    newarrivalproducts(state) {
-      return state.newarrivalproducts
-    },
     countItems(state) {
       return state.cart.length
+    },
+    totalPrice(state) {
+      return state.orders[0].totalPrice + 29
+    },
+    surName(state) {
+      return state.orders[0].surname
+    },
+    lastName(state) {
+      return state.orders[0].lastname
+    },
+    eMail(state) {
+      return state.orders[0].email
+    },
+    phoneNumber(state) {
+      return state.orders[0].telephone
+    },
+    street(state) {
+      return state.orders[0].street
+    },
+    zipCode(state) {
+      return state.orders[0].postAdress
+    },
+    city(state) {
+      return state.orders[0].city
     }
   }
 })
