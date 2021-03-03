@@ -7,19 +7,23 @@
           ><router-link to="/" class="logo-text">WearLuxury</router-link></b-col
         >
         <b-col id="home-con" class="primary"
-          ><router-link to="/" class="white-text">Home</router-link></b-col
+          ><router-link to="/" class="white-text"
+            ><span @click="listhover = false">Home</span></router-link
+          ></b-col
         >
         <b-col
           @mouseover="listhover = true"
           id="products-con"
           class="primary, menu"
         >
-          <router-link to="/Products" class="white-text">Products</router-link>
+          <router-link to="/Products" class="white-text"
+            ><span @click="listhover = false">Products</span></router-link
+          >
         </b-col>
 
         <b-col id="about-con" class="primary"
           ><router-link to="/about" class="white-text"
-            >About</router-link
+            ><span @click="listhover = false">About</span></router-link
           ></b-col
         >
 
