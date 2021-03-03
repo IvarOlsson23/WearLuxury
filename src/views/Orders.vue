@@ -6,7 +6,6 @@
     </div>
     <div>
       <b-row id="ongoing-con">
-      
         <b-col>
           <b-card
             :title="cartItemLength"
