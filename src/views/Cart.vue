@@ -276,36 +276,9 @@
               />
             </b-form-group>
             <b-form-group
-              id="telephone"
-<<<<<<< HEAD
-              placeholder="07XXXXXXX"
-              required
-              v-model="receiver.telephone"
-              type="tel"
-            />
-          </b-form-group>
-          <b-form-group
-            id="email-group"
-            label="Email"
-            label-for="email-adress"
-            v-model="receiver.email"
-          >
-            <b-form-input
-              id="email-adress"
-              type="email"
-              placeholder="JonathanLuxman@email.com"
-              required
-              v-model="receiver.email"
-            />
-
-            <!-- Subscribe to newsletter -->
-
-            <b-form-checkbox style=" padding: 10px; margin-top: 10px">
-              I accept all informations and terms on WearLuxury</b-form-checkbox
-=======
-              label="Phonenumber"
+              id="telephone-group"
+              label="Telephone"
               label-for="telephone"
->>>>>>> 7333c553a43c1e8264ed3bcf537fa52771f84100
             >
               <b-form-input
                 id="telephone"
