@@ -272,13 +272,15 @@
   }
   #man-list {
     width: 50%;
-    padding-top: 20px;
+    padding-top: 25px;
+    padding-left: 0px;
   }
   #man-list li:first-child {
     border-bottom: 1px solid;
   }
   #woman-list {
     width: 50%;
+    padding-left: 0px;
   }
   #woman-list li:first-child {
     border-bottom: 1px solid;
