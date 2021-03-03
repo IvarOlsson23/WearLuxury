@@ -268,6 +268,7 @@
           email: this.email
         })
       },
+      
       Zip() {
         localStorage.setItem('zip', this.zip)
         this.$bvModal.show('confirm-zip')
