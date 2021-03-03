@@ -6,7 +6,7 @@
     </div>
     <div>
       <b-row id="ongoing-con">
-        <!-- CARTITEMS -->
+      
         <b-col>
           <b-card
             :title="cartItemLength"
@@ -14,16 +14,16 @@
             border-variant="light"
           >
             <b-card
-              :img-src="require('../assets' + boughtProducts.img)"
+              :img-src="require('../assets' + product.img)"
               img-left
               img-width="120px"
               img-height="100%"
-              :title="orders.brand"
-              :sub-title="orders.name"
+              :title="product.brand"
+              :sub-title="product.name"
               footer-tag="footer"
               footer-bg-variant="light"
               footer-border-variant="light"
-             v-for="(boughtProducts, index) in $store.state.orders"
+           v-for="(product, index) in $store.state.cart"
               :key="index"
               class="mb-4 "
               footer-class="d-flex flex-column justify-content-around bg-white"
@@ -71,7 +71,7 @@
               <template #footer>
                 <div class="d-flex justify-content-between font-weight-bold  ">
                   <span>Total amount(inc. vat)</span>
-                  <span>{{ totalAmount }} $</span>
+                  <span>{{ aa }} $</span>
                 </div>
               </template>
             </b-card>
@@ -83,7 +83,48 @@
 </template>
 <script>
  
- 
+ export default {
+    name: 'Orders',
+    data() {
+      return {
+        username: localStorage.getItem('username'),
+       
+       
+      }
+    },
+    methods: {
+      onSubmit() {
+        this.receiver.boughtProducts = this.$store.state.cart.slice()
+        this.receiver.totalPrice = this.totalAmount
+        this.$store.commit('setOrder', Object.assign({}, this.receiver))
+    
+      },
+     
+    },
+    computed: {
+     totalAmount() {
+        if (this.$store.state.orders.length > 0) {
+          return (
+            this.$store.state.orders
+              .map(item => item.price * item.items)
+              .reduce((total, amount) => total + amount) + 29
+          )
+        } else {
+          return 0
+        }
+      },
+
+      cartItemLength() {
+        let productLength = this.$store.state.orders.length
+        let pr = this.$store.state.orders
+        let productMessage = productLength === 1 ? ' order ' : ' orders '
+        return  productLength + productMessage + this.username +pr 
+      }
+    },
+   
+    
+  }
+  
 </script>
 
 <style scoped>

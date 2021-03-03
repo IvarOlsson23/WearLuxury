@@ -2,8 +2,9 @@
   <div id="con">
     <b-container class="bv-example-row">
       <div id="your">Your Account</div>
-      <b-row>
-        <b-col class="cols"
+      <b-row class="d-flex justify-content-center">
+        <b-col class="cols h-100 shadow-sm" sm="12" md="3"  
+          border-variant="light"
           ><router-link to="/orders"
             ><div class="img-div">
               <img
@@ -12,78 +13,80 @@
                 alt="suit"
               />
             </div>
-            <div class="img-div">Your Orders</div></router-link
+            <div class="small-text">Your Orders</div></router-link
           ></b-col
         >
-        <b-col class="cols"
+        <b-col class="cols h-100 shadow-sm" sm="12" md="3"  border-variant="light"
           ><router-link to="/"
             ><div class="img-div">
               <img class="full-wd" src="../assets/card.png" alt="suit" />
             </div>
-            <div class="img-div">Payments</div></router-link
+            <div class="small-text">Payments</div></router-link
           ></b-col
         >
-        <b-col class="cols"
+        <b-col class="cols h-100 shadow-sm" sm="12" md="3" border-variant="light"
           ><router-link to="/Userinfo"
             ><div class="img-div">
               <img class="full-wd" src="../assets/info.png" alt="suit" />
             </div>
-            <div class="img-div">Your information</div></router-link
+            <div class="small-text">Your information</div></router-link
           ></b-col
         >
       </b-row>
 
   
-       <b-row>
-        <b-col class="cols"
+       <b-row class="d-flex justify-content-center">
+        <b-col class="cols h-100 shadow-sm" sm="12" md="3" border-variant="light"
           ><router-link to="/orders"
             ><div class="img-div a">
               <img class="full-wd" src="../assets/security.png" alt="suit" />
             </div>
-            <div class="img-div">Security</div></router-link
+            <div class="small-text">Security</div></router-link
           ></b-col
         >
-        <b-col class="cols"
+        <b-col class="cols h-100 shadow-sm" sm="12" md="3" border-variant="light"
           ><router-link to="/orders"
             ><div class="img-div">
               <img class="full-wd" src="../assets/friend.png" alt="suit" />
             </div>
-            <div class="img-div">InviteFriend</div></router-link
+            <div class="small-text">InviteFriend</div></router-link
           ></b-col
         >
-        <b-col class="cols a"
+        <b-col class="cols a h-100 shadow-sm " sm="12" md="3" border-variant="light"
           ><router-link to="/orders"
             ><div class="img-div">
               <img class="full-wd" src="../assets/gift-card.png" alt="suit" />
             </div>
-            <div class="img-div">Gift cards</div></router-link
+            <div class="small-text">Gift cards</div></router-link
           ></b-col
         >
       </b-row>
+
       <div id="need">Need help?</div>
-      <b-row>
-        <b-col class="cols"
+
+      <b-row class="d-flex justify-content-center">
+        <b-col class="cols h-100 shadow-sm" sm="12" md="3" border-variant="light"
           ><router-link to="/orders"
             ><div class="img-div a">
               <img class="full-wd" src="../assets/member.png" alt="suit" />
             </div>
-            <div class="img-div">About the membership</div></router-link
+            <div class="small-text">About the membership</div></router-link
           ></b-col
         >
-        <b-col class="cols"
+        <b-col class="cols h-100 shadow-sm" sm="12" md="3" border-variant="light"
           ><router-link to="/orders"
             ><div class="img-div">
               <img class="full-wd" src="../assets/news.png" alt="suit" />
             </div>
-            <div class="img-div">My newsletters</div></router-link
+            <div class="small-text">My newsletters</div></router-link
           ></b-col
         >
-        <b-col class="cols"
+        <b-col class="cols h-100 shadow-sm" sm="12" md="3" border-variant="light"
           ><router-link to="/orders"
             ><div class="img-div">
               <img class="full-wd" src="../assets/help.png" alt="suit" />
             </div>
-            <div class="img-div">Help</div></router-link
+            <div class="small-text">Help</div></router-link
           ></b-col
         >
       </b-row>
@@ -101,22 +104,25 @@
   .a {
     padding-top: 30px;
   }
+  .inline{
+     display: inline-block;
+  }
 
   .img-div {
-    width: 50%;
+
     display: inline-block;
   }
   .full-wd {
     width: 100%;
   }
   .cols {
-    border: 1px solid;
-    margin: 20px;
+    max-width: 250px;
+   min-height: 250px;
+    margin: 40px;
     border-radius: 5px;
   }
   #your {
     font-size: 40px;
-    text-align: left;
     padding-bottom: 15px;
     padding-top: 20px;
   }
@@ -126,6 +132,15 @@
     border-top: 1px solid;
     border-bottom: 1px solid;
   }
+@media only screen and (max-width:800px) {
+ 
+.small-text{
+  font-size: 18px;
+}
+.cols {
+  align-items: left;
+}
+}
 @media only screen and (max-width:450px) {
   #gift-card{
     display: block;

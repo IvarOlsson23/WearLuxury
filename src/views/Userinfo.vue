@@ -22,7 +22,29 @@
             </b-modal>
           </b-col>
         </b-row>
+<b-row>
+          <b-col>
+            <div class="inline">Lastname:</div>
 
+            <div class="inline">{{ lastname }}</div>
+          </b-col>
+          <b-col>
+            <b-button v-b-modal.lastname-modal size="sm" variant="light"
+              ><b-icon class="ml-2" icon="box-arrow-in-down-left"
+            /></b-button>
+            <b-modal id="lastname-modal" title="Change lastname" @ok="Lastname">
+              <form ref="form">
+                <b-form-group label="Lastname" label-for="lastname-input">
+                  <b-form-input
+                    type="text"
+                    id="lastname-input"
+                    v-model="lastname"
+                  />
+                </b-form-group>
+              </form>
+            </b-modal>
+          </b-col>
+        </b-row>
         <b-row>
           <b-col>
             <div class="inline">Password:</div>
@@ -107,6 +129,29 @@
             </b-modal>
           </b-col>
         </b-row>
+          <b-row>
+          <b-col>
+            <div class="inline">Street:</div>
+            <div class="inline">{{ street }}</div>
+          </b-col>
+          <b-col>
+            <b-button v-b-modal.street-modal size="sm" variant="light"
+              ><b-icon class="ml-2" icon="box-arrow-in-down-left"
+            /></b-button>
+            <b-modal id="street-modal" title="Change street" @ok="Street">
+              <form ref="form">
+                <b-form-group label="Street" label-for="street-input">
+                  <b-form-input
+                    type="text"
+                    id="street-input"
+                    v-model="street"
+                  />
+                </b-form-group>
+              </form>
+            </b-modal>
+          </b-col>
+        </b-row>
+        
         <b-row>
           <b-col>
             <div class="inline">Country:</div>
@@ -160,25 +205,31 @@
       </b-container>
 
       <b-modal id="confirm-username">
-        <p class="my-4">Username changed!</p>
+        <p class="my-4">Username changed to {{username}}!</p>
       </b-modal>
       <b-modal id="confirm-password">
         <p class="my-4">Password changed!</p>
       </b-modal>
       <b-modal id="confirm-email">
-        <p class="my-4">Email changed!</p>
+        <p class="my-4">Email changed to {{email}}!</p>
       </b-modal>
       <b-modal id="confirm-phone">
-        <p class="my-4">PhoneNumber changed!</p>
+        <p class="my-4">PhoneNumber changed to {{phone}}!</p>
       </b-modal>
       <b-modal id="confirm-zip">
-        <p class="my-4">Zip-code changed!</p>
+        <p class="my-4">Zip-code changed to {{zip}}!</p>
       </b-modal>
       <b-modal id="confirm-country">
-        <p class="my-4">Your country has changed!</p>
+        <p class="my-4">Your country has changed to {{country}}!</p>
       </b-modal>
       <b-modal id="confirm-adress">
-        <p class="my-4">Your delivery adress has changed!</p>
+        <p class="my-4">Your delivery adress has changed to {{adress}}!</p>
+      </b-modal>
+       <b-modal id="confirm-street">
+        <p class="my-4">Your delivery street has changed to {{street}}!</p>
+      </b-modal>
+       <b-modal id="confirm-lastname">
+        <p class="my-4">Your lastname has changed to {{lastname}}!</p>
       </b-modal>
       <b-button id="logut" variant="danger" @click="logout">Log out</b-button>
     </div>
@@ -227,7 +278,10 @@
         email: null,
         zip: null,
         country: null,
-        adress: null
+        adress: null,
+        street: null,
+        lastname: null,
+        
       }
     },
     created() {
@@ -239,6 +293,8 @@
           this.zip = this.currentUser.zip
           this.country = this.currentUser.country
           this.adress = this.currentUser.adress
+          this.street = this.currentUser.adress
+          this.lastname = this.currentUser.adress
         }
       }
     },
@@ -252,6 +308,8 @@
         localStorage.setItem('zip', '')
         localStorage.setItem('country', '')
         localStorage.setItem('adress', '')
+         localStorage.setItem('street', '')
+        localStorage.setItem('lastname', '')
         this.$router.push('/login')
       },
 
@@ -305,6 +363,22 @@
         this.$store.commit('changecountry', {
           id: this.currentUser.id,
           country: this.country
+        })
+      },
+       Street() {
+        localStorage.setItem('street', this.street)
+        this.$bvModal.show('confirm-street')
+        this.$store.commit('changestreet', {
+          id: this.currentUser.id,
+          street: this.street
+        })
+      },
+       Lastname() {
+        localStorage.setItem('lastname', this.lastname)
+        this.$bvModal.show('confirm-lastname')
+        this.$store.commit('changelastname', {
+          id: this.currentUser.id,
+          lastname: this.lastname
         })
       },
 

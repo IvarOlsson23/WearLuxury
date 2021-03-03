@@ -89,6 +89,14 @@ export default new Vuex.Store({
     const index = state.users.findIndex(users => users.id === newAdress.id)
     state.users[index].adress = newAdress.adress
   },
+  changeLastname(state, newLastname) {
+    const index = state.users.findIndex(users => users.id === newLastname.id)
+    state.users[index].lastname = newLastname.lastname
+  },
+  changeStreet(state, newStreet) {
+    const index = state.users.findIndex(users => users.id === newStreet.id)
+    state.users[index].street = newStreet.street
+  },
 
   actions: {},
   modules: {},
