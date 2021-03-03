@@ -127,7 +127,7 @@
                   >Repeat Password</label
                 >
                 <b-form-input
-                  v-model="password"
+                  v-model="repeatpassword"
                   required
                   type="password"
                   id="text-password"
@@ -228,9 +228,22 @@
     },
     methods: {
       doLogin() {
-        if (this.email != '' && this.password != 'true') {
-          localStorage.setItem('loggedin', true)
-          this.redirect()
+        // if (this.email != '' && this.password != 'true') {
+        //   localStorage.setItem('loggedin', true)
+        //   this.redirect()
+        // }
+        for (let i = 0; i < this.$store.state.users.length; i++) {
+          if (
+            this.email != '' &&
+            this.password != 'true' &&
+            this.email === this.$store.state.users[i]['email'] &&
+            this.password === this.$store.state.users[i]['password']
+          ) {
+            localStorage.setItem('loggedin', true)
+            this.redirect()
+          } else {
+            console.log('failed to login')
+          }
         }
       },
       doregister() {
@@ -240,7 +253,22 @@
           this.password != '' &&
           this.name != ''
         ) {
+          let newUser = {
+            id: 3,
+            username: this.name,
+            password: this.password,
+            firstname: '',
+            lastname: '',
+            street: '',
+            postAdress: '',
+            city: '',
+            telephone: '',
+            email: this.email
+          }
+          this.$store.commit('addUser', newUser)
           this.redirect()
+        } else {
+          console.log('error')
         }
       },
       redirect() {

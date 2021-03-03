@@ -97,10 +97,12 @@
       >
         <ul id="man-list">
           <li>
-            <router-link to="/products" class="text-dec">Man</router-link>
+            <router-link to="/products" class="text-dec"
+              ><h5>Man</h5></router-link
+            >
           </li>
           <li>
-            <router-link to="/products" class="text-dec">Suit</router-link>
+            <router-link to="/products" class="text-dec">Suits</router-link>
           </li>
           <li>
             <router-link to="/products" class="text-dec">Ties</router-link>
@@ -118,7 +120,9 @@
 
         <ul id="woman-list">
           <li>
-            <router-link to="/products" class="text-dec">Woman</router-link>
+            <router-link to="/products" class="text-dec"
+              ><h5>Woman</h5></router-link
+            >
           </li>
           <li>
             <router-link to="/products" class="text-dec">Dresses</router-link>
@@ -277,6 +281,7 @@
   }
   #man-list li:first-child {
     border-bottom: 1px solid;
+    margin-bottom: 8px;
   }
   #woman-list {
     width: 50%;
@@ -284,6 +289,8 @@
   }
   #woman-list li:first-child {
     border-bottom: 1px solid;
+
+    margin-bottom: 8px;
   }
 
   @media only screen and (max-width: 1162px) {
