@@ -1,7 +1,7 @@
 <template>
   <div class="login">
-    <b-row>
-      <b-col cols="12">
+    <b-row class="d-flex justify-content-center">
+      <b-col sm="12" md="6">
         <b-form
           v-if="mode == 'login'"
           @submit.stop.prevent
@@ -10,7 +10,7 @@
         >
           <!-- Login -->
 
-          <b-row class="login-bg" style="">
+          <b-row class="login-bg">
             <b-col>
               <h1>Login</h1>
               <div class="text-left mt-5">
@@ -208,6 +208,11 @@
 
 <script>
   export default {
+    created() {
+      if (localStorage.getItem('loggedin') == 'true') {
+        this.$router.push('profil')
+      }
+    },
     data() {
       return {
         email: '',
@@ -223,7 +228,8 @@
     },
     methods: {
       doLogin() {
-        if (this.email != '' && this.password != '') {
+        if (this.email != '' && this.password != 'true') {
+          localStorage.setItem('loggedin', true)
           this.redirect()
         }
       },

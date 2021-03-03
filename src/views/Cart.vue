@@ -205,96 +205,122 @@
         <!-- ContactINFO -->
         <b-col cols="12" md="6" class="mt-sm-4 mt-md-0 mt-4">
           <h2>Contact information</h2>
-          <b-form-group id="surname-group" label-for="surname" label="Surname">
-            <b-form-input
-              id="surname"
-              placeholder="Jonathan"
-              required
-              v-model="receiver.surname"
-            />
-          </b-form-group>
           <b-form-group
-            i
-            d="lastname-group"
-            label-for="lastname"
-            label="Lastname"
+            id="loginChoice-group"
+            label="Log in choice"
+            label-for="loginChoice"
           >
-            <b-form-input
-              id="lastname"
-              placeholder="Luxman"
-              v-model="receiver.lastname"
+            <b-form-select
+              id="loginChoice"
               required
+              :options="loginOptions"
+              v-model="loginChoice"
             />
           </b-form-group>
-          <b-form-group
-            id="street-group"
-            label="Street & street number"
-            label-for="street"
-          >
-            <b-form-input
-              id="street"
-              placeholder="Kingstreet 13"
-              v-model="receiver.street"
-              required
-            />
-          </b-form-group>
-          <b-form-group
-            id="postNumber-group"
-            label="Post number"
-            label-for="postAdress"
-          >
-            <b-form-input
-              id="postAdress"
-              required
-              placeholder="41511"
-              v-model="receiver.postAdress"
-            />
-          </b-form-group>
-          <b-form-group id="city" label="City" label-for="city">
-            <b-form-input
-              id="city"
-              required
-              placeholder="Gothenburg"
-              v-model="receiver.city"
-            />
-          </b-form-group>
-          <b-form-group
-            id="telephone"
-            label="Phonenumber"
-            label-for="telephone"
-          >
-            <b-form-input
-              id="telephone"
-              placeholder="07XXXXXXX"
-              required
-              v-model="receiver.telephone"
-              type="tel"
-            />
-          </b-form-group>
-          <b-form-group id="email-group" label="Email" label-for="email-adress">
-            <b-form-input
-              id="email-adress"
-              type="email"
-              placeholder="JonathanLuxman@email.com"
-              required
-              v-model="receiver.email"
-            />
-          </b-form-group>
-          <!-- Subscribe to newsletter -->
-          <b-form-group class="mx-2">
-            <b-form-checkbox style=" padding: 10px; margin-top: 10px" required>
-              I accept all information and terms on WearLuxury</b-form-checkbox
+          <div v-if="loginChoice === 'Or continue as guest'">
+            <b-form-group
+              id="firstname-group"
+              label-for="firstname"
+              label="Firstname"
             >
+              <b-form-input
+                id="firstname"
+                placeholder="Jonathan"
+                required
+                v-model="receiver.firstname"
+              />
+            </b-form-group>
+            <b-form-group
+              i
+              d="lastname-group"
+              label-for="lastname"
+              label="Lastname"
+            >
+              <b-form-input
+                id="lastname"
+                placeholder="Luxman"
+                v-model="receiver.lastname"
+                required
+              />
+            </b-form-group>
+            <b-form-group
+              id="street-group"
+              label="Street & street number"
+              label-for="street"
+            >
+              <b-form-input
+                id="street"
+                placeholder="Kingstreet 13"
+                v-model="receiver.street"
+                required
+              />
+            </b-form-group>
+            <b-form-group
+              id="postNumber-group"
+              label="Post number"
+              label-for="postAdress"
+            >
+              <b-form-input
+                id="postAdress"
+                required
+                placeholder="41511"
+                v-model="receiver.postAdress"
+              />
+            </b-form-group>
+            <b-form-group id="city" label="City" label-for="city">
+              <b-form-input
+                id="city"
+                required
+                placeholder="Gothenburg"
+                v-model="receiver.city"
+              />
+            </b-form-group>
+            <b-form-group
+              id="telephone-group"
+              label="Telephone"
+              label-for="telephone"
+            >
+              <b-form-input
+                id="telephone"
+                placeholder="07XXXXXXX"
+                required
+                v-model="receiver.telephone"
+                type="tel"
+              />
+            </b-form-group>
+            <b-form-group
+              id="email-group"
+              label="Email"
+              label-for="email-adress"
+            >
+              <b-form-input
+                id="email-adress"
+                type="email"
+                placeholder="JonathanLuxman@email.com"
+                required
+                v-model="receiver.email"
+              />
+            </b-form-group>
+            <!-- Subscribe to newsletter -->
+            <b-form-group class="mx-2">
+              <b-form-checkbox
+                style=" padding: 10px; margin-top: 10px"
+                required
+              >
+                I accept all information and terms on
+                WearLuxury</b-form-checkbox
+              >
 
-            <b-form-checkbox
-              style=" padding: 10px; margin-top: 10px"
-              v-model="receiver.newsLetter"
-              value="accepted"
-              unchecked-value="not_accepted"
-            >
-              Yes, I want to subscribe to WearLuxury newsletters
-            </b-form-checkbox>
-          </b-form-group>
+              <b-form-checkbox
+                style=" padding: 10px; margin-top: 10px"
+                v-model="receiver.newsLetter"
+                value="accepted"
+                unchecked-value="not_accepted"
+              >
+                Yes, I want to subscribe to WearLuxury newsletters
+              </b-form-checkbox>
+            </b-form-group>
+          </div>
         </b-col>
       </b-row>
 
@@ -313,7 +339,7 @@
     data() {
       return {
         receiver: {
-          surename: '',
+          firstname: '',
           lastname: '',
           street: '',
           postAdress: '',
@@ -329,11 +355,13 @@
           paypalEmail: '',
           bitcoinAdress: '',
           boughtProducts: '',
-          totalPrice: '',
+          totalPrice: 0,
           newsLetter: ''
         },
         payMethodOptions: ['Visa', 'Paypal', 'Bitcoin', 'Invoice'],
-        options: [1, 2, 3, 4]
+        options: [1, 2, 3, 4],
+        loginOptions: ['Use your account information', 'Or continue as guest'],
+        loginChoice: ''
       }
     },
     methods: {

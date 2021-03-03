@@ -6,20 +6,24 @@
           ><router-link to="/" class="logo-icon">WL </router-link
           ><router-link to="/" class="logo-text">WearLuxury</router-link></b-col
         >
-        <b-col id="home-con" class="primary"
-          ><router-link to="/" class="white-text">Home</router-link></b-col
+        <b-col id="home-con" class="primary" @mouseover="listhover = false"
+          ><router-link to="/" class="white-text"
+            ><span @click="listhover = false">Home</span></router-link
+          ></b-col
         >
         <b-col
           @mouseover="listhover = true"
           id="products-con"
           class="primary, menu"
         >
-          <router-link to="/Products" class="white-text">Products</router-link>
+          <router-link to="/Products" class="white-text"
+            ><span @click="listhover = false">Products</span></router-link
+          >
         </b-col>
 
-        <b-col id="about-con" class="primary"
+        <b-col id="about-con" class="primary" @mouseover="listhover = false"
           ><router-link to="/about" class="white-text"
-            >About</router-link
+            ><span @click="listhover = false">About</span></router-link
           ></b-col
         >
 
@@ -84,49 +88,53 @@
         ></b-col>
       </b-row>
     </b-container>
-    <div
-      id="dropdown"
-      v-if="listhover"
-      @click="listhover = false"
-      @mouseleave="listhover = false"
-    >
-      <ul id="man-list">
-        <li><router-link to="/products" class="text-dec">Man</router-link></li>
-        <li>
-          <router-link to="/products" class="text-dec">Suit</router-link>
-        </li>
-        <li>
-          <router-link to="/products" class="text-dec">Ties</router-link>
-        </li>
-        <li>
-          <router-link to="/products" class="text-dec">Jackets</router-link>
-        </li>
-        <li>
-          <router-link to="/products" class="text-dec">Shoes</router-link>
-        </li>
-        <li>
-          <router-link to="/products" class="text-dec">Bags</router-link>
-        </li>
-      </ul>
+    <transition name="fade">
+      <div
+        id="dropdown"
+        v-if="listhover"
+        @click="listhover = false"
+        @mouseleave="listhover = false"
+      >
+        <ul id="man-list">
+          <li>
+            <router-link to="/products" class="text-dec">Man</router-link>
+          </li>
+          <li>
+            <router-link to="/products" class="text-dec">Suit</router-link>
+          </li>
+          <li>
+            <router-link to="/products" class="text-dec">Ties</router-link>
+          </li>
+          <li>
+            <router-link to="/products" class="text-dec">Jackets</router-link>
+          </li>
+          <li>
+            <router-link to="/products" class="text-dec">Shoes</router-link>
+          </li>
+          <li>
+            <router-link to="/products" class="text-dec">Bags</router-link>
+          </li>
+        </ul>
 
-      <ul id="woman-list">
-        <li>
-          <router-link to="/products" class="text-dec">Woman</router-link>
-        </li>
-        <li>
-          <router-link to="/products" class="text-dec">Dresses</router-link>
-        </li>
-        <li>
-          <router-link to="/products" class="text-dec">Shoes</router-link>
-        </li>
-        <li>
-          <router-link to="/products" class="text-dec">Jackets</router-link>
-        </li>
-        <li>
-          <router-link to="/products" class="text-dec">Bags</router-link>
-        </li>
-      </ul>
-    </div>
+        <ul id="woman-list">
+          <li>
+            <router-link to="/products" class="text-dec">Woman</router-link>
+          </li>
+          <li>
+            <router-link to="/products" class="text-dec">Dresses</router-link>
+          </li>
+          <li>
+            <router-link to="/products" class="text-dec">Shoes</router-link>
+          </li>
+          <li>
+            <router-link to="/products" class="text-dec">Jackets</router-link>
+          </li>
+          <li>
+            <router-link to="/products" class="text-dec">Bags</router-link>
+          </li>
+        </ul>
+      </div>
+    </transition>
   </div>
 </template>
 
@@ -156,6 +164,15 @@
 
 <style scoped lang="scss">
   @import url('https://fonts.googleapis.com/css2?family=Great+Vibes&display=swap');
+  .fade-enter-active,
+  .fade-leave-active {
+    transition: opacity 0.4s ease-in;
+  }
+
+  .fade-enter,
+  .fade-leave-to {
+    opacity: 0;
+  }
 
   #nav {
     position: sticky;
@@ -255,13 +272,15 @@
   }
   #man-list {
     width: 50%;
-    padding-top: 20px;
+    padding-top: 25px;
+    padding-left: 0px;
   }
   #man-list li:first-child {
     border-bottom: 1px solid;
   }
   #woman-list {
     width: 50%;
+    padding-left: 0px;
   }
   #woman-list li:first-child {
     border-bottom: 1px solid;
@@ -274,6 +293,9 @@
     #logincon {
       padding-right: 40px;
     }
+    #logo-con {
+      font-size: 20px;
+    }
   }
 
   @media only screen and (max-width: 580px) {
@@ -283,6 +305,7 @@
     .sok-button {
       display: none;
     }
+
     #logo-con {
       font-size: 30px;
       margin-top: 20px;

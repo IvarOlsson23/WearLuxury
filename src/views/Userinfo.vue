@@ -4,12 +4,12 @@
       <div id="you">Your Informations</div>
 
       <b-container>
-        <b-row>
-          <b-col id="name">
-            <div class="inline">Username:</div>
-            <div class="inline">{{ username }}</div>
-          </b-col>
-          <b-col id="ico" >
+        <b-row class="aa">
+         
+            <b-col class="inline" sm="12" md="4">Username:</b-col>
+            <b-col class="inline" sm="12" md="4">{{ username }}</b-col>
+          
+          <b-col id="ico" md="3">
             <b-button v-b-modal.username-modal size="sm" variant="light"
               ><b-icon class="ml-2" icon="box-arrow-in-down-left" />
             </b-button>
@@ -23,12 +23,12 @@
           </b-col>
         </b-row>
 <b-row>
-          <b-col>
-            <div class="inline">Lastname:</div>
+          
+            <b-col class="inline" sm="12" md="4">Lastname:</b-col>
 
-            <div class="inline">{{ lastname }}</div>
-          </b-col>
-          <b-col>
+            <b-col class="inline" sm="12" md="4">{{ lastname }}</b-col>
+          
+          <b-col md="3">
             <b-button v-b-modal.lastname-modal size="sm" variant="light"
               ><b-icon class="ml-2" icon="box-arrow-in-down-left"
             /></b-button>
@@ -46,13 +46,13 @@
           </b-col>
         </b-row>
         <b-row>
-          <b-col>
-            <div class="inline">Password:</div>
-            <div class="inline">
+         
+            <b-col class="inline" sm="12" md="4">Password:</b-col>
+            <b-col class="inline" sm="12" md="4">
               &bull;&bull;&bull;&bull;&bull;&bull;
-            </div>
-          </b-col>
-          <b-col>
+            </b-col>
+          
+          <b-col md="3">
             <b-button v-b-modal.password-modal size="sm" variant="light"
               ><b-icon class="ml-2" icon="box-arrow-in-down-left" />
             </b-button>
@@ -70,11 +70,11 @@
           </b-col>
         </b-row>
         <b-row>
-          <b-col>
-            <div class="inline">Phone:</div>
-            <div class="inline">{{ phone }}</div>
-          </b-col>
-          <b-col>
+         
+            <b-col class="inline" sm="12" md="4">Phone:</b-col>
+            <b-col class="inline" sm="12" md="4">{{ phone }}</b-col>
+          
+          <b-col md="3">
             <b-button v-b-modal.phone-modal size="sm" variant="light"
               ><b-icon class="ml-2" icon="box-arrow-in-down-left"
             /></b-button>
@@ -92,12 +92,12 @@
           </b-col>
         </b-row>
         <b-row>
-          <b-col>
-            <div class="inline">Email:</div>
+          
+            <b-col class="inline" sm="12" md="4">Email:</b-col>
 
-            <div class="inline">{{ email }}</div>
-          </b-col>
-          <b-col>
+            <b-col class="inline" sm="12" md="4">{{ email }}</b-col>
+          
+          <b-col md="3">
             <b-button v-b-modal.email-modal size="sm" variant="light"
               ><b-icon class="ml-2" icon="box-arrow-in-down-left"
             /></b-button>
@@ -111,12 +111,12 @@
           </b-col>
         </b-row>
         <b-row>
-          <b-col>
-            <div class="inline">Zip-code:</div>
+        
+            <b-col class="inline" sm="12" md="4">Zip-code:</b-col>
 
-            <div class="inline">{{ zip }}</div>
-          </b-col>
-          <b-col>
+            <b-col class="inline" sm="12" md="4">{{ zip }}</b-col>
+          
+          <b-col md="3">
             <b-button v-b-modal.zip-modal size="sm" variant="light"
               ><b-icon class="ml-2" icon="box-arrow-in-down-left"
             /></b-button>
@@ -130,11 +130,11 @@
           </b-col>
         </b-row>
           <b-row>
-          <b-col>
-            <div class="inline">Street:</div>
-            <div class="inline">{{ street }}</div>
-          </b-col>
-          <b-col>
+         
+            <b-col class="inline" sm="12" md="4">Street:</b-col>
+            <b-col class="inline" sm="12" md="4">{{ street }}</b-col>
+         
+          <b-col md="3">
             <b-button v-b-modal.street-modal size="sm" variant="light"
               ><b-icon class="ml-2" icon="box-arrow-in-down-left"
             /></b-button>
@@ -153,12 +153,12 @@
         </b-row>
         
         <b-row>
-          <b-col>
-            <div class="inline">Country:</div>
+          
+            <b-col class="inline" sm="12" md="4">Country:</b-col>
 
-            <div class="inline">{{ country }}</div>
-          </b-col>
-          <b-col>
+            <b-col class="inline" sm="12" md="4">{{ country }}</b-col>
+         
+          <b-col md="3">
             <b-button v-b-modal.country-modal size="sm" variant="light"
               ><b-icon class="ml-2" icon="box-arrow-in-down-left"
             /></b-button>
@@ -176,12 +176,12 @@
           </b-col>
         </b-row>
         <b-row>
-          <b-col>
-            <div class="inline">Delivery adress:</div>
+         
+            <b-col class="inline" sm="12" md="4">Delivery adress:</b-col>
 
-            <div class="inline">{{ adress }}</div>
-          </b-col>
-          <b-col>
+            <b-col class="inline" sm="12" md="4">{{ adress }}</b-col>
+          
+          <b-col md="3">
             <b-button v-b-modal.adress-modal size="sm" variant="light"
               ><b-icon class="ml-2" icon="box-arrow-in-down-left"
             /></b-button>
@@ -231,47 +231,18 @@
        <b-modal id="confirm-lastname">
         <p class="my-4">Your lastname has changed to {{lastname}}!</p>
       </b-modal>
-      <b-button id="logut" variant="danger" @click="logout">Log out</b-button>
+
     </div>
   </div>
 </template>
-<style scoped>
-  #con {
-    width: 40%;
-    margin: auto;
-  }
-  #ico{
-    width: 25%;
-  }
-  #name{
-    width: 75%;
-  }
 
-  #xcon {
-    margin-top: 30px;
-  }
-
-  #logut {
-    margin-bottom: 10px;
-  }
-  .inline {
-    display: inline-block;
-    margin-bottom: 30px;
-  
-  }
-
-  #you {
-    font-size: 24px;
-    padding-bottom: 30px;
-  }
-</style>
 <script>
   export default {
     name: 'Userinfo',
 
     data() {
       return {
-        currentUser: null,
+        currentUser: 1,
         username: localStorage.getItem('username'),
         password: localStorage.getItem('password'),
         phone: localStorage.getItem('phone'),
@@ -300,19 +271,7 @@
     },
 
     methods: {
-      logout() {
-        localStorage.setItem('username', '')
-        localStorage.setItem('password', '')
-        localStorage.setItem('email', '')
-        localStorage.setItem('phone', '')
-        localStorage.setItem('zip', '')
-        localStorage.setItem('country', '')
-        localStorage.setItem('adress', '')
-         localStorage.setItem('street', '')
-        localStorage.setItem('lastname', '')
-        this.$router.push('/login')
-      },
-
+     
       name() {
         console.log('submit')
         console.log(this.username)
@@ -349,6 +308,7 @@
           email: this.email
         })
       },
+
       Zip() {
         localStorage.setItem('zip', this.zip)
         this.$bvModal.show('confirm-zip')
@@ -393,3 +353,31 @@
     }
   }
 </script>
+<style scoped>
+  #con {
+    width: 60%;
+    margin: auto;
+  }
+
+  #xcon {
+    margin-top: 30px;
+  }
+
+  #logut {
+    margin-bottom: 10px;
+  }
+  .inline {
+    margin-bottom: 30px;
+  }
+
+
+  #you {
+    font-size: 24px;
+    padding-bottom: 30px;
+  }
+
+  @media only screen and (max-width:800px){
+.aa{
+border: 1px solid;
+}}
+</style>
