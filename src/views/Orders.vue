@@ -56,7 +56,28 @@
   export default {
     name: 'Orders',
     data() {
-      return {}
+      return {
+        receiver: {
+          surename: '',
+          lastname: '',
+          street: '',
+          postAdress: '',
+          city: '',
+          telephone: '',
+          email: '',
+          payMethod: '',
+          cardNumber: '',
+          cardNumberName: '',
+          cardExpMonth: '',
+          cardExpYear: '',
+          cardSecurity: '',
+          paypalEmail: '',
+          bitcoinAdress: '',
+          boughtProducts: '',
+          totalPrice: '',
+          price: ''
+        }
+      }
     },
 
     methods: {

@@ -23,7 +23,6 @@
           <p>{{ product.price }} $</p>
         </span>
         <!-- Show more info button -->
-
         <button id="more" v-b-modal="'infoModal' + id">
           More info
         </button>
@@ -61,50 +60,41 @@
           "
           >Add to cart</b-button
         >
+        <!-- More info modal -->
 
-        <div>
-          <!-- More info modal -->
-          <b-modal
-            :id="'infoModal' + id"
-            class="no-border"
-            content-class="shadow"
-            hide-backdrop
-            hide-footer
-          >
-            <img
-              :src="require('../assets' + product.img)"
-              alt="product"
-              class="img-modal"
-            />
-            <h2>{{ product.brand }}</h2>
-            <h4>{{ product.name }}</h4>
+        <b-modal :id="'infoModal' + id" hide-backdrop hide-footer>
+          <img
+            :src="require('../assets' + product.img)"
+            alt="product"
+            class="img-modal"
+          />
+          <h2>{{ product.brand }}</h2>
+          <h4>{{ product.name }}</h4>
 
-            <p>
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-              eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
-              enim ad minim veniam, quis nostrud exercitation ullamco laboris
-              nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in
-              reprehenderit in voluptate velit esse cillum dolore eu fugiat
-              nulla pariatur. Lorem ipsum dolor sit amet, consectetur adipiscing
-              elit, sed do eiusmod tempor incididunt ut labore et dolore magna
-              aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco
-              laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure
-              dolor in reprehenderit in voluptate velit esse cillum dolore eu
-              fugiat nulla pariatur. Lorem ipsum dolor sit amet, consectetur
-              adipiscing elit, sed do eiusmod tempor incididunt ut labore et
-              dolore magna aliqua. Ut enim ad minim veniam, quis nostrud
-              exercitation ullamco laboris nisi ut aliquip ex ea commodo
-              consequat. Duis aute irure dolor in reprehenderit in voluptate
-              velit esse cillum dolore eu fugiat nulla pariatur.
-            </p>
-          </b-modal>
-        </div>
+          <p>
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+            eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim
+            ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut
+            aliquip ex ea commodo consequat. Duis aute irure dolor in
+            reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla
+            pariatur. Lorem ipsum dolor sit amet, consectetur adipiscing elit,
+            sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+            Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris
+            nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in
+            reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla
+            pariatur. Lorem ipsum dolor sit amet, consectetur adipiscing elit,
+            sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+            Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris
+            nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in
+            reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla
+            pariatur.
+          </p>
+        </b-modal>
+
         <!--  Add to cart modal -->
         <b-modal
           :id="'addText' + id"
           button-size="sm"
-          class="no-border"
-          content-class="shadow"
           hide-backdrop
           ok-only
           size="sm"

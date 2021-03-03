@@ -10,7 +10,7 @@
         >
           <!-- Login -->
 
-          <b-row class="login-bg" style="">
+          <b-row class="login-bg">
             <b-col>
               <h1>Login</h1>
               <div class="text-left mt-5">

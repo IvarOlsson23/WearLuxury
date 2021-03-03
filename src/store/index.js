@@ -34,27 +34,7 @@ export default new Vuex.Store({
       }
     ],
     loggedIn: true,
-    newarrivalproducts: [
-      {
-        title: 'Black lace dress',
-        img: 'blackdress.jpg',
-        price: '1999kr',
-        cathegory: 'women'
-      },
 
-      {
-        title: 'Golden watch',
-        img: 'watch.jpg',
-        price: '2799kr',
-        cathegory: 'accessories'
-      },
-      {
-        title: 'Gold earings',
-        img: 'earings.jpg',
-        price: '800kr',
-        cathegory: 'accessories'
-      }
-    ],
     products,
     orders: [],
     cart: []

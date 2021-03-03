@@ -276,8 +276,8 @@
               />
             </b-form-group>
             <b-form-group
-              id="telephone"
-              label="Phonenumber"
+              id="telephone-group"
+              label="Telephone"
               label-for="telephone"
             >
               <b-form-input

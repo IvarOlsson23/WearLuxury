@@ -184,35 +184,7 @@
     </div>
   </div>
 </template>
-<style scoped>
-  #con {
-    width: 40%;
-    margin: auto;
-  }
-  #ico {
-    width: 25%;
-  }
-  #name {
-    width: 75%;
-  }
 
-  #xcon {
-    margin-top: 30px;
-  }
-
-  #logut {
-    margin-bottom: 10px;
-  }
-  .inline {
-    display: inline-block;
-    margin-bottom: 30px;
-  }
-
-  #you {
-    font-size: 24px;
-    padding-bottom: 30px;
-  }
-</style>
 <script>
   export default {
     name: 'Userinfo',
@@ -290,7 +262,7 @@
           email: this.email
         })
       },
-      
+
       Zip() {
         localStorage.setItem('zip', this.zip)
         this.$bvModal.show('confirm-zip')
@@ -319,3 +291,32 @@
     }
   }
 </script>
+<style scoped>
+  #con {
+    width: 40%;
+    margin: auto;
+  }
+  #ico {
+    width: 25%;
+  }
+  #name {
+    width: 75%;
+  }
+
+  #xcon {
+    margin-top: 30px;
+  }
+
+  #logut {
+    margin-bottom: 10px;
+  }
+  .inline {
+    display: inline-block;
+    margin-bottom: 30px;
+  }
+
+  #you {
+    font-size: 24px;
+    padding-bottom: 30px;
+  }
+</style>
