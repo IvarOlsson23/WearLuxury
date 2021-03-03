@@ -34,27 +34,7 @@ export default new Vuex.Store({
       }
     ],
     loggedIn: true,
-    newarrivalproducts: [
-      {
-        title: 'Black lace dress',
-        img: 'blackdress.jpg',
-        price: '1999kr',
-        cathegory: 'women'
-      },
 
-      {
-        title: 'Golden watch',
-        img: 'watch.jpg',
-        price: '2799kr',
-        cathegory: 'accessories'
-      },
-      {
-        title: 'Gold earings',
-        img: 'earings.jpg',
-        price: '800kr',
-        cathegory: 'accessories'
-      }
-    ],
     products,
     orders: [],
     cart: []
@@ -101,6 +81,14 @@ export default new Vuex.Store({
   changeAdress(state, newAdress) {
     const index = state.users.findIndex(users => users.id === newAdress.id)
     state.users[index].adress = newAdress.adress
+  },
+  changeLastname(state, newLastname) {
+    const index = state.users.findIndex(users => users.id === newLastname.id)
+    state.users[index].lastname = newLastname.lastname
+  },
+  changeStreet(state, newStreet) {
+    const index = state.users.findIndex(users => users.id === newStreet.id)
+    state.users[index].street = newStreet.street
   },
 
   actions: {},

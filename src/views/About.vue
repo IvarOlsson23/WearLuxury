@@ -228,13 +228,7 @@
   </b-col>
 </template>
 
-<script>
-  export default {
-    data() {
-      return {}
-    }
-  }
-</script>
+<script></script>
 
 <style scoped lang="scss">
   .flexbox {

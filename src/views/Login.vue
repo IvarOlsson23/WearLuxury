@@ -209,7 +209,7 @@
 <script>
   export default {
     created() {
-      if (localStorage.getItem('loggedin') == true) {
+      if (localStorage.getItem('loggedin') == 'true') {
         this.$router.push('profil')
       }
     },

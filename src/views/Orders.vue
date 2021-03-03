@@ -6,7 +6,6 @@
     </div>
     <div>
       <b-row id="ongoing-con">
-        <!-- CARTITEMS -->
         <b-col>
           <b-card
             :title="cartItemLength"
@@ -42,7 +41,7 @@
               <template #footer>
                 <div class="d-flex justify-content-between font-weight-bold  ">
                   <span>Total amount(inc. vat)</span>
-                  <span>{{ totalAmount }} $</span>
+                  <span>{{ aa }} $</span>
                 </div>
               </template>
             </b-card>
