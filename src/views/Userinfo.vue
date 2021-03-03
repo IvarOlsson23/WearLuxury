@@ -9,7 +9,7 @@
             <div class="inline">Username:</div>
             <div class="inline">{{ username }}</div>
           </b-col>
-          <b-col id="ico" >
+          <b-col id="ico">
             <b-button v-b-modal.username-modal size="sm" variant="light"
               ><b-icon class="ml-2" icon="box-arrow-in-down-left" />
             </b-button>
@@ -189,10 +189,10 @@
     width: 40%;
     margin: auto;
   }
-  #ico{
+  #ico {
     width: 25%;
   }
-  #name{
+  #name {
     width: 75%;
   }
 
@@ -206,7 +206,6 @@
   .inline {
     display: inline-block;
     margin-bottom: 30px;
-  
   }
 
   #you {

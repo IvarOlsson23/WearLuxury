@@ -355,7 +355,7 @@
           paypalEmail: '',
           bitcoinAdress: '',
           boughtProducts: '',
-          totalPrice: '',
+          totalPrice: 0,
           newsLetter: ''
         },
         payMethodOptions: ['Visa', 'Paypal', 'Bitcoin', 'Invoice'],

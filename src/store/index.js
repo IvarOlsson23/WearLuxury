@@ -106,14 +106,11 @@ export default new Vuex.Store({
   actions: {},
   modules: {},
   getters: {
-    newarrivalproducts(state) {
-      return state.newarrivalproducts
-    },
     countItems(state) {
       return state.cart.length
     },
     totalPrice(state) {
-      return state.orders[0].totalPrice
+      return state.orders[0].totalPrice + 29
     },
     surName(state) {
       return state.orders[0].surname

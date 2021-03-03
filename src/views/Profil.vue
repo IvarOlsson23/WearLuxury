@@ -3,6 +3,11 @@
     <b-container class="bv-example-row">
       <div id="your">Your Account</div>
       <b-row>
+        <b-button style="margin-left:40px; width:100px" @click="logout"
+          >Logout</b-button
+        >
+      </b-row>
+      <b-row>
         <b-col class="cols"
           ><router-link to="/orders"
             ><div class="img-div">
@@ -33,8 +38,7 @@
         >
       </b-row>
 
-  
-       <b-row>
+      <b-row>
         <b-col class="cols"
           ><router-link to="/orders"
             ><div class="img-div a">
@@ -91,7 +95,19 @@
   </div>
 </template>
 
-<script></script>
+<script>
+  export default {
+    data() {
+      return {}
+    },
+    methods: {
+      logout() {
+        localStorage.removeItem('loggedin')
+        this.$router.push('Login')
+      }
+    }
+  }
+</script>
 
 <style scoped lang="scss">
   #con {
@@ -126,10 +142,9 @@
     border-top: 1px solid;
     border-bottom: 1px solid;
   }
-@media only screen and (max-width:450px) {
-  #gift-card{
-    display: block;
+  @media only screen and (max-width: 450px) {
+    #gift-card {
+      display: block;
+    }
   }
-}
-
 </style>

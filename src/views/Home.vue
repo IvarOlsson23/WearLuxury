@@ -235,5 +235,9 @@
     #wrapper {
       height: 30em;
     }
+    .logo-main {
+      margin-top: 4em;
+      height: 150px;
+    }
   }
 </style>
