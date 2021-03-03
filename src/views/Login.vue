@@ -10,11 +10,7 @@
         >
           <!-- Login -->
 
-<<<<<<< HEAD
-          <b-row class="login-bg">
-=======
           <b-row class="login-bg" style="">
->>>>>>> 7333c553a43c1e8264ed3bcf537fa52771f84100
             <b-col>
               <h1>Login</h1>
               <div class="text-left mt-5">
@@ -213,7 +209,7 @@
 <script>
   export default {
     created() {
-      if (localStorage.getItem('loggedin') == 1) {
+      if (localStorage.getItem('loggedin') == 'true') {
         this.$router.push('profil')
       }
     },

@@ -56,32 +56,7 @@
   export default {
     name: 'Orders',
     data() {
-<<<<<<< HEAD
-      return {
-        receiver: {
-          surename: '',
-          lastname: '',
-          street: '',
-          postAdress: '',
-          city: '',
-          telephone: '',
-          email: '',
-          payMethod: '',
-          cardNumber: '',
-          cardNumberName: '',
-          cardExpMonth: '',
-          cardExpYear: '',
-          cardSecurity: '',
-          paypalEmail: '',
-          bitcoinAdress: '',
-          boughtProducts: '',
-          totalPrice: '',
-          price: ''
-        }
-      }
-=======
       return {}
->>>>>>> 7333c553a43c1e8264ed3bcf537fa52771f84100
     },
 
     methods: {
@@ -90,13 +65,6 @@
         this.receiver.totalPrice = this.totalAmount
       }
     },
-<<<<<<< HEAD
-
-    computed: {
-      cartItemLength() {
-        let productLength = this.$store.state.orders.length
-=======
->>>>>>> 7333c553a43c1e8264ed3bcf537fa52771f84100
 
     computed: {
       cartItemLength() {
