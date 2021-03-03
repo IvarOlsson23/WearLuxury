@@ -217,7 +217,7 @@
               v-model="loginChoice"
             />
           </b-form-group>
-          <div v-if="loginChoice === 'Or continuee as guest'">
+          <div v-if="loginChoice === 'Or continue as guest'">
             <b-form-group
               id="firstname-group"
               label-for="firstname"
