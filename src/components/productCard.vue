@@ -50,7 +50,6 @@
         </div>
 
         <!--  Add to cart button -->
-
         <b-button
           id="add-btn"
           block
@@ -101,7 +100,6 @@
           </b-modal>
         </div>
         <!--  Add to cart modal -->
-
         <b-modal
           :id="'addText' + id"
           button-size="sm"

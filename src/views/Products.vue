@@ -248,6 +248,11 @@
 </script>
 
 <style scoped>
+  .img-modal {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+  }
   .productbox {
     border: solid 1px rgba(185, 184, 184, 0.747);
     font-style: bold;

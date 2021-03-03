@@ -286,6 +286,7 @@
     .sok-button {
       display: none;
     }
+
     #logo-con {
       font-size: 30px;
       margin-top: 20px;
