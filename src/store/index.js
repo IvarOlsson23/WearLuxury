@@ -19,6 +19,40 @@ export default new Vuex.Store({
         password: 'admin123',
         email: 'admin123@test.com',
         phone: '0712312312'
+      },
+      {
+        id: 3,
+        username: 'tl',
+        password: 'losen',
+        firstname: 'Thomas',
+        lastname: 'Laukkanen',
+        street: 'Kungsgatan 7',
+        postAdress: '41523',
+        city: 'Gothenburg',
+        telephone: '0733449955',
+        email: 'tl@gmail.com'
+      }
+    ],
+    loggedIn: true,
+    newarrivalproducts: [
+      {
+        title: 'Black lace dress',
+        img: 'blackdress.jpg',
+        price: '1999kr',
+        cathegory: 'women'
+      },
+
+      {
+        title: 'Golden watch',
+        img: 'watch.jpg',
+        price: '2799kr',
+        cathegory: 'accessories'
+      },
+      {
+        title: 'Gold earings',
+        img: 'earings.jpg',
+        price: '800kr',
+        cathegory: 'accessories'
       }
     ],
     products,
