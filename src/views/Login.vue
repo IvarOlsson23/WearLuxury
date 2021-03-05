@@ -228,10 +228,6 @@
     },
     methods: {
       doLogin() {
-        // if (this.email != '' && this.password != 'true') {
-        //   localStorage.setItem('loggedin', true)
-        //   this.redirect()
-        // }
         for (let i = 0; i < this.$store.state.users.length; i++) {
           if (
             this.email != '' &&
