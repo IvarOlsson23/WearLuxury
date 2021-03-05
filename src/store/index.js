@@ -33,7 +33,7 @@ export default new Vuex.Store({
         email: 'tl@gmail.com'
       }
     ],
-    loggedIn: true,
+    loggedIn: false,
 
     products,
     orders: [],

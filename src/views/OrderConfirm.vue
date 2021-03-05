@@ -54,8 +54,6 @@
     <img src="@/assets/divider.svg" alt="divider" class="divider" />
     <!-- / Order has been processed -->
 
-   
-
     <!-- Rating -->
 
     <div id="rating">
